@@ -1407,6 +1407,182 @@
   }
 
   /* ============================================================
+  LEGAL MODALS
+  ============================================================ */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4,4,4,0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.23,1,0.32,1);
+  }
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal-box {
+    background: linear-gradient(160deg, #161410 0%, #0f0f0f 100%);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 680px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,168,76,0.06);
+    transform: translateY(28px) scale(0.97);
+    transition: transform 0.38s cubic-bezier(0.23,1,0.32,1);
+  }
+  .modal-overlay.active .modal-box {
+    transform: translateY(0) scale(1);
+  }
+  .modal-header {
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+  .modal-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .modal-brand-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+  }
+  .modal-close {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    line-height: 1;
+  }
+  .modal-close:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: rgba(201,168,76,0.3);
+    color: var(--gold);
+  }
+  .modal-body {
+    padding: 28px 32px 32px;
+    overflow-y: auto;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,168,76,0.2) transparent;
+  }
+  .modal-body::-webkit-scrollbar { width: 4px; }
+  .modal-body::-webkit-scrollbar-track { background: transparent; }
+  .modal-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 4px; }
+  .modal-section { margin-bottom: 1.8rem; }
+  .modal-section:last-child { margin-bottom: 0; }
+  .modal-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .modal-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,168,76,0.12);
+  }
+  .modal-body p {
+    font-size: 0.92rem;
+    color: rgba(245,240,232,0.72);
+    line-height: 1.8;
+    margin-bottom: 0.7rem;
+  }
+  .modal-body p:last-child { margin-bottom: 0; }
+  .modal-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin: 0.5rem 0 0.8rem;
+    padding: 0;
+  }
+  .modal-body ul li {
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.7;
+    padding-left: 1.3rem;
+    position: relative;
+  }
+  .modal-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold-dim);
+    font-size: 0.72rem;
+    top: 0.28rem;
+  }
+  .modal-highlight {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.14);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 1rem 0;
+  }
+  .modal-highlight p {
+    font-size: 0.88rem !important;
+    color: rgba(245,240,232,0.82) !important;
+    margin: 0 !important;
+    line-height: 1.7;
+  }
+  .modal-highlight strong { color: var(--gold); font-weight: 600; }
+  .modal-footer-note {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.78rem !important;
+    color: var(--muted) !important;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  @media(max-width:520px) {
+    .modal-header { padding: 22px 20px 16px; }
+    .modal-body  { padding: 20px 20px 26px; }
+    .modal-title { font-size: 1.4rem; }
+  }
+
+  /* ============================================================
   WHATSAPP FAB
   ============================================================ */
   .whatsapp-fab {
@@ -2412,77 +2588,195 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-<!-- ===== PRIVACY POLICY ===== -->
-<section id="privacy-policy" class="section">
-  <div class="section-inner">
-    <div style="max-width:800px;margin:0 auto">
-      
-      <span class="section-tag">Legal</span>
-      <h2 class="section-title">Privacy Policy</h2>
-      <div class="divider"></div>
+<!-- ===== LEGAL MODALS ===== -->
 
-      <p class="section-sub" style="margin-bottom:2rem">
-        Your privacy is important to us. This Privacy Policy explains how GroomFit collects, uses, and protects your information.
-      </p>
-
-      <div style="display:flex;flex-direction:column;gap:1.5rem;font-size:0.9rem;color:var(--muted)">
-
-        <div>
-          <h4 style="color:var(--white)">1. Information We Collect</h4>
-          <p>
-            We may collect your name, phone number, email, and fitness-related details when you apply for coaching or contact us via WhatsApp.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="color:var(--white)">2. How We Use Your Information</h4>
-          <p>
-            Your information is used to provide coaching services, create personalised plans, communicate updates, and improve our program.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="color:var(--white)">3. Data Protection</h4>
-          <p>
-            We take appropriate measures to protect your personal data. Your information is never sold or shared with third parties.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="color:var(--white)">4. Communication</h4>
-          <p>
-            By contacting GroomFit, you agree to receive communication via WhatsApp, email, or phone related to your transformation program.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="color:var(--white)">5. Your Rights</h4>
-          <p>
-            You can request to update or delete your personal data at any time by contacting us.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="color:var(--white)">6. Updates</h4>
-          <p>
-            This policy may be updated from time to time. Continued use of our services implies acceptance of these changes.
-          </p>
-        </div>
-
+<!-- Privacy Policy Modal -->
+<div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="title-privacy">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <span class="modal-brand-label">GroomFit · Legal</span>
+        <h2 class="modal-title" id="title-privacy">Privacy Policy</h2>
       </div>
+      <button class="modal-close" onclick="closeModal('privacy')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <div class="modal-section-title">Our Commitment</div>
+        <p>At GroomFit, your privacy is something we take seriously. Any information you share with us is used solely to deliver and improve your coaching experience — nothing more, nothing less.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">What We Collect</div>
+        <p>When you apply for or enrol in a GroomFit program, we may collect:</p>
+        <ul>
+          <li>Personal details — your name, phone number, and email address</li>
+          <li>Fitness information — current weight, body goals, wedding date, and any health notes you share</li>
+          <li>Communication history — messages exchanged via WhatsApp, email, or calls during coaching</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">How We Use It</div>
+        <p>Your information helps us build and deliver a coaching experience that's truly personalised for you. Specifically, we use it to:</p>
+        <ul>
+          <li>Create your custom workout and diet plan</li>
+          <li>Communicate with you via WhatsApp, calls, or email throughout the program</li>
+          <li>Track your progress and adjust your plan when needed</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Data Protection</div>
+        <div class="modal-highlight">
+          <p><strong>We do not sell, rent, or share your personal data with any third party.</strong> Your information stays strictly between you and your GroomFit coach.</p>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Your Rights</div>
+        <p>You are always in control of your data. At any time, you may:</p>
+        <ul>
+          <li>Request to view the information we hold about you</li>
+          <li>Ask us to correct or update any inaccurate details</li>
+          <li>Request complete deletion of your data after your program ends</li>
+        </ul>
+        <p>Simply reach out to us on WhatsApp or email and we'll handle your request promptly.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Your Consent</div>
+        <p>By applying to or joining GroomFit, you agree to the collection and use of information as described above. If you have any questions or concerns, we're always just a message away.</p>
+      </div>
+
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
     </div>
   </div>
-</section>
+</div>
+
+<!-- Terms & Conditions Modal -->
+<div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="title-terms">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <span class="modal-brand-label">GroomFit · Legal</span>
+        <h2 class="modal-title" id="title-terms">Terms &amp; Conditions</h2>
+      </div>
+      <button class="modal-close" onclick="closeModal('terms')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <div class="modal-section-title">The Service</div>
+        <p>GroomFit provides online fitness coaching designed specifically for Indian men preparing for their wedding. This includes personalised workout plans, Indian-adapted diet plans, progress check-ins, and coaching support — delivered remotely via WhatsApp, video calls, and email.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Your Responsibility</div>
+        <p>GroomFit provides the plan, the structure, and the support — but results come from your consistent effort. By joining, you acknowledge that:</p>
+        <ul>
+          <li>You will follow the program as instructed to the best of your ability</li>
+          <li>Results depend on your commitment, consistency, and lifestyle choices</li>
+          <li>You will communicate openly with your coach about progress, challenges, or health concerns</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Payment Terms</div>
+        <p>GroomFit operates on a simple, transparent payment structure:</p>
+        <ul>
+          <li>Payment is a one-time program fee — no recurring charges, no hidden costs</li>
+          <li>The program begins once payment is confirmed</li>
+          <li>All applicable fees are communicated clearly before you pay</li>
+        </ul>
+        <div class="modal-highlight">
+          <p><strong>What you see is what you pay.</strong> No surprises, no add-ons, no upsells mid-program.</p>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Code of Conduct</div>
+        <p>We believe in a respectful coaching relationship. We ask that all communication with your coach and the GroomFit team remains courteous and professional. GroomFit reserves the right to discontinue service (without refund) in cases of abusive or disrespectful behaviour.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Health Disclaimer</div>
+        <p>GroomFit coaching is not a substitute for medical advice. If you have any underlying health conditions, please consult a qualified doctor before starting the program. Always inform your coach of any medical concerns.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Acceptance</div>
+        <p>By purchasing or enrolling in a GroomFit program, you confirm that you have read, understood, and agree to these Terms &amp; Conditions.</p>
+      </div>
+
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
+    </div>
+  </div>
+</div>
+
+<!-- Refund Policy Modal -->
+<div class="modal-overlay" id="modal-refund" role="dialog" aria-modal="true" aria-labelledby="title-refund">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <span class="modal-brand-label">GroomFit · Legal</span>
+        <h2 class="modal-title" id="title-refund">Refund Policy</h2>
+      </div>
+      <button class="modal-close" onclick="closeModal('refund')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <div class="modal-section-title">Our Guarantee</div>
+        <div class="modal-highlight">
+          <p><strong>7-Day Risk-Free Guarantee.</strong> We're confident in what we deliver. If you join GroomFit and genuinely feel it's not working for you within the first 7 days, you'll get a full refund — no questions, no drama.</p>
+        </div>
+        <p>We stand behind our program because we've seen what it does when followed sincerely. This guarantee exists because we believe you deserve to try it without risk.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Conditions</div>
+        <p>To be eligible for a refund within the 7-day window:</p>
+        <ul>
+          <li>You must have genuinely followed the program during those 7 days</li>
+          <li>Refunds will not be issued if the plan has not been attempted at all</li>
+          <li>Your feedback helps us improve — sharing it is appreciated but not mandatory</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">How to Request</div>
+        <p>The process is simple. Just send us a WhatsApp message at <strong style="color:var(--gold)">+91 95888 59960</strong> within 7 days of your program start date. Mention your name and your request — that's it. No forms, no back-and-forth.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Processing Time</div>
+        <p>Once your refund is approved, the amount will be credited back to your original payment method within <strong style="color:var(--gold)">5–7 business days</strong>.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">After 7 Days</div>
+        <div class="modal-highlight">
+          <p>Refund requests made after the 7-day window will not be accepted. <strong>We encourage you to raise any concerns early</strong> — your coach is available to help resolve issues before you consider a refund.</p>
+        </div>
+      </div>
+
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
   <div class="footer-logo">Groom<span>Fit</span></div>
   <p class="footer-tagline">India's Premier Wedding Transformation Program for Men</p>
   <ul class="footer-links">
-  <li><a href="#">Privacy Policy</a></li>
-  <li><a href="#">Terms</a></li>
-  <li><a href="#">Refund Policy</a></li>
-  <li><a href="https://wa.me/919588859960">Contact Us</a></li>
-  <li><a href="#">Instagram</a></li>
+  <li><a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a></li>
+  <li><a href="#" onclick="openModal('terms');return false;">Terms</a></li>
+  <li><a href="#" onclick="openModal('refund');return false;">Refund Policy</a></li>
+  <li><a href="https://wa.me/919588859960" target="_blank" rel="noopener">Contact Us</a></li>
+  <li><a href="https://www.instagram.com/groomfit.in" target="_blank" rel="noopener">Instagram</a></li>
   </ul>
   <p class="footer-copy">© 2024 GroomFit. All rights reserved. · Results may vary. Commitment required.</p>
 </footer>
@@ -2549,7 +2843,44 @@
   document.getElementById('cdSecs').textContent  = String(secs).padStart(2, '0');
   }
 
-  // Set a default demo date 90 days from now
+  // ===== LEGAL MODALS =====
+  function openModal(id) {
+    const overlay = document.getElementById('modal-' + id);
+    if (!overlay) return;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // scroll modal body to top each open
+    const body = overlay.querySelector('.modal-body');
+    if (body) body.scrollTop = 0;
+  }
+
+  function closeModal(id) {
+    const overlay = document.getElementById('modal-' + id);
+    if (!overlay) return;
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(function(overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
   const demo = new Date();
   demo.setDate(demo.getDate() + 90);
   document.getElementById('weddingDate').value = demo.toISOString().split('T')[0];
