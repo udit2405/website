@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroomFit — Transform Before Your Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+  --gold:  #C9A84C;
+  --gold-light:  #E8C96A;
+  --gold-dim:  #7A5F24;
+  --black:   #080808;
+  --dark:  #0E0E0E;
+  --dark-2:  #141414;
+  --dark-3:  #1C1C1C;
+  --dark-4:  #242424;
+  --white:   #F5F0E8;
+  --muted:   #8A8070;
+  --radius:  10px;
+  --transition:  0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  line-height: 1.15;
+  }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  .gold { color: var(--gold); }
+  .italic { font-style: italic; }
+
+  /* ===== NOISE TEXTURE OVERLAY ===== */
+  body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+  }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  padding: 0 5%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  transition: var(--transition);
+  }
+  nav.scrolled { background: rgba(8,8,8,0.97); }
+
+  .nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  }
+  .nav-links a { color: var(--muted); transition: color 0.25s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: background 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  @media(max-width:768px){
+  .nav-links { display: none; }
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 38px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 0 0 rgba(201,168,76,0);
+  }
+  .btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+  }
+
+  .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 4px;
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  }
+  .btn-outline:hover {
+  background: var(--gold);
+  color: var(--black);
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .section {
+  width: 100%;
+  padding: 100px 5%;
+  position: relative;
+  }
+  .section-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  }
+  .section-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 6px 14px;
+  border-radius: 3px;
+  margin-bottom: 1.2rem;
+  }
+  .section-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  margin-bottom: 1.2rem;
+  }
+  .section-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.8;
+  }
+
+  /* ===== GOLD DIVIDER ===== */
+  .divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 1.4rem 0;
+  }
+
+  /* ============================================================
+  HERO
+  ============================================================ */
+  #hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 5% 220px;
+  position: relative;
+  overflow: hidden;
+  }
+
+  /* Layered background */
+  #hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+  radial-gradient(ellipse 70% 55% at 70% 60%, rgba(201,168,76,0.08) 0%, transparent 65%),
+  radial-gradient(ellipse 50% 50% at 20% 30%, rgba(201,168,76,0.04) 0%, transparent 60%),
+  linear-gradient(160deg, #0a0a0a 0%, #0e0c08 50%, #0a0a0a 100%);
+  z-index: 0;
+  }
+
+  /* Decorative rings */
+  .hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.06);
+  pointer-events: none;
+  }
+  .hero-ring-1 { width: 600px; height: 600px; top: -150px; right: -100px; }
+  .hero-ring-2 { width: 900px; height: 900px; top: -300px; right: -300px; border-color: rgba(201,168,76,0.03); }
+
+  .hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  }
+  .hero-left-col { min-width: 0; }
+  @media (min-width: 1024px) {
+  .hero-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+  gap: 2.5rem 2.75rem;
+  }
+  }
+
+  .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  }
+
+  .hero-headline {
+  font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  max-width: 800px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.35s forwards;
+  }
+  .hero-headline em {
+  font-style: italic;
+  color: var(--gold);
+  }
+
+  .hero-sub {
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  color: rgba(245,240,232,0.6);
+  max-width: 580px;
+  margin: 1.8rem 0 1.15rem;
+  line-height: 1.85;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.5s forwards;
+  }
+
+  .hero-value-strong {
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  font-family: 'Outfit', sans-serif;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1.55;
+  max-width: 580px;
+  margin: 0 0 2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.58s forwards;
+  }
+  .hero-value-strong strong {
+  font-weight: 700;
+  color: var(--gold-light);
+  }
+
+  .hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.72s forwards;
+  }
+
+  .hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 3.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.88s forwards;
+  }
+  .hero-trust-dots {
+  display: flex;
+  gap: 4px;
+  }
+  .hero-trust-dots span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--dark-3);
+  border: 2px solid var(--dark-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  }
+  .hero-trust-dots span:nth-child(2) { margin-left: -8px; }
+  .hero-trust-dots span:nth-child(3) { margin-left: -8px; }
+
+  .hero-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  z-index: 2;
+  animation: bounce 2s infinite;
+  }
+  .scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+  }
+
+  /* Stats bar */
+  .hero-stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(14,14,14,0.92);
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding: 24px 5%;
+  display: flex;
+  justify-content: center;
+  gap: 4%;
+  flex-wrap: wrap;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeUp 0.9s 1s forwards;
+  }
+  .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  }
+  .stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  }
+  .stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  }
+
+  /* ============================================================
+  PROBLEM
+  ============================================================ */
+  #problem {
+  background: var(--dark);
+  }
+  .problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 4rem;
+  }
+  @media(max-width:768px){ .problem-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .pain-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  }
+  .pain-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.07);
+  border-radius: var(--radius);
+  transition: border-color 0.3s, background 0.3s;
+  }
+  .pain-item:hover {
+  border-color: rgba(201,168,76,0.2);
+  background: var(--dark-3);
+  }
+  .pain-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  }
+  .pain-item h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  }
+  .pain-item p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  }
+
+  .problem-visual {
+  position: relative;
+  }
+  .problem-card {
+  background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-2) 100%);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  }
+  .problem-card-emoji { font-size: 4rem; margin-bottom: 1rem; }
+  .problem-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  }
+  .problem-card p { color: var(--muted); font-size: 0.9rem; }
+  .ring-accent {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.15);
+  pointer-events: none;
+  }
+
+  /* ============================================================
+  SOLUTION
+  ============================================================ */
+  #solution {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  }
+  #solution::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  }
+
+  .solution-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 4rem;
+  }
+  @media(max-width:768px){ .solution-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+  .solution-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  }
+  .pillar {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  }
+  .pillar-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgba(201,168,76,0.15);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 48px;
+  }
+  .pillar h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  }
+  .pillar p { font-size: 0.88rem; color: var(--muted); }
+
+  .solution-highlight {
+  background: linear-gradient(150deg, #181208 0%, #1a1500 100%);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 20px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  }
+  .solution-highlight::before {
+  content: 'GF';
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9rem;
+  font-weight: 700;
+  color: rgba(201,168,76,0.04);
+  pointer-events: none;
+  }
+  .sh-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  }
+  .sh-title {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  }
+  .sh-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  }
+  .sh-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  }
+  .sh-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  }
+  .sh-days {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201,168,76,0.12);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  }
+  .sh-days-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  }
+  .sh-days-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+  /* ============================================================
+  FEATURES
+  ============================================================ */
+  #features {
+  background: var(--dark);
+  }
+  .features-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  }
+  .features-header .section-sub { margin: 0 auto; }
+
+  .features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  }
+  @media(max-width:900px){ .features-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:560px){ .features-grid { grid-template-columns: 1fr; } }
+
+  .feature-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 14px;
+  padding: 32px 28px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  }
+  .feature-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition: width 0.4s ease;
+  }
+  .feature-card:hover { border-color: rgba(201,168,76,0.22); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .feature-card:hover::after { width: 100%; }
+
+  .feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  }
+  .feature-card h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  }
+  .feature-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  /* ============================================================
+  TRANSFORMATIONS
+  ============================================================ */
+  #transformations {
+  background: var(--black);
+  }
+  .transform-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  }
+
+  .transform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  }
+  @media(max-width:900px){ .transform-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:560px){ .transform-grid { grid-template-columns: 1fr; } }
+
+  .transform-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.1);
+  background: var(--dark-2);
+  }
+  .transform-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  }
+  .photo-placeholder {
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  }
+  .photo-placeholder.before {
+  background: linear-gradient(160deg, #111 0%, #1a1a1a 100%);
+  color: var(--muted);
+  }
+  .photo-placeholder.after {
+  background: linear-gradient(160deg, #1a1200 0%, #201800 100%);
+  color: var(--gold);
+  }
+  .photo-emoji { font-size: 2.5rem; margin-bottom: 4px; }
+  .transform-divider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--black);
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 700;
+  z-index: 2;
+  }
+  .transform-info {
+  padding: 20px 22px;
+  border-top: 1px solid rgba(201,168,76,0.08);
+  }
+  .transform-info h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  }
+  .transform-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 8px;
+  }
+  .transform-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(201,168,76,0.1);
+  color: var(--gold);
+  padding: 3px 10px;
+  border-radius: 3px;
+  }
+
+  .transform-note {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  }
+
+  /* ============================================================
+  CREDIBILITY / TEAM
+  ============================================================ */
+  #credibility {
+  background: var(--dark);
+  position: relative;
+  }
+  .cred-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 70px;
+  align-items: center;
+  }
+  @media(max-width:768px){ .cred-layout { grid-template-columns: 1fr; gap: 50px; } }
+
+  .cred-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  }
+  .badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: rgba(201,168,76,0.05);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 10px;
+  }
+  .badge-icon { font-size: 1.6rem; }
+  .badge-text h5 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  }
+  .badge-text p { font-size: 0.78rem; color: var(--muted); }
+
+  .team-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  }
+  .trainer-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 14px;
+  transition: border-color 0.3s;
+  }
+  .trainer-card:hover { border-color: rgba(201,168,76,0.25); }
+  .trainer-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--dark-3), var(--dark-4));
+  border: 2px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  }
+  .trainer-info h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+  }
+  .trainer-cert {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 4px;
+  }
+  .trainer-info p { font-size: 0.82rem; color: var(--muted); }
+
+  /* ============================================================
+  HOW IT WORKS
+  ============================================================ */
+  #how {
+  background: var(--black);
+  }
+  .steps-header { text-align: center; margin-bottom: 5rem; }
+
+  .steps-track {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  }
+  .steps-line {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  right: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2) 80%, transparent);
+  }
+  @media(max-width:768px){ .steps-line { display: none; } }
+
+  .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+  }
+  @media(max-width:768px){ .steps-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+  .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  }
+  .step-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--dark-2);
+  border: 2px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  }
+  .step:hover .step-circle {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--gold);
+  transform: scale(1.1);
+  }
+  .step h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  }
+  .step p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+  /* ============================================================
+  TESTIMONIALS
+  ============================================================ */
+  #testimonials {
+  background: var(--dark);
+  }
+  .testi-header { text-align: center; margin-bottom: 4rem; }
+
+  .testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  }
+  @media(max-width:900px){ .testi-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:560px){ .testi-grid { grid-template-columns: 1fr; } }
+
+  .testi-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 14px;
+  padding: 32px 28px;
+  position: relative;
+  }
+  .testi-quote {
+  position: absolute;
+  top: 24px; right: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(201,168,76,0.1);
+  }
+  .stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+  }
+  .star { color: var(--gold); font-size: 0.9rem; }
+  .testi-card p { font-size: 0.9rem; color: rgba(245,240,232,0.8); line-height: 1.75; margin-bottom: 1.5rem; }
+  .testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  }
+  .testi-ava {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dim), var(--dark-4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  }
+  .testi-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  }
+  .testi-detail { font-size: 0.75rem; color: var(--muted); }
+  .testi-result {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  padding: 4px 12px;
+  border-radius: 3px;
+  }
+
+  /* ============================================================
+  PRICING
+  ============================================================ */
+  #pricing {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  }
+  #pricing::before {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  }
+  .pricing-header { text-align: center; margin-bottom: 4rem; }
+
+  .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+  }
+  @media(max-width:900px){ .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+
+  .plan {
+  border-radius: 18px;
+  border: 1px solid rgba(201,168,76,0.1);
+  background: var(--dark-2);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .plan:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
+
+  .plan.featured {
+  border-color: var(--gold);
+  background: linear-gradient(170deg, #181200 0%, #120f00 100%);
+  transform: scale(1.04);
+  }
+  .plan.featured:hover { transform: scale(1.04) translateY(-6px); }
+
+  .plan-badge {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 0 18px 0 10px;
+  }
+
+  .plan-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  }
+  .plan.featured .plan-name { color: var(--gold); }
+
+  .plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 0.5rem;
+  }
+  .price-symbol { font-size: 1.3rem; color: var(--gold); font-weight: 600; }
+  .price-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  }
+  .price-period { font-size: 0.8rem; color: var(--muted); }
+  .plan-desc { font-size: 0.83rem; color: var(--muted); margin-bottom: 1.8rem; }
+
+  .plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+  }
+  .plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  }
+  .check { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #555; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .plan-features li.off { color: var(--muted); opacity: 0.5; }
+
+  /* ============================================================
+  COUNTDOWN
+  ============================================================ */
+  #countdown-section {
+  background: var(--dark);
+  }
+  .countdown-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  }
+  .countdown-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  }
+  .countdown-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  }
+  .cd-box {
+  text-align: center;
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 24px 28px;
+  min-width: 110px;
+  }
+  .cd-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  }
+  .cd-unit {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+  }
+  .countdown-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  }
+  .countdown-input-row label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  }
+  .countdown-input-row input {
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--white);
+  font-size: 0.9rem;
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+  transition: border-color 0.25s;
+  }
+  .countdown-input-row input:focus { border-color: var(--gold); }
+  .cd-set-btn {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: background 0.25s;
+  }
+  .cd-set-btn:hover { background: var(--gold-light); }
+
+  /* ============================================================
+  GUARANTEE
+  ============================================================ */
+  #guarantee {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  }
+  #guarantee::before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100%, 880px);
+  height: 420px;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.09) 0%, transparent 68%);
+  pointer-events: none;
+  }
+  .guarantee-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  }
+  .guarantee-wrap .section-sub {
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .guarantee-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.28);
+  border-radius: 18px;
+  padding: 2.35rem 2rem 2rem;
+  margin: 2.25rem 0 1.75rem;
+  text-align: center;
+  box-shadow:
+  0 0 0 1px rgba(201,168,76,0.06),
+  0 0 48px rgba(201,168,76,0.06),
+  0 24px 64px rgba(0,0,0,0.45);
+  }
+  .guarantee-card-icon {
+  font-size: 2.1rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px rgba(201,168,76,0.25));
+  }
+  .guarantee-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  }
+  .guarantee-list {
+  list-style: none;
+  text-align: left;
+  max-width: 440px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  }
+  .guarantee-list li {
+  font-size: 0.88rem;
+  color: rgba(245,240,232,0.88);
+  line-height: 1.6;
+  padding-left: 1.35rem;
+  position: relative;
+  }
+  .guarantee-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  }
+  .guarantee-card-strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.06rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.55;
+  padding-top: 1.35rem;
+  margin: 0;
+  border-top: 1px solid rgba(201,168,76,0.14);
+  }
+  .guarantee-trust-line {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  }
+  .guarantee-cta {
+  margin-top: 0.25rem;
+  }
+
+  /* ============================================================
+  URGENCY
+  ============================================================ */
+  #urgency {
+  background: linear-gradient(135deg, #100d00 0%, #0a0800 50%, #130d00 100%);
+  border-top: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  text-align: center;
+  }
+  .urgency-inner { max-width: 700px; margin: 0 auto; }
+  .urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  }
+  .urgency-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4caf50;
+  animation: pulse-dot 1.5s infinite;
+  }
+  .urgency-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+  }
+  .urgency-sub { color: var(--muted); margin-bottom: 2.5rem; font-size: 1rem; }
+
+  .slots-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  }
+  .slot {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  }
+  .slot.taken { background: rgba(201,168,76,0.25); border: 1px solid rgba(201,168,76,0.3); }
+  .slot.open { background: var(--gold); border: 1px solid var(--gold-light); }
+
+  .slots-label { font-size: 0.8rem; color: var(--muted); margin-bottom: 2.5rem; }
+  .slots-label span { color: var(--gold); font-weight: 700; }
+
+  /* ============================================================
+  FINAL CTA
+  ============================================================ */
+  #final-cta {
+  background: var(--black);
+  text-align: center;
+  }
+  .final-cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  }
+  .final-cta-title { font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 1.2rem; }
+  .final-cta-sub { color: var(--muted); font-size: 1rem; margin-bottom: 2.8rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  .final-disclaimer {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  }
+  .final-disclaimer::before {
+  content: '🔒';
+  font-size: 0.9rem;
+  }
+
+  /* ============================================================
+  FOOTER
+  ============================================================ */
+  footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  padding: 40px 5%;
+  text-align: center;
+  }
+  .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy {
+  margin-top: 1.8rem;
+  font-size: 0.72rem;
+  color: rgba(138,128,112,0.5);
+  }
+
+  /* ============================================================
+  WHATSAPP FAB
+  ============================================================ */
+  .whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+  z-index: 800;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  }
+  .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.55); }
+  .whatsapp-fab svg { width: 28px; height: 28px; fill: white; }
+  .whatsapp-tooltip {
+  position: fixed;
+  bottom: 98px;
+  right: 28px;
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  z-index: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+  }
+  .whatsapp-fab:hover + .whatsapp-tooltip,
+  .whatsapp-fab:focus + .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+  }
+
+  /* ===== HERO: AI/DIY vs COACHING ===== */
+  .hero-comparison {
+  margin-top: 2rem;
+  max-width: 720px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.82s forwards;
+  }
+  .hero-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  }
+  @media (max-width: 640px) {
+  .hero-comparison-grid { grid-template-columns: 1fr; }
+  }
+  .hero-comp-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  transition: transform 0.35s var(--transition), border-color 0.35s, box-shadow 0.35s;
+  }
+  .hero-comp-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201,168,76,0.22);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  }
+  .hero-comp-card--gf {
+  background: linear-gradient(160deg, rgba(201,168,76,0.1) 0%, var(--dark-2) 55%);
+  border-color: rgba(201,168,76,0.32);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.06) inset;
+  }
+  .hero-comp-card--gf:hover {
+  border-color: var(--gold);
+  box-shadow: 0 20px 50px rgba(201,168,76,0.14);
+  }
+  .hero-comp-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--white);
+  }
+  .hero-comp-card--diy .hero-comp-title { color: var(--muted); }
+  .hero-comp-card--gf .hero-comp-title { color: var(--gold); }
+  .hero-comp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  }
+  .hero-comp-list li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.5;
+  }
+  .hero-comp-card--gf .hero-comp-list li { color: rgba(245,240,232,0.85); }
+  .hero-comp-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  flex-shrink: 0;
+  margin-top: 0.45em;
+  }
+  .hero-comp-card--gf .hero-comp-list li::before {
+  background: var(--gold);
+  }
+  .hero-comp-close {
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.55;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .hero-comp-close em {
+  color: var(--gold);
+  font-style: italic;
+  }
+
+  /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
+  .hero-offline-card {
+  background: rgba(20,20,20,0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201,168,76,0.28);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.06) inset;
+  align-self: center;
+  animation: heroCardIn 0.9s 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .hero-offline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  line-height: 1.2;
+  }
+  .hero-offline-title span { color: var(--gold); }
+  .hero-offline-text {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
+  }
+  .hero-offline-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  }
+  .hero-city-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.88);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.18);
+  padding: 0.35rem 0.55rem 0.35rem 0.45rem;
+  border-radius: 4px;
+  }
+  .hero-city-marker {
+  font-size: 0.65rem;
+  line-height: 1;
+  }
+  .hero-offline-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border-radius: 4px;
+  transition: background 0.25s, transform 0.25s;
+  }
+  .hero-offline-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  }
+  @keyframes heroCardIn {
+  from { opacity: 0; transform: translateX(18px) translateY(10px); }
+  to { opacity: 1; transform: translateX(0) translateY(0); }
+  }
+  @media (max-width: 1023px) {
+  .hero-offline-card {
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+  animation-delay: 0.4s;
+  }
+  }
+  @media (prefers-reduced-motion: reduce) {
+  .hero-offline-card { animation: none; opacity: 1; transform: none; }
+  }
+
+  /* ============================================================
+  KEYFRAMES
+  ============================================================ */
+  @keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  }
+  @keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%   { transform: translateX(-50%) translateY(-8px); }
+  }
+  @keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%   { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  /* ===== GOLD SHIMMER on featured plan ===== */
+  .plan.featured .plan-price .price-num {
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+  <div class="nav-logo">Groom<span>Fit</span></div>
+  <ul class="nav-links">
+  <li><a href="#problem">Problem</a></li>
+  <li><a href="#features">Program</a></li>
+  <li><a href="#how">How it Works</a></li>
+  <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <a href="#final-cta" class="nav-cta">Apply for Coaching</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-ring hero-ring-1"></div>
+  <div class="hero-ring hero-ring-2"></div>
+  <div class="hero-inner">
+  <div class="hero-left-col">
+  <div class="hero-eyebrow">India's #1 Groom Fitness Program</div>
+
+  <h1 class="hero-headline">
+  Transform Your Body<br/>
+  Before Your <em>Wedding</em><br/>
+  in 90 Days
+  </h1>
+
+  <p class="hero-sub">
+  We personally guide you through a complete body transformation. Workouts, diet, and accountability — so you look elite on your wedding day.  
+  No guesswork. No trial &amp; error.
+  </p>
+  <p class="hero-value-strong"><strong>This is not just a plan. This is hands-on transformation coaching.</strong></p>
+
+  <div class="hero-cta-group">
+  <a href="#final-cta" class="btn-primary">
+  Get My Custom Plan
+  <span>→</span>
+  </a>
+  <a href="#how" class="btn-outline">See How It Works</a>
+  </div>
+
+  <div class="hero-comparison">
+  <div class="hero-comparison-grid">
+  <div class="hero-comp-card hero-comp-card--diy">
+  <div class="hero-comp-title">Do It Yourself / AI Plans</div>
+  <ul class="hero-comp-list">
+  <li>Generic workouts</li>
+  <li>No accountability</li>
+  <li>No customization</li>
+  <li>Easy to quit</li>
+  <li>Risky for a once-in-a-lifetime event</li>
+  </ul>
+  </div>
+  <div class="hero-comp-card hero-comp-card--gf">
+  <div class="hero-comp-title">With GroomFit Coaching</div>
+  <ul class="hero-comp-list">
+  <li>Personalised plan for YOUR body</li>
+  <li>Weekly coach check-ins</li>
+  <li>Real accountability</li>
+  <li>Proven transformation system</li>
+  <li>Designed for your wedding deadline</li>
+  </ul>
+  </div>
+  </div>
+  <p class="hero-comp-close">Your wedding happens once. Do you really want to risk it on <em>guesswork</em>?</p>
+  </div>
+
+  <div class="hero-trust">
+  <div class="hero-trust-dots">
+  <span aria-hidden="true">💍</span>
+  <span aria-hidden="true">✨</span>
+  <span aria-hidden="true">⭐</span>
+  </div>
+  <span>Trusted by 100+ grooms across India &nbsp;·&nbsp; Results in 60–90 days</span>
+  </div>
+  </div>
+
+  <aside class="hero-offline-card" aria-label="Offline coaching locations">
+  <h3 class="hero-offline-title">Offline <span>Coaching</span> Available</h3>
+  <p class="hero-offline-text">Prefer in-person guidance? Meet us for consultations and gym sessions in select cities.</p>
+  <div class="hero-offline-cities">
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Mumbai</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Gurgaon</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Jaipur</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Ghaziabad</span>
+  </div>
+  <a href="https://wa.me/919588859960?text=Hi%2C%20I%27d%20like%20to%20book%20an%20offline%20consultation%20with%20GroomFit" class="hero-offline-cta" target="_blank" rel="noopener">Book Offline Consultation</a>
+  </aside>
+  </div>
+
+  <div class="hero-scroll-hint">
+  <span>Scroll</span>
+  <div class="scroll-line"></div>
+  </div>
+
+  <div class="hero-stats">
+  <div class="stat-item">
+  <span class="stat-num">200+</span>
+  <span class="stat-label">Grooms Transformed</span>
+  </div>
+  <div class="stat-item">
+  <span class="stat-num">90</span>
+  <span class="stat-label">Day Program</span>
+  </div>
+  <div class="stat-item">
+  <span class="stat-num">5⭐</span>
+  <span class="stat-label">Avg. Rating</span>
+  </div>
+  <div class="stat-item">
+  <span class="stat-num">5yrs</span>
+  <span class="stat-label">Expert Experience</span>
+  </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem" class="section">
+  <div class="section-inner">
+  <div class="problem-grid">
+  <div class="reveal">
+  <span class="section-tag">The Reality Check</span>
+  <h2 class="section-title">You Only Get <em class="gold italic">One Shot</em> at Your Wedding Day</h2>
+  <div class="divider"></div>
+  <p class="section-sub" style="margin-bottom:2.5rem">
+  Most grooms ignore their fitness until 2 weeks before the wedding — then panic. Sound familiar?
+  </p>
+  <ul class="pain-list">
+  <li class="pain-item">
+  <span class="pain-icon">😓</span>
+  <div>
+  <h4>Not Happy With Your Body</h4>
+  <p>You look in the mirror and know you could look better — but you don't know where to start.</p>
+  </div>
+  </li>
+  <li class="pain-item">
+  <span class="pain-icon">📸</span>
+  <div>
+  <h4>Wedding Photo Pressure</h4>
+  <p>Thousands of photos, videos, and reels that will live forever. You don't want to cringe at them.</p>
+  </div>
+  </li>
+  <li class="pain-item">
+  <span class="pain-icon">⏰</span>
+  <div>
+  <h4>No Time to Figure It Out</h4>
+  <p>Wedding prep is already overwhelming. You can't spend months researching diet and workout plans.</p>
+  </div>
+  </li>
+  <li class="pain-item">
+  <span class="pain-icon">🤷</span>
+  <div>
+  <h4>Confused About Diet & Workouts</h4>
+  <p>Too much conflicting information online. You try things, see no results, and give up.</p>
+  </div>
+  </li>
+  </ul>
+  </div>
+
+  <div class="reveal" style="transition-delay:0.15s">
+  <div class="problem-visual">
+  <div class="problem-card">
+  <div class="problem-card-emoji">💒</div>
+  <h3 class="gold">The Big Day<br/>Is Coming</h3>
+  <p style="margin:1rem 0 1.5rem">Every day without a plan is a day of wasted potential — and you can't get those days back.</p>
+  <div style="display:flex;flex-direction:column;gap:0.7rem">
+  <div style="background:var(--dark-3);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;font-size:0.82rem">
+  <span>Without GroomFit</span>
+  <span style="color:#e57373;font-weight:600">❌ Average results</span>
+  </div>
+  <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;font-size:0.82rem">
+  <span>With GroomFit</span>
+  <span style="color:var(--gold);font-weight:600">✅ Elite transformation</span>
+  </div>
+  </div>
+  </div>
+  <div class="ring-accent"></div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="solution" class="section">
+  <div class="section-inner">
+  <div class="solution-layout">
+  <div class="reveal">
+  <span class="section-tag">The GroomFit System</span>
+  <h2 class="section-title">A Precision Plan Built for <em class="gold italic">Grooms Only</em></h2>
+  <div class="divider"></div>
+  <p class="section-sub" style="margin-bottom:2.5rem">
+  This isn't a generic fitness app or YouTube routine. This is a structured, deadline-driven transformation designed for men who have a real deadline — their wedding.
+  </p>
+  <div class="solution-pillars">
+  <div class="pillar reveal" style="transition-delay:0.1s">
+  <span class="pillar-num">01</span>
+  <div>
+  <h4>Structured 60–90 Day Plan</h4>
+  <p>Every day mapped out. No guessing. No wasted sessions. A clear path from now to wedding day.</p>
+  </div>
+  </div>
+  <div class="pillar reveal" style="transition-delay:0.2s">
+  <span class="pillar-num">02</span>
+  <div>
+  <h4>Personal Coaching</h4>
+  <p>You're not a number. Our coaches know your timeline, your body type, and your goals.</p>
+  </div>
+  </div>
+  <div class="pillar reveal" style="transition-delay:0.3s">
+  <span class="pillar-num">03</span>
+  <div>
+  <h4>Diet + Workout + Accountability</h4>
+  <p>Custom Indian meal plans, structured workouts, and weekly check-ins to keep you on track.</p>
+  </div>
+  </div>
+  <div class="pillar reveal" style="transition-delay:0.4s">
+  <span class="pillar-num">04</span>
+  <div>
+  <h4>Designed Specifically for Grooms</h4>
+  <p>We understand the wedding prep chaos — and we work around it, not against it.</p>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="reveal" style="transition-delay:0.2s">
+  <div class="solution-highlight">
+  <div class="sh-tag">What You Get</div>
+  <h3 class="sh-title">Everything You Need to <span class="gold">Look Elite</span></h3>
+  <ul class="sh-list">
+  <li>Personalised workout plan (gym or home)</li>
+  <li>Indian diet plan (veg & non-veg options)</li>
+  <li>Weekly check-in calls with your coach</li>
+  <li>WhatsApp support 6 days a week</li>
+  <li>Progress tracking & body measurement logs</li>
+  <li>Deadline-based milestones aligned to your D-Day</li>
+  <li>Pre-wedding posture & grooming tips</li>
+  </ul>
+  <div class="sh-days">
+  <div class="sh-days-num">90</div>
+  <div class="sh-days-text">
+  <strong>Days of dedicated transformation</strong><br/>
+  <span style="color:var(--muted)">Aligned perfectly to your wedding date</span>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features" class="section">
+  <div class="section-inner">
+  <div class="features-header reveal">
+  <span class="section-tag">Program Features</span>
+  <h2 class="section-title">Everything Included. <em class="gold italic">Nothing Extra to Buy.</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  <p class="section-sub">A complete ecosystem for your transformation — not piecemeal advice, but a full system.</p>
+  </div>
+
+  <div class="features-grid">
+  <div class="feature-card reveal" style="transition-delay:0.05s">
+  <div class="feature-icon">🏋️</div>
+  <h4>Custom Workout Plan</h4>
+  <p>Gym or home — we build a plan that fits your setup. Designed for maximum results in minimum time.</p>
+  </div>
+  <div class="feature-card reveal" style="transition-delay:0.1s">
+  <div class="feature-icon">🍛</div>
+  <h4>Indian Diet Plan</h4>
+  <p>Veg or non-veg, North or South — a realistic meal plan built around your lifestyle and food culture.</p>
+  </div>
+  <div class="feature-card reveal" style="transition-delay:0.15s">
+  <div class="feature-icon">📊</div>
+  <h4>Weekly Check-Ins</h4>
+  <p>Regular reviews of your progress, adjustments to your plan, and direct feedback from your coach.</p>
+  </div>
+  <div class="feature-card reveal" style="transition-delay:0.2s">
+  <div class="feature-icon">💬</div>
+  <h4>WhatsApp Support</h4>
+  <p>Direct access to your coach. Ask anything, get real answers — not chatbots, not delays.</p>
+  </div>
+  <div class="feature-card reveal" style="transition-delay:0.25s">
+  <div class="feature-icon">📈</div>
+  <h4>Progress Tracking</h4>
+  <p>Body measurements, photos, and milestone logs so you can see and feel the transformation week by week.</p>
+  </div>
+  <div class="feature-card reveal" style="transition-delay:0.3s">
+  <div class="feature-icon">💍</div>
+  <h4>Deadline-Based Plan</h4>
+  <p>Your wedding date is the countdown. Every week is engineered to peak exactly when it matters most.</p>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== TRANSFORMATIONS ===== -->
+<section id="transformations" class="section">
+  <div class="section-inner">
+  <div class="transform-header reveal">
+  <span class="section-tag">Real Results</span>
+  <h2 class="section-title">Transformations That <em class="gold italic">Speak for Themselves</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  <p class="section-sub" style="margin:0 auto">
+  Every groom who committed to GroomFit showed up to their wedding looking and feeling their absolute best.
+  </p>
+  </div>
+
+  <div class="transform-grid">
+  <div class="transform-card reveal" style="transition-delay:0.05s">
+  <div class="transform-photos">
+  <div class="photo-placeholder before">
+  <div class="photo-emoji">🙍</div>
+  Before
+  </div>
+  <div class="photo-placeholder after">
+  <div class="photo-emoji">🤵</div>
+  After
+  </div>
+  <div class="transform-divider">→</div>
+  </div>
+  <div class="transform-info">
+  <h4>Arjun S. — Delhi</h4>
+  <p style="font-size:0.8rem;color:var(--muted)">Lost 8kg &amp; built visible definition in 75 days</p>
+  <div class="transform-meta">
+  <span class="transform-tag">75 Days</span>
+  <span class="transform-tag">-8 kg</span>
+  </div>
+  </div>
+  </div>
+  <div class="transform-card reveal" style="transition-delay:0.1s">
+  <div class="transform-photos">
+  <div class="photo-placeholder before">
+  <div class="photo-emoji">🙍</div>
+  Before
+  </div>
+  <div class="photo-placeholder after">
+  <div class="photo-emoji">🤵</div>
+  After
+  </div>
+  <div class="transform-divider">→</div>
+  </div>
+  <div class="transform-info">
+  <h4>Rohit M. — Mumbai</h4>
+  <p style="font-size:0.8rem;color:var(--muted)">From skinny-fat to lean &amp; muscular in 90 days</p>
+  <div class="transform-meta">
+  <span class="transform-tag">90 Days</span>
+  <span class="transform-tag">+5 kg Muscle</span>
+  </div>
+  </div>
+  </div>
+  <div class="transform-card reveal" style="transition-delay:0.15s">
+  <div class="transform-photos">
+  <div class="photo-placeholder before">
+  <div class="photo-emoji">🙍</div>
+  Before
+  </div>
+  <div class="photo-placeholder after">
+  <div class="photo-emoji">🤵</div>
+  After
+  </div>
+  <div class="transform-divider">→</div>
+  </div>
+  <div class="transform-info">
+  <h4>Karan P. — Bangalore</h4>
+  <p style="font-size:0.8rem;color:var(--muted)">Dropped 2 shirt sizes, shredded for baraat</p>
+  <div class="transform-meta">
+  <span class="transform-tag">60 Days</span>
+  <span class="transform-tag">-6 kg</span>
+  </div>
+  </div>
+  </div>
+  </div>
+  <p class="transform-note">* Placeholder transformations — actual client results will be featured here. Results vary by individual commitment and starting point.</p>
+  </div>
+</section>
+
+<!-- ===== CREDIBILITY ===== -->
+<section id="credibility" class="section">
+  <div class="section-inner">
+  <div class="cred-layout">
+  <div class="reveal">
+  <span class="section-tag">Why Trust Us</span>
+  <h2 class="section-title">Built by Experts, <em class="gold italic">Proven by Results</em></h2>
+  <div class="divider"></div>
+  <p class="section-sub" style="margin-bottom:2.5rem">
+  GroomFit isn't run by influencers or algorithm-chasing coaches. We're serious professionals who've dedicated years to the science of transformation.
+  </p>
+  <div class="cred-badges">
+  <div class="badge">
+  <span class="badge-icon">🏅</span>
+  <div class="badge-text">
+  <h5>5 Years of Specialised Experience</h5>
+  <p>Founder with deep expertise in physique transformation and groom-specific fitness programming.</p>
+  </div>
+  </div>
+  <div class="badge">
+  <span class="badge-icon">✅</span>
+  <div class="badge-text">
+  <h5>Certified & Qualified Trainers</h5>
+  <p>Every coach on the team is internationally certified and results-tested.</p>
+  </div>
+  </div>
+  <div class="badge">
+  <span class="badge-icon">📍</span>
+  <div class="badge-text">
+  <h5>India-First Approach</h5>
+  <p>Our plans are built around Indian food, lifestyle, and wedding culture — not Western cookie-cutter programs.</p>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="reveal" style="transition-delay:0.15s">
+  <div class="team-cards">
+  <div class="trainer-card">
+  <div class="trainer-avatar">👨</div>
+  <div class="trainer-info">
+  <h4>Jinendra Sharma.</h4>
+  <div class="trainer-cert">🎓 Certified Fitness Trainer</div>
+  <p>Specialises in fat loss and body recomposition. Has personally coached 100+ clients to their transformation goals. Known for no-nonsense plans that deliver.</p>
+  </div>
+  </div>
+  <div class="trainer-card">
+  <div class="trainer-avatar">👨</div>
+  <div class="trainer-info">
+  <h4>Rahul Sharma.</h4>
+  <div class="trainer-cert">🎓 Certified Strength & Conditioning Coach</div>
+  <p>Expert in building lean muscle and improving posture. Designs structured programs used by competitive athletes and high-profile clients alike.</p>
+  </div>
+  </div>
+  <div class="trainer-card" style="background:rgba(201,168,76,0.05);border-color:rgba(201,168,76,0.15)">
+  <div class="trainer-avatar" style="border-color:var(--gold)">🏆</div>
+  <div class="trainer-info">
+  <h4>Udit Sahai</h4>
+  <div class="trainer-cert" style="color:var(--gold-light)">5 Years · Transformation Specialist</div>
+  <p>Started GroomFit after witnessing too many grooms regret not preparing. Built the entire system from the ground up — with results as the only metric that matters.</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how" class="section">
+  <div class="section-inner">
+  <div class="steps-header reveal">
+  <span class="section-tag">The Process</span>
+  <h2 class="section-title">How GroomFit <em class="gold italic">Works</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  <p class="section-sub" style="margin:0 auto">Four simple steps from today to the best shape of your life. We handle the complexity — you focus on executing.</p>
+  </div>
+
+  <div class="steps-track">
+  <div class="steps-line"></div>
+  <div class="steps-grid">
+  <div class="step reveal" style="transition-delay:0.05s">
+  <div class="step-circle">01</div>
+  <h4>Apply</h4>
+  <p>Fill out a quick form about your wedding date, current fitness level, and goals. We review and accept serious applicants only.</p>
+  </div>
+  <div class="step reveal" style="transition-delay:0.12s">
+  <div class="step-circle">02</div>
+  <h4>Get Your Custom Plan</h4>
+  <p>Within 48 hours, receive your personalised workout + diet plan built for your exact body type and wedding timeline.</p>
+  </div>
+  <div class="step reveal" style="transition-delay:0.19s">
+  <div class="step-circle">03</div>
+  <h4>Follow Daily Routine</h4>
+  <p>Execute your plan day by day. Your coach is with you every step — checking in, adjusting, and pushing you forward.</p>
+  </div>
+  <div class="step reveal" style="transition-delay:0.26s">
+  <div class="step-circle">04</div>
+  <h4>Transform Before Wedding</h4>
+  <p>Show up to your wedding looking elite. Confident. Aesthetic. Exactly the groom you always imagined being.</p>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="section">
+  <div class="section-inner">
+  <div class="testi-header reveal">
+  <span class="section-tag">Client Stories</span>
+  <h2 class="section-title">What Grooms Say About <em class="gold italic">GroomFit</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  </div>
+
+  <div class="testi-grid">
+  <div class="testi-card reveal" style="transition-delay:0.05s">
+  <div class="testi-quote">"</div>
+  <div class="stars">
+  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <p>"I started GroomFit 80 days before my wedding. By the time I wore my sherwani, I had lost 7 kilos and felt genuinely confident for the first time in years. My baraat photos are everything."</p>
+  <div class="testi-author">
+  <div class="testi-ava">🤵</div>
+  <div>
+  <div class="testi-name">Vikram S.</div>
+  <div class="testi-detail">Married in December · Delhi</div>
+  </div>
+  </div>
+  <div class="testi-result">-7 kg in 80 Days</div>
+  </div>
+  <div class="testi-card reveal" style="transition-delay:0.1s">
+  <div class="testi-quote">"</div>
+  <div class="stars">
+  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <p>"The Indian diet plan was a game changer. I always thought I'd have to eat bland salads to get fit. GroomFit proved that wrong completely. My mother-in-law actually commented on my transformation!"</p>
+  <div class="testi-author">
+  <div class="testi-ava">🤵</div>
+  <div>
+  <div class="testi-name">Aditya R.</div>
+  <div class="testi-detail">Married in February · Pune</div>
+  </div>
+  </div>
+  <div class="testi-result">Lost 5 kg + Gained Confidence</div>
+  </div>
+  <div class="testi-card reveal" style="transition-delay:0.15s">
+  <div class="testi-quote">"</div>
+  <div class="stars">
+  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <p>"Rahul sir's WhatsApp support was everything. I was traveling for work during the program and he adjusted my plan on the fly. Showed up to my wedding more lean and defined than I've been in my 20s."</p>
+  <div class="testi-author">
+  <div class="testi-ava">🤵</div>
+  <div>
+  <div class="testi-name">Siddharth P.</div>
+  <div class="testi-detail">Married in March · Mumbai</div>
+  </div>
+  </div>
+  <div class="testi-result">Best Shape of His Life</div>
+  </div>
+  </div>
+  <p class="transform-note" style="margin-top:2rem">* Testimonials are placeholder representations. Real client reviews will be displayed here.</p>
+  </div>
+</section>
+
+<!-- ===== COUNTDOWN ===== -->
+<section id="countdown-section" class="section">
+  <div class="section-inner">
+  <div class="countdown-wrap reveal">
+  <span class="section-tag" style="display:block;text-align:center">Your Wedding Countdown</span>
+  <h2 class="section-title" style="text-align:center">How Much Time Do <em class="gold italic">You Have?</em></h2>
+  <div class="divider" style="margin:1rem auto 2rem"></div>
+  <div class="countdown-label">Days Until Your Wedding</div>
+  <div class="countdown-boxes" id="countdownBoxes">
+  <div class="cd-box"><div class="cd-num" id="cdDays">--</div><div class="cd-unit">Days</div></div>
+  <div class="cd-box"><div class="cd-num" id="cdHours">--</div><div class="cd-unit">Hours</div></div>
+  <div class="cd-box"><div class="cd-num" id="cdMins">--</div><div class="cd-unit">Minutes</div></div>
+  <div class="cd-box"><div class="cd-num" id="cdSecs">--</div><div class="cd-unit">Seconds</div></div>
+  </div>
+  <div class="countdown-input-row">
+  <label for="weddingDate">Enter your wedding date:</label>
+  <input type="date" id="weddingDate" />
+  <button class="cd-set-btn" onclick="setWeddingDate()">Set Date</button>
+  </div>
+  <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--muted);text-align:center">
+  Every day counts. The sooner you start, the better your transformation.
+  </p>
+  </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section id="guarantee" class="section">
+  <div class="section-inner">
+  <div class="guarantee-wrap reveal">
+  <span class="section-tag" style="display:inline-block">Zero Risk Guarantee</span>
+  <h2 class="section-title" style="text-align:center;margin-bottom:0.5rem">Try GroomFit Without Risk</h2>
+  <div class="divider" style="margin:1rem auto 1.75rem"></div>
+  <p class="section-sub">
+  We’re confident in our system because we’ve delivered results time and time again. If you follow the plan and don’t see measurable progress, we don’t deserve your money.
+  </p>
+
+  <div class="guarantee-card">
+  <div class="guarantee-card-icon" aria-hidden="true">🛡️</div>
+  <h3 class="guarantee-card-title">7-Day No-Questions-Asked Refund</h3>
+  <ul class="guarantee-list">
+  <li>Try the program risk-free for 7 days</li>
+  <li>If you’re not satisfied, get a full refund</li>
+  <li>No awkward questions, no chasing support</li>
+  <li>Your results matter more than your payment</li>
+  </ul>
+  <p class="guarantee-card-strong">You either transform — or you don’t pay.</p>
+  </div>
+
+  <p class="guarantee-trust-line">We don’t work with everyone. But if we accept you, we’re fully committed to getting you results.</p>
+
+  <a href="https://wa.me/919588859960?text=Hi%2C%20I%20want%20to%20join%20GroomFit" class="btn-primary guarantee-cta" target="_blank" rel="noopener">Start Risk-Free <span>→</span></a>
+  </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="section">
+  <div class="section-inner">
+  <div class="pricing-header reveal">
+  <span class="section-tag">Invest in Yourself</span>
+  <h2 class="section-title">Choose Your <em class="gold italic">Transformation</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  <p class="section-sub" style="margin:0 auto">
+  Every plan includes expert coaching, custom plans, and full accountability. Choose based on how much personalisation you want.
+  </p>
+  </div>
+
+  <div class="pricing-grid">
+  <!-- Basic -->
+  <div class="plan reveal" style="transition-delay:0.05s">
+  <div class="plan-name">Basic Plan</div>
+  <div class="plan-price">
+  <span class="price-symbol">₹</span>
+  <span class="price-num">4,999</span>
+  <span class="price-period">/program</span>
+  </div>
+  <p class="plan-desc">A structured plan for the self-driven groom.</p>
+  <ul class="plan-features">
+  <li><span class="check">✓</span> Custom workout plan (gym/home)</li>
+  <li><span class="check">✓</span> Indian diet plan (veg/non-veg)</li>
+  <li><span class="check">✓</span> 60-day program structure</li>
+  <li><span class="check">✓</span> Progress tracking templates</li>
+  <li class="off"><span class="cross">✗</span> Weekly check-in calls</li>
+  <li class="off"><span class="cross">✗</span> WhatsApp support</li>
+  <li class="off"><span class="cross">✗</span> 1-on-1 coaching</li>
+  </ul>
+  <a href="#final-cta" class="btn-outline" style="width:100%;justify-content:center">Get Started</a>
+  </div>
+
+  <!-- Premium -->
+  <div class="plan featured reveal" style="transition-delay:0.1s">
+  <div class="plan-badge">Most Popular</div>
+  <div class="plan-name">Premium Coaching</div>
+  <div class="plan-price">
+  <span class="price-symbol">₹</span>
+  <span class="price-num">9,999</span>
+  <span class="price-period">/program</span>
+  </div>
+  <p class="plan-desc">Full support, coaching, and accountability for serious grooms.</p>
+  <ul class="plan-features">
+  <li><span class="check">✓</span> Custom workout plan (gym/home)</li>
+  <li><span class="check">✓</span> Indian diet plan (veg/non-veg)</li>
+  <li><span class="check">✓</span> 90-day program structure</li>
+  <li><span class="check">✓</span> Progress tracking & body metrics</li>
+  <li><span class="check">✓</span> Weekly video check-in calls</li>
+  <li><span class="check">✓</span> WhatsApp support (6 days/week)</li>
+  <li class="off"><span class="cross">✗</span> Dedicated 1-on-1 coach</li>
+  </ul>
+  <a href="#final-cta" class="btn-primary" style="width:100%;justify-content:center">Apply for Coaching</a>
+  </div>
+
+  <!-- Elite -->
+  <div class="plan reveal" style="transition-delay:0.15s">
+  <div class="plan-name">1-on-1 Transformation</div>
+  <div class="plan-price">
+  <span class="price-symbol">₹</span>
+  <span class="price-num">17,999</span>
+  <span class="price-period">/program</span>
+  </div>
+  <p class="plan-desc">Elite-level personal coaching for maximum results.</p>
+  <ul class="plan-features">
+  <li><span class="check">✓</span> Everything in Premium</li>
+  <li><span class="check">✓</span> Dedicated personal coach</li>
+  <li><span class="check">✓</span> Daily plan adjustments</li>
+  <li><span class="check">✓</span> Posture & grooming coaching</li>
+  <li><span class="check">✓</span> Pre-wedding peak week protocol</li>
+  <li><span class="check">✓</span> WhatsApp support (7 days/week)</li>
+  <li><span class="check">✓</span> Post-wedding maintenance plan</li>
+  </ul>
+  <a href="#final-cta" class="btn-outline" style="width:100%;justify-content:center">Apply for Elite</a>
+  </div>
+  </div>
+
+  <p style="text-align:center;margin-top:2.5rem;font-size:0.82rem;color:var(--muted)">
+  💳 One-time investment · No hidden charges · 100% focused on your wedding transformation
+  </p>
+  </div>
+</section>
+
+<!-- ===== URGENCY ===== -->
+<section id="urgency" class="section">
+  <div class="section-inner">
+  <div class="urgency-inner reveal">
+  <div class="urgency-badge">
+  <span class="dot"></span>
+  Live — Limited Slots Available This Month
+  </div>
+  <h2 class="urgency-title">We Only Accept <em class="gold italic">Serious Grooms</em></h2>
+  <p class="urgency-sub">GroomFit maintains limited slots per month to ensure every client gets focused, personalised coaching. We don't onboard everyone who applies.</p>
+
+  <div class="slots-row">
+  <div class="slot taken"></div>
+  <div class="slot taken"></div>
+  <div class="slot taken"></div>
+  <div class="slot taken"></div>
+  <div class="slot taken"></div>
+  <div class="slot taken"></div>
+  <div class="slot taken"></div>
+  <div class="slot taken"></div>
+  <div class="slot open"></div>
+  <div class="slot open"></div>
+  <div class="slot open"></div>
+  </div>
+
+  <p class="slots-label"><span>3 slots remaining</span> out of 11 for this month</p>
+
+  <a href="#final-cta" class="btn-primary" style="font-size:1rem;padding:18px 48px">
+  Claim My Slot Now →
+  </a>
+  </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section id="final-cta" class="section">
+  <div class="section-inner">
+  <div class="final-cta-inner reveal">
+  <span class="section-tag" style="display:block;text-align:center">Your Transformation Starts Today</span>
+  <h2 class="final-cta-title">Start Your 90-Day <em class="gold italic">Wedding Transformation</em></h2>
+  <p class="final-cta-sub">Don't wait. Don't regret. Your wedding photos last a lifetime. Your body transformation starts now.</p>
+
+  <a href="https://wa.me/919588859960?text=Hi%2C%20I%20want%20to%20join%20GroomFit" class="btn-primary" style="font-size:1.05rem;padding:20px 54px">
+  Get My Custom Plan &nbsp;→
+  </a>
+
+  <div class="final-disclaimer">
+  Secure application · 100% confidential · Response within 24 hours
+  </div>
+
+  <div style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:3.5rem;padding-top:3rem;border-top:1px solid rgba(201,168,76,0.1)">
+  <div style="text-align:center">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">200+</div>
+  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Grooms Transformed</div>
+  </div>
+  <div style="text-align:center">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">90</div>
+  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Day Max Program</div>
+  </div>
+  <div style="text-align:center">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">5★</div>
+  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Average Rating</div>
+  </div>
+  <div style="text-align:center">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">48hr</div>
+  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Plan Delivery</div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">Groom<span>Fit</span></div>
+  <p class="footer-tagline">India's Premier Wedding Transformation Program for Men</p>
+  <ul class="footer-links">
+  <li><a href="#">Privacy Policy</a></li>
+  <li><a href="#">Terms</a></li>
+  <li><a href="#">Refund Policy</a></li>
+  <li><a href="https://wa.me/919588859960">Contact Us</a></li>
+  <li><a href="#">Instagram</a></li>
+  </ul>
+  <p class="footer-copy">© 2024 GroomFit. All rights reserved. · Results may vary. Commitment required.</p>
+</footer>
+
+<!-- ===== WHATSAPP FAB ===== -->
+<a href="https://wa.me/919588859960?text=Hi%2C%20I%20want%20to%20join%20GroomFit" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+<div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+  if (e.isIntersecting) {
+  e.target.classList.add('visible');
+  observer.unobserve(e.target);
+  }
+  });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Countdown
+  let weddingDate = null;
+  let countdownInterval = null;
+
+  function setWeddingDate() {
+  const input = document.getElementById('weddingDate').value;
+  if (!input) return;
+  weddingDate = new Date(input);
+  if (countdownInterval) clearInterval(countdownInterval);
+  updateCountdown();
+  countdownInterval = setInterval(updateCountdown, 1000);
+  }
+
+  function updateCountdown() {
+  if (!weddingDate) return;
+  const now = new Date();
+  const diff = weddingDate - now;
+  if (diff <= 0) {
+  document.getElementById('cdDays').textContent = '00';
+  document.getElementById('cdHours').textContent = '00';
+  document.getElementById('cdMins').textContent = '00';
+  document.getElementById('cdSecs').textContent = '00';
+  return;
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById('cdDays').textContent  = String(days).padStart(2, '0');
+  document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cdMins').textContent  = String(mins).padStart(2, '0');
+  document.getElementById('cdSecs').textContent  = String(secs).padStart(2, '0');
+  }
+
+  // Set a default demo date 90 days from now
+  const demo = new Date();
+  demo.setDate(demo.getDate() + 90);
+  document.getElementById('weddingDate').value = demo.toISOString().split('T')[0];
+  setWeddingDate();
+</script>
+</body>
+</html>
