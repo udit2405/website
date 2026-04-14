@@ -2984,10 +2984,13 @@
   // Show popup once
 document.addEventListener("DOMContentLoaded", function() {
   if (!localStorage.getItem("popupShown")) {
-    setTimeout(() => {
-      document.getElementById("leadPopup").style.display = "flex";
-      localStorage.setItem("popupShown", "true");
-    }, 5000); // 5 sec delay
+    const popup = document.getElementById("leadPopup");
+
+    if (popup) {
+      popup.style.display = "flex";
+    }
+
+    localStorage.setItem("popupShown", "true");
   }
 });
 
