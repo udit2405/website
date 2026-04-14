@@ -2982,7 +2982,7 @@
 
 <script>
   // Show popup once
-window.addEventListener("load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   if (!localStorage.getItem("popupShown")) {
     setTimeout(() => {
       document.getElementById("leadPopup").style.display = "flex";
