@@ -2897,49 +2897,63 @@
   document.getElementById('weddingDate').value = demo.toISOString().split('T')[0];
   setWeddingDate();
 </script>
-<!-- LEAD FORM POPUP -->
+<!-- PREMIUM LEAD POPUP -->
 <div id="leadPopup" style="
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 320px;
-  height: 400px;
-  background: #111;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
   display: none;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 ">
 
-  <!-- Close Button -->
-  <span onclick="closePopup()" style="
-    position: absolute;
-    top: 8px;
-    right: 12px;
+  <div style="
+    background: #111;
+    padding: 30px;
+    border-radius: 16px;
+    width: 320px;
     color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 10;
-  ">✖</span>
+    font-family: Arial, sans-serif;
+    position: relative;
+  ">
 
-  <!-- Google Form Embed -->
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/viewform?embedded=true"
-    width="100%" 
-    height="100%" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0"
-    style="border-radius: 12px;">
-  </iframe>
+    <!-- Close -->
+    <span onclick="closePopup()" style="
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 18px;
+    ">✖</span>
 
+    <h3>Get Your Free Groom Plan</h3>
+    <p style="font-size: 13px; margin-bottom: 20px;">
+      We’ll contact you within 24 hours
+    </p>
+
+    <form id="leadForm">
+
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
+
+      <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
+
+      <input type="text" name="location" placeholder="Location" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
+
+      <button type="submit" style="width:100%;padding:12px;background:#00ff88;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
 </div>
 
 <script>
+  // Show popup once
   if (!localStorage.getItem("popupShown")) {
-    setTimeout(function() {
-      document.getElementById("leadPopup").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("leadPopup").style.display = "flex";
       localStorage.setItem("popupShown", "true");
     }, 3000);
   }
@@ -2947,6 +2961,28 @@
   function closePopup() {
     document.getElementById("leadPopup").style.display = "none";
   }
+
+  // FORM SUBMIT
+
+
+  document.getElementById("leadForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://docs.google.com/forms/d/e/1HMLjAL1-7Q9ZZ04D_eJeZc9i5TIWUbds4urM1GF_SGk/formResponse", {
+    method: "POST",
+    mode: "no-cors",
+    body: new URLSearchParams({
+     "entry.525461384": formData.get("name"),
+      "entry.933229371": formData.get("phone"),
+      "entry.1660694465": formData.get("location")
+    })
+  });
+
+  alert("Thanks! We'll contact you soon.");
+  closePopup();
+});
 </script>
 
   
