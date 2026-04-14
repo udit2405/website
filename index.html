@@ -218,11 +218,11 @@
   HERO
   ============================================================ */
   #hero {
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 140px 5% 220px;
+  padding: 100px 5% 140px;
   position: relative;
   overflow: hidden;
   }
@@ -250,6 +250,7 @@
   .hero-ring-2 { width: 900px; height: 900px; top: -300px; right: -300px; border-color: rgba(201,168,76,0.03); }
 
  .hero-inner {
+  margin-top: 0;
   position: relative;
   z-index: 2;
   max-width: 1180px;
@@ -290,7 +291,9 @@
   }
 
   .hero-headline {
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.1;
+}
   font-weight: 700;
   line-height: 1.05;
   max-width: 800px;
