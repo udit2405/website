@@ -1114,90 +1114,6 @@ html {
   .cross { color: #555; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
   .plan-features li.off { color: var(--muted); opacity: 0.5; }
 
-  /* ============================================================
-  COUNTDOWN
-  ============================================================ */
-  #countdown-section {
-  background: var(--dark);
-  }
-  .countdown-wrap {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  }
-  .countdown-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2rem;
-  font-weight: 600;
-  }
-  .countdown-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  }
-  .cd-box {
-  text-align: center;
-  background: var(--dark-2);
-  border: 1px solid rgba(201,168,76,0.15);
-  border-radius: 12px;
-  padding: 24px 28px;
-  min-width: 110px;
-  }
-  .cd-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  }
-  .cd-unit {
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 6px;
-  }
-  .countdown-input-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-  }
-  .countdown-input-row label {
-  font-size: 0.82rem;
-  color: var(--muted);
-  }
-  .countdown-input-row input {
-  background: var(--dark-3);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 6px;
-  padding: 10px 14px;
-  color: var(--white);
-  font-size: 0.9rem;
-  font-family: 'Outfit', sans-serif;
-  outline: none;
-  transition: border-color 0.25s;
-  }
-  .countdown-input-row input:focus { border-color: var(--gold); }
-  .cd-set-btn {
-  background: var(--gold);
-  color: var(--black);
-  border: none;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  font-family: 'Outfit', sans-serif;
-  cursor: pointer;
-  transition: background 0.25s;
-  }
-  .cd-set-btn:hover { background: var(--gold-light); }
 
   /* ============================================================
   GUARANTEE
@@ -1873,6 +1789,51 @@ html {
 </nav>
 
 <!-- ===== HERO ===== -->
+
+  .mini-countdown {
+  margin-top: 20px;
+  padding: 16px;
+  max-width: 260px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 10px;
+}
+
+.mini-title {
+  font-size: 12px;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mini-row {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.mini-countdown input {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 8px;
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: white;
+  border-radius: 6px;
+}
+
+.mini-countdown button {
+  width: 100%;
+  padding: 8px;
+  background: var(--gold);
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+  
 <section id="hero">
   <div class="hero-ring hero-ring-1"></div>
   <div class="hero-ring hero-ring-2"></div>
@@ -1903,6 +1864,15 @@ Every week you delay = visible difference on your wedding day.
   <a href="#how" class="btn-outline">See How It Works</a>
   </div>
 
+    <div class="mini-countdown">
+  <p class="mini-title">Wedding Countdown</p>
+  <div class="mini-row">
+    <span id="miniDays">90</span> days left
+  </div>
+  <input type="date" id="miniDate">
+  <button onclick="setMiniDate()">Set Date</button>
+</div>
+    
     <p style="font-size:0.8rem; color:#888; margin-top:10px;">
 Limited slots this month — we only accept serious grooms
 </p>
@@ -2418,32 +2388,6 @@ Limited slots this month — we only accept serious grooms
   </div>
 </section>
 
-<!-- ===== COUNTDOWN ===== -->
-<section id="countdown-section" class="section">
-  <div class="section-inner">
-  <div class="countdown-wrap reveal">
-  <span class="section-tag" style="display:block;text-align:center">Your Wedding Countdown</span>
-  <h2 class="section-title" style="text-align:center">How Much Time Do <em class="gold italic">You Have?</em></h2>
-  <div class="divider" style="margin:1rem auto 2rem"></div>
-  <div class="countdown-label">Days Until Your Wedding</div>
-  <div class="countdown-boxes" id="countdownBoxes">
-  <div class="cd-box"><div class="cd-num" id="cdDays">--</div><div class="cd-unit">Days</div></div>
-  <div class="cd-box"><div class="cd-num" id="cdHours">--</div><div class="cd-unit">Hours</div></div>
-  <div class="cd-box"><div class="cd-num" id="cdMins">--</div><div class="cd-unit">Minutes</div></div>
-  <div class="cd-box"><div class="cd-num" id="cdSecs">--</div><div class="cd-unit">Seconds</div></div>
-  </div>
-  <div class="countdown-input-row">
-  <label for="weddingDate">Enter your wedding date:</label>
-  <input type="date" id="weddingDate" />
-  <button class="cd-set-btn" onclick="setWeddingDate()">Set Date</button>
-  </div>
-  <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--muted);text-align:center">
-  Every day counts. The sooner you start, the better your transformation.
-  </p>
-  </div>
-  </div>
-</section>
-
 <!-- ===== GUARANTEE ===== -->
 <section id="guarantee" class="section">
   <div class="section-inner">
@@ -2882,19 +2826,6 @@ Limited slots this month — we only accept serious grooms
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
 
-  // Countdown
-  let weddingDate = null;
-  let countdownInterval = null;
-
-  function setWeddingDate() {
-  const input = document.getElementById('weddingDate').value;
-  if (!input) return;
-  weddingDate = new Date(input);
-  if (countdownInterval) clearInterval(countdownInterval);
-  updateCountdown();
-  countdownInterval = setInterval(updateCountdown, 1000);
-  }
-
   function updateCountdown() {
   if (!weddingDate) return;
   const now = new Date();
@@ -3050,8 +2981,19 @@ document.addEventListener("DOMContentLoaded", function() {
   alert("Thanks! We'll contact you soon.");
   closePopup();
 });
+function setMiniDate() {
+  const date = new Date(document.getElementById("miniDate").value);
+  const now = new Date();
+  const diff = date - now;
+
+  if (diff <= 0) return;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("miniDays").textContent = days;
+}
 </script>
 
+  
   
 </body>
 </html>
