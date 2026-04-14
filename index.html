@@ -196,7 +196,7 @@
   margin-bottom: 1.2rem;
   }
   .section-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   margin-bottom: 1.2rem;
   }
   .section-sub {
@@ -249,17 +249,18 @@
   .hero-ring-1 { width: 600px; height: 600px; top: -150px; right: -100px; }
   .hero-ring-2 { width: 900px; height: 900px; top: -300px; right: -300px; border-color: rgba(201,168,76,0.03); }
 
-  .hero-inner {
+ .hero-inner {
   position: relative;
   z-index: 2;
   max-width: 1180px;
   margin: 0 auto;
   width: 100%;
+
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
   align-items: center;
-  }
+  gap: 2.5rem;
+}
   .hero-left-col { min-width: 0; }
   @media (min-width: 1024px) {
   .hero-inner {
@@ -289,7 +290,7 @@
   }
 
   .hero-headline {
-  font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
   font-weight: 700;
   line-height: 1.05;
   max-width: 800px;
@@ -302,7 +303,7 @@
   }
 
   .hero-sub {
-  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: rgba(245,240,232,0.6);
   max-width: 580px;
   margin: 1.8rem 0 1.15rem;
@@ -1719,6 +1720,7 @@
 
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
+    align-self: center;
   background: rgba(20,20,20,0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
