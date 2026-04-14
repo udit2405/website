@@ -2897,6 +2897,59 @@
   document.getElementById('weddingDate').value = demo.toISOString().split('T')[0];
   setWeddingDate();
 </script>
+<!-- LEAD FORM POPUP -->
+<div id="leadPopup" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  height: 400px;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  z-index: 9999;
+  display: none;
+  overflow: hidden;
+">
+
+  <!-- Close Button -->
+  <span onclick="closePopup()" style="
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+  ">✖</span>
+
+  <!-- Google Form Embed -->
+  <iframe 
+    src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/viewform?embedded=true" width="640" height="647" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
+    width="100%" 
+    height="100%" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0"
+    style="border-radius: 12px;">
+  </iframe>
+
+</div>
+
+<script>
+  if (!localStorage.getItem("popupShown")) {
+    setTimeout(function() {
+      document.getElementById("leadPopup").style.display = "block";
+      localStorage.setItem("popupShown", "true");
+    }, 3000);
+  }
+
+  function closePopup() {
+    document.getElementById("leadPopup").style.display = "none";
+  }
+</script>
+
+  
 </body>
 </html>
 
