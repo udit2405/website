@@ -1913,10 +1913,6 @@ Every week you delay = visible difference on your wedding day.
   Days Left - <span id="miniDays" class="flip">90</span>
 </div>
 
-<div class="mini-sub">
-  <span id="miniHours">00</span>h :
-  <span id="miniMinutes">00</span>m
-</div>
       
   <input type="date" id="miniDate">
   <button onclick="setMiniDate()">Set Date</button>
@@ -3066,9 +3062,6 @@ if (days !== lastDays) {
   lastDays = days;
 }
 
-// update hours + minutes
-document.getElementById("miniHours").textContent = String(hours).padStart(2, '0');
-document.getElementById("miniMinutes").textContent = String(minutes).padStart(2, '0');
 
 // urgency color
 const box = document.querySelector(".mini-countdown");
@@ -3081,12 +3074,7 @@ if (days <= 10) {
 
 setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("miniDays").textContent = days;
-}
-
-// update every 1 second
-setInterval(updateMiniCountdown, 1000);
+  
 </script>
 
   
