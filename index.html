@@ -3180,16 +3180,30 @@ setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
     </p>
 
     <a id="whatsappBtn" href="#" target="_blank" style="
-      display:inline-block;
-      background:#C9A84C;
-      color:#000;
-      padding:12px 20px;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:600;
-    ">
-      Continue on WhatsApp
-    </a>
+  display:inline-block;
+  background:#C9A84C;
+  color:#000;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+">
+  Continue on WhatsApp
+</a>
+
+<div style="margin-top:12px;">
+  <button onclick="closeSuccessPopup()" style="
+    background:none;
+    border:none;
+    color:#aaa;
+    font-size:13px;
+    cursor:pointer;
+    text-decoration:underline;
+  ">
+    Maybe later
+  </button>
+</div>
+    
   </div>
 </div>
 
@@ -3197,6 +3211,12 @@ setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 
 </script>
   <script>
+
+ function closeSuccessPopup() {
+  const popup = document.getElementById("successPopup");
+  if (popup) popup.style.display = "none";
+
+}
 document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
