@@ -298,52 +298,59 @@ function closeSuccessPopup() {
   document.getElementById("successPopup").style.display = "none";
 }
 
-document.getElementById("leadForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+// ✅ FIX: wait till page loads
+document.addEventListener("DOMContentLoaded", function () {
 
-  const form = this;
-  const formData = new FormData(form);
+  const form = document.getElementById("leadForm");
 
-  // GOOGLE FORM SUBMIT
-  const googleForm = document.createElement("form");
-  googleForm.method = "POST";
-  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
-  googleForm.target = "hidden_iframe";
+  if (!form) return; // safety
 
-  function addField(name, value) {
-    const input = document.createElement("input");
-    input.type = "hidden";
-    input.name = name;
-    input.value = value;
-    googleForm.appendChild(input);
-  }
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  // 🔥 CONNECT THESE TO YOUR GOOGLE FORM
-  addField("entry.525461384", formData.get("name"));
-  addField("entry.933229371", formData.get("phone"));
-  addField("entry.1013425097", formData.get("location"));
+    const formData = new FormData(form);
 
-  document.body.appendChild(googleForm);
-  googleForm.submit();
+    // GOOGLE FORM SUBMIT
+    const googleForm = document.createElement("form");
+    googleForm.method = "POST";
+    googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+    googleForm.target = "hidden_iframe";
 
-  // WHATSAPP LINK
-  const name = formData.get("name") || "there";
-  const message = `Hi, I just applied from your article. My name is ${name}.`;
-  const encodedMsg = encodeURIComponent(message);
+    function addField(name, value) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = name;
+      input.value = value;
+      googleForm.appendChild(input);
+    }
 
-  const phone = "919588859960";
-  const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
+    addField("entry.525461384", formData.get("name"));
+    addField("entry.933229371", formData.get("phone"));
+    addField("entry.1013425097", formData.get("location"));
 
-  document.getElementById("whatsappBtn").href = waLink;
+    document.body.appendChild(googleForm);
+    googleForm.submit();
 
-  // SHOW SUCCESS POPUP
-  document.getElementById("successPopup").style.display = "flex";
+    // WHATSAPP LINK
+    const name = formData.get("name") || "there";
+    const message = `Hi, I just applied from your article. My name is ${name}.`;
+    const encodedMsg = encodeURIComponent(message);
 
-  // CLOSE FORM POPUP
-  closePopup();
+    const phone = "919588859960";
+    const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
 
-  // RESET FORM
-  form.reset();
+    document.getElementById("whatsappBtn").href = waLink;
+
+    // SHOW SUCCESS POPUP
+    document.getElementById("successPopup").style.display = "flex";
+
+    // CLOSE FORM POPUP
+    closePopup();
+
+    // RESET
+    form.reset();
+  });
+
 });
 </script>
 
