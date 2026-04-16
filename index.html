@@ -44,16 +44,7 @@
   border-radius: 6px;
 }
 
-.mini-countdown button {
-  width: 100%;
-  padding: 8px;
-  background: var(--gold);
-  color: black;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
+
     .mini-countdown button {
   width: 100%;
   padding: 8px;
@@ -1971,7 +1962,7 @@ You don’t need more time — you need the right plan, right now.
   <span aria-hidden="true">✨</span>
   <span aria-hidden="true">⭐</span>
   </div>
-  <span>Trusted by 100+ grooms across India &nbsp;·&nbsp; Results in 60–90 days</span>
+  <span>Trusted by grooms across India &nbsp;·&nbsp; Results in 60–90 days</span>
   </div>
   </div>
 
@@ -2335,7 +2326,9 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
   Real stories from grooms who were exactly where you are
 </p>
     
-  <p class="transform-note">* Placeholder transformations — actual client results will be featured here. Results vary by individual commitment and starting point.</p>
+ <p class="transform-note">
+Client transformations (identity protected)
+</p>
   </div>
 </section>
 
@@ -2525,6 +2518,10 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
 <section id="pricing" class="section">
   <div class="section-inner">
   <div class="pricing-header reveal">
+    <p style="text-align:center;color:#aaa;margin-bottom:20px;">
+Most grooms spend ₹40K–₹60K on clothes & grooming.  
+This ensures your body matches it.
+</p>
   <span class="section-tag">Invest in Yourself</span>
   <h2 class="section-title">Choose Your <em class="gold italic">Transformation</em></h2>
   <div class="divider" style="margin:1rem auto"></div>
@@ -3064,7 +3061,13 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
 
       <input type="text" name="location" placeholder="Location" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
 
-      <button type="submit" style="width:100%;padding:12px;background:#00ff88;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
+      <input type="date" name="wedding" required 
+style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
+
+<input type="text" name="goal" placeholder="Your Goal (Lose fat / Build muscle)" required 
+style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
+
+      <button type="submit" aria-label="Submit form" style="width:100%;padding:12px;background:#00ff88;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
         Submit
       </button>
 
@@ -3087,7 +3090,17 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 document.addEventListener("DOMContentLoaded", function() {
-  if (!localStorage.getItem("popupShown")) {
+  const lastShown = localStorage.getItem("popupTime");
+  const now = Date.now();
+
+  if (!lastShown || now - lastShown > 86400000) {
+    setTimeout(() => {
+      document.getElementById("leadPopup").style.display = "flex";
+    }, 5000);
+
+    localStorage.setItem("popupTime", now);
+  }
+});
     const popup = document.getElementById("leadPopup");
 
     if (popup) {
@@ -3111,18 +3124,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const formData = new FormData(this);
 
-  fetch("https://docs.google.com/forms/d/e/1HMLjAL1-7Q9ZZ04D_eJeZc9i5TIWUbds4urM1GF_SGk/formResponse", {
+  fetch("https://docs.google.com/forms/d/e/1HMLjAL1-7Q92Z04D_eJeZc9i5TlWUbdS4urM1GF_SGk/formResponse", {
     method: "POST",
     mode: "no-cors",
     body: new URLSearchParams({
-     "entry.525461384": formData.get("name"),
-      "entry.933229371": formData.get("phone"),
-      "entry.1660694465": formData.get("location")
-    })
+  "entry.525461384": formData.get("name"),
+  "entry.933229371": formData.get("phone"),
+  "entry.1660694465": formData.get("location"),
+  "entry.NEW_WEDDING_ID": formData.get("wedding"),
+  "entry.NEW_GOAL_ID": formData.get("goal")
+})
   });
 
+  setTimeout(() => {
   alert("Thanks! We'll contact you soon.");
   closePopup();
+}, 500);
 });
 let miniTargetDate;
   let lastDays = null;
