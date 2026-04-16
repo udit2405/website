@@ -1875,7 +1875,7 @@ overflow: hidden;
   <li><a href="#how">How it Works</a></li>
   <li><a href="#pricing">Pricing</a></li>
 </ul>
-  <a href="#final-cta" class="nav-cta">Apply for Coaching</a>
+ <a href="#final-cta" class="nav-cta">Check If I Qualify</a>
 </nav>
 
 <!-- ===== HERO ===== -->
@@ -1895,6 +1895,10 @@ Show Up Like the Groom You’re Meant to Be.
 
 <p class="hero-value-strong">
 60–90 day transformation designed specifically for grooms
+</p>
+
+<p style="font-size:0.85rem; color:#aaa; margin-top:10px;">
+For grooms who want a lean, defined, camera-ready physique — not just weight loss
 </p>
 
  <p class="hero-sub">
@@ -1923,7 +1927,7 @@ Every week you delay = visible difference on your wedding day.
     
 
 <p style="font-size:0.75rem; color:#888; margin-top:8px;">
-  Only serious applicants accepted · Limited slots this month
+  Application required · Only serious grooms accepted
 </p>
 
     <div class="mini-countdown">
@@ -1937,9 +1941,6 @@ Every week you delay = visible difference on your wedding day.
   <button onclick="setMiniDate()">Set Date</button>
 </div>
     
-    <p style="font-size:0.8rem; color:#888; margin-top:10px;">
-Limited slots this month — we only accept serious grooms
-</p>
 
   <div class="hero-comparison">
   <div class="hero-comparison-grid">
@@ -2681,7 +2682,7 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
   <p class="final-cta-sub">Don't wait. Don't regret. Your wedding photos last a lifetime. Your body transformation starts now.</p>
 
   <a href="https://wa.me/919588859960?text=Hi%2C%20I%20want%20to%20join%20GroomFit" class="btn-primary" style="font-size:1.05rem;padding:20px 54px">
-  Start My Transformation &nbsp;→
+  Check If I Qualify → &nbsp;→
   </a>
 
   <div class="final-disclaimer">
@@ -3053,9 +3054,9 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
       font-size: 18px;
     ">✖</span>
 
-    <h3>Get Your Free Groom Plan</h3>
+    <h3>Check If You Qualify for GroomFit</h3>
     <p style="font-size: 13px; margin-bottom: 20px;">
-      We’ll contact you within 24 hours
+      Apply below — we’ll get back within 24 hours
     </p>
 
     <form id="leadForm">
@@ -3077,6 +3078,17 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
 
 <script>
   // Show popup once
+  // AUTO SET DEFAULT WEDDING DATE (90 DAYS)
+document.addEventListener("DOMContentLoaded", function() {
+  const defaultDate = new Date();
+  defaultDate.setDate(defaultDate.getDate() + 90);
+
+  const input = document.getElementById("miniDate");
+  if (input) {
+    input.value = defaultDate.toISOString().split('T')[0];
+    miniTargetDate = new Date(input.value);
+  }
+});
 document.addEventListener("DOMContentLoaded", function() {
   if (!localStorage.getItem("popupShown")) {
     const popup = document.getElementById("leadPopup");
