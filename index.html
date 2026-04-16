@@ -1869,8 +1869,8 @@ Every week you delay = visible difference on your wedding day.
     <div class="mini-countdown">
   <p class="mini-title">Wedding Countdown</p>
   <div class="mini-row">
-    <span id="miniDays">90</span> days left
-  </div>
+  Days Left - <span id="miniDays">90</span>
+</div>
   <input type="date" id="miniDate">
   <button onclick="setMiniDate()">Set Date</button>
 </div>
@@ -2983,16 +2983,29 @@ document.addEventListener("DOMContentLoaded", function() {
   alert("Thanks! We'll contact you soon.");
   closePopup();
 });
-function setMiniDate() {
-  const date = new Date(document.getElementById("miniDate").value);
-  const now = new Date();
-  const diff = date - now;
+let miniTargetDate;
 
-  if (diff <= 0) return;
+function setMiniDate() {
+  miniTargetDate = new Date(document.getElementById("miniDate").value);
+}
+
+function updateMiniCountdown() {
+  if (!miniTargetDate) return;
+
+  const now = new Date();
+  const diff = miniTargetDate - now;
+
+  if (diff <= 0) {
+    document.getElementById("miniDays").textContent = "0";
+    return;
+  }
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   document.getElementById("miniDays").textContent = days;
 }
+
+// update every 1 second
+setInterval(updateMiniCountdown, 1000);
 </script>
 
   
