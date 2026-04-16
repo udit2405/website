@@ -2279,17 +2279,71 @@ background:#000;
 
   <!-- CARD 2 -->
   <div class="transform-card reveal">
-    <div class="transform-photos">
-      <div class="photo-placeholder before">
-        <div class="photo-emoji">🙍</div>
-        Before
-      </div>
-      <div class="photo-placeholder after">
-        <div class="photo-emoji">🤵</div>
-        After
-      </div>
-      <div class="transform-divider">→</div>
-    </div>
+    <div class="transform-photos" style="
+  position:relative;
+  overflow:hidden;
+  height:240px;
+">
+
+  <!-- BEFORE IMAGE -->
+  <img src="bro2before.jpeg" style="
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+  ">
+
+  <!-- AFTER IMAGE -->
+  <img src="bro2after.jpeg" id="afterImage2" style="
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    clip-path: inset(0 50% 0 0);
+  ">
+
+  <!-- SLIDER -->
+  <input type="range" min="0" max="100" value="50" id="slider2" style="
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    z-index:5;
+  ">
+
+  <!-- LABELS -->
+  <span style="
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">BEFORE</span>
+
+  <span style="
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">AFTER</span>
+
+</div>
 
     <div class="transform-info">
       <h4>Rohit M. — Mumbai</h4>
@@ -3295,6 +3349,15 @@ if (slider && afterImage) {
   slider.addEventListener("input", function () {
     const value = this.value;
    afterImage.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+  });
+}
+    const slider2 = document.getElementById("slider2");
+const afterImage2 = document.getElementById("afterImage2");
+
+if (slider2 && afterImage2) {
+  slider2.addEventListener("input", function () {
+    const value = this.value;
+    afterImage2.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
   });
 }
     
