@@ -3096,55 +3096,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // FORM SUBMIT
  
-  e.preventDefault();
-
-  const formData = new FormData(this);
-
-  const googleForm = document.createElement("form");
-  googleForm.method = "POST";
-  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
-  googleForm.target = "hidden_iframe";
-
-  function addField(name, value) {
-    const input = document.createElement("input");
-    input.type = "hidden";
-    input.name = name;
-    input.value = value;
-    googleForm.appendChild(input);
-  }
-
-  // ONLY 3 fields
-  addField("entry.525461384", formData.get("name"));
-  addField("entry.933229371", formData.get("phone"));
-  addField("entry.1013425097", formData.get("location"));
-
-  document.body.appendChild(googleForm);
-
-   // ✅ Get name (update name field if needed)
-const name = form.querySelector("input[name='name']")?.value || "there";
-
-// ✅ Create WhatsApp message
-const message = `Hi, I just applied for GroomFit. My name is ${name}. Looking forward.`;
-const encodedMsg = encodeURIComponent(message);
-
-// 🔴 PUT YOUR NUMBER HERE
-const phone = "919876543210";
-
-const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
-
-// ✅ Show success popup
-document.getElementById("successPopup").style.display = "flex";
-
-// ✅ Set WhatsApp button link
-document.getElementById("whatsappBtn").href = waLink;
-
-// OPTIONAL: reset form
-form.reset();
-  googleForm.submit();
-
-  alert("Thanks! We'll contact you soon.");
-  closePopup();
-});
+  
 let miniTargetDate;
   let lastDays = null;
 
