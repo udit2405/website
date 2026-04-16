@@ -3046,7 +3046,7 @@ This ensures your body matches it.
       Apply below — we’ll get back within 24 hours
     </p>
 
-   <form id="leadForm" onsubmit="handleFormSubmit(event)">
+   <<form id="leadForm">
 
       <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
 
@@ -3097,7 +3097,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // FORM SUBMIT
 
 
- document.getElementById("leadForm").addEventListener("submit", function(e) {
+ 
   e.preventDefault();
 
   const formData = new FormData(this);
@@ -3244,41 +3244,56 @@ setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 </div>
 
   <script>
-function handleFormSubmit(e) {
+
+</script>
+  <script>
+document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const form = document.getElementById("leadForm");
+  const form = this;
+  const formData = new FormData(form);
 
-  // Get name field (update ID if needed)
-  const name = form.querySelector("input[name='name']")?.value || "there";
+  // GOOGLE FORM SUBMIT
+  const googleForm = document.createElement("form");
+  googleForm.method = "POST";
+  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  googleForm.target = "hidden_iframe";
 
-  // Submit to Google Form (hidden)
- const form = document.getElementById("leadForm");
-const formData = new FormData(form);
-  fetch(form.action, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  });
+  function addField(name, value) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
 
-  // Create WhatsApp message
+  addField("entry.525461384", formData.get("name"));
+  addField("entry.933229371", formData.get("phone"));
+  addField("entry.1013425097", formData.get("location"));
+
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+
+  // WHATSAPP MESSAGE
+  const name = formData.get("name") || "there";
   const message = `Hi, I just applied for GroomFit. My name is ${name}. Looking forward.`;
   const encodedMsg = encodeURIComponent(message);
 
-  const phone = "919588859960"; // 🔴 PUT YOUR NUMBER
-
+  const phone = "919588859960";
   const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
 
   document.getElementById("whatsappBtn").href = waLink;
 
-  // Show success popup
+  // SHOW SUCCESS POPUP
   document.getElementById("successPopup").style.display = "flex";
 
-  // Reset form (optional)
+  // CLOSE FORM POPUP
+  closePopup();
+
+  // RESET FORM
   form.reset();
-}
+});
 </script>
-  
   
 </body>
 </html>
