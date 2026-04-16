@@ -3108,27 +3108,34 @@ document.addEventListener("DOMContentLoaded", function() {
   // FORM SUBMIT
 
 
-  document.getElementById("leadForm").addEventListener("submit", function(e) {
+ document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const formData = new FormData(this);
 
-  fetch("https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse", {
-    method: "POST",
-    mode: "no-cors",
-    body: new URLSearchParams({
-  "entry.525461384": formData.get("name"),
-  "entry.933229371": formData.get("phone"),
-  "entry.1013425097": formData.get("location"),
-  "entry.297419927": formData.get("goal"),
-  "entry.1950308540": "Yes, I’m serious"
-})
-  });
+  const googleForm = document.createElement("form");
+  googleForm.method = "POST";
+  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  googleForm.target = "hidden_iframe";
 
-  setTimeout(() => {
+  function addField(name, value) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+
+  // ONLY 3 fields
+  addField("entry.525461384", formData.get("name"));
+  addField("entry.933229371", formData.get("phone"));
+  addField("entry.1013425097", formData.get("location"));
+
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+
   alert("Thanks! We'll contact you soon.");
   closePopup();
-}, 500);
 });
 let miniTargetDate;
   let lastDays = null;
