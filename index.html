@@ -3101,17 +3101,7 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem("popupTime", now);
   }
 });
-    const popup = document.getElementById("leadPopup");
-
-    if (popup) {
-      setTimeout(() => {
-        popup.style.display = "flex";
-      }, 5000); // 5 second delay
-    }
-
-    localStorage.setItem("popupShown", "true");
-  }
-});
+  
   function closePopup() {
     document.getElementById("leadPopup").style.display = "none";
   }
@@ -3124,15 +3114,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const formData = new FormData(this);
 
-  fetch("https://docs.google.com/forms/d/e/1HMLjAL1-7Q92Z04D_eJeZc9i5TlWUbdS4urM1GF_SGk/formResponse", {
+  fetch("https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse", {
     method: "POST",
     mode: "no-cors",
     body: new URLSearchParams({
   "entry.525461384": formData.get("name"),
   "entry.933229371": formData.get("phone"),
-  "entry.1660694465": formData.get("location"),
-  "entry.NEW_WEDDING_ID": formData.get("wedding"),
-  "entry.NEW_GOAL_ID": formData.get("goal")
+  "entry.1013425097": formData.get("location"),
+  "entry.297419927": formData.get("goal"),
+  "entry.821203535": formData.get("weight"),
+  "entry.680416967": formData.get("timeline"),
+  "entry.1950308540": formData.get("intent"),
+      "entry.YOUR_WEDDING_ID": formData.get("wedding")
 })
   });
 
