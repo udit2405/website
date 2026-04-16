@@ -344,9 +344,9 @@ html {
   .hero-left-col { min-width: 0; }
   @media (min-width: 1024px) {
   .hero-inner {
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
-  gap: 2.5rem 2.75rem;
-  }
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+}
   }
 
   .hero-eyebrow {
@@ -1723,9 +1723,10 @@ overflow: hidden;
   }
 
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
-  .hero-offline-card {
-    margin-top: -140px;
-  align-self: center;
+  hero-offline-card {
+  margin-top: 0;
+  align-self: start;
+  justify-self: end;
   
   background: rgba(20,20,20,0.55);
   -webkit-backdrop-filter: blur(16px);
