@@ -280,8 +280,54 @@ Check If I Qualify →
 </div>
 <script>
 function openPopup() {
-  alert("Popup form will open here (connect your form later)");
+  document.getElementById("leadPopup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("leadPopup").style.display = "none";
 }
 </script>
+
+  <div id="leadPopup" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+
+  <div style="
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    width:320px;
+    color:#fff;
+    position:relative;
+  ">
+
+    <span onclick="closePopup()" style="
+      position:absolute;
+      top:10px;
+      right:15px;
+      cursor:pointer;
+    ">✖</span>
+
+    <h3>Check If You Qualify</h3>
+
+    <form id="leadForm">
+      <input type="text" name="name" placeholder="Name" required style="width:100%;padding:10px;margin-bottom:10px;">
+      <input type="tel" name="phone" placeholder="Phone" required style="width:100%;padding:10px;margin-bottom:10px;">
+      <input type="text" name="location" placeholder="Location" required style="width:100%;padding:10px;margin-bottom:15px;">
+
+      <button type="submit" style="width:100%;padding:12px;background:#C9A84C;border:none;">
+        Submit
+      </button>
+    </form>
+
+  </div>
+</div>
+  
 </body>
 </html>
