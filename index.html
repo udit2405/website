@@ -54,6 +54,47 @@
   font-weight: 600;
   cursor: pointer;
 }
+    .mini-countdown button {
+  width: 100%;
+  padding: 8px;
+  background: var(--gold);
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 🔥 ADD FROM HERE */
+.flip {
+  display: inline-block;
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.flip.animate {
+  transform: rotateX(360deg);
+}
+
+.mini-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.mini-countdown.urgent {
+  border-color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.08);
+}
+
+.mini-countdown.urgent .mini-title {
+  color: #ff4d4d;
+}
+
+.mini-countdown.urgent .flip {
+  color: #ff4d4d;
+}
+/* 🔥 ADD TILL HERE */
+    
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -1869,8 +1910,14 @@ Every week you delay = visible difference on your wedding day.
     <div class="mini-countdown">
   <p class="mini-title">Wedding Countdown</p>
   <div class="mini-row">
-  Days Left - <span id="miniDays">90</span>
+  Days Left - <span id="miniDays" class="flip">90</span>
 </div>
+
+<div class="mini-sub">
+  <span id="miniHours">00</span>h :
+  <span id="miniMinutes">00</span>m
+</div>
+      
   <input type="date" id="miniDate">
   <button onclick="setMiniDate()">Set Date</button>
 </div>
@@ -2984,6 +3031,7 @@ document.addEventListener("DOMContentLoaded", function() {
   closePopup();
 });
 let miniTargetDate;
+  let lastDays = null;
 
 function setMiniDate() {
   miniTargetDate = new Date(document.getElementById("miniDate").value);
@@ -2999,6 +3047,39 @@ function updateMiniCountdown() {
     document.getElementById("miniDays").textContent = "0";
     return;
   }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+const daysEl = document.getElementById("miniDays");
+
+// animate only when value changes
+if (days !== lastDays) {
+  daysEl.classList.add("animate");
+
+  setTimeout(() => {
+    daysEl.textContent = days;
+    daysEl.classList.remove("animate");
+  }, 200);
+
+  lastDays = days;
+}
+
+// update hours + minutes
+document.getElementById("miniHours").textContent = String(hours).padStart(2, '0');
+document.getElementById("miniMinutes").textContent = String(minutes).padStart(2, '0');
+
+// urgency color
+const box = document.querySelector(".mini-countdown");
+if (days <= 10) {
+  box.classList.add("urgent");
+} else {
+  box.classList.remove("urgent");
+}
+  } // function ends
+
+setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   document.getElementById("miniDays").textContent = days;
