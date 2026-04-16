@@ -16,6 +16,13 @@
   
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  #leadPopup * {
+  pointer-events: auto;
+}
+
+button {
+  cursor: pointer;
+}
 <style>
 
 body{
@@ -347,17 +354,18 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 999999;
 ">
 
   <div style="
-    background:#111;
-    padding:30px;
-    border-radius:16px;
-    width:320px;
-    color:#fff;
-    position:relative;
-  ">
+  background:#111;
+  padding:30px;
+  border-radius:16px;
+  width:320px;
+  color:#fff;
+  position:relative;
+  z-index: 1000000;
+">
 
     <span onclick="closePopup()" style="
       position:absolute;
