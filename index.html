@@ -378,16 +378,14 @@ html {
   background: var(--gold);
   }
 
-  .hero-headline {
+ .hero-headline {
   font-size: clamp(2rem, 4vw, 3.6rem);
-  line-height: 1.1;
-}
   font-weight: 700;
   line-height: 1.05;
   max-width: 800px;
   opacity: 0;
   animation: fadeUp 0.9s 0.35s forwards;
-  }
+}
   .hero-headline em {
   font-style: italic;
   color: var(--gold);
@@ -2202,85 +2200,96 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
   </p>
   </div>
 
- <div class="transform-grid">
-<div class="transform-card reveal">
+<div class="transform-grid">
 
-  <div class="transform-photos">
+  <!-- CARD 1 -->
+  <div class="transform-card reveal">
+    <div class="transform-photos">
 
-    <div class="photo-placeholder before">
-      <img src="brobefore.jpeg" alt="Before Transformation"
-           style="width:100%; height:100%; object-fit:cover; object-position:top;">
-      <span style="position:absolute; bottom:10px; left:10px; font-size:12px; letter-spacing:1px;">
-        BEFORE
-      </span>
+      <div class="photo-placeholder before">
+        <img src="brobefore.jpeg" alt="Before"
+             style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; bottom:10px; left:10px; font-size:12px;">
+          BEFORE
+        </span>
+      </div>
+
+      <div class="photo-placeholder after">
+        <img src="broafter.jpeg" alt="After"
+             style="width:100%; height:100%; object-fit:cover;">
+        <span style="position:absolute; bottom:10px; left:10px; font-size:12px; color:#C9A84C;">
+          AFTER
+        </span>
+      </div>
+
+      <div class="transform-divider">→</div>
     </div>
 
-    <div class="photo-placeholder after">
-      <img src="broafter.jpeg" alt="After Transformation"
-           style="width:100%; height:100%; object-fit:cover; object-position:top;">
-      <span style="position:absolute; bottom:10px; left:10px; font-size:12px; letter-spacing:1px; color:#C9A84C;">
-        AFTER
-      </span>
+    <div class="transform-info">
+      <h4>Arjun S. — Delhi</h4>
+      <p style="font-size:0.8rem;color:var(--muted)">
+        Lost 8kg & built visible definition in 75 days
+      </p>
+      <div class="transform-meta">
+        <span class="transform-tag">75 Days</span>
+        <span class="transform-tag">-8 KG</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="transform-card reveal">
+    <div class="transform-photos">
+      <div class="photo-placeholder before">
+        <div class="photo-emoji">🙍</div>
+        Before
+      </div>
+      <div class="photo-placeholder after">
+        <div class="photo-emoji">🤵</div>
+        After
+      </div>
+      <div class="transform-divider">→</div>
     </div>
 
-    <div class="transform-divider">→</div>
-
+    <div class="transform-info">
+      <h4>Rohit M. — Mumbai</h4>
+      <p style="font-size:0.8rem;color:var(--muted)">
+        From skinny-fat to lean & muscular in 90 days
+      </p>
+      <div class="transform-meta">
+        <span class="transform-tag">90 Days</span>
+        <span class="transform-tag">+5 KG</span>
+      </div>
+    </div>
   </div>
 
-  <div class="transform-info">
-    <h4>Arjun S. — Delhi</h4>
-    <p style="font-size:0.8rem;color:var(--muted)">
-      Lost 8kg & built visible definition in 75 days
-    </p>
-    <div class="transform-meta">
-      <span class="transform-tag">75 Days</span>
-      <span class="transform-tag">-8 KG</span>
+  <!-- CARD 3 -->
+  <div class="transform-card reveal">
+    <div class="transform-photos">
+      <div class="photo-placeholder before">
+        <div class="photo-emoji">🙍</div>
+        Before
+      </div>
+      <div class="photo-placeholder after">
+        <div class="photo-emoji">🤵</div>
+        After
+      </div>
+      <div class="transform-divider">→</div>
     </div>
 
+    <div class="transform-info">
+      <h4>Karan P. — Bangalore</h4>
+      <p style="font-size:0.8rem;color:var(--muted)">
+        Dropped 2 shirt sizes, shredded for baraat
+      </p>
+      <div class="transform-meta">
+        <span class="transform-tag">60 Days</span>
+        <span class="transform-tag">-6 KG</span>
+      </div>
+    </div>
+  </div>
 
-  <div class="transform-card reveal" style="transition-delay:0.1s">
-  <div class="transform-photos">
-  <div class="photo-placeholder before">
-  <div class="photo-emoji">🙍</div>
-  Before
-  </div>
-  <div class="photo-placeholder after">
-  <div class="photo-emoji">🤵</div>
-  After
-  </div>
-  <div class="transform-divider">→</div>
-  </div>
-  <div class="transform-info">
-  <h4>Rohit M. — Mumbai</h4>
-  <p style="font-size:0.8rem;color:var(--muted)">From skinny-fat to lean &amp; muscular in 90 days</p>
-  <div class="transform-meta">
-  <span class="transform-tag">90 Days</span>
-  <span class="transform-tag">+5 kg Muscle</span>
-  </div>
-  </div>
-  </div>
-  <div class="transform-card reveal" style="transition-delay:0.15s">
-  <div class="transform-photos">
-  <div class="photo-placeholder before">
-  <div class="photo-emoji">🙍</div>
-  Before
-  </div>
-  <div class="photo-placeholder after">
-  <div class="photo-emoji">🤵</div>
-  After
-  </div>
-  <div class="transform-divider">→</div>
-  </div>
-  <div class="transform-info">
-  <h4>Karan P. — Bangalore</h4>
-  <p style="font-size:0.8rem;color:var(--muted)">Dropped 2 shirt sizes, shredded for baraat</p>
-  <div class="transform-meta">
-  <span class="transform-tag">60 Days</span>
-  <span class="transform-tag">-6 kg</span>
-  </div>
-  </div>
-  </div>
-  </div>
+</div>
 
     <div style="text-align:center; margin-top:40px;">
   <a href="#pricing" class="btn-outline">
@@ -2975,10 +2984,7 @@ style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:3px 
     }
   });
 
-  const demo = new Date();
-  demo.setDate(demo.getDate() + 90);
-  document.getElementById('weddingDate').value = demo.toISOString().split('T')[0];
-  setWeddingDate();
+  
 </script>
 <!-- PREMIUM LEAD POPUP -->
 <div id="leadPopup" style="
