@@ -1,165 +1,199 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
+<title>How GroomFit Works</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <title>Why Most Grooms Fail | GroomFit</title>
+<style>
 
-  <!-- COPY SAME FONTS -->
+:root{
+  --gold:#C9A84C;
+  --dark:#0E0E0E;
+  --dark2:#181818;
+  --white:#F5F0E8;
+  --muted:#888;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Outfit&display=swap" rel="stylesheet">
+body{
+  margin:0;
+  font-family:'Outfit',sans-serif;
+  background:#080808;
+  color:var(--white);
+}
 
-  <!-- COPY YOUR MAIN CSS -->
+/* HERO */
+.hero{
+  padding:120px 20px 80px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
 
-  <link rel="stylesheet" href="styles.css"> <!-- OR paste your CSS if inline -->
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;
+  margin-bottom:15px;
+}
 
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* TIMELINE */
+.timeline{
+  max-width:900px;
+  margin:80px auto;
+  position:relative;
+  padding-left:30px;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:10px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:linear-gradient(var(--gold),transparent);
+}
+
+.step{
+  margin-bottom:60px;
+  position:relative;
+}
+
+.step-circle{
+  position:absolute;
+  left:-6px;
+  top:0;
+  width:30px;
+  height:30px;
+  background:var(--gold);
+  color:black;
+  font-weight:700;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.step-card{
+  background:var(--dark2);
+  padding:25px;
+  border-radius:12px;
+  border:1px solid rgba(201,168,76,0.2);
+  transition:0.3s;
+}
+
+.step-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--gold);
+}
+
+.step h3{
+  margin:0 0 10px;
+}
+
+.step p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.btn{
+  background:var(--gold);
+  color:black;
+  padding:15px 30px;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
+}
+
+.secondary{
+  display:block;
+  margin-top:15px;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+</style>
 </head>
 
-<body style="background:#080808; color:#fff; font-family:Outfit;">
+<body>
 
-<!-- SIMPLE NAV BACK -->
+<!-- HERO -->
+<section class="hero">
+  <h1>How GroomFit Works</h1>
+  <p>A simple, structured system designed to get you in your best shape before your wedding.</p>
+</section>
 
-<nav style="padding:20px;">
+<!-- TIMELINE -->
+<section class="timeline">
 
-  <a href="index.html" style="color:#C9A84C;">← Back to Home</a>
-
-</nav>
-
-<!-- 🔥 YOUR PROBLEM SECTION -->
-
-<section class="section">
-
-  <div class="section-inner">
-
- <!-- 🔥 ADD THIS EXACTLY HERE -->
-
-    <h1 style="font-size:2.5rem; margin-bottom:20px;">
-
-      Why 90% of Grooms Fail Their Wedding Transformation
-
-    </h1>
-
-    <p style="color:#aaa; max-width:600px; margin-bottom:40px;">
-
-      Most men don't fail because they lack effort — they fail because they follow the wrong system for a deadline that actually matters.
-
-    </p>
-    
-<!-- ===== PROBLEM ===== -->
-<section id="problem" class="section">
-  <div class="section-inner">
-
-    <div class="problem-grid">
-
-      <!-- LEFT SIDE -->
-      <div class="reveal">
-        <span class="section-tag">Reality Check</span>
-
-        <h2 class="section-title">
-          Why Most Grooms <em class="gold italic">Fail Before Their Wedding</em>
-        </h2>
-
-        <div class="divider"></div>
-
-        <p class="section-sub" style="margin-bottom:2.5rem">
-          It’s not lack of effort.<br/>
-          It’s following the wrong system for a deadline that actually matters.
-        </p>
-
-        <ul class="pain-list">
-
-          <li class="pain-item">
-            <span class="pain-icon">🏋️</span>
-            <div>
-              <h4>Regular Gym Membership</h4>
-              <p>
-                No structured plan for your wedding timeline. Trainers don’t track progress. 
-                You’re just another member — results depend on your discipline.
-              </p>
-            </div>
-          </li>
-
-          <li class="pain-item">
-            <span class="pain-icon">📱</span>
-            <div>
-              <h4>YouTube / AI Plans</h4>
-              <p>
-                Generic workouts, no accountability, no Indian diet structure. 
-                You start strong… then fall off within weeks.
-              </p>
-            </div>
-          </li>
-
-          <li class="pain-item">
-            <span class="pain-icon">⏰</span>
-            <div>
-              <h4>Last-Minute Panic</h4>
-              <p>
-                Starting 1 month before is too late. Crash dieting leads to fatigue, 
-                poor results, and zero real transformation.
-              </p>
-            </div>
-          </li>
-
-        </ul>
-      </div>
-
-      <!-- RIGHT SIDE (YOUR DIFFERENTIATOR) -->
-      <div class="reveal" style="transition-delay:0.15s">
-
-        <div class="problem-visual">
-          <div class="problem-card">
-
-            <div class="problem-card-emoji">💍</div>
-
-            <h3 class="gold">The GroomFit System</h3>
-
-            <p style="margin:1rem 0 1.5rem">
-              Built ONLY for grooms with a real deadline — your wedding day.
-            </p>
-
-            <div style="display:flex;flex-direction:column;gap:0.7rem">
-
-              <div style="background:var(--dark-3);border-radius:8px;padding:12px 16px;font-size:0.82rem">
-                ✔ 60–90 day structured transformation plan
-              </div>
-
-              <div style="background:var(--dark-3);border-radius:8px;padding:12px 16px;font-size:0.82rem">
-                ✔ Weekly accountability & coach check-ins
-              </div>
-
-              <div style="background:var(--dark-3);border-radius:8px;padding:12px 16px;font-size:0.82rem">
-                ✔ Indian diet that is realistic & sustainable
-              </div>
-
-              <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:12px 16px;font-size:0.82rem">
-                ✔ Designed to peak exactly on your wedding day
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="ring-accent"></div>
-        </div>
-
-      </div>
-
+  <div class="step">
+    <div class="step-circle">1</div>
+    <div class="step-card">
+      <h3>Apply</h3>
+      <p>Tell us about your wedding date, body, and goals. We accept only serious grooms.</p>
     </div>
-
   </div>
+
+  <div class="step">
+    <div class="step-circle">2</div>
+    <div class="step-card">
+      <h3>Get Your Plan</h3>
+      <p>Within 48 hours, receive a custom workout and Indian diet plan built for your timeline.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-circle">3</div>
+    <div class="step-card">
+      <h3>Execute Daily</h3>
+      <p>Follow your plan daily with coaching, accountability, and constant adjustments.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-circle">4</div>
+    <div class="step-card">
+      <h3>Show Up Transformed</h3>
+      <p>Walk into your wedding confident, lean, and in the best shape of your life.</p>
+    </div>
+  </div>
+
 </section>
 
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to Start Your Transformation?</h2>
+  
+  <a href="#" onclick="openPopup(); return false;" class="btn">
+    Check If I Qualify →
+  </a>
 
-      </div>
-
+  <a href="index.html#pricing" class="secondary">
+    Or View Pricing
+  </a>
 </section>
+
+<script>
+function openPopup(){
+  window.location.href = "index.html";
+}
+</script>
 
 </body>
-
 </html>
