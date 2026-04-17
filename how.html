@@ -54,14 +54,37 @@ body{
   text-align:center;
 }
 
-/* ===== BACK BUTTON ===== */
+/* ===== PREMIUM BACK BUTTON ===== */
 .back{
-  position:absolute;
-  left:25px;
+  position:fixed;
   top:25px;
+  left:25px;
+
+  background:rgba(20,20,20,0.6);
+  backdrop-filter:blur(10px);
+
   color:#C9A84C;
   text-decoration:none;
+
+  padding:12px 22px;
+  border-radius:10px;
+
   font-size:14px;
+  font-weight:500;
+
+  border:1px solid rgba(201,168,76,0.3);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  z-index:99999;
+
+  transition:all 0.3s ease;
+}
+
+.back:hover{
+  background:#C9A84C;
+  color:#000;
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 15px 40px rgba(0,0,0,0.7);
 }
 
 /* ===== JUMP BUTTON ===== */
