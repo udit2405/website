@@ -11,33 +11,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-.jump-btn{
-  position:fixed;
-  top:25px;
-  right:25px;
-  background:rgba(20,20,20,0.7);
-  backdrop-filter:blur(10px);
-  color:#C9A84C;
-  padding:12px 20px;
-  border-radius:8px;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:500;
-  border:1px solid rgba(201,168,76,0.3);
-  z-index:99999;
-  transition:all 0.3s ease;
-}
-
-/* hover */
-.jump-btn:hover{
-  background:#C9A84C;
-  color:#000;
-  transform:translateY(-2px);
-}
-  
 <style>
 
-  
 /* ===== BASE ===== */
 body{
   margin:0;
@@ -85,6 +60,30 @@ body{
   color:#C9A84C;
   text-decoration:none;
   font-size:14px;
+}
+
+/* ===== JUMP BUTTON (FIXED) ===== */
+.jump-btn{
+  position:fixed;
+  top:25px;
+  right:25px;
+  background:rgba(20,20,20,0.7);
+  backdrop-filter:blur(10px);
+  color:#C9A84C;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:500;
+  border:1px solid rgba(201,168,76,0.3);
+  z-index:99999;
+  transition:all 0.3s ease;
+}
+
+.jump-btn:hover{
+  background:#C9A84C;
+  color:#000;
+  transform:translateY(-2px);
 }
 
 /* ===== TOP ===== */
@@ -188,7 +187,7 @@ h1{
   background:#e0b84f;
 }
 
-/* ===== WHATSAPP BUTTON (FIXED) ===== */
+/* ===== WHATSAPP BUTTON ===== */
 .whatsapp-float{
   position:fixed;
   bottom:25px;
@@ -202,7 +201,7 @@ h1{
   border-radius:50%;
   text-decoration:none;
   box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  z-index:99999; /* VERY IMPORTANT */
+  z-index:99999;
 }
 
 .whatsapp-float i{
@@ -239,10 +238,11 @@ h1{
 
 <body>
 
-  <a href="index.html#pricing" class="jump-btn">
+<!-- ✅ JUMP BUTTON -->
+<a href="index.html#pricing" class="jump-btn">
   Jump To Pricing →
 </a>
-  
+
 <!-- VIDEO -->
 <video autoplay muted loop playsinline class="bg-video">
   <source src="problem_back.mp4" type="video/mp4">
