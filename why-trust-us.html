@@ -14,6 +14,30 @@
 
 <style>
 
+  /* ===== BACK TO HOME ===== */
+.back-home{
+  position:fixed;
+  top:20px;
+  left:20px;
+  background:rgba(0,0,0,0.6);
+  color:#C9A84C;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:500;
+  border:1px solid rgba(201,168,76,0.3);
+  z-index:9999;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.back-home:hover{
+  background:#C9A84C;
+  color:#000;
+  transform:translateY(-2px);
+}
+
 /* ===== JUMP BUTTON ===== */
 .jump-btn{
   position:fixed;
@@ -273,6 +297,8 @@ h1 {
 </head>
 
 <body>
+
+<a href="index.html" class="back-home">← Back to Home</a>
 
 <a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
 
