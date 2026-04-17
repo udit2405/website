@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>GroomFit — Transform Before Your Wedding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
+
+    html, body {
+  touch-action: pan-y;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+    
   /* ===== RESET & BASE ===== */
 
     /* MINI COUNTDOWN */
@@ -3233,6 +3240,30 @@ if (slider3 && afterImage3) {
 </a>
 
 <div class="pricing-tooltip">View Pricing</div>
+
+  <script>
+// Disable pinch zoom
+document.addEventListener('gesturestart', function (e) {
+  e.preventDefault();
+});
+
+// Disable double tap zoom
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (e) {
+  const now = new Date().getTime();
+  if (now - lastTouchEnd <= 300) {
+    e.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
+
+// Prevent multi-touch zoom
+document.addEventListener('touchmove', function (e) {
+  if (e.scale !== undefined && e.scale !== 1) {
+    e.preventDefault();
+  }
+}, { passive: false });
+</script>
 
 </body>
 </html>
