@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<!-- FONT AWESOME -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Why Trust Us | GroomFit</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
 
 /* ===== JUMP BUTTON ===== */
@@ -66,23 +52,23 @@ h1 {
 .subtext {
   text-align: center;
   max-width: 700px;
-  margin: 20px auto 60px;
+  margin: 20px auto 40px; /* 🔥 reduced */
   color: #aaa;
 }
 
 /* ===== BADGES ===== */
 .badges {
   display: grid;
-  grid-template-columns: repeat(3, auto); /* 🔥 KEY FIX */
-  justify-content: center; /* center cards */
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
   gap: 18px;
-  margin-bottom: 60px;
+  margin-bottom: 20px; /* 🔥 MAJOR FIX */
 }
 
 .badge {
   text-align:center;
-  padding:20px 16px;
-  max-width:260px;
+  padding:18px 14px;
+  max-width:240px;
   margin:auto;
   background:rgba(255,255,255,0.03);
   border-radius:12px;
@@ -95,20 +81,21 @@ h1 {
   box-shadow:0 10px 30px rgba(201,168,76,0.15);
 }
 
-.badge-icon{font-size:22px;margin-bottom:8px;}
-.badge-title{font-size:16px;font-weight:600;margin-bottom:8px;}
-.badge p{color:#aaa;font-size:14px;}
+.badge-icon{font-size:20px;margin-bottom:6px;}
+.badge-title{font-size:15px;font-weight:600;margin-bottom:6px;}
+.badge p{color:#aaa;font-size:13px;}
 
 /* ===== TEAM ===== */
 .team{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:25px;
+  margin-top:-40px; /* 🔥 MAIN GAP FIX */
 }
 
 .card{
   background:rgba(255,255,255,0.03);
-  padding:18px 20px 22px;
+  padding:16px 18px 20px;
   border-radius:16px;
   text-align:center;
   transition:0.3s;
@@ -119,11 +106,11 @@ h1 {
 }
 
 .avatar{
-  width:90px;
-  height:90px;
+  width:85px;
+  height:85px;
   margin:auto;
-  margin-top:-10px;   /* 🔥 moves entire content up */
-  margin-bottom:10px;
+  margin-top:-15px; /* 🔥 lifts content */
+  margin-bottom:8px;
   border-radius:50%;
   overflow:hidden;
   border:2px solid #C9A84C;
@@ -134,16 +121,16 @@ h1 {
   object-fit:cover;
 }
 
-/* ===== NEW TEXT STYLES ===== */
+/* TEXT */
 .role{
   font-size:0.8rem;
   color:#C9A84C;
-  margin-top:3px;
+  margin-top:2px;
   font-weight:500;
 }
 
 .desc{
-  font-size:0.85rem;
+  font-size:0.83rem;
   color:#aaa;
   margin-top:4px;
   line-height:1.5;
@@ -154,17 +141,13 @@ h1 {
   position:fixed;
   right:40px;
   top:90px;
-
   width:200px;
   padding:20px;
   border-radius:18px;
-
   background:rgba(15,15,15,0.75);
   backdrop-filter:blur(18px);
-
   border:1px solid rgba(201,168,76,0.3);
   box-shadow:0 30px 80px rgba(0,0,0,0.7);
-
   z-index:999;
 }
 
@@ -202,7 +185,7 @@ h1 {
   box-shadow:0 12px 30px rgba(201,168,76,0.4);
 }
 
-/* ===== WHATSAPP FIXED ===== */
+/* ===== WHATSAPP ===== */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -216,10 +199,6 @@ h1 {
   border-radius:50%;
   z-index:9999;
   box-shadow:0 10px 25px rgba(0,0,0,0.4);
-
-  text-decoration:none;
-  border:none;
-  outline:none;
 }
 
 .whatsapp-float i{
@@ -227,13 +206,7 @@ h1 {
   color:#fff;
 }
 
-.whatsapp-float:focus,
-.whatsapp-float:active{
-  outline:none;
-  text-decoration:none;
-}
-
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:768px){
   .floating-box{
     bottom:20px;
@@ -243,211 +216,21 @@ h1 {
   }
   .badges{grid-template-columns:1fr;}
 }
+
+/* DOT */
 .dot{
-
   width:8px;
-
   height:8px;
-
   background:#4CAF50;
-
   border-radius:50%;
-
   display:inline-block;
-
   margin-right:6px;
-
   animation:blink 1.2s infinite;
-
 }
 
 @keyframes blink{
-
-  0%,100%{opacity:1; transform:scale(1);}
-
-  50%{opacity:0.3; transform:scale(1.3);}
-
+  0%,100%{opacity:1;}
+  50%{opacity:0.3;}
 }
-  
+
 </style>
-</head>
-
-<body>
-
-<a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
-
-<div class="container">
-
-<h1>Why Trust <span class="gold">GroomFit</span></h1>
-
-<p class="subtext">
-We are not influencers chasing trends. GroomFit is built by professionals who understand transformation deeply — and execute it with precision.
-</p>
-
-<div class="badges">
-  <div class="badge">
-    <div class="badge-icon">🏅</div>
-    <div class="badge-title">5+ Years Experience</div>
-    <p>Deep expertise in groom-specific transformation planning.</p>
-  </div>
-
-  <div class="badge">
-    <div class="badge-icon">✅</div>
-    <div class="badge-title">Certified Coaches</div>
-    <p>Internationally certified trainers delivering proven results.</p>
-  </div>
-
-  <div class="badge">
-    <div class="badge-icon">📍</div>
-    <div class="badge-title">India-Focused</div>
-    <p>Plans designed for Indian wedding timelines.</p>
-  </div>
-</div>
-
-<div class="team">
-
-  <div class="card">
-    <div class="avatar"><img src="jitu.jpg"></div>
-    <div>Jinendra Sharma</div>
-    <div class="role">Fat Loss & Body Recomposition Specialist</div>
-    <div class="desc">
-      Helped 100+ men drop fat and build visible definition within strict timelines.
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="avatar"><img src="udit.jpg"></div>
-    <div>Udit Sahai</div>
-    <div class="role">Founder · Groom Transformation Specialist</div>
-    <div class="desc">
-      Built GroomFit after seeing grooms regret not preparing — every system here is built for real results.
-    </div>
-  </div>
-  
-  <div class="card">
-    <div class="avatar"><img src="rahul.jpg"></div>
-    <div>Rahul Sharma</div>
-    <div class="role">Strength & Conditioning Coach</div>
-    <div class="desc">
-      Focuses on building lean muscle with structured, performance-driven training systems.
-    </div>
-  </div>
-
-  
-
-</div>
-
-</div>
-
-<div class="floating-box">
-  <div class="live">
-
-  <span class="dot"></span>
-
-  Applications Live
-
-</div>
-  <div class="slots">3 / 11 Slots Left</div>
-  <button onclick="openPopup()">Check If I Qualify →</button>
-</div>
-
-<a href="https://wa.me/919588859960" target="_blank" class="whatsapp-float">
-  <span><i class="fab fa-whatsapp"></i></span>
-</a>
-
-<!-- POPUP -->
-<div id="leadPopup" style="
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-">
-
-  <div style="
-    background: #111;
-    padding: 30px;
-    border-radius: 16px;
-    width: 320px;
-    color: #fff;
-    position: relative;
-  ">
-
-    <span onclick="closePopup()" style="
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      cursor: pointer;
-      font-size: 18px;
-    ">✖</span>
-
-    <h3>Check If You Qualify for GroomFit</h3>
-    <p style="font-size: 13px; margin-bottom: 20px;">
-      Apply below — we’ll get back within 24 hours
-    </p>
-
-    <form id="leadForm">
-
-      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
-
-      <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
-
-      <input type="text" name="location" placeholder="Location" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
-
-      <button type="submit" style="width:100%;padding:12px;background:#00ff88;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
-        Submit
-      </button>
-
-    </form>
-
-  </div>
-</div>
-
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-<script>
-function openPopup() {
-  document.getElementById("leadPopup").style.display = "flex";
-}
-
-function closePopup() {
-  document.getElementById("leadPopup").style.display = "none";
-}
-
-document.getElementById("leadForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const form = this;
-  const formData = new FormData(form);
-
-  const googleForm = document.createElement("form");
-  googleForm.method = "POST";
-  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
-  googleForm.target = "hidden_iframe";
-
-  function addField(name, value) {
-    const input = document.createElement("input");
-    input.type = "hidden";
-    input.name = name;
-    input.value = value;
-    googleForm.appendChild(input);
-  }
-
-  addField("entry.525461384", formData.get("name"));
-  addField("entry.933229371", formData.get("phone"));
-  addField("entry.1013425097", formData.get("location"));
-
-  document.body.appendChild(googleForm);
-  googleForm.submit();
-
-  alert("Application submitted successfully!");
-
-  closePopup();
-  form.reset();
-});
-</script>
-  
-</body>
-</html>
