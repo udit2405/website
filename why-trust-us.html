@@ -146,6 +146,77 @@ h1 {
   box-shadow: 0 10px 30px rgba(201,168,76,0.4);
 }
 
+/* ===== PREMIUM WHATSAPP BUTTON ===== */
+.whatsapp-premium-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 16px;
+
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+
+  background: linear-gradient(135deg, #C9A84C, #E8C96A);
+  color: #000;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(201,168,76,0.25);
+}
+
+/* Glow effect */
+.whatsapp-premium-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(120deg, #fff, transparent, #fff);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.3;
+}
+
+/* Hover */
+.whatsapp-premium-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(201,168,76,0.4);
+}
+
+/* Arrow animation */
+.whatsapp-premium-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-premium-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+  margin-top:14px;
+  background:none;
+  border:none;
+  color:#888;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.secondary-btn:hover {
+  color:#ccc;
+}
+  
 /* ===== POPUP ===== */
 .popup {
   position: fixed;
@@ -162,6 +233,17 @@ h1 {
   padding: 30px;
   border-radius: 12px;
   width: 320px;
+
+  transform: scale(0.9);
+  opacity: 0;
+  animation: popupFade 0.3s ease forwards;
+}
+
+@keyframes popupFade {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* MOBILE */
@@ -243,7 +325,18 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
 
 <!-- POPUP -->
 <div id="popup" class="popup">
-  <div class="popup-box">
+  <div class="popup-box" style="position:relative;">
+
+    <button onclick="closePopup()" style="
+      position:absolute;
+      top:10px;
+      right:15px;
+      background:none;
+      border:none;
+      color:#aaa;
+      font-size:18px;
+      cursor:pointer;
+    ">×</button>
 
     <h3>Check If You Qualify</h3>
 
@@ -261,28 +354,40 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
   <div id="successPopup" class="popup">
   <div class="popup-box" style="text-align:center">
 
-    <h3 style="margin-bottom:10px;">Application Received</h3>
+    <h3 style="
+  margin-bottom:12px;
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:0.5px;
+">
+  Application Received
+</h3>
 
-    <p style="color:#aaa;font-size:14px;margin-bottom:20px;">
-      If you're serious, message us on WhatsApp to fast-track your approval.
-    </p>
+<p style="
+  color:#aaa;
+  font-size:14px;
+  margin-bottom:10px;
+  line-height:1.5;
+">
+  You're one step away from your transformation.
+</p>
 
-    <a id="whatsappBtn" href="#" target="_blank" class="cta-btn" style="margin-bottom:10px;">
-      Continue on WhatsApp →
-    </a>
+<p style="
+  color:#C9A84C;
+  font-size:13px;
+  margin-bottom:22px;
+">
+  ⚠️ Only 3 serious applicants accepted this week
+</p>
 
-    <br>
+<a id="whatsappBtn" href="#" target="_blank" class="whatsapp-premium-btn">
+  <span>Continue on WhatsApp</span>
+  <span class="arrow">→</span>
+</a>
 
-    <button onclick="closeSuccess()" style="
-      margin-top:10px;
-      background:none;
-      border:none;
-      color:#aaa;
-      cursor:pointer;
-      text-decoration:underline;
-    ">
-      Maybe later
-    </button>
+<button onclick="closeSuccess()" class="secondary-btn">
+  Maybe later
+</button>
 
   </div>
 </div>
@@ -291,7 +396,10 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
 function openPopup(){
   document.getElementById("popup").style.display = "flex";
 }
-
+function closePopup(){
+  document.getElementById("popup").style.display = "none";
+}
+  
 function closeSuccess(){
   document.getElementById("successPopup").style.display = "none";
 }
@@ -299,9 +407,9 @@ function closeSuccess(){
 document.getElementById("form").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const name = this.querySelector('input[type="text"]').value;
-  const phone = this.querySelector('input[type="tel"]').value;
-  const location = this.querySelectorAll('input[type="text"]')[1].value;
+  const name = this.querySelector('input[placeholder="Name"]').value;
+const phone = this.querySelector('input[placeholder="Phone"]').value;
+const location = this.querySelector('input[placeholder="Location"]').value;
 
   const googleForm = document.createElement("form");
   googleForm.method = "POST";
