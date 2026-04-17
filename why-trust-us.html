@@ -287,7 +287,39 @@ h1 {
   transform: scale(1.1);
   box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
+/* ===== BADGE UPGRADE ===== */
 
+.badge {
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.badge-icon {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.badge-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.badge p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* subtle glow on hover */
+.badge:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201,168,76,0.5);
+  box-shadow: 0 10px 30px rgba(201,168,76,0.15);
+}
+  
 </style>
 </head>
 
@@ -302,21 +334,22 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
 </p>
 
 <!-- BADGES -->
-<div class="badges">
-  <div class="badge">
-    <h5>🏅 5 Years Experience</h5>
-    <p>Deep expertise in groom-specific transformation planning.</p>
-  </div>
+<div class="badge">
+  <div class="badge-icon">🏅</div>
+  <div class="badge-title">5+ Years Experience</div>
+  <p>Deep expertise in groom-specific transformation planning.</p>
+</div>
 
-  <div class="badge">
-    <h5>✅ Certified Coaches</h5>
-    <p>Internationally certified trainers delivering proven results.</p>
-  </div>
+<div class="badge">
+  <div class="badge-icon">✅</div>
+  <div class="badge-title">Certified Coaches</div>
+  <p>Internationally certified trainers delivering proven results.</p>
+</div>
 
-  <div class="badge">
-    <h5>📍 India-Focused</h5>
-    <p>Plans designed for Indian lifestyle & wedding timelines.</p>
-  </div>
+<div class="badge">
+  <div class="badge-icon">📍</div>
+  <div class="badge-title">India-Focused</div>
+  <p>Plans designed for Indian wedding timelines.</p>
 </div>
 
 <!-- TEAM -->
@@ -339,7 +372,7 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
 <div class="card">
   <div class="avatar"><img src="udit.jpg"></div>
   <div>Udit Sahai</div>
-  <div style="color:#C9A84C;">Founder</div>
+  <div style="color:#C9A84C;">Founder & Transformation specialist</div>
   <p style="color:#aaa;">Built GroomFit to ensure no groom regrets their physique.</p>
 </div>
 
