@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- ✅ FONT AWESOME (FIXED) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -145,39 +149,26 @@ h1 {
 
 /* ===== WHATSAPP FLOAT ===== */
 .whatsapp-float{
-
   position:fixed;
-
   bottom:20px;
-
   left:20px;
-
   width:60px;
-
   height:60px;
-
-  background:#25D366; /* WhatsApp green */
-
+  background:#25D366;
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   border-radius:50%;
-
   z-index:9999;
-
   box-shadow:0 10px 25px rgba(0,0,0,0.4);
-
+  transition:0.3s;
 }
-
+.whatsapp-float:hover{
+  transform:scale(1.1);
+}
 .whatsapp-float i{
-
   font-size:30px;
-
-  color:#fff; /* WHITE ICON */
-
+  color:#fff;
 }
 
 /* ===== MOBILE ===== */
@@ -197,7 +188,7 @@ h1 {
 
 <body>
 
-<!-- ✅ JUMP BUTTON -->
+<!-- JUMP BUTTON -->
 <a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
 
 <div class="container">
@@ -233,10 +224,12 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
     <div class="avatar"><img src="jitu.jpg"></div>
     <div>Jinendra Sharma</div>
   </div>
+
   <div class="card">
     <div class="avatar"><img src="rahul.jpg"></div>
     <div>Rahul Sharma</div>
   </div>
+
   <div class="card">
     <div class="avatar"><img src="udit.jpg"></div>
     <div>Udit Sahai</div>
@@ -252,7 +245,7 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
   <button style="width:100%;padding:12px;background:#C9A84C;border:none;">Check If I Qualify →</button>
 </div>
 
-<!-- WHATSAPP -->
+<!-- WHATSAPP BUTTON -->
 <a href="https://wa.me/919588859960" target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>
 </a>
