@@ -132,6 +132,21 @@ h1 {
   object-fit:cover;
 }
 
+/* ===== NEW TEXT STYLES ===== */
+.role{
+  font-size:0.8rem;
+  color:#C9A84C;
+  margin-top:6px;
+  font-weight:500;
+}
+
+.desc{
+  font-size:0.85rem;
+  color:#aaa;
+  margin-top:6px;
+  line-height:1.5;
+}
+
 /* ===== FLOATING BOX ===== */
 .floating-box{
   position:fixed;
@@ -200,9 +215,9 @@ h1 {
   z-index:9999;
   box-shadow:0 10px 25px rgba(0,0,0,0.4);
 
-  text-decoration:none;   /* 🔥 FIX */
-  border:none;            /* 🔥 FIX */
-  outline:none;           /* 🔥 FIX */
+  text-decoration:none;
+  border:none;
+  outline:none;
 }
 
 .whatsapp-float i{
@@ -210,7 +225,6 @@ h1 {
   color:#fff;
 }
 
-/* 🔥 REMOVE BLUE LINE ON CLICK */
 .whatsapp-float:focus,
 .whatsapp-float:active{
   outline:none;
@@ -233,7 +247,6 @@ h1 {
 
 <body>
 
-<!-- JUMP BUTTON -->
 <a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
 
 <div class="container">
@@ -265,32 +278,44 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
 </div>
 
 <div class="team">
+
   <div class="card">
     <div class="avatar"><img src="jitu.jpg"></div>
     <div>Jinendra Sharma</div>
+    <div class="role">Fat Loss & Body Recomposition Specialist</div>
+    <div class="desc">
+      Helped 100+ men drop fat and build visible definition within strict timelines.
+    </div>
   </div>
 
   <div class="card">
     <div class="avatar"><img src="rahul.jpg"></div>
     <div>Rahul Sharma</div>
+    <div class="role">Strength & Conditioning Coach</div>
+    <div class="desc">
+      Focuses on building lean muscle with structured, performance-driven training systems.
+    </div>
   </div>
 
   <div class="card">
     <div class="avatar"><img src="udit.jpg"></div>
     <div>Udit Sahai</div>
+    <div class="role">Founder · Groom Transformation Specialist</div>
+    <div class="desc">
+      Built GroomFit after seeing grooms regret not preparing — every system here is built for real results.
+    </div>
   </div>
-</div>
 
 </div>
 
-<!-- FLOATING BOX -->
+</div>
+
 <div class="floating-box">
   <div class="live">● Applications Live</div>
   <div class="slots">3 / 11 Slots Left</div>
   <button>Check If I Qualify →</button>
 </div>
 
-<!-- WHATSAPP -->
 <a href="https://wa.me/919588859960" target="_blank" class="whatsapp-float">
   <span><i class="fab fa-whatsapp"></i></span>
 </a>
