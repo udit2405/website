@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,7 +19,6 @@ body{
   font-family:'Outfit',sans-serif;
   color:#fff;
   background:#000;
-  overflow:hidden;
 }
 
 /* ===== VIDEO ===== */
@@ -163,6 +163,28 @@ h1{
   background:#e0b84f;
 }
 
+/* ===== WHATSAPP BUTTON (FIXED) ===== */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  background:linear-gradient(135deg,#C9A84C,#e0b84f);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  z-index:99999; /* VERY IMPORTANT */
+}
+
+.whatsapp-float i{
+  font-size:30px;
+  color:#000;
+}
+
 /* ===== MOBILE ===== */
 @media(max-width:768px){
 
@@ -187,33 +209,6 @@ h1{
   }
 }
 
-.whatsapp-float{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  width:60px;
-  height:60px;
-  background:linear-gradient(135deg,#C9A84C,#e0b84f);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  text-decoration:none;
-  box-shadow:0 8px 25px rgba(0,0,0,0.4);
-  z-index:999;
-  transition:all 0.3s ease;
-}
-
-.whatsapp-float i{
-  font-size:28px;
-  color:#000;
-}
-
-.whatsapp-float:hover{
-  transform:scale(1.1);
-  box-shadow:0 12px 35px rgba(0,0,0,0.6);
-}
-  
 </style>
 </head>
 
@@ -232,9 +227,7 @@ h1{
 <!-- MAIN -->
 <div class="wrapper">
 
-  <!-- TOP -->
   <div class="top">
-
     <h1>
       Why <span style="color:#C9A84C;">90% of Grooms Fail</span><br>
       Their Wedding Transformation
@@ -244,7 +237,6 @@ h1{
       It’s not lack of effort. It’s following the wrong system for a deadline that actually matters.
     </p>
 
-    <!-- CARDS -->
     <div class="cards">
       <div class="card">
         <h3>🏋️ Gym Membership</h3>
@@ -261,28 +253,27 @@ h1{
         <p>Crash dieting. Poor results.</p>
       </div>
     </div>
-
   </div>
 
-  <!-- MIDDLE -->
   <div class="middle">
     <h2>The Hard Truth</h2>
     <p>Your wedding has a deadline. Your fitness approach doesn’t.</p>
     <p class="highlight">That’s why most grooms fail.</p>
   </div>
 
-  <!-- BOTTOM -->
   <div class="bottom">
     <h2>You Don’t Need More Effort You Need the Right System</h2>
     <a href="index.html#pricing" class="btn">See The Program →</a>
   </div>
 
 </div>
+
+<!-- ✅ WHATSAPP BUTTON -->
 <a href="https://wa.me/919588859960?text=Hi%20GroomFit,%20I%20want%20to%20start%20my%20transformation"
    class="whatsapp-float"
    target="_blank">
    <i class="fab fa-whatsapp"></i>
 </a>
-  
+
 </body>
 </html>
