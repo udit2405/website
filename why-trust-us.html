@@ -258,19 +258,84 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
   </div>
 </div>
 
+  <div id="successPopup" class="popup">
+  <div class="popup-box" style="text-align:center">
+
+    <h3 style="margin-bottom:10px;">Application Received</h3>
+
+    <p style="color:#aaa;font-size:14px;margin-bottom:20px;">
+      If you're serious, message us on WhatsApp to fast-track your approval.
+    </p>
+
+    <a id="whatsappBtn" href="#" target="_blank" class="cta-btn" style="margin-bottom:10px;">
+      Continue on WhatsApp →
+    </a>
+
+    <br>
+
+    <button onclick="closeSuccess()" style="
+      margin-top:10px;
+      background:none;
+      border:none;
+      color:#aaa;
+      cursor:pointer;
+      text-decoration:underline;
+    ">
+      Maybe later
+    </button>
+
+  </div>
+</div>
 <script>
 
 function openPopup(){
-  document.getElementById("popup").style.display="flex";
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closeSuccess(){
+  document.getElementById("successPopup").style.display = "none";
 }
 
 document.getElementById("form").addEventListener("submit", function(e){
   e.preventDefault();
-  const msg = "Hi, I just applied for GroomFit";
-  window.open("https://wa.me/919588859960?text=" + encodeURIComponent(msg));
+
+  const name = this.querySelector('input[type="text"]').value;
+  const phone = this.querySelector('input[type="tel"]').value;
+  const location = this.querySelectorAll('input[type="text"]')[1].value;
+
+  const googleForm = document.createElement("form");
+  googleForm.method = "POST";
+  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  googleForm.target = "hidden_iframe";
+
+  function addField(nameAttr, value) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = nameAttr;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+
+  addField("entry.525461384", name);
+  addField("entry.933229371", phone);
+  addField("entry.1013425097", location);
+
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+
+  const message = `Hi, I just applied for GroomFit. My name is ${name}.`;
+  const waLink = `https://wa.me/919588859960?text=${encodeURIComponent(message)}`;
+  document.getElementById("whatsappBtn").href = waLink;
+
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("successPopup").style.display = "flex";
+
+  this.reset();
 });
 
 </script>
 
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+  
 </body>
 </html>
