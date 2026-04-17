@@ -62,28 +62,34 @@ body{
   font-size:14px;
 }
 
-/* ===== JUMP BUTTON (FIXED) ===== */
+
+/* ===== JUMP BUTTON (HIGH-CONVERSION) ===== */
 .jump-btn{
   position:fixed;
   top:25px;
   right:25px;
-  background:rgba(20,20,20,0.7);
-  backdrop-filter:blur(10px);
-  color:#C9A84C;
-  padding:12px 20px;
-  border-radius:8px;
+
+  background:#C9A84C; /* FILLED GOLD */
+  color:#000; /* BLACK TEXT */
+
+  padding:16px 28px; /* BIGGER */
+  border-radius:10px;
+
   text-decoration:none;
-  font-size:14px;
-  font-weight:500;
-  border:1px solid rgba(201,168,76,0.3);
+  font-size:16px;
+  font-weight:600;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
   z-index:99999;
+
   transition:all 0.3s ease;
 }
 
+/* HOVER */
 .jump-btn:hover{
-  background:#C9A84C;
-  color:#000;
-  transform:translateY(-2px);
+  background:#e0b84f;
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 15px 40px rgba(0,0,0,0.7);
 }
 
 /* ===== TOP ===== */
