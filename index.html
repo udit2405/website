@@ -178,6 +178,7 @@ html {
   .nav-logo span { color: var(--gold); }
 
   .nav-links {
+    
   display: flex;
   gap: 2rem;
   list-style: none;
@@ -329,10 +330,15 @@ html {
 }
   .hero-bg-video {
   object-fit: cover;
-    @media (max-width: 768px) {
+  width: 100%;
+  height: 100%;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
   .mobile-video {
     object-fit: contain;
-    transform: scale(0.55); /* adjust this */
+    transform: scale(0.8); /* try 0.75–0.9 */
   }
 }
   width: 100%;
@@ -1947,13 +1953,29 @@ overflow: hidden;
 
   
  <ul class="nav-links">
+
+  <!-- PRIMARY (same page) -->
+
   <li><a href="#program">Program</a></li>
+
   <li><a href="#transformations">Results</a></li>
+
   <li><a href="#pricing">Pricing</a></li>
+
   <li><a href="#testimonials">Reviews</a></li>
-  <li><a href="problem.html">Problem</a></li>
-  <li><a href="#how">How</a></li>
-  <li><a href="why-trust-us.html">Experts</a></li>
+
+  <!-- DIVIDER -->
+
+  <li class="nav-divider"></li>
+
+  <!-- SECONDARY (new pages) -->
+
+  <li class="nav-secondary"><a href="problem.html">Problem</a></li>
+
+  <li class="nav-secondary"><a href="how.html">How</a></li>
+
+  <li class="nav-secondary"><a href="why-trust-us.html">Experts</a></li>
+
 </ul>
   <a href="#pricing" class="nav-cta nav-cta-primary">View Pricing</a>
 </nav>
@@ -2000,7 +2022,10 @@ You don’t need more time — you need the right plan, right now.
     
 
    <div class="hero-cta-group">
-  <a href="#" onclick="openPopup(); return false;" class="btn-primary">
+  <button onclick="openPopup()" class="btn-primary">
+  Check If I Qualify
+  <span>→</span>
+</button>
     Check If I Qualify
     <span>→</span>
   </a>
