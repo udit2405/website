@@ -1,173 +1,227 @@
-<section style="background:#080808;color:#fff;padding:100px 20px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div style="max-width:1100px;margin:auto;">
+<title>Why Grooms Fail | GroomFit</title>
 
-<!-- BACK -->
-<a href="index.html" style="color:#C9A84C;text-decoration:none;font-size:14px;">
-← Back to Home
-</a>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+body{
+  margin:0;
+  font-family:'Outfit',sans-serif;
+  color:#fff;
+  background:#000;
+  overflow-x:hidden;
+}
+
+/* ===== VIDEO BACKGROUND ===== */
+.bg-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+.video-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85));
+  z-index:-1;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:100px 20px;
+}
+
+/* ===== HERO ===== */
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;
+  line-height:1.2;
+}
+
+.sub{
+  color:#aaa;
+  font-size:18px;
+  max-width:600px;
+  margin-top:15px;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-top:60px;
+}
+
+.card{
+  background:rgba(20,20,20,0.6);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:12px;
+  border:1px solid rgba(201,168,76,0.2);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#C9A84C;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#aaa;
+  font-size:14px;
+}
+
+/* ===== CENTER SECTION ===== */
+.center{
+  text-align:center;
+  padding:100px 20px;
+}
+
+.highlight{
+  color:#C9A84C;
+  font-weight:600;
+  margin-top:20px;
+  font-size:22px;
+}
+
+/* ===== CTA ===== */
+.cta{
+  text-align:center;
+  padding:100px 20px;
+}
+
+.btn{
+  background:#C9A84C;
+  color:#000;
+  padding:16px 30px;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
+}
+
+/* ===== BACK LINK ===== */
+.back{
+  color:#C9A84C;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:768px){
+  h1{font-size:32px;}
+  .bg-video{transform:scale(1.2);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🎥 BACKGROUND VIDEO -->
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="problem_back.mp4" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
 
 <!-- HERO -->
-<h1 style="
-font-family:'Cormorant Garamond',serif;
-font-size:48px;
-margin-top:30px;
-line-height:1.2;
-max-width:800px;
-">
-Why <span style="color:#C9A84C;">90% of Grooms Fail</span>  
+<div class="container">
+
+<a href="index.html" class="back">← Back to Home</a>
+
+<h1>
+Why <span style="color:#C9A84C;">90% of Grooms Fail</span><br>
 Their Wedding Transformation
 </h1>
 
-<p style="color:#aaa;font-size:18px;max-width:600px;margin-top:15px;">
+<p class="sub">
 It’s not lack of effort.  
 It’s following the wrong system for a deadline that actually matters.
 </p>
 
-</div>
+<!-- CARDS -->
+<div class="grid">
 
-</section>
-
-
-<!-- 🔥 PAIN CARDS -->
-<section style="background:#0E0E0E;padding:80px 20px;">
-
-<div style="max-width:1100px;margin:auto;">
-
-<h2 style="
-text-align:center;
-font-size:32px;
-margin-bottom:60px;
-font-family:'Cormorant Garamond',serif;
-">
-Where Most Grooms Go Wrong
-</h2>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-">
-
-<!-- CARD 1 -->
-<div style="
-background:#181818;
-padding:30px;
-border-radius:12px;
-border:1px solid rgba(201,168,76,0.15);
-transition:0.3s;
-">
-<h3 style="margin-bottom:10px;">🏋️ Gym Membership</h3>
-<p style="color:#aaa;font-size:14px;">
+<div class="card">
+<h3>🏋️ Gym Membership</h3>
+<p>
 No structured plan. No deadline focus.  
 You’re just another member hoping discipline saves you.
 </p>
 </div>
 
-<!-- CARD 2 -->
-<div style="
-background:#181818;
-padding:30px;
-border-radius:12px;
-border:1px solid rgba(201,168,76,0.15);
-">
-<h3 style="margin-bottom:10px;">📱 YouTube / AI Plans</h3>
-<p style="color:#aaa;font-size:14px;">
+<div class="card">
+<h3>📱 YouTube / AI Plans</h3>
+<p>
 Generic workouts. No accountability.  
-You start strong — then disappear in 2 weeks.
+You start strong — then fall off quickly.
 </p>
 </div>
 
-<!-- CARD 3 -->
-<div style="
-background:#181818;
-padding:30px;
-border-radius:12px;
-border:1px solid rgba(201,168,76,0.15);
-">
-<h3 style="margin-bottom:10px;">⏳ Last-Minute Panic</h3>
-<p style="color:#aaa;font-size:14px;">
-Crash dieting. No structure.  
-You show up tired, flat, and disappointed.
+<div class="card">
+<h3>⏳ Last-Minute Panic</h3>
+<p>
+Crash dieting. Poor results.  
+You show up tired instead of confident.
 </p>
 </div>
 
 </div>
+
 </div>
-</section>
 
-
-<!-- 🔥 REALITY STRIKE -->
-<section style="background:#080808;padding:100px 20px;text-align:center;">
-
-<div style="max-width:800px;margin:auto;">
-
-<h2 style="
-font-size:36px;
-font-family:'Cormorant Garamond',serif;
-margin-bottom:20px;
-">
+<!-- REALITY -->
+<div class="center">
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;">
 The Hard Truth
 </h2>
 
-<p style="
-color:#aaa;
-font-size:18px;
-line-height:1.7;
-">
-Your wedding is a fixed deadline.  
-Your current fitness approach isn’t built for deadlines.
+<p style="color:#aaa;font-size:18px;">
+Your wedding has a deadline.  
+Your fitness approach doesn’t.
 </p>
 
-<p style="
-margin-top:20px;
-font-size:22px;
-color:#C9A84C;
-font-weight:600;
-">
+<p class="highlight">
 That’s why most grooms fail.
 </p>
-
 </div>
-</section>
 
+<!-- CTA -->
+<div class="cta">
 
-<!-- 🔥 SOLUTION TRANSITION -->
-<section style="
-background:linear-gradient(135deg,#1a1405,#0a0a0a);
-padding:100px 20px;
-text-align:center;
-border-top:1px solid rgba(201,168,76,0.2);
-">
-
-<div style="max-width:800px;margin:auto;">
-
-<h2 style="
-font-size:38px;
-font-family:'Cormorant Garamond',serif;
-margin-bottom:20px;
-">
+<h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;">
 You Don’t Need More Effort  
-You Need the <span style="color:#C9A84C;">Right System</span>
+You Need the Right System
 </h2>
 
-<p style="color:#aaa;font-size:18px;">
-A system designed for a deadline.  
-A system built specifically for grooms.
-</p>
-
-<a href="index.html#pricing" style="
-display:inline-block;
-margin-top:30px;
-background:#C9A84C;
-color:#000;
-padding:16px 30px;
-border-radius:6px;
-font-weight:600;
-text-decoration:none;
-">
+<a href="index.html#pricing" class="btn">
 See The Program →
 </a>
 
 </div>
-</section>
+
+</body>
+</html>
