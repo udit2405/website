@@ -303,9 +303,26 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* use cover, not contain */
   z-index: 0;
   opacity: 0.5;
+  background: black;
+}
+
+@media (max-width: 768px) {
+  .desktop-video {
+    display: none;
+  }
+
+  .mobile-video {
+    display: block;
+  }
+}
+  .hero-bg-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background: black;
 }
     
   #hero {
@@ -1930,8 +1947,14 @@ overflow: hidden;
 
   
 <section id="hero">
-  <video autoplay muted loop playsinline class="hero-bg-video">
+  <!-- Desktop Video -->
+<video autoplay muted loop playsinline class="hero-bg-video desktop-video">
   <source src="background_video.mp4" type="video/mp4">
+</video>
+
+<!-- Mobile Video -->
+<video autoplay muted loop playsinline class="hero-bg-video mobile-video">
+  <source src="mob_video.mp4" type="video/mp4">
 </video>
   <div class="hero-ring hero-ring-1"></div>
   <div class="hero-ring hero-ring-2"></div>
