@@ -1,27 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why Trust Us | GroomFit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 
-/* ===== JUMP BUTTON ===== */
-.jump-btn{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:#C9A84C;
-  color:#000;
-  padding:14px 26px;
-  border-radius:10px;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  z-index:9999;
-  transition:all 0.3s ease;
-}
-.jump-btn:hover{
-  background:#e0b84f;
-  transform:translateY(-3px) scale(1.05);
-}
-
-/* ===== BASE ===== */
+/* BASE */
 body {
   margin: 0;
   color: #eaeaea;
@@ -31,10 +23,23 @@ body {
     url("gym.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
 }
 
-/* ===== CONTENT ===== */
+/* BUTTON */
+.jump-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#C9A84C;
+  color:#000;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  z-index:9999;
+}
+
+/* CONTENT */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -42,9 +47,9 @@ body {
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
+  font-family: 'Playfair Display';
 }
 
 .gold { color: #C9A84C; }
@@ -52,65 +57,51 @@ h1 {
 .subtext {
   text-align: center;
   max-width: 700px;
-  margin: 20px auto 40px; /* 🔥 reduced */
+  margin: 20px auto 40px;
   color: #aaa;
 }
 
-/* ===== BADGES ===== */
+/* BADGES */
 .badges {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   gap: 18px;
-  margin-bottom: 20px; /* 🔥 MAJOR FIX */
+  margin-bottom: 20px; /* FIX */
 }
 
 .badge {
-  text-align:center;
-  padding:18px 14px;
+  padding:18px;
   max-width:240px;
-  margin:auto;
   background:rgba(255,255,255,0.03);
   border-radius:12px;
-  border:1px solid rgba(255,255,255,0.05);
-  transition:0.3s;
-}
-.badge:hover{
-  transform:translateY(-6px);
-  border-color:rgba(201,168,76,0.5);
-  box-shadow:0 10px 30px rgba(201,168,76,0.15);
+  text-align:center;
 }
 
-.badge-icon{font-size:20px;margin-bottom:6px;}
-.badge-title{font-size:15px;font-weight:600;margin-bottom:6px;}
-.badge p{color:#aaa;font-size:13px;}
+.badge-icon{font-size:20px;}
+.badge-title{font-size:15px;font-weight:600;}
+.badge p{font-size:13px;color:#aaa;}
 
-/* ===== TEAM ===== */
+/* TEAM */
 .team{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  margin-top:-40px; /* 🔥 MAIN GAP FIX */
+  margin-top:-40px; /* FIX */
 }
 
 .card{
   background:rgba(255,255,255,0.03);
-  padding:16px 18px 20px;
+  padding:16px;
   border-radius:16px;
   text-align:center;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
-  border:1px solid rgba(201,168,76,0.4);
 }
 
 .avatar{
-  width:85px;
-  height:85px;
+  width:80px;
+  height:80px;
   margin:auto;
-  margin-top:-15px; /* 🔥 lifts content */
-  margin-bottom:8px;
+  margin-top:-20px; /* FIX */
   border-radius:50%;
   overflow:hidden;
   border:2px solid #C9A84C;
@@ -118,74 +109,40 @@ h1 {
 .avatar img{
   width:100%;
   height:100%;
-  object-fit:cover;
 }
 
-/* TEXT */
 .role{
-  font-size:0.8rem;
+  font-size:12px;
   color:#C9A84C;
-  margin-top:2px;
-  font-weight:500;
 }
 
 .desc{
-  font-size:0.83rem;
+  font-size:13px;
   color:#aaa;
-  margin-top:4px;
-  line-height:1.5;
 }
 
-/* ===== FLOATING BOX ===== */
+/* FLOATING BOX */
 .floating-box{
   position:fixed;
-  right:40px;
-  top:90px;
+  right:30px;
+  top:100px;
   width:200px;
   padding:20px;
-  border-radius:18px;
-  background:rgba(15,15,15,0.75);
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(201,168,76,0.3);
-  box-shadow:0 30px 80px rgba(0,0,0,0.7);
+  background:#111;
+  border-radius:15px;
   z-index:999;
-}
-
-.floating-box:hover{
-  transform:translateY(-4px) scale(1.02);
-}
-
-.floating-box .live{
-  color:#4CAF50;
-  font-size:13px;
-  margin-bottom:10px;
-}
-
-.floating-box .slots{
-  font-size:24px;
-  font-weight:600;
-  margin-bottom:20px;
 }
 
 .floating-box button{
   width:100%;
-  padding:13px;
+  padding:12px;
+  background:#C9A84C;
   border:none;
-  border-radius:10px;
-  background:linear-gradient(135deg,#C9A84C,#E8C96A);
-  color:#000;
-  font-weight:600;
-  font-size:14px;
+  border-radius:8px;
   cursor:pointer;
-  transition:0.3s;
 }
 
-.floating-box button:hover{
-  transform:translateY(-2px) scale(1.02);
-  box-shadow:0 12px 30px rgba(201,168,76,0.4);
-}
-
-/* ===== WHATSAPP ===== */
+/* WHATSAPP */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -197,8 +154,6 @@ h1 {
   align-items:center;
   justify-content:center;
   border-radius:50%;
-  z-index:9999;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 .whatsapp-float i{
@@ -206,31 +161,130 @@ h1 {
   color:#fff;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .floating-box{
-    bottom:20px;
-    top:auto;
-    right:20px;
-    width:90%;
-  }
-  .badges{grid-template-columns:1fr;}
-}
-
-/* DOT */
-.dot{
-  width:8px;
-  height:8px;
-  background:#4CAF50;
-  border-radius:50%;
-  display:inline-block;
-  margin-right:6px;
-  animation:blink 1.2s infinite;
-}
-
-@keyframes blink{
-  0%,100%{opacity:1;}
-  50%{opacity:0.3;}
-}
-
 </style>
+</head>
+
+<body>
+
+<a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
+
+<div class="container">
+
+<h1>Why Trust <span class="gold">GroomFit</span></h1>
+
+<p class="subtext">
+We are not influencers chasing trends. GroomFit is built by professionals who understand transformation deeply.
+</p>
+
+<div class="badges">
+  <div class="badge">
+    <div class="badge-icon">🏅</div>
+    <div class="badge-title">5+ Years Experience</div>
+    <p>Deep expertise in groom-specific transformation planning.</p>
+  </div>
+
+  <div class="badge">
+    <div class="badge-icon">✅</div>
+    <div class="badge-title">Certified Coaches</div>
+    <p>Internationally certified trainers delivering results.</p>
+  </div>
+
+  <div class="badge">
+    <div class="badge-icon">📍</div>
+    <div class="badge-title">India-Focused</div>
+    <p>Plans designed for Indian wedding timelines.</p>
+  </div>
+</div>
+
+<div class="team">
+
+  <div class="card">
+    <div class="avatar"><img src="jitu.jpg"></div>
+    <div>Jinendra Sharma</div>
+    <div class="role">Fat Loss Specialist</div>
+    <div class="desc">Helped 100+ men transform.</div>
+  </div>
+
+  <div class="card">
+    <div class="avatar"><img src="udit.jpg"></div>
+    <div>Udit Sahai</div>
+    <div class="role">Founder</div>
+    <div class="desc">Built GroomFit for real results.</div>
+  </div>
+
+  <div class="card">
+    <div class="avatar"><img src="rahul.jpg"></div>
+    <div>Rahul Sharma</div>
+    <div class="role">Strength Coach</div>
+    <div class="desc">Builds lean muscle systems.</div>
+  </div>
+
+</div>
+
+</div>
+
+<div class="floating-box">
+  <div>3 / 11 Slots Left</div>
+  <button onclick="openPopup()">Check If I Qualify →</button>
+</div>
+
+<a href="https://wa.me/919588859960" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- POPUP -->
+<div id="leadPopup" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:#111;padding:25px;border-radius:12px;width:300px;">
+    <span onclick="closePopup()" style="float:right;cursor:pointer;">✖</span>
+
+    <h3>Apply</h3>
+
+    <form id="leadForm">
+      <input name="name" placeholder="Name" required style="width:100%;margin:5px 0;padding:10px;">
+      <input name="phone" placeholder="Phone" required style="width:100%;margin:5px 0;padding:10px;">
+      <input name="location" placeholder="Location" required style="width:100%;margin:5px 0;padding:10px;">
+      <button type="submit" style="width:100%;padding:10px;background:#00ff88;border:none;">Submit</button>
+    </form>
+  </div>
+</div>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+function openPopup(){
+  document.getElementById("leadPopup").style.display="flex";
+}
+
+function closePopup(){
+  document.getElementById("leadPopup").style.display="none";
+}
+
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let f = document.createElement("form");
+  f.method="POST";
+  f.action="https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  f.target="hidden_iframe";
+
+  function add(n,v){
+    let i=document.createElement("input");
+    i.type="hidden"; i.name=n; i.value=v;
+    f.appendChild(i);
+  }
+
+  add("entry.525461384", this.name.value);
+  add("entry.933229371", this.phone.value);
+  add("entry.1013425097", this.location.value);
+
+  document.body.appendChild(f);
+  f.submit();
+
+  alert("Submitted!");
+  closePopup();
+  this.reset();
+});
+</script>
+
+</body>
+</html>
