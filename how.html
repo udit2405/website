@@ -1,170 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How GroomFit Works</title>
 
-  <!-- COPY SAME CSS + FONTS FROM MAIN FILE -->
+<!-- FONT AWESOME (WHATSAPP ICON) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How It Works | GroomFit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+body{
+  margin:0;
+  font-family:'Outfit',sans-serif;
+  color:#fff;
+  background:#000;
+  overflow:hidden;
+}
+
+/* ===== VIDEO BACKGROUND ===== */
+.bg-video{
+  position:fixed;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9));
+  z-index:-1;
+}
+
+/* ===== WRAPPER ===== */
+.wrapper{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* ===== BACK BUTTON ===== */
+.back{
+  position:absolute;
+  left:25px;
+  top:25px;
+  color:#C9A84C;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* ===== JUMP BUTTON ===== */
+.jump-btn{
+  position:fixed;
+  top:25px;
+  right:25px;
+  background:#C9A84C;
+  color:#000;
+  padding:16px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  z-index:99999;
+  transition:0.3s;
+}
+
+.jump-btn:hover{
+  background:#e0b84f;
+  transform:translateY(-3px) scale(1.05);
+}
+
+/* ===== HEADLINE ===== */
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.sub{
+  color:#aaa;
+  font-size:15px;
+  margin-bottom:30px;
+}
+
+/* ===== STEPS ===== */
+.steps{
+  display:flex;
+  gap:18px;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.step{
+  background:rgba(20,20,20,0.6);
+  backdrop-filter:blur(10px);
+  padding:18px;
+  border-radius:12px;
+  width:220px;
+  border:1px solid rgba(201,168,76,0.25);
+  transition:0.3s;
+}
+
+.step:hover{
+  transform:translateY(-5px);
+  border-color:#C9A84C;
+}
+
+.step h3{
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.step p{
+  font-size:13px;
+  color:#aaa;
+}
+
+/* ===== CTA ===== */
+.cta h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  margin-bottom:12px;
+}
+
+.btn{
+  background:#C9A84C;
+  color:#000;
+  padding:14px 32px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#e0b84f;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  z-index:99999;
+}
+
+.whatsapp-float i{
+  font-size:32px;
+  color:#fff;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+  h1{font-size:28px;}
+
+  .steps{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .step{
+    width:90%;
+  }
+
+  .bg-video{
+    transform:scale(1.3);
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- OPTIONAL: COPY NAVBAR -->
+<!-- JUMP BUTTON -->
+<a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
 
-<section id="how" class="section">
-  
-<!-- ===== HOW IT WORKS ===== -->
-<section id="how" class="section">
-  <div class="section-inner">
-  <div class="steps-header reveal">
-  <span class="section-tag">The Process</span>
-  <h2 class="section-title">How GroomFit <em class="gold italic">Works</em></h2>
-  <div class="divider" style="margin:1rem auto"></div>
-  <p class="section-sub" style="margin:0 auto">Four simple steps from today to the best shape of your life. We handle the complexity — you focus on executing.</p>
-  </div>
+<!-- VIDEO -->
+<video autoplay muted loop playsinline class="bg-video">
+  <source src="problem_back.mp4" type="video/mp4">
+</video>
 
-  <div class="steps-track">
-  <div class="steps-line"></div>
-  <div class="steps-grid">
-  <div class="step reveal" style="transition-delay:0.05s">
-  <div class="step-circle">01</div>
-  <h4>Apply</h4>
-  <p>Fill out a quick form about your wedding date, current fitness level, and goals. We review and accept serious applicants only.</p>
-  </div>
-  <div class="step reveal" style="transition-delay:0.12s">
-  <div class="step-circle">02</div>
-  <h4>Start My Transformation</h4>
-  <p>Within 48 hours, receive your personalised workout + diet plan built for your exact body type and wedding timeline.</p>
-  </div>
-  <div class="step reveal" style="transition-delay:0.19s">
-  <div class="step-circle">03</div>
-  <h4>Follow Daily Routine</h4>
-  <p>Execute your plan day by day. Your coach is with you every step — checking in, adjusting, and pushing you forward.</p>
-  </div>
-  <div class="step reveal" style="transition-delay:0.26s">
-  <div class="step-circle">04</div>
-  <h4>Transform Before Wedding</h4>
-  <p>Show up to your wedding looking elite. Confident. Aesthetic. Exactly the groom you always imagined being.</p>
-  </div>
-  </div>
-  </div>
-  </div>
-</section>
+<div class="overlay"></div>
 
+<!-- BACK -->
+<a href="index.html" class="back">← Back to Home</a>
 
+<!-- MAIN -->
+<div class="wrapper">
 
+  <h1>
+    How GroomFit <span style="color:#C9A84C;">Works</span>
+  </h1>
 
-
-  <!-- ===== GUARANTEE ===== -->
-<section id="guarantee" class="section">
-  <div class="section-inner">
-  <div class="guarantee-wrap reveal">
-  <span class="section-tag" style="display:inline-block">Zero Risk Guarantee</span>
-  <h2 class="section-title" style="text-align:center;margin-bottom:0.5rem">Try GroomFit Without Risk</h2>
-  <div class="divider" style="margin:1rem auto 1.75rem"></div>
-  <p class="section-sub">
-  We’re confident in our system because we’ve delivered results time and time again. If you follow the plan and don’t see measurable progress, we don’t deserve your money.
+  <p class="sub">
+    Simple. Structured. Built for your wedding deadline.
   </p>
 
-  <div class="guarantee-card">
-  <div class="guarantee-card-icon" aria-hidden="true">🛡️</div>
-  <h3 class="guarantee-card-title">7-Day No-Questions-Asked Refund</h3>
-  <ul class="guarantee-list">
-  <li>Try the program risk-free for 7 days</li>
-  <li>If you’re not satisfied, get a full refund</li>
-  <li>No awkward questions, no chasing support</li>
-  <li>Your results matter more than your payment</li>
-  </ul>
-  <p class="guarantee-card-strong">You either transform — or you don’t pay.</p>
+  <!-- STEPS -->
+  <div class="steps">
+
+    <div class="step">
+      <h3>1. Apply</h3>
+      <p>Tell us your wedding date, goals & current fitness level.</p>
+    </div>
+
+    <div class="step">
+      <h3>2. Get Plan</h3>
+      <p>Receive a personalised workout + Indian diet plan in 48 hours.</p>
+    </div>
+
+    <div class="step">
+      <h3>3. Execute</h3>
+      <p>Follow daily routine with coach tracking & accountability.</p>
+    </div>
+
+    <div class="step">
+      <h3>4. Transform</h3>
+      <p>Show up to your wedding confident, lean, and aesthetic.</p>
+    </div>
+
   </div>
 
-  <p class="guarantee-trust-line">We don’t work with everyone. But if we accept you, we’re fully committed to getting you results.</p>
+  <!-- CTA -->
+  <div class="cta">
+    <h2>You Don’t Need More Effort. You Need the Right System.</h2>
+    <a href="index.html#pricing" class="btn">See The Program →</a>
+  </div>
 
-  <a href="#" onclick="openPopup(); return false;" class="btn-primary guarantee-cta">
-  Start Risk-Free <span>→</span>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919588859960?text=Hi%20GroomFit,%20I%20want%20to%20start%20my%20transformation"
+   class="whatsapp-float"
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
 </a>
-  </div>
-  </div>
-</section>
-
-  
-<!-- ===== URGENCY ===== -->
-<section id="urgency" class="section">
-  <div class="section-inner">
-  <div class="urgency-inner reveal">
-  <div class="urgency-badge">
-  <span class="dot"></span>
-  Live — Limited Slots Available This Month
-  </div>
-  <h2 class="urgency-title">We Only Accept <em class="gold italic">Serious Grooms</em></h2>
-  <p class="urgency-sub">GroomFit maintains limited slots per month to ensure every client gets focused, personalised coaching. We don't onboard everyone who applies.</p>
-
-  <div class="slots-row">
-  <div class="slot taken"></div>
-  <div class="slot taken"></div>
-  <div class="slot taken"></div>
-  <div class="slot taken"></div>
-  <div class="slot taken"></div>
-  <div class="slot taken"></div>
-  <div class="slot taken"></div>
-  <div class="slot taken"></div>
-  <div class="slot open"></div>
-  <div class="slot open"></div>
-  <div class="slot open"></div>
-  </div>
-
-  <p class="slots-label"><span>3 slots remaining</span> out of 11 for this month</p>
-
-  <a href="#final-cta" class="btn-primary" style="font-size:1rem;padding:18px 48px">
-  Claim My Slot Now →
-  </a>
-  </div>
-  </div>
-</section>
-
-<!-- ===== FINAL CTA ===== -->
-<section id="final-cta" class="section">
-  <div class="section-inner">
-  <div class="final-cta-inner reveal">
-  <span class="section-tag" style="display:block;text-align:center">Your Transformation Starts Today</span>
-  <h2 class="final-cta-title">Start Your 90-Day <em class="gold italic">Wedding Transformation</em></h2>
-  <p class="final-cta-sub">Don't wait. Don't regret. Your wedding photos last a lifetime. Your body transformation starts now.</p>
-
- <a href="#" onclick="openPopup(); return false;" class="btn-primary" style="font-size:1.05rem;padding:20px 54px">
-  Check If I Qualify  &nbsp;→
-</a>
-
-  <div class="final-disclaimer">
-  Secure application · 100% confidential · Response within 24 hours
-  </div>
-
-  <div style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:3.5rem;padding-top:3rem;border-top:1px solid rgba(201,168,76,0.1)">
-  <div style="text-align:center">
-  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">100+</div>
-  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Grooms Transformed</div>
-  </div>
-  <div style="text-align:center">
-  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">90</div>
-  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Day Max Program</div>
-  </div>
-  <div style="text-align:center">
-  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">5★</div>
-  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Average Rating</div>
-  </div>
-  <div style="text-align:center">
-  <div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)">48hr</div>
-  <div style="font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Plan Delivery</div>
-  </div>
-  </div>
-  </div>
-  </div>
-</section>
-
-
-
-  
-</section>
 
 </body>
 </html>
