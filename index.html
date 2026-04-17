@@ -296,6 +296,18 @@ html {
   /* ============================================================
   HERO
   ============================================================ */
+
+    .hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.3;
+}
+    
   #hero {
   min-height: 92vh;
   display: flex;
@@ -312,11 +324,9 @@ html {
   position: absolute;
   inset: 0;
   background:
-  radial-gradient(ellipse 70% 55% at 70% 60%, rgba(201,168,76,0.08) 0%, transparent 65%),
-  radial-gradient(ellipse 50% 50% at 20% 30%, rgba(201,168,76,0.04) 0%, transparent 60%),
-  linear-gradient(160deg, #0a0a0a 0%, #0e0c08 50%, #0a0a0a 100%);
-  z-index: 0;
-  }
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+  z-index: 1;
+}
 
   /* Decorative rings */
   .hero-ring {
@@ -1920,6 +1930,9 @@ overflow: hidden;
 
   
 <section id="hero">
+  <video autoplay muted loop playsinline class="hero-bg-video">
+  <source src="background_video.mp4" type="video/mp4">
+</video>
   <div class="hero-ring hero-ring-1"></div>
   <div class="hero-ring hero-ring-2"></div>
   <div class="hero-inner">
