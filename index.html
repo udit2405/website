@@ -1646,6 +1646,88 @@ overflow: hidden;
     .modal-title { font-size: 1.4rem; }
   }
 
+  /* ===== QUESTION BOX ===== */
+.qbox {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 800;
+  font-family: 'Outfit', sans-serif;
+}
+
+.qbox-toggle {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.qbox-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.qbox-content {
+  display: none;
+  margin-top: 10px;
+  width: 260px;
+  background: rgba(20,20,20,0.95);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.qbox.active .qbox-content {
+  display: block;
+}
+
+.qbox-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.qbox-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.qbox input,
+.qbox textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(201,168,76,0.2);
+  background: var(--dark-3);
+  color: white;
+  font-size: 0.75rem;
+}
+
+.qbox textarea {
+  resize: none;
+  height: 60px;
+}
+
+.qbox button {
+  width: 100%;
+  padding: 10px;
+  background: var(--gold);
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+    
+
+    
   /* ============================================================
   WHATSAPP FAB
   ============================================================ */
@@ -3176,9 +3258,57 @@ setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 </div>
     
   </div>
-</div>
+</div>  <!-- END successPopup -->
 
-  <script>
+<script>
+// Toggle box
+function toggleQBox() {
+  const box = document.getElementById("questionBox");
+  box.classList.toggle("active");
+}
+
+// Send to WhatsApp
+function sendToWhatsApp() {
+  const name = document.getElementById("qName").value || "there";
+  const msg = document.getElementById("qMsg").value;
+
+  if (!msg.trim()) {
+    alert("Please type your question");
+    return;
+  }
+
+  const text = `Hi, I have a question about GroomFit.\n\nName: ${name}\nQuestion: ${msg}`;
+  const encoded = encodeURIComponent(text);
+
+  const phone = "919588859960";
+  window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
+}
+</script>
+
+  
+
+  // Toggle box
+function toggleQBox() {
+  const box = document.getElementById("questionBox");
+  box.classList.toggle("active");
+}
+
+// Send to WhatsApp
+function sendToWhatsApp() {
+  const name = document.getElementById("qName").value || "there";
+  const msg = document.getElementById("qMsg").value;
+
+  if (!msg.trim()) {
+    alert("Please type your question");
+    return;
+  }
+
+  const text = `Hi, I have a question about GroomFit.\n\nName: ${name}\nQuestion: ${msg}`;
+  const encoded = encodeURIComponent(text);
+
+  const phone = "919588859960";
+  window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
+}
 
 </script>
   <script>
@@ -3272,6 +3402,27 @@ if (slider3 && afterImage3) {
 
 <div class="pricing-tooltip">View Pricing</div>
 
+  <!-- ===== QUICK QUESTION BOX ===== -->
+<div id="questionBox" class="qbox">
+  
+  <!-- Collapsed Button -->
+  <div class="qbox-toggle" onclick="toggleQBox()">
+    💬 Have a question?
+  </div>
+
+  <!-- Expanded Box -->
+  <div class="qbox-content">
+    <p class="qbox-title">Not sure if this is for you?</p>
+    <p class="qbox-sub">Ask anything. We’ll help.</p>
+
+    <input type="text" id="qName" placeholder="Your name (optional)">
+    <textarea id="qMsg" placeholder="Type your question..."></textarea>
+
+    <button onclick="sendToWhatsApp()">Send on WhatsApp</button>
+  </div>
+
+</div>
+  
 </body>
 </html>
 
