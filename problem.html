@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -185,6 +187,33 @@ h1{
   }
 }
 
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:60px;
+  height:60px;
+  background:linear-gradient(135deg,#C9A84C,#e0b84f);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+  z-index:999;
+  transition:all 0.3s ease;
+}
+
+.whatsapp-float i{
+  font-size:28px;
+  color:#000;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.1);
+  box-shadow:0 12px 35px rgba(0,0,0,0.6);
+}
+  
 </style>
 </head>
 
@@ -249,6 +278,11 @@ h1{
   </div>
 
 </div>
-
+<a href="https://wa.me/919588859960?text=Hi%20GroomFit,%20I%20want%20to%20start%20my%20transformation"
+   class="whatsapp-float"
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
+  
 </body>
 </html>
