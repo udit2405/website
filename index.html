@@ -341,10 +341,6 @@ html {
     transform: scale(0.8); /* try 0.75–0.9 */
   }
 }
-  width: 100%;
-  height: 100%;
-  background: black;
-}
     
   #hero {
   min-height: 92vh;
@@ -3261,39 +3257,8 @@ setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 </div>  <!-- END successPopup -->
 
 <script>
-// Toggle box
-function toggleQBox() {
-  const box = document.getElementById("questionBox");
-  box.classList.toggle("active");
-}
 
-// Send to WhatsApp
-function sendToWhatsApp() {
-  const name = document.getElementById("qName").value || "there";
-  const msg = document.getElementById("qMsg").value;
-  const weddingDate = document.getElementById("miniDate")?.value || "not set";
-
-  if (!msg.trim()) {
-    alert("Please type your question");
-    return;
-  }
-
-  const text = `Hi, I have a question about GroomFit.
-
-Name: ${name}
-Wedding Date: ${weddingDate}
-Question: ${msg}`;
-
-  const encoded = encodeURIComponent(text);
-  const phone = "919588859960";
-
-  window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
-}
-</script>
-
-  
-
-  // Toggle box
+   // Toggle box
 function toggleQBox() {
   const box = document.getElementById("questionBox");
   box.classList.toggle("active");
@@ -3306,6 +3271,8 @@ function toggleQBox() {
   }
 }, 15000);
   
+</script>
+  
 
   <script>
 
@@ -3314,7 +3281,18 @@ function toggleQBox() {
   if (popup) popup.style.display = "none";
 
 }
-document.getElementById("leadForm").addEventListener("submit", function(e) {
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("leadForm");
+  if (!form) return;
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    // rest of your code...
+  });
+});{
   e.preventDefault();
 
   const form = this;
