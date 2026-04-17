@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Why Trust Us | GroomFit</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== GLOBAL ===== */
+/* ===== BASE ===== */
 body {
   margin: 0;
   background: #0c0c0c;
@@ -23,41 +24,40 @@ body {
   padding: 60px 20px;
 }
 
-/* ===== RIGHT FLOAT BOX ===== */
-.floating-box {
-  position: fixed;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 260px;
-  background: rgba(20,20,20,0.9);
-  border: 1px solid rgba(201,168,76,0.3);
-  border-radius: 12px;
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 2.8rem;
+}
+
+.gold { color: #C9A84C; }
+
+.subtext {
+  text-align: center;
+  max-width: 700px;
+  margin: 20px auto 60px;
+  color: #aaa;
+}
+
+/* ===== BADGES ===== */
+.badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 80px;
+}
+
+.badge {
+  background: rgba(255,255,255,0.03);
   padding: 20px;
-  z-index: 999;
-  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
 }
 
-.live {
-  font-size: 12px;
-  color: #4CAF50;
-  margin-bottom: 8px;
-}
-
-.slots {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.btn {
-  width: 100%;
-  padding: 12px;
-  background: #C9A84C;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+.badge:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201,168,76,0.4);
 }
 
 /* ===== TEAM ===== */
@@ -72,6 +72,12 @@ body {
   padding: 25px;
   border-radius: 16px;
   text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border: 1px solid rgba(201,168,76,0.4);
 }
 
 .avatar {
@@ -90,11 +96,61 @@ body {
   object-fit: cover;
 }
 
+/* ===== FLOATING BOX ===== */
+.floating-box {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  padding: 22px;
+  border-radius: 14px;
+  background: rgba(18,18,18,0.9);
+  border: 1px solid rgba(201,168,76,0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+/* LIVE DOT */
+.live {
+  font-size: 12px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+/* SLOT TEXT */
+.slots {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* PREMIUM BUTTON */
+.cta-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #C9A84C, #E8C96A);
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 0 rgba(201,168,76,0);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(201,168,76,0.4);
+}
+
 /* ===== POPUP ===== */
-#leadPopup, #successPopup {
+.popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   display: none;
   align-items: center;
   justify-content: center;
@@ -108,7 +164,7 @@ body {
   width: 320px;
 }
 
-/* MOBILE FIX */
+/* MOBILE */
 @media(max-width:768px){
   .floating-box {
     bottom: 20px;
@@ -126,70 +182,78 @@ body {
 
 <div class="container">
 
-<h1 style="text-align:center;">Why Trust GroomFit</h1>
+<h1>Why Trust <span class="gold">GroomFit</span></h1>
+
+<p class="subtext">
+We are not influencers chasing trends. GroomFit is built by professionals who understand transformation deeply — and execute it with precision.
+</p>
+
+<!-- BADGES -->
+<div class="badges">
+  <div class="badge">
+    <h5>🏅 5 Years Experience</h5>
+    <p>Deep expertise in groom-specific transformation planning.</p>
+  </div>
+
+  <div class="badge">
+    <h5>✅ Certified Coaches</h5>
+    <p>Internationally certified trainers delivering proven results.</p>
+  </div>
+
+  <div class="badge">
+    <h5>📍 India-Focused</h5>
+    <p>Plans designed for Indian lifestyle & wedding timelines.</p>
+  </div>
+</div>
 
 <!-- TEAM -->
 <div class="team">
 
 <div class="card">
-<div class="avatar"><img src="jitu.jpg"></div>
-<h4>Jinendra Sharma</h4>
-<p>Certified Trainer</p>
+  <div class="avatar"><img src="jitu.jpg"></div>
+  <div>Jinendra Sharma</div>
+  <div style="color:#C9A84C;">Certified Fitness Trainer</div>
+  <p style="color:#aaa;">100+ transformations in fat loss & recomposition.</p>
 </div>
 
 <div class="card">
-<div class="avatar"><img src="rahul.jpg"></div>
-<h4>Rahul Sharma</h4>
-<p>Strength Coach</p>
+  <div class="avatar"><img src="rahul.jpg"></div>
+  <div>Rahul Sharma</div>
+  <div style="color:#C9A84C;">Strength Coach</div>
+  <p style="color:#aaa;">Expert in lean muscle building & athletic programming.</p>
 </div>
 
 <div class="card">
-<div class="avatar"><img src="udit.jpg"></div>
-<h4>Udit Sahai</h4>
-<p>Founder</p>
+  <div class="avatar"><img src="udit.jpg"></div>
+  <div>Udit Sahai</div>
+  <div style="color:#C9A84C;">Founder</div>
+  <p style="color:#aaa;">Built GroomFit to ensure no groom regrets their physique.</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- ===== FLOATING BOX ===== -->
+<!-- FLOATING BOX -->
 <div class="floating-box">
   <div class="live">● Applications Live</div>
   <div class="slots">3 / 11 Slots Left</div>
-  <button class="btn" onclick="openPopup()">Check If I Qualify</button>
+  <button class="cta-btn" onclick="openPopup()">Check If I Qualify →</button>
 </div>
 
-<!-- ===== LEAD POPUP ===== -->
-<div id="leadPopup">
+<!-- POPUP -->
+<div id="popup" class="popup">
   <div class="popup-box">
 
     <h3>Check If You Qualify</h3>
 
-    <form id="leadForm">
-      <input type="text" name="name" placeholder="Name" required style="width:100%;margin-bottom:10px;padding:10px;">
-      <input type="tel" name="phone" placeholder="Phone" required style="width:100%;margin-bottom:10px;padding:10px;">
-      <input type="text" name="location" placeholder="Location" required style="width:100%;margin-bottom:10px;padding:10px;">
+    <form id="form">
+      <input type="text" placeholder="Name" required style="width:100%;margin-bottom:10px;padding:10px;">
+      <input type="tel" placeholder="Phone" required style="width:100%;margin-bottom:10px;padding:10px;">
+      <input type="text" placeholder="Location" required style="width:100%;margin-bottom:10px;padding:10px;">
 
-      <button type="submit" class="btn">Submit</button>
+      <button class="cta-btn">Submit</button>
     </form>
-
-  </div>
-</div>
-
-<!-- ===== SUCCESS POPUP ===== -->
-<div id="successPopup">
-  <div class="popup-box" style="text-align:center">
-
-    <h3>Application Received</h3>
-
-    <a id="whatsappBtn" href="#" target="_blank" class="btn" style="margin-bottom:10px;">
-      Continue on WhatsApp
-    </a>
-
-    <button onclick="closeSuccess()" style="background:none;border:none;color:#aaa;">
-      Maybe Later
-    </button>
 
   </div>
 </div>
@@ -197,31 +261,13 @@ body {
 <script>
 
 function openPopup(){
-  document.getElementById("leadPopup").style.display="flex";
+  document.getElementById("popup").style.display="flex";
 }
 
-function closePopup(){
-  document.getElementById("leadPopup").style.display="none";
-}
-
-function closeSuccess(){
-  document.getElementById("successPopup").style.display="none";
-}
-
-document.getElementById("leadForm").addEventListener("submit", function(e){
+document.getElementById("form").addEventListener("submit", function(e){
   e.preventDefault();
-
-  const name = this.name.value;
-
-  const msg = `Hi, I applied for GroomFit. My name is ${name}`;
-  const link = "https://wa.me/919588859960?text=" + encodeURIComponent(msg);
-
-  document.getElementById("whatsappBtn").href = link;
-
-  document.getElementById("leadPopup").style.display="none";
-  document.getElementById("successPopup").style.display="flex";
-
-  this.reset();
+  const msg = "Hi, I just applied for GroomFit";
+  window.open("https://wa.me/919588859960?text=" + encodeURIComponent(msg));
 });
 
 </script>
