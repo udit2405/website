@@ -344,12 +344,106 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
 
 </div>
   <div class="slots">3 / 11 Slots Left</div>
-  <button>Check If I Qualify →</button>
+  <button onclick="openPopup()">Check If I Qualify →</button>
 </div>
 
 <a href="https://wa.me/919588859960" target="_blank" class="whatsapp-float">
   <span><i class="fab fa-whatsapp"></i></span>
 </a>
 
+<!-- POPUP -->
+<div id="leadPopup" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+
+  <div style="
+    background: #111;
+    padding: 30px;
+    border-radius: 16px;
+    width: 320px;
+    color: #fff;
+    position: relative;
+  ">
+
+    <span onclick="closePopup()" style="
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 18px;
+    ">✖</span>
+
+    <h3>Check If You Qualify for GroomFit</h3>
+    <p style="font-size: 13px; margin-bottom: 20px;">
+      Apply below — we’ll get back within 24 hours
+    </p>
+
+    <form id="leadForm">
+
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
+
+      <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
+
+      <input type="text" name="location" placeholder="Location" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
+
+      <button type="submit" style="width:100%;padding:12px;background:#00ff88;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+function openPopup() {
+  document.getElementById("leadPopup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("leadPopup").style.display = "none";
+}
+
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = this;
+  const formData = new FormData(form);
+
+  const googleForm = document.createElement("form");
+  googleForm.method = "POST";
+  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  googleForm.target = "hidden_iframe";
+
+  function addField(name, value) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+
+  addField("entry.525461384", formData.get("name"));
+  addField("entry.933229371", formData.get("phone"));
+  addField("entry.1013425097", formData.get("location"));
+
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+
+  alert("Application submitted successfully!");
+
+  closePopup();
+  form.reset();
+});
+</script>
+  
 </body>
 </html>
