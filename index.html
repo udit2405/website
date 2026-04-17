@@ -1843,6 +1843,54 @@ overflow: hidden;
   height: 60px;
   width: auto;
 }
+/* ===== PRICING FAB ===== */
+.pricing-fab {
+  position: fixed;
+  bottom: 100px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+  z-index: 800;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(201,168,76,0.55);
+}
+
+.pricing-tooltip {
+  position: fixed;
+  bottom: 170px;
+  right: 28px;
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  z-index: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.pricing-fab:hover + .pricing-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+    
   </style>
 </head>
 <body>
@@ -3453,20 +3501,11 @@ if (slider3 && afterImage3) {
 }
     
 </script>
- <a href="#pricing" style="
-position: fixed;
-bottom: 100px;
-right: 28px;
-background: #C9A84C;
-color: black;
-padding: 12px 18px;
-border-radius: 8px;
-font-weight: 600;
-z-index: 1100;
-box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-">
-View Pricing
+ <a href="#pricing" class="pricing-fab">
+  ₹
 </a>
+
+<div class="pricing-tooltip">View Pricing</div>
 
 </body>
 </html>
