@@ -42,9 +42,12 @@ h1 {
 /* ===== BADGES ===== */
 .badges {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* force 3 columns */
+  gap: 25px;
   margin-bottom: 80px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .badge {
@@ -248,6 +251,7 @@ h1 {
 
 /* MOBILE */
 @media(max-width:768px){
+
   .floating-box {
     bottom: 20px;
     top: auto;
@@ -255,6 +259,11 @@ h1 {
     right: 20px;
     width: 90%;
   }
+
+  .badges {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+
 }
 
   /* ===== FLOATING WHATSAPP BUTTON ===== */
