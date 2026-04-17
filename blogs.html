@@ -6,23 +6,38 @@
 
 <title>GroomFit Guides</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* ===== TOP BUTTONS ===== */
+/* ===== BACKGROUND ===== */
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  color: white;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url("blog_back.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ===== NAV BUTTONS ===== */
 .back-home{
   position:fixed;
   top:20px;
   left:20px;
   background:rgba(20,20,20,0.6);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   color:#C9A84C;
-  padding:12px 20px;
-  border-radius:10px;
+  padding:12px 22px;
+  border-radius:12px;
   text-decoration:none;
   font-size:14px;
   border:1px solid rgba(201,168,76,0.3);
@@ -35,33 +50,30 @@
   color:#000;
 }
 
-/* ===== JUMP BUTTON ===== */
 .jump-btn{
   position:fixed;
   top:20px;
   right:20px;
-  background:#C9A84C;
+  background:linear-gradient(135deg,#C9A84C,#e0b84f);
   color:#000;
   padding:14px 26px;
-  border-radius:10px;
+  border-radius:12px;
   text-decoration:none;
   font-weight:600;
-  font-size:14px;
   z-index:9999;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
   transition:0.3s;
 }
 
 .jump-btn:hover{
-  background:#e0b84f;
   transform:translateY(-2px) scale(1.05);
 }
 
-/* ===== WHATSAPP FLOAT ===== */
+/* ===== WHATSAPP ===== */
 .whatsapp-float{
   position:fixed;
-  bottom:20px;
-  right:20px;
+  bottom:25px;
+  right:25px;
   width:65px;
   height:65px;
   background:#25D366;
@@ -79,57 +91,134 @@
   color:#fff;
 }
 
-/* ===== BASE ===== */
-body {
-  background: #0a0a0a;
-  color: white;
-  font-family: 'Outfit', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* ===== CONTENT ===== */
+/* ===== CONTAINER ===== */
 .container {
-  max-width: 800px;
-  margin: 140px auto; /* spacing fix */
+  max-width: 900px;
+  margin: 140px auto;
   padding: 20px;
+  text-align:center;
 }
 
+/* ===== HEADER ===== */
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: #C9A84C;
   margin-bottom: 10px;
 }
 
 .sub {
   color: #aaa;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-size: 16px;
 }
 
+/* ===== BLOG LIST ===== */
 .blog-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
+/* ===== PREMIUM CARD ===== */
 .blog-item {
-  padding: 18px 20px;
-  background: #111;
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 10px;
-  transition: 0.3s;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:22px 24px;
+  border-radius:16px;
+
+  background:rgba(0,0,0,0.55); /* adjusted for image */
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(201,168,76,0.25);
+
+  transition:all 0.35s ease;
+  position:relative;
+  overflow:hidden;
 }
 
-.blog-item:hover {
-  border-color: #C9A84C;
-  transform: translateX(6px);
+.blog-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(201,168,76,0.15),transparent);
+  opacity:0;
+  transition:0.4s;
 }
 
-.blog-item a {
-  color: #C9A84C;
-  text-decoration: none;
-  font-size: 1.1rem;
+.blog-item:hover{
+  transform:translateY(-6px) scale(1.01);
+  border-color:#C9A84C;
+  box-shadow:0 20px 60px rgba(201,168,76,0.15);
+}
+
+.blog-item:hover::before{
+  opacity:1;
+}
+
+/* LEFT */
+.blog-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  background:rgba(201,168,76,0.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  color:#C9A84C;
+}
+
+.blog-text{
+  text-align:left;
+}
+
+.blog-text a{
+  color:#fff;
+  text-decoration:none;
+  font-size:1.15rem;
+  font-weight:500;
+}
+
+.blog-text p{
+  font-size:13px;
+  color:#aaa;
+  margin-top:4px;
+}
+
+/* ARROW */
+.arrow{
+  font-size:18px;
+  color:#C9A84C;
+  transition:0.3s;
+}
+
+.blog-item:hover .arrow{
+  transform:translateX(5px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  h1{font-size:2.4rem;}
+
+  .blog-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .arrow{
+    align-self:flex-end;
+  }
 }
 
 </style>
@@ -137,10 +226,8 @@ h1 {
 
 <body>
 
-<!-- BACK -->
+<!-- NAV -->
 <a href="index.html" class="back-home">← Home</a>
-
-<!-- JUMP -->
 <a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
 
 <div class="container">
@@ -150,13 +237,82 @@ h1 {
 
 <div class="blog-list">
 
-<div class="blog-item"><a href="weight-loss-before-wedding.html">Weight Loss Before Wedding</a></div>
-<div class="blog-item"><a href="wedding-transformation-for-men.html">Wedding Transformation for Men</a></div>
-<div class="blog-item"><a href="how-to-get-fit-in-3-months.html">How to Get Fit in 3 Months</a></div>
-<div class="blog-item"><a href="build-muscle-before-wedding.html">Build Muscle Before Wedding</a></div>
-<div class="blog-item"><a href="reduce-weight-fast-before-wedding.html">Reduce Weight Fast Before Wedding</a></div>
-<div class="blog-item"><a href="workout-plan-before-wedding.html">Workout Plan Before Wedding</a></div>
-<div class="blog-item"><a href="personal-trainer-for-weight-loss.html">Personal Trainer for Weight Loss</a></div>
+<div class="blog-item">
+  <div class="blog-left">
+    <div class="icon"><i class="fas fa-fire"></i></div>
+    <div class="blog-text">
+      <a href="weight-loss-before-wedding.html">Weight Loss Before Wedding</a>
+      <p>Complete fat loss strategy for grooms</p>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+</div>
+
+<div class="blog-item">
+  <div class="blog-left">
+    <div class="icon"><i class="fas fa-dumbbell"></i></div>
+    <div class="blog-text">
+      <a href="wedding-transformation-for-men.html">Wedding Transformation for Men</a>
+      <p>End-to-end body transformation system</p>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+</div>
+
+<div class="blog-item">
+  <div class="blog-left">
+    <div class="icon"><i class="fas fa-clock"></i></div>
+    <div class="blog-text">
+      <a href="how-to-get-fit-in-3-months.html">How to Get Fit in 3 Months</a>
+      <p>Timeline-based transformation plan</p>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+</div>
+
+<div class="blog-item">
+  <div class="blog-left">
+    <div class="icon"><i class="fas fa-bolt"></i></div>
+    <div class="blog-text">
+      <a href="build-muscle-before-wedding.html">Build Muscle Before Wedding</a>
+      <p>Lean muscle strategy for aesthetics</p>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+</div>
+
+<div class="blog-item">
+  <div class="blog-left">
+    <div class="icon"><i class="fas fa-weight-scale"></i></div>
+    <div class="blog-text">
+      <a href="reduce-weight-fast-before-wedding.html">Reduce Weight Fast Before Wedding</a>
+      <p>Fast but sustainable fat loss approach</p>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+</div>
+
+<div class="blog-item">
+  <div class="blog-left">
+    <div class="icon"><i class="fas fa-list"></i></div>
+    <div class="blog-text">
+      <a href="workout-plan-before-wedding.html">Workout Plan Before Wedding</a>
+      <p>Structured weekly training routine</p>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+</div>
+
+<div class="blog-item">
+  <div class="blog-left">
+    <div class="icon"><i class="fas fa-user"></i></div>
+    <div class="blog-text">
+      <a href="personal-trainer-for-weight-loss.html">Personal Trainer for Weight Loss</a>
+      <p>When coaching becomes necessary</p>
+    </div>
+  </div>
+  <div class="arrow">→</div>
+</div>
 
 </div>
 
