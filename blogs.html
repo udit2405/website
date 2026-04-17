@@ -235,6 +235,25 @@ h1 {
 <h1>GroomFit Guides</h1>
 <p class="sub">Real strategies to transform your body before your wedding</p>
 
+  <input 
+  type="text" 
+  id="searchBox" 
+  placeholder="Search guides (fat loss, muscle, 3 months...)"
+  style="
+    width:100%;
+    max-width:500px;
+    padding:14px 18px;
+    border-radius:12px;
+    border:1px solid rgba(201,168,76,0.3);
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    outline:none;
+    margin-bottom:40px;
+    font-size:14px;
+    backdrop-filter:blur(10px);
+  "
+>
+
 <div class="blog-list">
 
 <div class="blog-item">
@@ -324,6 +343,26 @@ h1 {
    target="_blank">
    <i class="fab fa-whatsapp"></i>
 </a>
+
+
+<script>
+const searchBox = document.getElementById("searchBox");
+
+searchBox.addEventListener("keyup", function() {
+  const value = this.value.toLowerCase();
+  const items = document.querySelectorAll(".blog-item");
+
+  items.forEach(item => {
+    const text = item.innerText.toLowerCase();
+
+    if (text.includes(value)) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});
+</script>
 
 </body>
 </html>
