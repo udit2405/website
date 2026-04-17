@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<!-- ✅ FONT AWESOME (FIXED) -->
+<!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
 <title>Why Trust Us | GroomFit</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -132,77 +132,61 @@ h1 {
   object-fit:cover;
 }
 
-/* ===== FLOATING BOX ===== */
+/* ===== FLOATING BOX (FIXED PROPERLY) ===== */
 .floating-box{
   position:fixed;
   right:40px;
-  top:38%; /* 🔥 SHIFTED UP */
-  transform:translateY(-50%);
+  top:90px; /* 🔥 FIXED POSITION */
 
-  width:280px;
-  padding:24px;
-  border-radius:16px;
+  width:300px;
+  padding:26px;
+  border-radius:18px;
 
-  background:rgba(15,15,15,0.75); /* cleaner glass */
-  backdrop-filter:blur(16px);
+  background:rgba(15,15,15,0.75);
+  backdrop-filter:blur(18px);
 
   border:1px solid rgba(201,168,76,0.3);
-  box-shadow:0 25px 70px rgba(0,0,0,0.7);
+  box-shadow:0 30px 80px rgba(0,0,0,0.7);
 
   z-index:999;
   transition:all 0.3s ease;
 }
 
-/* subtle hover lift */
 .floating-box:hover{
-  transform:translateY(-52%) scale(1.02);
+  transform:translateY(-4px) scale(1.02);
 }
 
-/* LIVE TEXT */
 .floating-box .live{
   color:#4CAF50;
   font-size:13px;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
-/* SLOTS TEXT */
 .floating-box .slots{
-  font-size:22px;
+  font-size:24px;
   font-weight:600;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
-/* BUTTON UPGRADE */
 .floating-box button{
   width:100%;
-  padding:14px;
+  padding:15px;
   border:none;
-  border-radius:8px;
-
+  border-radius:10px;
   background:linear-gradient(135deg,#C9A84C,#E8C96A);
   color:#000;
-
   font-weight:600;
-  font-size:14px;
-
+  font-size:15px;
   cursor:pointer;
-  transition:all 0.3s ease;
+  transition:0.3s;
 }
 
 .floating-box button:hover{
   transform:translateY(-2px) scale(1.02);
-  box-shadow:0 10px 25px rgba(201,168,76,0.4);
-}
-  width:280px;
-  padding:22px;
-  border-radius:14px;
-  background:rgba(18,18,18,0.9);
-  border:1px solid rgba(201,168,76,0.25);
-  backdrop-filter:blur(12px);
-  z-index:999;
+  box-shadow:0 12px 30px rgba(201,168,76,0.4);
 }
 
-/* ===== WHATSAPP FLOAT ===== */
+/* ===== WHATSAPP ===== */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -216,10 +200,6 @@ h1 {
   border-radius:50%;
   z-index:9999;
   box-shadow:0 10px 25px rgba(0,0,0,0.4);
-  transition:0.3s;
-}
-.whatsapp-float:hover{
-  transform:scale(1.1);
 }
 .whatsapp-float i{
   font-size:30px;
@@ -231,7 +211,6 @@ h1 {
   .floating-box{
     bottom:20px;
     top:auto;
-    transform:none;
     right:20px;
     width:90%;
   }
@@ -296,12 +275,11 @@ We are not influencers chasing trends. GroomFit is built by professionals who un
 <!-- FLOATING BOX -->
 <div class="floating-box">
   <div class="live">● Applications Live</div>
-
-<div class="slots">3 / 11 Slots Left</div>
-  <button style="width:100%;padding:12px;background:#C9A84C;border:none;">Check If I Qualify →</button>
+  <div class="slots">3 / 11 Slots Left</div>
+  <button>Check If I Qualify →</button>
 </div>
 
-<!-- WHATSAPP BUTTON -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/919588859960" target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>
 </a>
