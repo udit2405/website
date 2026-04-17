@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Why Trust Us | GroomFit</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -16,46 +15,39 @@ body {
   background: #0c0c0c;
   color: #eaeaea;
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
 }
 
-/* ===== TYPOGRAPHY ===== */
-h1, h2 {
-  font-family: 'Playfair Display', serif;
+@media(max-width:900px){
+  .container { grid-template-columns: 1fr; }
 }
 
-h1 {
-  font-size: 2.8rem;
-  text-align: center;
-}
+/* ===== TYPO ===== */
+h1, h2 { font-family: 'Playfair Display', serif; }
+h1 { font-size: 2.6rem; }
 
-h2 {
-  font-size: 2rem;
-}
-
-.gold {
-  color: #C9A84C;
-}
+.gold { color: #C9A84C; }
 
 .subtext {
-  text-align: center;
   max-width: 700px;
-  margin: 20px auto 60px;
+  margin: 20px 0 40px;
   color: #aaa;
 }
 
 /* ===== BADGES ===== */
 .badges {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
   gap: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .badge {
@@ -63,28 +55,13 @@ h2 {
   padding: 20px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.05);
-  transition: 0.3s;
-}
-
-.badge:hover {
-  transform: translateY(-5px);
-  border-color: rgba(201,168,76,0.4);
-}
-
-.badge h5 {
-  margin: 10px 0;
-}
-
-.badge p {
-  font-size: 0.9rem;
-  color: #aaa;
 }
 
 /* ===== TEAM ===== */
 .team {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 25px;
 }
 
 .card {
@@ -93,59 +70,137 @@ h2 {
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.05);
   text-align: center;
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201,168,76,0.5);
-}
-
-/* ===== IMAGE FIX ===== */
 .avatar {
   width: 90px;
   height: 90px;
   margin: auto;
-  margin-bottom: 15px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #C9A84C;
 }
 
 .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* ===== TEXT ===== */
-.name {
-  font-size: 1.1rem;
-  margin: 10px 0 5px;
+/* ===== SIDE BOX ===== */
+.side-box {
+  position: sticky;
+  top: 100px;
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(201,168,76,0.3);
 }
 
-.role {
-  font-size: 0.85rem;
+/* LIVE */
+.live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
   color: #C9A84C;
-  margin-bottom: 10px;
 }
 
-.desc {
-  font-size: 0.9rem;
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%,100%{opacity:1;}
+  50%{opacity:0.2;}
+}
+
+.slots {
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+.note {
+  font-size: 13px;
   color: #aaa;
 }
 
-/* ===== BACK BUTTON ===== */
-.back {
-  display: inline-block;
-  margin-top: 60px;
-  color: #C9A84C;
-  text-decoration: none;
-  font-size: 0.9rem;
+/* CTA */
+.cta {
+  margin-top: 15px;
+  width: 100%;
+  padding: 14px;
+  background: #C9A84C;
+  color: black;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
 }
 
-.back:hover {
-  opacity: 0.7;
+/* ===== POPUP ===== */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 14px;
+  width: 320px;
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+.popup-box h3 {
+  margin-bottom: 10px;
+}
+
+.popup-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.popup-box button {
+  width: 100%;
+  padding: 12px;
+  background: #C9A84C;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* SUCCESS */
+#success {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:black;
+  color:white;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:9999;
+}
+
+/* BACK */
+.back {
+  display:inline-block;
+  margin-top:40px;
+  color:#C9A84C;
 }
 
 </style>
@@ -155,74 +210,111 @@ h2 {
 
 <div class="container">
 
+<!-- LEFT -->
+<div>
+
 <h1>Why Trust <span class="gold">GroomFit</span></h1>
 
 <p class="subtext">
 We are not influencers chasing trends. GroomFit is built by professionals who understand transformation deeply — and execute it with precision.
 </p>
 
-<!-- ===== BADGES ===== -->
 <div class="badges">
-
-<div class="badge">
-<h5>🏅 5 Years Experience</h5>
-<p>Deep expertise in groom-specific transformation planning.</p>
+<div class="badge">🏅 5 Years Experience</div>
+<div class="badge">✅ Certified Coaches</div>
+<div class="badge">📍 India-Focused</div>
 </div>
 
-<div class="badge">
-<h5>✅ Certified Coaches</h5>
-<p>Internationally certified trainers delivering proven results.</p>
-</div>
-
-<div class="badge">
-<h5>📍 India-Focused</h5>
-<p>Plans designed for Indian diet, lifestyle, and wedding timelines.</p>
-</div>
-
-</div>
-
-<!-- ===== TEAM ===== -->
 <div class="team">
 
 <div class="card">
-<div class="avatar">
-<img src="jitu.jpg">
-</div>
+<div class="avatar"><img src="jitu.jpg"></div>
 <div class="name">Jinendra Sharma</div>
-<div class="role">Certified Fitness Trainer</div>
-<div class="desc">
-Specialises in fat loss and body recomposition with 100+ successful transformations.
-</div>
+<div class="role">Trainer</div>
 </div>
 
 <div class="card">
-<div class="avatar">
-<img src="rahul.jpg">
-</div>
+<div class="avatar"><img src="rahul.jpg"></div>
 <div class="name">Rahul Sharma</div>
-<div class="role">Strength & Conditioning Coach</div>
-<div class="desc">
-Expert in lean muscle building and structured athletic programming.
-</div>
+<div class="role">Coach</div>
 </div>
 
-<div class="card" style="border-color: rgba(201,168,76,0.4);">
-<div class="avatar">
-<img src="udit.jpg">
-</div>
+<div class="card" style="border-color:#C9A84C;">
+<div class="avatar"><img src="udit.jpg"></div>
 <div class="name">Udit Sahai</div>
-<div class="role">Founder · Transformation Specialist</div>
-<div class="desc">
-Built GroomFit after seeing grooms regret not preparing. Every system here is built for real results.
-</div>
+<div class="role">Founder</div>
 </div>
 
 </div>
 
-<!-- BACK -->
-<a href="index.html" class="back">← Back to Home</a>
+<a href="index.html" class="back">← Back</a>
 
 </div>
+
+<!-- RIGHT BOX -->
+<div class="side-box">
+
+<div class="live">
+<div class="dot"></div>
+LIVE · Accepting Applications
+</div>
+
+<div class="slots">
+<strong>3 / 11 Slots Left</strong>
+</div>
+
+<p class="note">
+Only serious candidates are accepted.
+</p>
+
+<div class="cta" onclick="openPopup()">
+CHECK IF I QUALIFY
+</div>
+
+</div>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <h3>Check If You Qualify</h3>
+    <form id="form">
+      <input type="text" placeholder="Name" required>
+      <input type="tel" placeholder="Phone" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div id="success">
+<h2>Application Received</h2>
+
+<a href="https://wa.me/919588859960" style="background:#C9A84C;padding:12px 20px;margin-top:10px;">
+Continue on WhatsApp
+</a>
+
+<button onclick="closeSuccess()" style="margin-top:10px;">Maybe later</button>
+</div>
+
+<script>
+
+function openPopup(){
+  document.getElementById("popup").style.display="flex";
+}
+
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("popup").style.display="none";
+  document.getElementById("success").style.display="flex";
+});
+
+function closeSuccess(){
+  document.getElementById("success").style.display="none";
+}
+
+</script>
 
 </body>
 </html>
