@@ -8,27 +8,24 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* ===== BACKGROUND ===== */
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: 'Outfit', sans-serif;
   color: white;
-
   background:
     linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
     url("blog_back.jpg");
-
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* ===== NAV BUTTONS ===== */
+/* ===== NAV ===== */
 .back-home{
   position:fixed;
   top:20px;
@@ -39,12 +36,10 @@ body {
   padding:12px 22px;
   border-radius:12px;
   text-decoration:none;
-  font-size:14px;
   border:1px solid rgba(201,168,76,0.3);
   z-index:9999;
   transition:0.3s;
 }
-
 .back-home:hover{
   background:#C9A84C;
   color:#000;
@@ -61,12 +56,6 @@ body {
   text-decoration:none;
   font-weight:600;
   z-index:9999;
-  box-shadow:0 15px 40px rgba(0,0,0,0.6);
-  transition:0.3s;
-}
-
-.jump-btn:hover{
-  transform:translateY(-2px) scale(1.05);
 }
 
 /* ===== WHATSAPP ===== */
@@ -82,10 +71,8 @@ body {
   align-items:center;
   justify-content:center;
   text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
   z-index:9999;
 }
-
 .whatsapp-float i{
   font-size:30px;
   color:#fff;
@@ -94,7 +81,7 @@ body {
 /* ===== CONTAINER ===== */
 .container {
   max-width: 900px;
-  margin: 50px auto 60px; /* 🔥 reduced top space */
+  margin: 40px auto 60px;
   padding: 20px;
   text-align:center;
 }
@@ -102,68 +89,66 @@ body {
 /* ===== HEADER ===== */
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3.2rem;
+  font-size: 3rem;
   color: #C9A84C;
-  margin-top: -10px;   /* 🔥 pulls everything upward */
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .sub {
   color: #aaa;
-  margin-bottom: 20px; /* tighter */
-  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* ===== SEARCH ===== */
+#searchBox{
+  width:100%;
+  max-width:500px;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid rgba(201,168,76,0.3);
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  margin-bottom:20px;
 }
 
 /* ===== BLOG LIST ===== */
 .blog-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
 }
 
-/* ===== PREMIUM CARD ===== */
-.blog-item {
+/* ===== CARD AS LINK (KEY FIX) ===== */
+.blog-item{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 
-  padding:22px 24px;
+  padding:22px;
   border-radius:16px;
 
-  background:rgba(0,0,0,0.55); /* adjusted for image */
+  background:rgba(0,0,0,0.55);
   backdrop-filter:blur(14px);
 
   border:1px solid rgba(201,168,76,0.25);
 
-  transition:all 0.35s ease;
-  position:relative;
-  overflow:hidden;
-}
+  text-decoration:none; /* 🔥 IMPORTANT */
+  color:inherit;
 
-.blog-item::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(201,168,76,0.15),transparent);
-  opacity:0;
-  transition:0.4s;
+  transition:0.3s;
 }
 
 .blog-item:hover{
-  transform:translateY(-6px) scale(1.01);
+  transform:translateY(-5px);
   border-color:#C9A84C;
-  box-shadow:0 20px 60px rgba(201,168,76,0.15);
-}
-
-.blog-item:hover::before{
-  opacity:1;
+  box-shadow:0 15px 40px rgba(201,168,76,0.2);
 }
 
 /* LEFT */
 .blog-left{
   display:flex;
-  align-items:center;
   gap:15px;
+  align-items:center;
 }
 
 .icon{
@@ -174,51 +159,31 @@ h1 {
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:18px;
   color:#C9A84C;
 }
 
-.blog-text{
-  text-align:left;
-}
-
-.blog-text a{
-  color:#fff;
-  text-decoration:none;
-  font-size:1.15rem;
-  font-weight:500;
+.blog-text h3{
+  margin:0;
+  font-size:1.1rem;
 }
 
 .blog-text p{
+  margin:4px 0 0;
   font-size:13px;
   color:#aaa;
-  margin-top:4px;
 }
 
 /* ARROW */
 .arrow{
-  font-size:18px;
   color:#C9A84C;
-  transition:0.3s;
-}
-
-.blog-item:hover .arrow{
-  transform:translateX(5px);
+  font-size:18px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-
-  h1{font-size:2.4rem;}
-
   .blog-item{
     flex-direction:column;
     align-items:flex-start;
-    gap:10px;
-  }
-
-  .arrow{
-    align-self:flex-end;
   }
 }
 
@@ -227,7 +192,6 @@ h1 {
 
 <body>
 
-<!-- NAV -->
 <a href="index.html" class="back-home">← Home</a>
 <a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
 
@@ -236,131 +200,61 @@ h1 {
 <h1>GroomFit Guides</h1>
 <p class="sub">Real strategies to transform your body before your wedding</p>
 
-  <input 
-  type="text" 
-  id="searchBox" 
-  placeholder="Search guides (fat loss, muscle, 3 months...)"
-  style="
-    width:100%;
-    max-width:500px;
-    padding:14px 18px;
-    border-radius:12px;
-    border:1px solid rgba(201,168,76,0.3);
-    background:rgba(0,0,0,0.5);
-    color:#fff;
-    outline:none;
-    margin-bottom:15px;
-    font-size:14px;
-    backdrop-filter:blur(10px);
-  "
->
+<input type="text" id="searchBox" placeholder="Search guides...">
 
 <div class="blog-list">
 
-<div class="blog-item">
+<!-- ✅ FULL CARD CLICKABLE -->
+
+<a href="weight-loss-before-wedding.html" class="blog-item">
   <div class="blog-left">
     <div class="icon"><i class="fas fa-fire"></i></div>
     <div class="blog-text">
-      <a href="weight-loss-before-wedding.html">Weight Loss Before Wedding</a>
+      <h3>Weight Loss Before Wedding</h3>
       <p>Complete fat loss strategy for grooms</p>
     </div>
   </div>
   <div class="arrow">→</div>
-</div>
+</a>
 
-<div class="blog-item">
+<a href="wedding-transformation-for-men.html" class="blog-item">
   <div class="blog-left">
     <div class="icon"><i class="fas fa-dumbbell"></i></div>
     <div class="blog-text">
-      <a href="wedding-transformation-for-men.html">Wedding Transformation for Men</a>
-      <p>End-to-end body transformation system</p>
+      <h3>Wedding Transformation for Men</h3>
+      <p>End-to-end system</p>
     </div>
   </div>
   <div class="arrow">→</div>
-</div>
+</a>
 
-<div class="blog-item">
+<a href="how-to-get-fit-in-3-months.html" class="blog-item">
   <div class="blog-left">
     <div class="icon"><i class="fas fa-clock"></i></div>
     <div class="blog-text">
-      <a href="how-to-get-fit-in-3-months.html">How to Get Fit in 3 Months</a>
-      <p>Timeline-based transformation plan</p>
+      <h3>How to Get Fit in 3 Months</h3>
+      <p>Timeline-based plan</p>
     </div>
   </div>
   <div class="arrow">→</div>
-</div>
-
-<div class="blog-item">
-  <div class="blog-left">
-    <div class="icon"><i class="fas fa-bolt"></i></div>
-    <div class="blog-text">
-      <a href="build-muscle-before-wedding.html">Build Muscle Before Wedding</a>
-      <p>Lean muscle strategy for aesthetics</p>
-    </div>
-  </div>
-  <div class="arrow">→</div>
-</div>
-
-<div class="blog-item">
-  <div class="blog-left">
-    <div class="icon"><i class="fas fa-weight-scale"></i></div>
-    <div class="blog-text">
-      <a href="reduce-weight-fast-before-wedding.html">Reduce Weight Fast Before Wedding</a>
-      <p>Fast but sustainable fat loss approach</p>
-    </div>
-  </div>
-  <div class="arrow">→</div>
-</div>
-
-<div class="blog-item">
-  <div class="blog-left">
-    <div class="icon"><i class="fas fa-list"></i></div>
-    <div class="blog-text">
-      <a href="workout-plan-before-wedding.html">Workout Plan Before Wedding</a>
-      <p>Structured weekly training routine</p>
-    </div>
-  </div>
-  <div class="arrow">→</div>
-</div>
-
-<div class="blog-item">
-  <div class="blog-left">
-    <div class="icon"><i class="fas fa-user"></i></div>
-    <div class="blog-text">
-      <a href="personal-trainer-for-weight-loss.html">Personal Trainer for Weight Loss</a>
-      <p>When coaching becomes necessary</p>
-    </div>
-  </div>
-  <div class="arrow">→</div>
-</div>
-
-</div>
-
-</div>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/919588859960?text=Hi%20GroomFit,%20I%20want%20to%20start%20my%20transformation"
-   class="whatsapp-float"
-   target="_blank">
-   <i class="fab fa-whatsapp"></i>
 </a>
 
+</div>
+
+</div>
+
+<a href="https://wa.me/919588859960" class="whatsapp-float" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
-const searchBox = document.getElementById("searchBox");
-
-searchBox.addEventListener("keyup", function() {
+document.getElementById("searchBox").addEventListener("keyup", function() {
   const value = this.value.toLowerCase();
   const items = document.querySelectorAll(".blog-item");
 
   items.forEach(item => {
     const text = item.innerText.toLowerCase();
-
-    if (text.includes(value)) {
-      item.style.display = "flex";
-    } else {
-      item.style.display = "none";
-    }
+    item.style.display = text.includes(value) ? "flex" : "none";
   });
 });
 </script>
