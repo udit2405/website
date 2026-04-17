@@ -212,14 +212,9 @@ html {
 }
 
     
- @media(max-width:768px){
-  .nav-links {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    font-size: 0.7rem;
+  @media(max-width:768px){
+  .nav-links { display: none; }
   }
-}
 
   /* ===== BUTTONS ===== */
  .btn-primary {
@@ -337,15 +332,18 @@ html {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  background: black;
 }
 
 /* MOBILE FIX */
 @media (max-width: 768px) {
   .mobile-video {
-    object-fit: cover;
-    transform: scale(0.9);
+    object-fit: contain;
+    transform: scale(0.8); /* try 0.75–0.9 */
   }
+}
+  width: 100%;
+  height: 100%;
+  background: black;
 }
     
   #hero {
@@ -391,31 +389,6 @@ html {
   align-items: start;
   gap: 2.5rem;
 }
-
-@media (max-width: 768px) {
-  .hero-inner {
-    gap: 1.5rem;
-  }
-
-  .hero-eyebrow {
-    margin-top: 20px;
-    font-size: 0.65rem;
-  }
-
-  .hero-headline {
-    font-size: 28px !important;
-    line-height: 1.2;
-  }
-
-  .hero-sub {
-    font-size: 14px;
-  }
-
-  .hero-value-strong {
-    font-size: 16px;
-  }
-}
-    
   .hero-left-col { min-width: 0; }
   @media (min-width: 1024px) {
   .hero-inner {
@@ -494,19 +467,6 @@ html {
   opacity: 0;
   animation: fadeUp 0.9s 0.72s forwards;
   }
-
-  @media (max-width: 768px) {
-  .hero-cta-group {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-cta-group button,
-  .hero-cta-group a {
-    width: 100%;
-    text-align: center;
-  }
-}
 
   .hero-trust {
   display: flex;
@@ -1828,7 +1788,7 @@ overflow: hidden;
 
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
-  margin-top: 0px;
+  margin-top: -140px;
   align-self: center;
   
   background: rgba(20,20,20,0.55);
@@ -1995,52 +1955,6 @@ overflow: hidden;
   opacity: 1;
   transform: translateY(0);
 }
-
-@media (max-width: 768px) {
-
-  body {
-    padding: 0 12px;
-  }
-
-  .section {
-    padding: 50px 0;
-  }
-
-  h2 {
-    font-size: 24px !important;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  /* grids → stack */
-  .solution-layout,
-  .cred-layout,
-  .problem-grid {
-    grid-template-columns: 1fr !important;
-    gap: 30px;
-  }
-
-  /* stats */
-  .hero-stats {
-    gap: 20px;
-  }
-
-  .stat-num {
-    font-size: 24px;
-  }
-
-  /* FAB buttons */
-  .whatsapp-fab,
-  .pricing-fab {
-    width: 50px;
-    height: 50px;
-    bottom: 20px;
-  }
-
-}
-    
     
   </style>
 </head>
@@ -2317,7 +2231,7 @@ Limited slots this month. Apply now—only committed grooms are accepted.
   height:240px;   /* 🔥 THIS FIXES EVERYTHING */
 ">
 
-   <img src="brobefore.jpeg" style="
+  <img src="brobefore.jpeg" style="
     width:100%;
     height:280px;
     object-fit:contain;
@@ -2327,8 +2241,7 @@ background:#000;
     left:0;
   ">
 
-
-    <img src="broafter.jpeg" id="afterImage" style="
+  <img src="broafter.jpeg" id="afterImage" style="
     width:100%;
     height:280px;
     object-fit:contain;
@@ -2338,7 +2251,6 @@ background:#000;
     left:0;
     clip-path: inset(0 50% 0 0);
   ">
-
 
   <!-- Slider -->
   <input type="range" min="0" max="100" value="50" id="slider" style="
