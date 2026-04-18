@@ -1,0 +1,3326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroomFit — Transform Before Your Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-92T8Y1TFG0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-92T8Y1TFG0');
+</script>
+    
+  
+  <style>
+
+ 
+
+    /* ===== DROPDOWN ===== */
+.nav-explore {
+  position: relative;
+  padding-bottom: 0px; /* 👈 adds hover buffer */
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(14,14,14,0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 160px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+   z-index: 1000; /* 👈 ADD THIS */
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dropdown a:hover {
+  color: var(--gold);
+  background: rgba(201,168,76,0.05);
+}
+
+/* SHOW ON HOVER */
+.nav-explore:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+    
+  /* ===== RESET & BASE ===== */
+
+    /* MINI COUNTDOWN */
+.mini-countdown {
+  margin-top: 20px;
+  padding: 16px;
+  max-width: 260px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 10px;
+}
+
+.mini-title {
+  font-size: 12px;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mini-row {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.mini-countdown input {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 8px;
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: white;
+  border-radius: 6px;
+}
+
+
+    .mini-countdown button {
+  width: 100%;
+  padding: 8px;
+  background: var(--gold);
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 🔥 ADD FROM HERE */
+.flip {
+  display: inline-block;
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.flip.animate {
+  transform: rotateX(360deg);
+}
+
+.mini-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.mini-countdown.urgent {
+  border-color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.08);
+}
+
+.mini-countdown.urgent .mini-title {
+  color: #ff4d4d;
+}
+
+.mini-countdown.urgent .flip {
+  color: #ff4d4d;
+}
+/* 🔥 ADD TILL HERE */
+    
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+  --gold:  #C9A84C;
+  --gold-light:  #E8C96A;
+  --gold-dim:  #7A5F24;
+  --black:   #080808;
+  --dark:  #0E0E0E;
+  --dark-2:  #141414;
+  --dark-3:  #1C1C1C;
+  --dark-4:  #242424;
+  --white:   #F5F0E8;
+  --muted:   #8A8070;
+  --radius:  10px;
+  --transition:  0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+  body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
+}
+
+ h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  .gold { color: var(--gold); }
+  .italic { font-style: italic; }
+
+  /* ===== NOISE TEXTURE OVERLAY ===== */
+  body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+  }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  padding: 0 5%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  transition: var(--transition);
+  }
+  nav.scrolled { background: rgba(8,8,8,0.97); }
+
+  .nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  }
+  .nav-links a { color: var(--muted); transition: color 0.25s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: background 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+.desktop-video {
+  display: block;
+}
+
+.mobile-video {
+  display: none;
+}
+
+    
+  @media(max-width:768px){
+  .nav-links { display: none; }
+  }
+
+  /* ===== BUTTONS ===== */
+ .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--black);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 38px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 rgba(201,168,76,0);
+}
+  .btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+  filter: brightness(1.08);
+}
+
+  .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 4px;
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  }
+  .btn-outline:hover {
+  background: var(--gold);
+  color: var(--black);
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .section {
+  width: 100%;
+  padding: 70px 5%;
+  position: relative;
+}
+  .section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+  .section-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 6px 14px;
+  border-radius: 3px;
+  margin-bottom: 1.2rem;
+  }
+  .section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 1.2rem;
+  }
+  .section-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.8;
+  }
+
+  /* ===== GOLD DIVIDER ===== */
+  .divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 1.4rem 0;
+  }
+
+  /* ============================================================
+  HERO
+  ============================================================ */
+
+    .hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* use cover, not contain */
+  z-index: 0;
+  opacity: 0.5;
+  background: black;
+}
+
+@media (max-width: 768px) {
+  .desktop-video {
+    display: none;
+  }
+
+  .mobile-video {
+    display: block;
+  }
+}
+  .hero-bg-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .mobile-video {
+    object-fit: contain;
+    transform: scale(0.8); /* try 0.75–0.9 */
+  }
+}
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+    
+  #hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 5% 120px;
+  position: relative;
+  overflow: hidden;
+  }
+
+  /* Layered background */
+  #hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  z-index: 1;
+}
+
+  /* Decorative rings */
+  .hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.06);
+  pointer-events: none;
+  }
+  .hero-ring-1 { width: 600px; height: 600px; top: -150px; right: -100px; }
+  .hero-ring-2 { width: 900px; height: 900px; top: -300px; right: -300px; border-color: rgba(201,168,76,0.03); }
+
+ .hero-inner {
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 2.5rem;
+}
+  .hero-left-col { min-width: 0; }
+  @media (min-width: 1024px) {
+  .hero-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+}
+  }
+
+  .hero-eyebrow {
+  margin-top: 60px; 
+  display: inline-flex;  
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  }
+
+ .hero-headline {
+   margin-top: 7px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  max-width: 800px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.35s forwards;
+}
+  .hero-headline em {
+  font-style: italic;
+  color: var(--gold);
+  }
+
+  .hero-sub {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: rgba(245,240,232,0.6);
+  max-width: 580px;
+  margin: 1.8rem 0 1.15rem;
+  line-height: 1.85;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.5s forwards;
+  }
+
+  .hero-value-strong {
+    margin-top: 10px;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  font-family: 'Outfit', sans-serif;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1.55;
+  max-width: 580px;
+  margin: 0.5rem 0 2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.58s forwards;
+  }
+  .hero-value-strong strong {
+  font-weight: 700;
+  color: var(--gold-light);
+  }
+
+  .hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.72s forwards;
+  }
+
+  .hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 3.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.88s forwards;
+  }
+  .hero-trust-dots {
+  display: flex;
+  gap: 4px;
+  }
+  .hero-trust-dots span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--dark-3);
+  border: 2px solid var(--dark-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  }
+  .hero-trust-dots span:nth-child(2) { margin-left: -8px; }
+  .hero-trust-dots span:nth-child(3) { margin-left: -8px; }
+
+  .hero-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  z-index: 2;
+  animation: bounce 2s infinite;
+  }
+  .scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+  }
+
+  /* Stats bar */
+  .hero-stats {
+  position: relative;
+  margin-top: 80px;
+  left: 0;
+  right: 0;
+  background: rgba(14,14,14,0.92);
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding: 24px 5%;
+  display: flex;
+  justify-content: center;
+  gap: 4%;
+  flex-wrap: wrap;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeUp 0.9s 1s forwards;
+  }
+  .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  }
+  .stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  }
+  .stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  }
+
+  /* ============================================================
+  PROBLEM
+  ============================================================ */
+  #problem {
+    scroll-margin-top: 120px;
+  background: var(--dark);
+  }
+    #program {
+  scroll-margin-top: 120px;
+}
+  .problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 4rem;
+  }
+  @media(max-width:768px){ .problem-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .pain-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  }
+  .pain-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.07);
+  border-radius: var(--radius);
+  transition: border-color 0.3s, background 0.3s;
+  }
+  .pain-item:hover {
+  border-color: rgba(201,168,76,0.2);
+  background: var(--dark-3);
+  }
+  .pain-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  }
+  .pain-item h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  }
+  .pain-item p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  }
+
+  .problem-visual {
+  position: relative;
+  }
+  .problem-card {
+  background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-2) 100%);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  }
+  .problem-card-emoji { font-size: 4rem; margin-bottom: 1rem; }
+  .problem-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  }
+  .problem-card p { color: var(--muted); font-size: 0.9rem; }
+  .ring-accent {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.15);
+  pointer-events: none;
+  }
+
+  /* ============================================================
+  SOLUTION
+  ============================================================ */
+  #solution {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  }
+  #solution::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  }
+
+  .solution-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 4rem;
+  }
+  @media(max-width:768px){ .solution-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+  .solution-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  }
+  .pillar {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  }
+  .pillar-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgba(201,168,76,0.15);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 48px;
+  }
+  .pillar h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  }
+  .pillar p { font-size: 0.88rem; color: var(--muted); }
+
+  .solution-highlight {
+  background: linear-gradient(150deg, #181208 0%, #1a1500 100%);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 20px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  }
+  .solution-highlight::before {
+  content: 'GF';
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9rem;
+  font-weight: 700;
+  color: rgba(201,168,76,0.04);
+  pointer-events: none;
+  }
+  .sh-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  }
+  .sh-title {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  }
+  .sh-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  }
+  .sh-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  }
+  .sh-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  }
+  .sh-days {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201,168,76,0.12);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  }
+  .sh-days-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  }
+  .sh-days-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+  /* ============================================================
+  FEATURES
+  ============================================================ */
+  #features {
+  background: var(--dark);
+  }
+  .features-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  }
+  .features-header .section-sub { margin: 0 auto; }
+
+  .features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  }
+  @media(max-width:900px){ .features-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:560px){ .features-grid { grid-template-columns: 1fr; } }
+
+  .feature-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 18px;
+  padding: 32px 28px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  }
+  .feature-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition: width 0.4s ease;
+  }
+  .feature-card:hover { border-color: rgba(201,168,76,0.22); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .feature-card:hover::after { width: 100%; }
+
+  .feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  }
+  .feature-card h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  }
+  .feature-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  /* ============================================================
+  TRANSFORMATIONS
+  ============================================================ */
+  #transformations {
+  scroll-margin-top: 120px;
+
+  background:
+    radial-gradient(circle at 70% 50%, rgba(201,168,76,0.12), transparent 60%),
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+    url("trans_back.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+  .transform-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  }
+
+  .transform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  }
+  @media(max-width:900px){ .transform-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:560px){ .transform-grid { grid-template-columns: 1fr; } }
+
+  .transform-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.1);
+  background: var(--dark-2);
+  }
+  .transform-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  }
+  .photo-placeholder {
+    position: relative;
+overflow: hidden;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  }
+  .photo-placeholder.before {
+  background: linear-gradient(160deg, #111 0%, #1a1a1a 100%);
+  color: var(--muted);
+  }
+  .photo-placeholder.after {
+  background: linear-gradient(160deg, #1a1200 0%, #201800 100%);
+  color: var(--gold);
+  }
+  .photo-emoji { font-size: 2.5rem; margin-bottom: 4px; }
+  .transform-divider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--black);
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 700;
+  z-index: 2;
+  }
+  .transform-info {
+  padding: 20px 22px;
+  border-top: 1px solid rgba(201,168,76,0.08);
+  }
+  .transform-info h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  }
+  .transform-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 8px;
+  }
+  .transform-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(201,168,76,0.1);
+  color: var(--gold);
+  padding: 3px 10px;
+  border-radius: 3px;
+  }
+
+  .transform-note {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  }
+
+  /* ============================================================
+  CREDIBILITY / TEAM
+  ============================================================ */
+  #credibility {
+  background: var(--dark);
+  position: relative;
+  }
+  .cred-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 70px;
+  align-items: center;
+  }
+  @media(max-width:768px){ .cred-layout { grid-template-columns: 1fr; gap: 50px; } }
+
+  .cred-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  }
+  .badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: rgba(201,168,76,0.05);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 10px;
+  }
+  .badge-icon { font-size: 1.6rem; }
+  .badge-text h5 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  }
+  .badge-text p { font-size: 0.78rem; color: var(--muted); }
+
+  .team-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  }
+  .trainer-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 14px;
+  transition: border-color 0.3s;
+  }
+  .trainer-card:hover { border-color: rgba(201,168,76,0.25); }
+  .trainer-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--dark-3), var(--dark-4));
+  border: 2px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  }
+  .trainer-info h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+  }
+  .trainer-cert {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 4px;
+  }
+  .trainer-info p { font-size: 0.82rem; color: var(--muted); }
+
+  /* ============================================================
+  HOW IT WORKS
+  ============================================================ */
+  #how {
+  background: var(--black);
+  }
+  .steps-header { text-align: center; margin-bottom: 5rem; }
+
+  .steps-track {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  }
+  .steps-line {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  right: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2) 80%, transparent);
+  }
+  @media(max-width:768px){ .steps-line { display: none; } }
+
+  .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+  }
+  @media(max-width:768px){ .steps-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+  .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  }
+  .step-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--dark-2);
+  border: 2px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  }
+  .step:hover .step-circle {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--gold);
+  transform: scale(1.1);
+  }
+  .step h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  }
+  .step p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+  /* ============================================================
+  TESTIMONIALS
+  ============================================================ */
+  #testimonials {
+  scroll-margin-top: 120px;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+    url("review.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  .testi-header { text-align: center; margin-bottom: 4rem; }
+
+  .testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  }
+  @media(max-width:900px){ .testi-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:560px){ .testi-grid { grid-template-columns: 1fr; } }
+
+  .testi-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 14px;
+  padding: 32px 28px;
+  position: relative;
+  }
+  .testi-quote {
+  position: absolute;
+  top: 24px; right: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(201,168,76,0.1);
+  }
+  .stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+  }
+  .star { color: var(--gold); font-size: 0.9rem; }
+  .testi-card p { font-size: 0.9rem; color: rgba(245,240,232,0.8); line-height: 1.75; margin-bottom: 1.5rem; }
+  .testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  }
+  .testi-ava {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dim), var(--dark-4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  }
+  .testi-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  }
+  .testi-detail { font-size: 0.75rem; color: var(--muted); }
+  .testi-result {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  padding: 4px 12px;
+  border-radius: 3px;
+  }
+
+  /* ============================================================
+  PRICING
+  ============================================================ */
+  #pricing {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  }
+  #pricing::before {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  }
+  .pricing-header { text-align: center; margin-bottom: 4rem; }
+
+  .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+  }
+  @media(max-width:900px){ .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+
+  .plan {
+  border-radius: 18px;
+  border: 1px solid rgba(201,168,76,0.1);
+  background: var(--dark-2);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .plan:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
+
+  .plan.featured {
+  border-color: var(--gold);
+  background: linear-gradient(170deg, #181200 0%, #120f00 100%);
+  transform: scale(1.04);
+  }
+  .plan.featured:hover { transform: scale(1.04) translateY(-6px); }
+
+  .plan-badge {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 0 18px 0 10px;
+  }
+
+  .plan-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  }
+  .plan.featured .plan-name { color: var(--gold); }
+
+  .plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 0.5rem;
+  }
+  .price-symbol { font-size: 1.3rem; color: var(--gold); font-weight: 600; }
+  .price-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  }
+  .price-period { font-size: 0.8rem; color: var(--muted); }
+  .plan-desc { font-size: 0.83rem; color: var(--muted); margin-bottom: 1.8rem; }
+
+  .plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+  }
+  .plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  }
+  .check { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #555; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .plan-features li.off { color: var(--muted); opacity: 0.5; }
+
+
+  /* ============================================================
+  GUARANTEE
+  ============================================================ */
+  #guarantee {
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  }
+  #guarantee::before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100%, 880px);
+  height: 420px;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.09) 0%, transparent 68%);
+  pointer-events: none;
+  }
+  .guarantee-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  }
+  .guarantee-wrap .section-sub {
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .guarantee-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.28);
+  border-radius: 18px;
+  padding: 2.35rem 2rem 2rem;
+  margin: 2.25rem 0 1.75rem;
+  text-align: center;
+  box-shadow:
+  0 0 0 1px rgba(201,168,76,0.06),
+  0 0 48px rgba(201,168,76,0.06),
+  0 24px 64px rgba(0,0,0,0.45);
+  }
+  .guarantee-card-icon {
+  font-size: 2.1rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px rgba(201,168,76,0.25));
+  }
+  .guarantee-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  }
+  .guarantee-list {
+  list-style: none;
+  text-align: left;
+  max-width: 440px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  }
+  .guarantee-list li {
+  font-size: 0.88rem;
+  color: rgba(245,240,232,0.88);
+  line-height: 1.6;
+  padding-left: 1.35rem;
+  position: relative;
+  }
+  .guarantee-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  }
+  .guarantee-card-strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.06rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.55;
+  padding-top: 1.35rem;
+  margin: 0;
+  border-top: 1px solid rgba(201,168,76,0.14);
+  }
+  .guarantee-trust-line {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  }
+  .guarantee-cta {
+  margin-top: 0.25rem;
+  }
+
+  /* ============================================================
+  URGENCY
+  ============================================================ */
+  #urgency {
+  background: linear-gradient(135deg, #100d00 0%, #0a0800 50%, #130d00 100%);
+  border-top: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  text-align: center;
+  }
+  .urgency-inner { max-width: 700px; margin: 0 auto; }
+  .urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  }
+  .urgency-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4caf50;
+  animation: pulse-dot 1.5s infinite;
+  }
+  .urgency-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+  }
+  .urgency-sub { color: var(--muted); margin-bottom: 2.5rem; font-size: 1rem; }
+
+  .slots-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  }
+  .slot {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  }
+  .slot.taken { background: rgba(201,168,76,0.25); border: 1px solid rgba(201,168,76,0.3); }
+  .slot.open { background: var(--gold); border: 1px solid var(--gold-light); }
+
+  .slots-label { font-size: 0.8rem; color: var(--muted); margin-bottom: 2.5rem; }
+  .slots-label span { color: var(--gold); font-weight: 700; }
+
+  /* ============================================================
+  FINAL CTA
+  ============================================================ */
+  #final-cta {
+  background: var(--black);
+  text-align: center;
+  }
+  .final-cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  }
+  .final-cta-title { font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 1.2rem; }
+  .final-cta-sub { color: var(--muted); font-size: 1rem; margin-bottom: 2.8rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  .final-disclaimer {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  }
+  .final-disclaimer::before {
+  content: '🔒';
+  font-size: 0.9rem;
+  }
+
+  /* ============================================================
+  FOOTER
+  ============================================================ */
+  footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  padding: 40px 5%;
+  text-align: center;
+  }
+  .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy {
+  margin-top: 1.8rem;
+  font-size: 0.72rem;
+  color: rgba(138,128,112,0.5);
+  }
+
+  /* ============================================================
+  LEGAL MODALS
+  ============================================================ */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4,4,4,0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.23,1,0.32,1);
+  }
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal-box {
+    background: linear-gradient(160deg, #161410 0%, #0f0f0f 100%);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 680px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,168,76,0.06);
+    transform: translateY(28px) scale(0.97);
+    transition: transform 0.38s cubic-bezier(0.23,1,0.32,1);
+  }
+  .modal-overlay.active .modal-box {
+    transform: translateY(0) scale(1);
+  }
+  .modal-header {
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+  .modal-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .modal-brand-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+  }
+  .modal-close {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    line-height: 1;
+  }
+  .modal-close:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: rgba(201,168,76,0.3);
+    color: var(--gold);
+  }
+  .modal-body {
+    padding: 28px 32px 32px;
+    overflow-y: auto;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,168,76,0.2) transparent;
+  }
+  .modal-body::-webkit-scrollbar { width: 4px; }
+  .modal-body::-webkit-scrollbar-track { background: transparent; }
+  .modal-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 4px; }
+  .modal-section { margin-bottom: 1.8rem; }
+  .modal-section:last-child { margin-bottom: 0; }
+  .modal-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .modal-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,168,76,0.12);
+  }
+  .modal-body p {
+    font-size: 0.92rem;
+    color: rgba(245,240,232,0.72);
+    line-height: 1.8;
+    margin-bottom: 0.7rem;
+  }
+  .modal-body p:last-child { margin-bottom: 0; }
+  .modal-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin: 0.5rem 0 0.8rem;
+    padding: 0;
+  }
+  .modal-body ul li {
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.7;
+    padding-left: 1.3rem;
+    position: relative;
+  }
+  .modal-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold-dim);
+    font-size: 0.72rem;
+    top: 0.28rem;
+  }
+  .modal-highlight {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.14);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 1rem 0;
+  }
+  .modal-highlight p {
+    font-size: 0.88rem !important;
+    color: rgba(245,240,232,0.82) !important;
+    margin: 0 !important;
+    line-height: 1.7;
+  }
+  .modal-highlight strong { color: var(--gold); font-weight: 600; }
+  .modal-footer-note {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.78rem !important;
+    color: var(--muted) !important;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  @media(max-width:520px) {
+    .modal-header { padding: 22px 20px 16px; }
+    .modal-body  { padding: 20px 20px 26px; }
+    .modal-title { font-size: 1.4rem; }
+  }
+
+  /* ============================================================
+  WHATSAPP FAB
+  ============================================================ */
+  .whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+  z-index: 800;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  }
+  .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.55); }
+  .whatsapp-fab svg { width: 28px; height: 28px; fill: white; }
+  .whatsapp-tooltip {
+  position: fixed;
+  bottom: 98px;
+  right: 28px;
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  z-index: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+  }
+  .whatsapp-fab:hover + .whatsapp-tooltip,
+  .whatsapp-fab:focus + .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+  }
+
+  /* ===== HERO: AI/DIY vs COACHING ===== */
+  .hero-comparison {
+  margin-top: 2rem;
+  max-width: 720px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.82s forwards;
+  }
+  .hero-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  }
+  @media (max-width: 640px) {
+  .hero-comparison-grid { grid-template-columns: 1fr; }
+  }
+  .hero-comp-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  transition: transform 0.35s var(--transition), border-color 0.35s, box-shadow 0.35s;
+  }
+  .hero-comp-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201,168,76,0.22);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  }
+  .hero-comp-card--gf {
+  background: linear-gradient(160deg, rgba(201,168,76,0.1) 0%, var(--dark-2) 55%);
+  border-color: rgba(201,168,76,0.32);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.06) inset;
+  }
+  .hero-comp-card--gf:hover {
+  border-color: var(--gold);
+  box-shadow: 0 20px 50px rgba(201,168,76,0.14);
+  }
+  .hero-comp-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--white);
+  }
+  .hero-comp-card--diy .hero-comp-title { color: var(--muted); }
+  .hero-comp-card--gf .hero-comp-title { color: var(--gold); }
+  .hero-comp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  }
+  .hero-comp-list li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.5;
+  }
+  .hero-comp-card--gf .hero-comp-list li { color: rgba(245,240,232,0.85); }
+  .hero-comp-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  flex-shrink: 0;
+  margin-top: 0.45em;
+  }
+  .hero-comp-card--gf .hero-comp-list li::before {
+  background: var(--gold);
+  }
+  .hero-comp-close {
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.55;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .hero-comp-close em {
+  color: var(--gold);
+  font-style: italic;
+  }
+
+  /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
+  .hero-offline-card {
+  margin-top: -140px;
+  align-self: center;
+  
+  background: rgba(20,20,20,0.55);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201,168,76,0.28);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.06) inset;
+  align-self: center;
+  animation: heroCardIn 0.9s 0.85s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .hero-offline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  line-height: 1.2;
+  }
+  .hero-offline-title span { color: var(--gold); }
+  .hero-offline-text {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
+  }
+  .hero-offline-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  }
+  .hero-city-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.88);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.18);
+  padding: 0.35rem 0.55rem 0.35rem 0.45rem;
+  border-radius: 4px;
+  }
+  .hero-city-marker {
+  font-size: 0.65rem;
+  line-height: 1;
+  }
+  .hero-offline-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border-radius: 4px;
+  transition: background 0.25s, transform 0.25s;
+  }
+  .hero-offline-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  }
+  @keyframes heroCardIn {
+  from { opacity: 0; transform: translateX(18px) translateY(10px); }
+  to { opacity: 1; transform: translateX(0) translateY(0); }
+  }
+  @media (max-width: 1023px) {
+  .hero-offline-card {
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+  animation-delay: 0.4s;
+  }
+  }
+  @media (prefers-reduced-motion: reduce) {
+  .hero-offline-card { animation: none; opacity: 1; transform: none; }
+  }
+
+  /* ============================================================
+  KEYFRAMES
+  ============================================================ */
+  @keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  }
+  @keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%   { transform: translateX(-50%) translateY(-8px); }
+  }
+  @keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%   { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  /* ===== GOLD SHIMMER on featured plan ===== */
+  .plan.featured .plan-price .price-num {
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+  }
+
+    .logo-img {
+  height: 60px;
+  width: auto;
+}
+/* ===== PRICING FAB ===== */
+.pricing-fab {
+  position: fixed;
+  bottom: 100px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+  z-index: 800;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(201,168,76,0.55);
+}
+
+.pricing-tooltip {
+  position: fixed;
+  bottom: 170px;
+  right: 28px;
+  background: var(--dark-3);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  z-index: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.pricing-fab:hover + .pricing-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+    
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+  <div class="nav-logo">
+  <img src="logo.jpg" alt="GroomFit Logo" class="logo-img">
+</div>
+
+
+
+  
+<ul class="nav-links">
+
+  <li><a href="#program">Program</a></li>
+  <li><a href="#transformations">Results</a></li>
+  <li><a href="#pricing">Pricing</a></li>
+  <li><a href="#testimonials">Reviews</a></li>
+
+  <li class="nav-divider"></li>
+
+  <li class="nav-explore">
+  <a href="#">Explore ▾</a>
+
+  <div class="dropdown">
+    <a href="problem.html">Why Grooms Fail</a>
+    <a href="how.html">How We Work</a>
+    <a href="why-trust-us.html">Meet Our Team</a>
+    <a href="blogs.html">Free Guides</a>
+  </div>
+</li>
+
+</ul>
+  
+  <a href="#pricing" class="nav-cta nav-cta-primary">View Pricing</a>
+</nav>
+
+<!-- ===== HERO (COUPLEFIT) ===== -->
+
+<section id="hero">
+
+<video autoplay muted loop playsinline class="hero-bg-video desktop-video">
+  <source src="couple_bg.mp4" type="video/mp4">
+</video>
+
+<video autoplay muted loop playsinline class="hero-bg-video mobile-video">
+  <source src="couple_mobile.mp4" type="video/mp4">
+</video>
+
+<div class="hero-inner">
+<div class="hero-left-col">
+
+<div class="hero-eyebrow">India’s First Couple Transformation Program</div>
+
+<h1 class="hero-headline">
+Transform Together — Look Incredible, Feel Connected,  
+and Step Into Your Wedding as a Team.
+</h1>
+
+<p class="hero-value-strong">
+A 60–90 day transformation designed for couples preparing for their wedding
+</p>
+
+<p class="hero-sub">
+You’re starting a life together.  
+Why not start the journey together too?
+</p>
+
+<p style="font-size:0.8rem; color:#aaa; margin-top:10px;">
+Couples across India · Shared transformations · Stronger together
+</p>
+
+<div class="hero-cta-group">
+
+<button onclick="openPopup()" class="btn-primary">
+  Apply as a Couple →
+</button>
+
+<a href="how.html" class="btn-outline">
+  See How It Works
+</a>
+
+</div>
+
+<p style="font-size:0.75rem; color:#888; margin-top:8px;">
+Limited couple slots — high-touch coaching for both partners.
+</p>
+
+<!-- 🔥 TRANSFORMATION SELECTOR -->
+<div style="margin-top:25px;">
+
+<p style="font-size:12px; color:#C9A84C; margin-bottom:10px; letter-spacing:1px;">
+CHOOSE YOUR TRANSFORMATION
+</p>
+
+<div style="display:flex; gap:10px; flex-wrap:wrap;">
+
+<a href="index.html" class="btn-outline">GroomFit</a>
+
+<a href="bridefit.html" class="btn-outline">BrideFit</a>
+
+<a href="couplefit.html" class="btn-primary">CoupleFit</a>
+
+</div>
+
+<p style="font-size:12px; color:#888; margin-top:8px;">
+Best for couples who want accountability + shared results.
+</p>
+
+</div>
+
+<!-- 🔥 COMPARISON -->
+<div class="hero-comparison">
+<div class="hero-comparison-grid">
+
+<div class="hero-comp-card hero-comp-card--diy">
+<div class="hero-comp-title">Doing It Separately</div>
+<ul class="hero-comp-list">
+<li>Different plans, no sync</li>
+<li>No shared accountability</li>
+<li>Hard to stay consistent together</li>
+<li>Different energy levels</li>
+<li>One partner often drops off</li>
+</ul>
+</div>
+
+<div class="hero-comp-card hero-comp-card--gf">
+<div class="hero-comp-title">With CoupleFit</div>
+<ul class="hero-comp-list">
+<li>One unified transformation plan</li>
+<li>Shared accountability</li>
+<li>Motivation from each other</li>
+<li>Synchronized progress</li>
+<li>Stronger bond before marriage</li>
+</ul>
+</div>
+
+</div>
+
+<p class="hero-comp-close">
+The couples who train together… show up differently on their wedding day.
+</p>
+
+</div>
+
+<div class="hero-trust">
+<span>Couples across India · 60–90 day programs · Real shared results</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="program" class="section">
+  <div class="section-inner">
+  <div class="solution-layout">
+  <div class="reveal">
+  <span class="section-tag">The GroomFit System</span>
+  <h2 class="section-title">
+A Transformation Built for <em class="gold italic">Two</em>
+</h2>
+  <div class="divider"></div>
+  <p class="section-sub" style="margin-bottom:2.5rem">
+  This isn't a generic fitness app or YouTube routine. This is a structured, deadline-driven transformation designed for men who have a real deadline — their wedding.
+  </p>
+  <div class="solution-pillars">
+  <div class="pillar reveal" style="transition-delay:0.1s">
+  <span class="pillar-num">01</span>
+  <div>
+  <h4>Structured 60–90 Day Plan</h4>
+  <p>Every day mapped out. No guessing. No wasted sessions. A clear path from now to wedding day.</p>
+  </div>
+  </div>
+  <div class="pillar reveal" style="transition-delay:0.2s">
+  <span class="pillar-num">02</span>
+  <div>
+  <h4>Personal Coaching</h4>
+  <p>You're not a number. Our coaches know your timeline, your body type, and your goals.</p>
+  </div>
+  </div>
+  <div class="pillar reveal" style="transition-delay:0.3s">
+  <span class="pillar-num">03</span>
+  <div>
+  <h4>Diet + Workout + Accountability</h4>
+  <p>Custom Indian meal plans, structured workouts, and weekly check-ins to keep you on track.</p>
+  </div>
+  </div>
+  <div class="pillar reveal" style="transition-delay:0.4s">
+  <span class="pillar-num">04</span>
+  <div>
+  <h4>Designed Specifically for Grooms</h4>
+  <p>We understand the wedding prep chaos — and we work around it, not against it.</p>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="reveal" style="transition-delay:0.2s">
+  <div class="solution-highlight">
+  <div class="sh-tag">What You Get</div>
+  <h3 class="sh-title">Everything You Need to <span class="gold">Look Elite</span></h3>
+  <ul class="sh-list">
+  <li>Personalised workout plan (gym or home)</li>
+  <li>Indian diet plan (veg & non-veg options)</li>
+  <li>Weekly check-in calls with your coach</li>
+  <li>WhatsApp support 6 days a week</li>
+  <li>Progress tracking & body measurement logs</li>
+  <li>Deadline-based milestones aligned to your D-Day</li>
+  <li>Pre-wedding posture & grooming tips</li>
+  </ul>
+  <div class="sh-days">
+  <div class="sh-days-num">90</div>
+  <div class="sh-days-text">
+  <strong>Days of dedicated transformation</strong><br/>
+  <span style="color:var(--muted)">Aligned perfectly to your wedding date</span>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+  
+<section class="section">
+<div class="section-inner">
+
+<h2 class="section-title">Why Couples Choose This</h2>
+
+<ul style="margin-top:20px; line-height:2;">
+<li>✔ You both stay accountable</li>
+<li>✔ No mismatch in progress</li>
+<li>✔ Shared routine despite busy schedules</li>
+<li>✔ Support system built-in</li>
+<li>✔ You look equally great together</li>
+</ul>
+
+</div>
+</section>
+  
+  
+<!-- ===== TRANSFORMATIONS ===== -->
+<section id="transformations" class="section">
+  <div class="section-inner">
+  <div class="transform-header reveal">
+  <span class="section-tag">Real Results</span>
+  <h2 class="section-title">Transformations That <em class="gold italic">Speak for Themselves</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  <p class="section-sub" style="margin:0 auto">
+  Every groom who committed to GroomFit showed up to their wedding looking and feeling their absolute best.
+  </p>
+  </div>
+
+<div class="transform-grid">
+
+  <!-- CARD 1 -->
+  <div class="transform-card reveal">
+  <div class="transform-photos" style="
+  position:relative;
+  overflow:hidden;
+  height:240px;   /* 🔥 THIS FIXES EVERYTHING */
+">
+
+  <img src="brobefore.jpeg" style="
+    width:100%;
+    height:280px;
+    object-fit:contain;
+background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+  ">
+
+  <img src="broafter.jpeg" id="afterImage" style="
+    width:100%;
+    height:280px;
+    object-fit:contain;
+background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    clip-path: inset(0 50% 0 0);
+  ">
+
+  <!-- Slider -->
+  <input type="range" min="0" max="100" value="50" id="slider" style="
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+  ">
+
+  <!-- Labels -->
+  <span style="
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">BEFORE</span>
+
+  <span style="
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">AFTER</span>
+
+</div>
+
+    <div class="transform-info">
+      <h4>Arjun S. — Delhi</h4>
+      <p style="font-size:0.8rem;color:var(--muted)">
+        Lost 8kg & built visible definition in 75 days
+      </p>
+      <div class="transform-meta">
+        <span class="transform-tag">75 Days</span>
+        <span class="transform-tag">-8 KG</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="transform-card reveal">
+    <div class="transform-photos" style="
+  position:relative;
+  overflow:hidden;
+  height:240px;
+">
+
+  <!-- BEFORE IMAGE -->
+  <img src="bro2before.jpg" style="
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+  ">
+
+  <!-- AFTER IMAGE -->
+  <img src="bro2after.jpg" id="afterImage2" style="
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    clip-path: inset(0 50% 0 0);
+  ">
+
+  <!-- SLIDER -->
+  <input type="range" min="0" max="100" value="50" id="slider2" style="
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    z-index:5;
+  ">
+
+  <!-- LABELS -->
+  <span style="
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">BEFORE</span>
+
+  <span style="
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">AFTER</span>
+
+</div>
+
+    <div class="transform-info">
+      <h4>Rohit M. — Mumbai</h4>
+      <p style="font-size:0.8rem;color:var(--muted)">
+        From skinny-fat to lean & muscular in 90 days
+      </p>
+      <div class="transform-meta">
+        <span class="transform-tag">90 Days</span>
+        <span class="transform-tag">+5 KG</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="transform-card reveal">
+    <div class="transform-photos" style="
+  position:relative;
+  overflow:hidden;
+  height:240px;
+">
+
+  <!-- BEFORE IMAGE -->
+  <img src="bro3before.jpg" style="
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+  ">
+
+  <!-- AFTER IMAGE -->
+  <img src="bro3after.jpg" id="afterImage3" style="
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    clip-path: inset(0 50% 0 0);
+  ">
+
+  <!-- SLIDER -->
+  <input type="range" min="0" max="100" value="50" id="slider3" style="
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    z-index:5;
+  ">
+
+  <!-- LABELS -->
+  <span style="
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">BEFORE</span>
+
+  <span style="
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    font-size:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.7);
+    padding:4px 8px;
+    border-radius:4px;
+    color:#000;
+  ">AFTER</span>
+
+</div>
+
+    <div class="transform-info">
+      <h4>Karan P. — Bangalore</h4>
+      <p style="font-size:0.8rem;color:var(--muted)">
+        Dropped 2 shirt sizes, shredded for baraat
+      </p>
+      <div class="transform-meta">
+        <span class="transform-tag">60 Days</span>
+        <span class="transform-tag">-6 KG</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    <div style="text-align:center; margin-top:40px;">
+  <a href="#pricing" class="btn-outline">
+  View Plans →
+</a>
+</div>
+    <p style="font-size:12px; color:#888; margin-top:10px; text-align:center;">
+  Real stories from grooms who were exactly where you are
+</p>
+    
+ <p class="transform-note">
+Client transformations (identity protected)
+</p>
+  </div>
+</section>
+
+
+  <!-- ===== PRICING ===== -->
+<section id="pricing" class="section">
+  <div class="section-inner">
+  <div class="pricing-header reveal">
+    <p style="text-align:center;color:#aaa;margin-bottom:20px;">
+Most couples spend ₹2L–₹10L on their wedding.  
+This ensures you both actually feel confident in it.
+</p>
+  <span class="section-tag">Invest in Yourself</span>
+  <h2 class="section-title">Choose Your <em class="gold italic">Transformation</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  <p class="section-sub" style="margin:0 auto">
+  Every plan includes expert coaching, custom plans, and full accountability. Choose based on how much personalisation you want.
+  </p>
+  </div>
+
+  <div class="pricing-grid">
+  <!-- Basic -->
+  <div class="plan reveal" style="transition-delay:0.05s">
+  <div class="plan-name">Basic Plan</div>
+  <div class="plan-price">
+  <span class="price-symbol">₹</span>
+  <span class="price-num">8,999</span>
+  <span class="price-period">/program</span>
+  </div>
+  <p class="plan-desc">A structured plan for the self-driven groom.</p>
+  <ul class="plan-features">
+  <li><span class="check">✓</span> Custom workout plan (gym/home)</li>
+  <li><span class="check">✓</span> Indian diet plan (veg/non-veg)</li>
+  <li><span class="check">✓</span> 60-day program structure</li>
+  <li><span class="check">✓</span> Progress tracking templates</li>
+  <li class="off"><span class="cross">✗</span> Weekly check-in calls</li>
+  <li class="off"><span class="cross">✗</span> WhatsApp support</li>
+  <li class="off"><span class="cross">✗</span> 1-on-1 coaching</li>
+  </ul>
+  <a href="https://razorpay.me/@uditsahai" target="_blank" class="btn-outline">
+  Pay ₹8,999 & Start
+</a>
+  </div>
+
+  <div class="plan featured">
+
+<div class="plan-badge">Best for Couples</div>
+
+<div class="plan-name">CoupleFit Transformation</div>
+
+<div class="plan-price">
+<span class="price-symbol">₹</span>
+<span class="price-num">29,999</span>
+<span class="price-period">/both</span>
+</div>
+
+<p class="plan-desc">
+A shared transformation journey for both partners — guided under one system.
+</p>
+
+<ul class="plan-features">
+<li><span class="check">✓</span> Full coaching for both individuals</li>
+<li><span class="check">✓</span> Personalised diet & workout (for each)</li>
+<li><span class="check">✓</span> Shared accountability system</li>
+<li><span class="check">✓</span> Weekly couple check-ins</li>
+<li><span class="check">✓</span> Coordinated schedules</li>
+<li><span class="check">✓</span> Joint progress tracking</li>
+<li><span class="check">✓</span> WhatsApp support (6 days/week)</li>
+</ul>
+
+<a href="#" onclick="openPopup()" class="btn-primary">
+Apply as a Couple →
+</a>
+
+</div>
+
+  <!-- Elite -->
+  <div class="plan reveal" style="transition-delay:0.15s">
+  <div class="plan-name">1-on-1 Transformation</div>
+  <div class="plan-price">
+  <span class="price-symbol">₹</span>
+  <span class="price-num">24,999</span>
+  <span class="price-period">/program</span>
+  </div>
+  <p class="plan-desc">Elite-level personal coaching for maximum results.</p>
+  <ul class="plan-features">
+  <li><span class="check">✓</span> Everything in Premium</li>
+  <li><span class="check">✓</span> Dedicated personal coach</li>
+  <li><span class="check">✓</span> Daily plan adjustments</li>
+  <li><span class="check">✓</span> Posture & grooming coaching</li>
+  <li><span class="check">✓</span> Pre-wedding peak week protocol</li>
+  <li><span class="check">✓</span> WhatsApp support (7 days/week)</li>
+  <li><span class="check">✓</span> Post-wedding maintenance plan</li>
+  </ul>
+  <a href="https://razorpay.me/@uditsahai" target="_blank" class="btn-outline">
+  Pay ₹24,999 & Start
+</a>
+  </div>
+  </div>
+
+  <p style="text-align:center;margin-top:2.5rem;font-size:0.82rem;color:var(--muted)">
+  💳 One-time investment · No hidden charges · 100% focused on your wedding transformation
+  </p>
+  </div>
+</section>
+
+  
+   <!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="section">
+  <div class="section-inner">
+  <div class="testi-header reveal">
+  <span class="section-tag">Client Stories</span>
+  <h2 class="section-title">What Grooms Say About <em class="gold italic">GroomFit</em></h2>
+  <div class="divider" style="margin:1rem auto"></div>
+  </div>
+
+  <div class="testi-grid">
+  <div class="testi-card reveal" style="transition-delay:0.05s">
+  <div class="testi-quote">"</div>
+  <div class="stars">
+  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <p>“Working in Dubai, my schedule was all over the place and fitness kept getting pushed. I tried GroomFit mainly because it was focused on grooms. In about 80 days I lost 9 kilos and finally felt confident on my wedding day. Didn’t expect it to make this much difference honestly."</p>
+  <div class="testi-author">
+  <div class="testi-ava">
+  <img src="akash.jpg" alt="Akash Bhamre"
+       style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+  <div>
+  <div class="testi-name">Akash Bhamre.</div>
+  <div class="testi-detail">Married in March 2024 · Dubai</div>
+  </div>
+  </div>
+  <div class="testi-result">-9 kg in 80 Days</div>
+  </div>
+  <div class="testi-card reveal" style="transition-delay:0.1s">
+  <div class="testi-quote">"</div>
+  <div class="stars">
+  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <p>"The Indian diet plan was a game changer. I always thought I'd have to eat bland salads to get fit. GroomFit proved that wrong completely. My mother-in-law actually commented on my transformation!"</p>
+  <div class="testi-author">
+  <div class="testi-ava">
+  <img src="arth.jpg" alt="Arth Patel"
+       style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+  <div>
+  <div class="testi-name">Arth Patel.</div>
+  <div class="testi-detail">Married in December 2024 · Surat</div>
+  </div>
+  </div>
+  <div class="testi-result">Lost 7 kg + Gained Muscle</div>
+  </div>
+  <div class="testi-card reveal" style="transition-delay:0.15s">
+  <div class="testi-quote">"</div>
+  <div class="stars">
+  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <p>“Tried YouTube workouts and doing things on my own for years — never worked out. A friend recommended GroomFit so I gave it a try. Not gonna lie, the coaches were on my back the whole time 😂 but that’s exactly what I needed. Ended up way more lean and confident by the wedding."</p>
+  <div class="testi-author">
+  <div class="testi-ava">
+  <img src="sourabh.jpg" alt="Sourabh R."
+       style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
+  <div>
+  <div class="testi-name">Sourabh R.</div>
+  <div class="testi-detail">Married in April 2025 · Gurugram</div>
+  </div>
+  </div>
+  <div class="testi-result">Lean and defined look</div>
+  </div>
+  </div>
+  <p class="transform-note" style="margin-top:2rem">* Based on real client experiences. Names and details may be adapted for privacy.</p>
+  </div>
+</section>
+
+  
+
+ 
+
+
+<!-- ===== LEGAL MODALS ===== -->
+
+<!-- Privacy Policy Modal -->
+<div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="title-privacy">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <span class="modal-brand-label">GroomFit · Legal</span>
+        <h2 class="modal-title" id="title-privacy">Privacy Policy</h2>
+      </div>
+      <button class="modal-close" onclick="closeModal('privacy')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <div class="modal-section-title">Our Commitment</div>
+        <p>At GroomFit, your privacy is something we take seriously. Any information you share with us is used solely to deliver and improve your coaching experience — nothing more, nothing less.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">What We Collect</div>
+        <p>When you apply for or enrol in a GroomFit program, we may collect:</p>
+        <ul>
+          <li>Personal details — your name, phone number, and email address</li>
+          <li>Fitness information — current weight, body goals, wedding date, and any health notes you share</li>
+          <li>Communication history — messages exchanged via WhatsApp, email, or calls during coaching</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">How We Use It</div>
+        <p>Your information helps us build and deliver a coaching experience that's truly personalised for you. Specifically, we use it to:</p>
+        <ul>
+          <li>Create your custom workout and diet plan</li>
+          <li>Communicate with you via WhatsApp, calls, or email throughout the program</li>
+          <li>Track your progress and adjust your plan when needed</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Data Protection</div>
+        <div class="modal-highlight">
+          <p><strong>We do not sell, rent, or share your personal data with any third party.</strong> Your information stays strictly between you and your GroomFit coach.</p>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Your Rights</div>
+        <p>You are always in control of your data. At any time, you may:</p>
+        <ul>
+          <li>Request to view the information we hold about you</li>
+          <li>Ask us to correct or update any inaccurate details</li>
+          <li>Request complete deletion of your data after your program ends</li>
+        </ul>
+        <p>Simply reach out to us on WhatsApp or email and we'll handle your request promptly.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Your Consent</div>
+        <p>By applying to or joining GroomFit, you agree to the collection and use of information as described above. If you have any questions or concerns, we're always just a message away.</p>
+      </div>
+
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
+    </div>
+  </div>
+</div>
+
+<!-- Terms & Conditions Modal -->
+<div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="title-terms">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <span class="modal-brand-label">GroomFit · Legal</span>
+        <h2 class="modal-title" id="title-terms">Terms &amp; Conditions</h2>
+      </div>
+      <button class="modal-close" onclick="closeModal('terms')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <div class="modal-section-title">The Service</div>
+        <p>GroomFit provides online fitness coaching designed specifically for Indian men preparing for their wedding. This includes personalised workout plans, Indian-adapted diet plans, progress check-ins, and coaching support — delivered remotely via WhatsApp, video calls, and email.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Your Responsibility</div>
+        <p>GroomFit provides the plan, the structure, and the support — but results come from your consistent effort. By joining, you acknowledge that:</p>
+        <ul>
+          <li>You will follow the program as instructed to the best of your ability</li>
+          <li>Results depend on your commitment, consistency, and lifestyle choices</li>
+          <li>You will communicate openly with your coach about progress, challenges, or health concerns</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Payment Terms</div>
+        <p>GroomFit operates on a simple, transparent payment structure:</p>
+        <ul>
+          <li>Payment is a one-time program fee — no recurring charges, no hidden costs</li>
+          <li>The program begins once payment is confirmed</li>
+          <li>All applicable fees are communicated clearly before you pay</li>
+        </ul>
+        <div class="modal-highlight">
+          <p><strong>What you see is what you pay.</strong> No surprises, no add-ons, no upsells mid-program.</p>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Code of Conduct</div>
+        <p>We believe in a respectful coaching relationship. We ask that all communication with your coach and the GroomFit team remains courteous and professional. GroomFit reserves the right to discontinue service (without refund) in cases of abusive or disrespectful behaviour.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Health Disclaimer</div>
+        <p>GroomFit coaching is not a substitute for medical advice. If you have any underlying health conditions, please consult a qualified doctor before starting the program. Always inform your coach of any medical concerns.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Acceptance</div>
+        <p>By purchasing or enrolling in a GroomFit program, you confirm that you have read, understood, and agree to these Terms &amp; Conditions.</p>
+      </div>
+
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
+    </div>
+  </div>
+</div>
+
+<!-- Refund Policy Modal -->
+<div class="modal-overlay" id="modal-refund" role="dialog" aria-modal="true" aria-labelledby="title-refund">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <span class="modal-brand-label">GroomFit · Legal</span>
+        <h2 class="modal-title" id="title-refund">Refund Policy</h2>
+      </div>
+      <button class="modal-close" onclick="closeModal('refund')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="modal-section">
+        <div class="modal-section-title">Our Guarantee</div>
+        <div class="modal-highlight">
+          <p><strong>7-Day Risk-Free Guarantee.</strong> We're confident in what we deliver. If you join GroomFit and genuinely feel it's not working for you within the first 7 days, you'll get a full refund — no questions, no drama.</p>
+        </div>
+        <p>We stand behind our program because we've seen what it does when followed sincerely. This guarantee exists because we believe you deserve to try it without risk.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Conditions</div>
+        <p>To be eligible for a refund within the 7-day window:</p>
+        <ul>
+          <li>You must have genuinely followed the program during those 7 days</li>
+          <li>Refunds will not be issued if the plan has not been attempted at all</li>
+          <li>Your feedback helps us improve — sharing it is appreciated but not mandatory</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">How to Request</div>
+        <p>The process is simple. Just send us a WhatsApp message at <strong style="color:var(--gold)">+91 95888 59960</strong> within 7 days of your program start date. Mention your name and your request — that's it. No forms, no back-and-forth.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">Processing Time</div>
+        <p>Once your refund is approved, the amount will be credited back to your original payment method within <strong style="color:var(--gold)">5–7 business days</strong>.</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-title">After 7 Days</div>
+        <div class="modal-highlight">
+          <p>Refund requests made after the 7-day window will not be accepted. <strong>We encourage you to raise any concerns early</strong> — your coach is available to help resolve issues before you consider a refund.</p>
+        </div>
+      </div>
+
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
+    </div>
+  </div>
+</div>
+  
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">Groom<span>Fit</span></div>
+  <p class="footer-tagline">India's Premier Wedding Transformation Program for Men</p>
+  <ul class="footer-links">
+  <li><a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a></li>
+  <li><a href="#" onclick="openModal('terms');return false;">Terms</a></li>
+  <li><a href="#" onclick="openModal('refund');return false;">Refund Policy</a></li>
+  <li><a href="https://wa.me/919588859960" target="_blank" rel="noopener">Contact Us</a></li>
+  <li><a href="https://www.instagram.com/groomfit.in" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+  <p class="footer-copy">© 2024 GroomFit. All rights reserved. · Results may vary. Commitment required.</p>
+</footer>
+
+<!-- ===== WHATSAPP FAB ===== -->
+<a href="https://wa.me/919588859960?text=Hi%2C%20I%20want%20to%20check%20if%20I%20qualify%20for%20GroomFit.%0A%0AMy%20wedding%20date%20is%3A%0AMy%20current%20weight%20is%3A%0AMy%20goal%20is%3A" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+<div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+  if (e.isIntersecting) {
+  e.target.classList.add('visible');
+  observer.unobserve(e.target);
+  }
+  });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  function updateCountdown() {
+  if (!weddingDate) return;
+  const now = new Date();
+  const diff = weddingDate - now;
+  if (diff <= 0) {
+  document.getElementById('cdDays').textContent = '00';
+  document.getElementById('cdHours').textContent = '00';
+  document.getElementById('cdMins').textContent = '00';
+  document.getElementById('cdSecs').textContent = '00';
+  return;
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById('cdDays').textContent  = String(days).padStart(2, '0');
+  document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cdMins').textContent  = String(mins).padStart(2, '0');
+  document.getElementById('cdSecs').textContent  = String(secs).padStart(2, '0');
+  }
+
+  // ===== LEGAL MODALS =====
+  function openModal(id) {
+    const overlay = document.getElementById('modal-' + id);
+    if (!overlay) return;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // scroll modal body to top each open
+    const body = overlay.querySelector('.modal-body');
+    if (body) body.scrollTop = 0;
+  }
+
+  function closeModal(id) {
+    const overlay = document.getElementById('modal-' + id);
+    if (!overlay) return;
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(function(overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  
+</script>
+<!-- PREMIUM LEAD POPUP -->
+<div id="leadPopup" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+
+  <div style="
+    background: #111;
+    padding: 30px;
+    border-radius: 16px;
+    width: 320px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+  ">
+
+    <!-- Close -->
+    <span onclick="closePopup()" style="
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 18px;
+    ">✖</span>
+
+    <h3>Check If You Qualify for GroomFit</h3>
+    <p style="font-size: 13px; margin-bottom: 20px;">
+      Apply below — we’ll get back within 24 hours
+    </p>
+
+   <form id="leadForm">
+
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
+
+      <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;">
+
+      <input type="text" name="location" placeholder="Location" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;">
+
+
+      <button type="submit" aria-label="Submit form" style="width:100%;padding:12px;background:#00ff88;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  // Show popup once
+  // AUTO SET DEFAULT WEDDING DATE (90 DAYS)
+document.addEventListener("DOMContentLoaded", function() {
+  const defaultDate = new Date();
+  defaultDate.setDate(defaultDate.getDate() + 90);
+
+  const input = document.getElementById("miniDate");
+  if (input) {
+    input.value = defaultDate.toISOString().split('T')[0];
+    miniTargetDate = new Date(input.value);
+  }
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const lastShown = localStorage.getItem("popupTime");
+  const now = Date.now();
+
+  if (!lastShown || now - lastShown > 86400000) {
+    setTimeout(() => {
+      document.getElementById("leadPopup").style.display = "flex";
+    }, 5000);
+
+    localStorage.setItem("popupTime", now);
+  }
+});
+  
+  function closePopup() {
+    document.getElementById("leadPopup").style.display = "none";
+  }
+
+  // FORM SUBMIT
+ 
+  
+let miniTargetDate;
+  let lastDays = null;
+
+function setMiniDate() {
+  miniTargetDate = new Date(document.getElementById("miniDate").value);
+}
+
+function updateMiniCountdown() {
+  if (!miniTargetDate) return;
+
+  const now = new Date();
+  const diff = miniTargetDate - now;
+
+  if (diff <= 0) {
+    document.getElementById("miniDays").textContent = "0";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+const daysEl = document.getElementById("miniDays");
+
+// animate only when value changes
+if (days !== lastDays) {
+  daysEl.classList.add("animate");
+
+  setTimeout(() => {
+    daysEl.textContent = days;
+    daysEl.classList.remove("animate");
+  }, 200);
+
+  lastDays = days;
+}
+
+
+// urgency color
+const box = document.querySelector(".mini-countdown");
+if (days <= 10) {
+  box.classList.add("urgent");
+} else {
+  box.classList.remove("urgent");
+}
+  } // function ends
+
+setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
+
+  function openPopup() {
+  document.getElementById("leadPopup").style.display = "flex";
+}
+  
+</script>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<div id="successPopup" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+">
+  <div style="
+    background:#111;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    max-width:400px;
+    width:90%;
+    border:1px solid #C9A84C;
+  ">
+    <h2 style="color:#fff; margin-bottom:10px;">Application Received</h2>
+    
+    <p style="color:#aaa; font-size:14px; margin-bottom:20px;">
+      If you're serious, message us on WhatsApp to fast-track your review.
+    </p>
+
+    <a id="whatsappBtn" href="#" target="_blank" style="
+  display:inline-block;
+  background:#C9A84C;
+  color:#000;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+">
+  Continue on WhatsApp
+</a>
+
+<!-- ✅ ADD THIS PAYMENT BUTTON HERE -->
+<a href="https://razorpay.me/@uditsahai" target="_blank" style="
+    display:inline-block;
+  background:#C9A84C;
+  color:#000;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+">
+  Pay & Start Instantly
+</a>
+
+<div style="margin-top:12px;">
+<div style="margin-top:12px;">
+  <button onclick="closeSuccessPopup()" style="
+    background:none;
+    border:none;
+    color:#aaa;
+    font-size:13px;
+    cursor:pointer;
+    text-decoration:underline;
+  ">
+    Maybe later
+  </button>
+</div>
+    
+  </div>
+</div>
+
+  <script>
+
+</script>
+  <script>
+
+ function closeSuccessPopup() {
+  const popup = document.getElementById("successPopup");
+  if (popup) popup.style.display = "none";
+
+}
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = this;
+  const formData = new FormData(form);
+
+  // GOOGLE FORM SUBMIT
+  const googleForm = document.createElement("form");
+  googleForm.method = "POST";
+  googleForm.action = "https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  googleForm.target = "hidden_iframe";
+
+  function addField(name, value) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+
+  addField("entry.525461384", formData.get("name"));
+  addField("entry.933229371", formData.get("phone"));
+  addField("entry.1013425097", formData.get("location"));
+
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+
+  // WHATSAPP MESSAGE
+  const name = formData.get("name") || "there";
+  const message = `Hi, I just applied for GroomFit. My name is ${name}. Looking forward.`;
+  const encodedMsg = encodeURIComponent(message);
+
+  const phone = "919588859960";
+  const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
+
+  document.getElementById("whatsappBtn").href = waLink;
+
+  // SHOW SUCCESS POPUP
+  document.getElementById("successPopup").style.display = "flex";
+
+  // CLOSE FORM POPUP
+  closePopup();
+
+  // RESET FORM
+  form.reset();
+});
+
+    /* 👇 ADD THIS EXACTLY HERE */
+const slider = document.getElementById("slider");
+const afterImage = document.getElementById("afterImage");
+
+if (slider && afterImage) {
+  slider.addEventListener("input", function () {
+    const value = this.value;
+   afterImage.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+  });
+}
+    const slider2 = document.getElementById("slider2");
+const afterImage2 = document.getElementById("afterImage2");
+
+if (slider2 && afterImage2) {
+  slider2.addEventListener("input", function () {
+    const value = this.value;
+    afterImage2.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+  });
+}
+    /* ===== KARAN SLIDER ===== */
+const slider3 = document.getElementById("slider3");
+const afterImage3 = document.getElementById("afterImage3");
+
+if (slider3 && afterImage3) {
+  slider3.addEventListener("input", function () {
+    const value = this.value;
+    afterImage3.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+  });
+}
+    
+</script>
+ <a href="#pricing" class="pricing-fab">
+  ₹
+</a>
+
+<div class="pricing-tooltip">View Pricing</div>
+
+<script>
+// Disable pinch zoom
+document.addEventListener('gesturestart', function (e) {
+  e.preventDefault();
+});
+
+// Disable double tap zoom
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (e) {
+  const now = new Date().getTime();
+  if (now - lastTouchEnd <= 300) {
+    e.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
+
+  // Prevent multi-touch zoom
+document.addEventListener('touchmove', function (e) {
+  if (e.scale !== undefined && e.scale !== 1) {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+</script>
+  
+</body>
+</html>
+
+
+
