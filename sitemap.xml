@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- MAIN PAGE -->
   <url>
     <loc>https://www.groomfit.in/</loc>
   </url>
 
+  <!-- CORE PAGES -->
+  <url>
+    <loc>https://www.groomfit.in/problem.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.groomfit.in/how.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.groomfit.in/why-trust-us.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.groomfit.in/blogs.html</loc>
+  </url>
+
+  <!-- BLOG ARTICLES (ADD YOUR 10 ARTICLES HERE) -->
+  <!-- Example -->
   <url>
     <loc>https://www.groomfit.in/blog1.html</loc>
   </url>
@@ -12,5 +32,7 @@
   <url>
     <loc>https://www.groomfit.in/blog2.html</loc>
   </url>
+
+  <!-- Add all remaining blog pages like this -->
 
 </urlset>
