@@ -18,7 +18,7 @@ body{
   line-height:1.8;
 }
 
-/* ===== NAVBAR ===== */
+/* NAV */
 nav{
   position:fixed;
   top:0;
@@ -26,52 +26,48 @@ nav{
   right:0;
   height:60px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   padding:0 5%;
   background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(201,168,76,0.2);
   z-index:1000;
 }
 
-.nav-left a{
-  color:#C9A84C;
+nav a{
   text-decoration:none;
   font-weight:600;
-  font-size:14px;
+}
+
+.nav-left a{
+  color:#C9A84C;
 }
 
 .nav-right a{
   background:#C9A84C;
   color:#000;
-  padding:10px 18px;
+  padding:10px 16px;
   border-radius:6px;
-  font-weight:600;
-  text-decoration:none;
-  font-size:14px;
 }
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 .container{
   max-width:900px;
   margin:auto;
-  padding:100px 20px 80px;
+  padding:100px 20px;
 }
 
 h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:42px;
+  font-size:40px;
 }
 
 h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:28px;
+  font-size:26px;
   color:#C9A84C;
-  margin-top:60px;
+  margin-top:50px;
 }
-
-p{ color:#ccc; }
 
 .hero{
   display:grid;
@@ -81,7 +77,7 @@ p{ color:#ccc; }
 
 .hero img{
   width:100%;
-  border-radius:12px;
+  border-radius:10px;
 }
 
 .highlight{
@@ -103,27 +99,50 @@ p{ color:#ccc; }
   margin-top:60px;
   padding:30px;
   text-align:center;
-  background:linear-gradient(135deg,#1a1500,#0f0f0f);
-  border:1px solid rgba(201,168,76,0.4);
-  border-radius:12px;
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:10px;
 }
 
 .btn{
-  display:inline-block;
   background:#C9A84C;
   color:#000;
-  padding:14px 28px;
-  font-weight:600;
+  padding:12px 25px;
   border-radius:6px;
-  margin-top:15px;
+  display:inline-block;
+  margin-top:10px;
   text-decoration:none;
+  font-weight:600;
 }
 
-/* ===== WHATSAPP FLOAT ===== */
-.whatsapp-fab{
+/* POPUPS */
+.popup{
   position:fixed;
-  bottom:25px;
-  right:25px;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.popup-box{
+  background:#111;
+  padding:25px;
+  border-radius:10px;
+  width:300px;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+/* WHATSAPP FAB */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
   width:60px;
   height:60px;
   background:#25D366;
@@ -131,19 +150,10 @@ p{ color:#ccc; }
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 6px 20px rgba(0,0,0,0.4);
-  z-index:999;
 }
 
-.whatsapp-fab img{
-  width:30px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero{
-    grid-template-columns:1fr;
-  }
+.whatsapp img{
+  width:28px;
 }
 
 </style>
@@ -151,12 +161,11 @@ p{ color:#ccc; }
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
   <div class="nav-left">
     <a href="https://www.groomfit.in/">← Back to Home</a>
   </div>
-
   <div class="nav-right">
     <a href="https://www.groomfit.in/#pricing">View Pricing</a>
   </div>
@@ -167,87 +176,130 @@ p{ color:#ccc; }
 <div class="hero">
   <div>
     <h1>Weight Loss Before Wedding for Men</h1>
-
-    <p>
-      Your wedding photos will exist forever.  
-      The question is — will you feel proud of how you looked in them?
-    </p>
-
-    <p>
-      Most grooms don’t fail because they’re lazy.  
-      They fail because they start late, follow random advice, and never commit to a structured plan.
-    </p>
+    <p>Your wedding photos will last forever. Will you be proud of how you look?</p>
+    <p>Most grooms fail because they follow random plans without structure.</p>
   </div>
-
-  <img src="groom-transformation.jpg" alt="">
+  <img src="groom-transformation.jpg">
 </div>
 
 <div class="highlight">
-<strong>This is a proven 60–90 day transformation system designed specifically for grooms.</strong>
+<strong>This is a structured 60–90 day transformation plan for grooms.</strong>
 </div>
 
 <h2>How Much Weight Can You Lose?</h2>
-
 <ul>
-<li><strong>30 days:</strong> 2–4 kg</li>
-<li><strong>60 days:</strong> 4–7 kg</li>
-<li><strong>90 days:</strong> 6–10 kg</li>
+<li>30 days: 2–4 kg</li>
+<li>60 days: 4–7 kg</li>
+<li>90 days: 6–10 kg</li>
 </ul>
-
-<p>Anything beyond this leads to poor results and fatigue.</p>
 
 <h2>Why Most Grooms Fail</h2>
-
 <ul>
-<li>No structured plan</li>
-<li>Random workouts</li>
+<li>No plan</li>
 <li>No accountability</li>
-<li>Inconsistent effort</li>
+<li>Inconsistent</li>
 </ul>
 
-<h2>The 60–90 Day Plan</h2>
-
-<h3>Training</h3>
+<h2>The Plan</h2>
 <ul>
 <li>Strength training 4–5x/week</li>
 <li>Cardio daily</li>
-</ul>
-
-<h3>Diet</h3>
-<ul>
-<li>High protein Indian meals</li>
-<li>Controlled carbs</li>
-</ul>
-
-<h3>Habits</h3>
-<ul>
-<li>8–10k steps daily</li>
-<li>7 hours sleep</li>
+<li>High protein diet</li>
 </ul>
 
 <h2>Your Timeline</h2>
-
 <div class="timeline">
-  <div><strong>90 Days:</strong> Full transformation</div>
-  <div><strong>60 Days:</strong> Visible fat loss</div>
-  <div><strong>30 Days:</strong> Minor changes</div>
+<div>90 Days: Full transformation</div>
+<div>60 Days: Visible fat loss</div>
+<div>30 Days: Minor change</div>
 </div>
 
 <div class="cta">
 <h2>Want a Personalised Plan?</h2>
-<p>Stop guessing. Get a plan built for your wedding timeline.</p>
-
-<a href="https://wa.me/919588859960" class="btn">
-Check If I Qualify →
-</a>
+<a href="#" onclick="openPopup()" class="btn">Check If I Qualify →</a>
 </div>
 
 </div>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/919588859960" class="whatsapp-fab">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<!-- FORM POPUP -->
+<div id="formPopup" class="popup">
+  <div class="popup-box">
+    <h3>Check If You Qualify</h3>
+    <form id="leadForm">
+      <input name="name" placeholder="Name" required>
+      <input name="phone" placeholder="Phone" required>
+      <input name="location" placeholder="Location" required>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div id="successPopup" class="popup">
+  <div class="popup-box" style="text-align:center;">
+    <h3>Application Received</h3>
+
+    <a id="waBtn" class="btn" style="background:#25D366;">Connect on WhatsApp</a>
+
+    <a href="https://www.groomfit.in/#pricing" class="btn">Go to Pricing</a>
+
+    <p onclick="closeSuccess()" style="color:#aaa;cursor:pointer;">Maybe later</p>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919588859960" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+
+function openPopup(){
+  document.getElementById("formPopup").style.display="flex";
+}
+
+function closeSuccess(){
+  document.getElementById("successPopup").style.display="none";
+}
+
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data=new FormData(this);
+
+  // GOOGLE FORM
+  const f=document.createElement("form");
+  f.method="POST";
+  f.action="https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  f.target="hidden_iframe";
+
+  function add(name,val){
+    let i=document.createElement("input");
+    i.name=name; i.value=val;
+    f.appendChild(i);
+  }
+
+  add("entry.525461384",data.get("name"));
+  add("entry.933229371",data.get("phone"));
+  add("entry.1013425097",data.get("location"));
+
+  document.body.appendChild(f);
+  f.submit();
+
+  // WHATSAPP LINK
+  let name=data.get("name");
+  let msg=encodeURIComponent("Hi, I just applied. My name is "+name);
+  document.getElementById("waBtn").href=`https://wa.me/919588859960?text=${msg}`;
+
+  document.getElementById("formPopup").style.display="none";
+  document.getElementById("successPopup").style.display="flex";
+
+  this.reset();
+});
+
+</script>
 
 </body>
 </html>
