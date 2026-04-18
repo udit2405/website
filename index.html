@@ -2160,6 +2160,69 @@ overflow: hidden;
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== NAV BOX STYLE ===== */
+.nav-card {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 10px;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: var(--muted);
+
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.nav-card:hover {
+  transform: translateY(-3px) scale(1.05);
+  color: var(--gold);
+  border-color: rgba(201,168,76,0.6);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    0 0 20px rgba(201,168,76,0.25);
+}
+
+/* Glow border */
+.nav-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, rgba(201,168,76,0.6), transparent);
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-card:hover::before {
+  opacity: 1;
+}
+
+/* Active highlight (optional) */
+.nav-card.active {
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  box-shadow:
+    0 0 15px rgba(201,168,76,0.25),
+    0 0 40px rgba(201,168,76,0.15);
+}
+    
     
   </style>
 </head>
@@ -2176,23 +2239,21 @@ overflow: hidden;
   
 <ul class="nav-links">
 
-  <li><a href="#program">Program</a></li>
-  <li><a href="#transformations">Results</a></li>
-  <li><a href="#pricing">Pricing</a></li>
-  <li><a href="#testimonials">Reviews</a></li>
-
-  <li class="nav-divider"></li>
+  <li><a href="#program" class="nav-card">Program</a></li>
+  <li><a href="#transformations" class="nav-card">Results</a></li>
+  <li><a href="#pricing" class="nav-card">Pricing</a></li>
+  <li><a href="#testimonials" class="nav-card">Reviews</a></li>
 
   <li class="nav-explore">
-  <a href="#">Explore ▾</a>
+    <a href="#" class="nav-card">Explore ▾</a>
 
-  <div class="dropdown">
-    <a href="problem.html">Why Grooms Fail</a>
-    <a href="how.html">How We Work</a>
-    <a href="why-trust-us.html">Meet Our Team</a>
-    <a href="blogs.html">Free Guides</a>
-  </div>
-</li>
+    <div class="dropdown">
+      <a href="problem.html">Why Grooms Fail</a>
+      <a href="how.html">How We Work</a>
+      <a href="why-trust-us.html">Meet Our Team</a>
+      <a href="blogs.html">Free Guides</a>
+    </div>
+  </li>
 
 </ul>
   
