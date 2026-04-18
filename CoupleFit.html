@@ -215,6 +215,22 @@ html {
   }
 
   /* ===== NAVBAR ===== */
+
+    /* ===== NAV BUTTON (RESULTS REPLACEMENT) ===== */
+.nav-results-btn {
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 6px 14px;
+  border-radius: 4px;
+  color: var(--gold) !important;
+  transition: all 0.3s ease;
+}
+
+.nav-results-btn:hover {
+  background: var(--gold);
+  color: black !important;
+}
+    
   nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -2296,7 +2312,7 @@ overflow: hidden;
 <ul class="nav-links">
 
   <li><a href="#program">Program</a></li>
-  <li><a href="#transformations">Results</a></li>
+  <li><a href="#shared-upgrade" class="nav-results-btn">Why It Works</a></li>
   <li><a href="#pricing">Pricing</a></li>
   <li><a href="#testimonials">Reviews</a></li>
 
