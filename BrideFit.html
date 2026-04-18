@@ -2175,29 +2175,31 @@ overflow: hidden;
 /* ===== NAV CARDS (LIKE PERSONA BOXES) ===== */
 
 .nav-card {
-  display: inline-flex;              /* 👈 FIX alignment */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 110px;                  /* 👈 SAME WIDTH FOR ALL */
-  height: 40px;                      /* 👈 SAME HEIGHT */
-
-  padding: 0 16px;                   /* 👈 consistent spacing */
+  min-width: 110px;
+  height: 40px;
+  padding: 0 16px;
 
   border-radius: 10px;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  text-align: center;
+
+  /* 🔥 MAKE ALL LIKE PRICING */
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
 
   background: linear-gradient(145deg, #111, #0b0b0b);
-  border: 1px solid rgba(201,168,76,0.2);
-  color: var(--muted);
+
+  box-shadow:
+    0 0 15px rgba(201,168,76,0.25),
+    0 0 40px rgba(201,168,76,0.15);
 
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 /* Hover effect */
