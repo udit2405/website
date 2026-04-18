@@ -2106,9 +2106,12 @@ overflow: hidden;
   }
 
     .logo-img {
-  height: 60px;
+  height: 45px;        /* 👈 reduce size */
   width: auto;
+  object-fit: contain; /* prevents stretching */
+  display: block;
 }
+    
 /* ===== PRICING FAB ===== */
 .pricing-fab {
   position: fixed;
