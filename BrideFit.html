@@ -297,10 +297,13 @@ html {
   transition: all 0.4s ease;
   box-shadow: 0 0 0 rgba(201,168,76,0);
 }
-  .btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(201,168,76,0.35);
-  filter: brightness(1.08);
+  .btn-primary {
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.12);   /* 👈 bigger */
+  box-shadow: 0 20px 60px rgba(201,168,76,0.5);
 }
 
   .btn-outline {
@@ -3389,7 +3392,7 @@ if (slider3 && afterImage3) {
   function selectPersona(type) {
 
   if (type === 'groom') {
-    window.location.href = "#pricing";
+    window.location.href = "index.html";
   }
 
   if (type === 'bride') {
