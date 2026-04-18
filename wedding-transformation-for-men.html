@@ -16,7 +16,6 @@ body{
   background:#080808;
   color:#f5f0e8;
   font-family:'Outfit',sans-serif;
-  line-height:1.8;
 }
 
 /* ===== NAV ===== */
@@ -42,10 +41,7 @@ nav a{
   font-weight:600;
 }
 
-.nav-left a{
-  color:#C9A84C;
-}
-
+.nav-left a{color:#C9A84C;}
 .nav-right a{
   background:#C9A84C;
   color:#000;
@@ -64,29 +60,26 @@ nav a{
     linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
     url("https://images.unsplash.com/photo-1594737625785-a6cbdabd333c");
   background-size:cover;
-  background-position:center;
 }
 
 .hero h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:56px;
-  line-height:1.1;
-  max-width:700px;
+  font-size:52px;
 }
 
 .hero p{
   max-width:520px;
   color:#aaa;
-  margin-top:15px;
 }
 
-.hero .btn{
-  margin-top:25px;
+.btn{
   display:inline-block;
+  margin-top:20px;
   background:#C9A84C;
   color:#000;
-  padding:14px 30px;
+  padding:14px 28px;
   border-radius:6px;
+  text-decoration:none;
   font-weight:600;
 }
 
@@ -99,57 +92,60 @@ nav a{
 
 .section h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:32px;
   color:#C9A84C;
-  margin-bottom:15px;
 }
 
-.section p{
-  color:#bbb;
-}
-
-/* ===== CARD ===== */
-.card{
-  background:#141414;
-  border:1px solid rgba(201,168,76,0.15);
-  border-radius:12px;
-  padding:25px;
-  margin-top:25px;
-}
-
-/* ===== GRID ===== */
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-@media(max-width:768px){
-  .grid{grid-template-columns:1fr;}
-}
-
-/* ===== CTA ===== */
-.cta{
-  margin-top:60px;
+/* ===== CTA BOX ===== */
+.cta-box{
+  margin:80px auto;
+  max-width:900px;
   padding:40px;
   text-align:center;
+  border-radius:16px;
   background:linear-gradient(135deg,#1a1500,#0f0f0f);
   border:1px solid rgba(201,168,76,0.3);
-  border-radius:16px;
 }
 
-.cta h2{
-  font-size:34px;
+/* ===== POPUP ===== */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
 }
 
-.cta .btn{
-  margin-top:20px;
-  display:inline-block;
-  background:#C9A84C;
-  color:#000;
-  padding:14px 30px;
-  border-radius:6px;
-  font-weight:600;
+.popup-box{
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  width:320px;
+}
+
+.popup-box input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+/* ===== SUCCESS ===== */
+.success-box{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.success-inner{
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
 }
 
 /* ===== WHATSAPP ===== */
@@ -159,12 +155,11 @@ nav a{
   right:25px;
   width:60px;
   height:60px;
-  border-radius:50%;
   background:#25D366;
+  border-radius:50%;
   display:flex;
-  align-items:center;
   justify-content:center;
-  box-shadow:0 8px 30px rgba(0,0,0,0.4);
+  align-items:center;
 }
 
 .whatsapp img{width:30px;}
@@ -179,7 +174,6 @@ nav a{
   <div class="nav-left">
     <a href="https://www.groomfit.in/">← Back to Home</a>
   </div>
-
   <div class="nav-right">
     <a href="https://www.groomfit.in/#pricing">View Pricing</a>
   </div>
@@ -187,62 +181,97 @@ nav a{
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Become the Best Version of Yourself Before Your Wedding</h1>
-
-  <p>
-  A 90-day transformation that helps you lose fat, build muscle, and walk into your wedding with confidence.
-  </p>
-
-  <a href="https://www.groomfit.in/#pricing" class="btn">See Plans →</a>
+  <h1>Become Your Best Before Your Wedding</h1>
+  <p>90-day transformation designed for Indian grooms.</p>
+  <a href="#" onclick="openPopup()" class="btn">Check If I Qualify →</a>
 </section>
 
-<!-- CONTENT -->
-<section class="section">
-
-<h2>Why Most Grooms Fail</h2>
-
-<div class="grid">
-  <div class="card">No structured plan</div>
-  <div class="card">Random YouTube workouts</div>
-  <div class="card">Inconsistent effort</div>
-  <div class="card">No accountability</div>
+<!-- CTA BOTTOM -->
+<div class="cta-box">
+  <h2>Want a Personalised Plan?</h2>
+  <p>Get a transformation plan tailored to your wedding date.</p>
+  <a href="#" onclick="openPopup()" class="btn">Check If I Qualify →</a>
 </div>
 
-<h2>The Transformation System</h2>
+<!-- POPUP FORM -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h3>Check If You Qualify</h3>
 
-<div class="card">
-<ul>
-<li>Strength training 4–5x/week</li>
-<li>Cardio daily</li>
-<li>High-protein Indian diet</li>
-<li>Consistent routine</li>
-</ul>
+    <form id="leadForm">
+      <input name="name" placeholder="Name" required>
+      <input name="phone" placeholder="Phone" required>
+      <input name="location" placeholder="Location" required>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
 </div>
 
-<h2>90-Day Roadmap</h2>
+<!-- SUCCESS -->
+<div class="success-box" id="success">
+  <div class="success-inner">
+    <h2>Application Received</h2>
+    <p>Continue to complete your application:</p>
 
-<div class="grid">
-  <div class="card"><strong>Month 1</strong><br>Fat loss begins</div>
-  <div class="card"><strong>Month 2</strong><br>Definition builds</div>
-  <div class="card"><strong>Month 3</strong><br>Peak physique</div>
+    <a id="waBtn" href="#" class="btn">Connect on WhatsApp</a><br><br>
+    <a href="https://www.groomfit.in/#pricing" class="btn">View Pricing</a><br><br>
+
+    <button onclick="closeSuccess()" style="background:none;color:#aaa;border:none;">Maybe Later</button>
+  </div>
 </div>
 
-</section>
-
-<!-- CTA -->
-<section class="section">
-<div class="cta">
-  <h2>Ready to Transform?</h2>
-  <p>Stop guessing. Follow a structured plan built for your wedding timeline.</p>
-
-  <a href="https://www.groomfit.in/#pricing" class="btn">Start Now →</a>
-</div>
-</section>
-
-<!-- WHATSAPP -->
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/919588859960" class="whatsapp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
+
+<script>
+
+function openPopup(){
+  document.getElementById("popup").style.display="flex";
+}
+
+function closeSuccess(){
+  document.getElementById("success").style.display="none";
+}
+
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = new FormData(this);
+
+  // GOOGLE FORM
+  const form = document.createElement("form");
+  form.method="POST";
+  form.action="https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse";
+  form.target="hidden_iframe";
+
+  function add(name,val){
+    let i=document.createElement("input");
+    i.name=name;
+    i.value=val;
+    form.appendChild(i);
+  }
+
+  add("entry.525461384", data.get("name"));
+  add("entry.933229371", data.get("phone"));
+  add("entry.1013425097", data.get("location"));
+
+  document.body.appendChild(form);
+  form.submit();
+
+  // WHATSAPP
+  const msg = encodeURIComponent("Hi, I applied. Name: "+data.get("name"));
+  document.getElementById("waBtn").href = "https://wa.me/919588859960?text="+msg;
+
+  document.getElementById("popup").style.display="none";
+  document.getElementById("success").style.display="flex";
+});
+
+</script>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 </body>
 </html>
