@@ -1868,13 +1868,61 @@ overflow: hidden;
 }
 
 .persona-card {
-  background: var(--dark-2);
-  border: 1px solid rgba(201,168,76,0.1);
-  padding: 14px;
-  border-radius: 8px;
+  position: relative;
+  padding: 22px 18px;
+  border-radius: 16px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid rgba(201,168,76,0.2);
+
+  transition: all 0.35s ease;
+}
+
+/* Glow border effect */
+.persona-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+
+  background: linear-gradient(120deg, transparent, rgba(201,168,76,0.6), transparent);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover = PREMIUM FEEL */
+.persona-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    0 0 25px rgba(201,168,76,0.25);
+  border-color: rgba(201,168,76,0.6);
+}
+
+.persona-card:hover::before {
+  opacity: 1;
+}
+
+/* Active press feel */
+.persona-card:active {
+  transform: scale(0.97);
+}
+
+/* Featured (CoupleFit) = EXTRA GLOW */
+.persona-card.featured {
+  background: radial-gradient(circle at 50% 30%, rgba(201,168,76,0.15), #0b0b0b);
+  border-color: var(--gold);
+  box-shadow: 0 0 35px rgba(201,168,76,0.25);
 }
 
 .persona-card:hover {
@@ -1889,7 +1937,14 @@ overflow: hidden;
 
 .persona-name {
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.persona-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
 }
 
 .persona-sub {
@@ -2166,17 +2221,17 @@ Trusted by 100+ grooms across India · 5★ average rating
   <div class="persona-grid">
 
     <div class="persona-card" onclick="selectPersona('groom')">
-      <div class="persona-name">GroomFit</div>
+      <div class="persona-name">🤵 GroomFit</div>
       <div class="persona-sub">For Grooms</div>
     </div>
 
     <div class="persona-card" onclick="selectPersona('bride')">
-      <div class="persona-name">BrideFit</div>
+      <div class="persona-name">👰 BrideFit</div>
       <div class="persona-sub">For Brides</div>
     </div>
 
     <div class="persona-card featured" onclick="selectPersona('couple')">
-      <div class="persona-name">CoupleFit 💍</div>
+      <div class="persona-name">💍 CoupleFit</div>
       <div class="persona-sub">Train Together</div>
     </div>
 
