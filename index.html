@@ -1848,6 +1848,58 @@ overflow: hidden;
   font-style: italic;
   }
 
+    .persona-selector {
+  margin-top: 25px;
+  max-width: 650px;
+}
+
+.persona-title {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.persona-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.1);
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.persona-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.persona-card.featured {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.1);
+}
+
+.persona-name {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.persona-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+    
+    
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
   margin-top: -140px;
@@ -2107,20 +2159,34 @@ Trusted by 100+ grooms across India · 5★ average rating
 
 </div>
 
+    <div class="persona-selector">
+
+  <p class="persona-title">Who is this for?</p>
+
+  <div class="persona-grid">
+
+    <div class="persona-card" onclick="selectPersona('groom')">
+      <div class="persona-name">GroomFit</div>
+      <div class="persona-sub">For Grooms</div>
+    </div>
+
+    <div class="persona-card" onclick="selectPersona('bride')">
+      <div class="persona-name">BrideFit</div>
+      <div class="persona-sub">For Brides</div>
+    </div>
+
+    <div class="persona-card featured" onclick="selectPersona('couple')">
+      <div class="persona-name">CoupleFit 💍</div>
+      <div class="persona-sub">Train Together</div>
+    </div>
+
+  </div>
+</div>
+
 <p style="font-size:0.75rem; color:#888; margin-top:8px;">
 Limited slots this month. Apply now—only committed grooms are accepted.
 </p>
 
-    <div class="mini-countdown">
-  <p class="mini-title">Wedding Countdown</p>
-  <div class="mini-row">
-  Days Left - <span id="miniDays" class="flip">90</span>
-</div>
-
-      
-  <input type="date" id="miniDate">
-  <button onclick="setMiniDate()">Set Date</button>
-</div>
     
 
   <div class="hero-comparison">
@@ -3051,85 +3117,9 @@ This ensures your body matches it.
 </div>
 
 <script>
-  // Show popup once
-  // AUTO SET DEFAULT WEDDING DATE (90 DAYS)
-document.addEventListener("DOMContentLoaded", function() {
-  const defaultDate = new Date();
-  defaultDate.setDate(defaultDate.getDate() + 90);
-
-  const input = document.getElementById("miniDate");
-  if (input) {
-    input.value = defaultDate.toISOString().split('T')[0];
-    miniTargetDate = new Date(input.value);
-  }
-});
-document.addEventListener("DOMContentLoaded", function() {
-  const lastShown = localStorage.getItem("popupTime");
-  const now = Date.now();
-
-  if (!lastShown || now - lastShown > 86400000) {
-    setTimeout(() => {
-      document.getElementById("leadPopup").style.display = "flex";
-    }, 5000);
-
-    localStorage.setItem("popupTime", now);
-  }
-});
-  
-  function closePopup() {
-    document.getElementById("leadPopup").style.display = "none";
-  }
 
   // FORM SUBMIT
- 
-  
-let miniTargetDate;
-  let lastDays = null;
 
-function setMiniDate() {
-  miniTargetDate = new Date(document.getElementById("miniDate").value);
-}
-
-function updateMiniCountdown() {
-  if (!miniTargetDate) return;
-
-  const now = new Date();
-  const diff = miniTargetDate - now;
-
-  if (diff <= 0) {
-    document.getElementById("miniDays").textContent = "0";
-    return;
-  }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-const daysEl = document.getElementById("miniDays");
-
-// animate only when value changes
-if (days !== lastDays) {
-  daysEl.classList.add("animate");
-
-  setTimeout(() => {
-    daysEl.textContent = days;
-    daysEl.classList.remove("animate");
-  }, 200);
-
-  lastDays = days;
-}
-
-
-// urgency color
-const box = document.querySelector(".mini-countdown");
-if (days <= 10) {
-  box.classList.add("urgent");
-} else {
-  box.classList.remove("urgent");
-}
-  } // function ends
-
-setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 
   function openPopup() {
   document.getElementById("leadPopup").style.display = "flex";
@@ -3301,8 +3291,25 @@ if (slider3 && afterImage3) {
 </a>
 
 <div class="pricing-tooltip">View Pricing</div>
-
+  
 <script>
+
+  function selectPersona(type) {
+
+  if (type === 'groom') {
+    window.location.href = "#pricing";
+  }
+
+  if (type === 'bride') {
+    window.location.href = "#pricing";
+    alert("BrideFit coming soon");
+  }
+
+  if (type === 'couple') {
+    window.location.href = "#pricing";
+  }
+}
+  
 // Disable pinch zoom
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
