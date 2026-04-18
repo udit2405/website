@@ -3469,12 +3469,9 @@ if (slider3 && afterImage3) {
 let lastTouchEnd = 0;
 document.addEventListener('touchend', function (e) {
   const now = new Date().getTime();
-
-  // Only prevent zoom, NOT normal taps
-  if (now - lastTouchEnd <= 300 && e.touches && e.touches.length > 1) {
+  if (now - lastTouchEnd <= 300) {
     e.preventDefault();
   }
-
   lastTouchEnd = now;
 }, false);
 
