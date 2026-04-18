@@ -250,8 +250,17 @@ html {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   }
-  .nav-links a { color: var(--muted); transition: color 0.25s; }
-  .nav-links a:hover { color: var(--gold); }
+  .nav-links a {
+  text-decoration: none;
+}
+
+.nav-card {
+  color: var(--muted);   /* 👈 force same color */
+}
+
+.nav-card:hover {
+  color: var(--gold);    /* 👈 consistent hover */
+}
 
   .nav-cta {
   background: var(--gold);
@@ -2166,8 +2175,15 @@ overflow: hidden;
 /* ===== NAV CARDS (LIKE PERSONA BOXES) ===== */
 
 .nav-card {
-  display: inline-block;
-  padding: 10px 16px;
+  display: inline-flex;              /* 👈 FIX alignment */
+  align-items: center;
+  justify-content: center;
+
+  min-width: 110px;                  /* 👈 SAME WIDTH FOR ALL */
+  height: 40px;                      /* 👈 SAME HEIGHT */
+
+  padding: 0 16px;                   /* 👈 consistent spacing */
+
   border-radius: 10px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -2225,13 +2241,12 @@ overflow: hidden;
 .nav-card.featured {
   border: 1.5px solid var(--gold);
   color: var(--gold);
+  background: linear-gradient(145deg, #111, #0b0b0b); /* 👈 same bg */
 
   box-shadow:
     0 0 15px rgba(201,168,76,0.25),
     0 0 40px rgba(201,168,76,0.15);
 }
-    
-
     
   </style>
 </head>
