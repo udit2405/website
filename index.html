@@ -7,7 +7,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+
+
+  
   <style>
+
+
+    /* ===== DROPDOWN ===== */
+.nav-explore {
+  position: relative;
+  padding-bottom: 10px; /* 👈 adds hover buffer */
+}
+
+.dropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: rgba(14,14,14,0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 160px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+   z-index: 1000; /* 👈 ADD THIS */
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dropdown a:hover {
+  color: var(--gold);
+  background: rgba(201,168,76,0.05);
+}
+
+/* SHOW ON HOVER */
+.nav-explore:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+    
   /* ===== RESET & BASE ===== */
 
     /* MINI COUNTDOWN */
@@ -1978,10 +2029,16 @@ overflow: hidden;
 
   <li class="nav-divider"></li>
 
-  <li class="nav-secondary"><a href="problem.html">Problem</a></li>
-  <li class="nav-secondary"><a href="how.html">Solution</a></li>
-  <li class="nav-secondary"><a href="why-trust-us.html">Experts</a></li>
-  <li><a href="blogs.html">Guides</a></li>
+  <li class="nav-explore">
+  <a href="#">Explore ▾</a>
+
+  <div class="dropdown">
+    <a href="problem.html">Problem</a>
+    <a href="how.html">Solution</a>
+    <a href="why-trust-us.html">Experts</a>
+    <a href="blogs.html">Guides</a>
+  </div>
+</li>
 
 </ul>
   
