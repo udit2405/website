@@ -1,221 +1,335 @@
-<!-- ONLY CONTENT EXPANDED — DESIGN SAME -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Wedding Transformation for Men | GroomFit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+body{
+  margin:0;
+  background:#080808;
+  color:#f5f0e8;
+  font-family:'Outfit',sans-serif;
+  line-height:1.8;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:65px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 6%;
+  background:rgba(8,8,8,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,0.2);
+  z-index:1000;
+}
+
+nav a{
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+}
+
+.nav-left a{ color:#C9A84C; }
+
+.nav-right a{
+  background:#C9A84C;
+  color:#000;
+  padding:10px 20px;
+  border-radius:6px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:120px 6% 80px;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url("https://images.unsplash.com/photo-1594737625785-a6cbdabd333c");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:56px;
+  line-height:1.1;
+  max-width:700px;
+}
+
+.hero p{
+  max-width:520px;
+  color:#aaa;
+  margin-top:15px;
+}
+
+.hero .btn{
+  margin-top:25px;
+  display:inline-block;
+  background:#C9A84C;
+  color:#000;
+  padding:14px 30px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:80px 6%;
+  max-width:1000px;
+  margin:auto;
+}
+
+.section h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  color:#C9A84C;
+  margin-bottom:15px;
+}
+
+.section p{ color:#bbb; }
+
+/* ===== CARD ===== */
+.card{
+  background:#141414;
+  border:1px solid rgba(201,168,76,0.15);
+  border-radius:12px;
+  padding:25px;
+  margin-top:25px;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
+}
+
+/* ===== CTA ===== */
+.cta{
+  margin-top:60px;
+  padding:40px;
+  text-align:center;
+  background:linear-gradient(135deg,#1a1500,#0f0f0f);
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:16px;
+}
+
+.cta h2{ font-size:34px; }
+
+.cta .btn{
+  margin-top:20px;
+  display:inline-block;
+  background:#C9A84C;
+  color:#000;
+  padding:14px 30px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+/* ===== POPUP ===== */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup-box{
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  width:320px;
+}
+
+.popup-box input{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+/* ===== SUCCESS ===== */
+.success{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.success-box{
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.whatsapp img{width:30px;}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="https://www.groomfit.in/">← Back to Home</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="https://www.groomfit.in/#pricing">View Pricing</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Become the Best Version of Yourself Before Your Wedding</h1>
+
+  <p>
+  A 90-day transformation that helps you lose fat, build muscle, and walk into your wedding with confidence.
+  </p>
+
+  <a href="https://www.groomfit.in/#pricing" class="btn">See Plans →</a>
+</section>
+
+<!-- CONTENT -->
 <section class="section">
 
 <h2>Why Most Grooms Fail</h2>
 
-<p>
-Most Indian grooms don’t fail because they lack motivation — they fail because they don’t have a structured system.
-Between work pressure, family responsibilities, and wedding functions, fitness becomes an afterthought.
-</p>
-
-<p>
-You try going to the gym for a week, then miss a few days because of travel, then restart again.
-This cycle repeats until the wedding is 2–3 weeks away and panic kicks in.
-</p>
-
 <div class="grid">
-  <div class="card">
-    <strong>No structured plan</strong><br>
-    Random workouts without progression lead to zero visible results.
-  </div>
-
-  <div class="card">
-    <strong>Random YouTube workouts</strong><br>
-    Copying different routines every week confuses your body instead of improving it.
-  </div>
-
-  <div class="card">
-    <strong>Inconsistent effort</strong><br>
-    3 days of effort followed by 4 days off will never create transformation.
-  </div>
-
-  <div class="card">
-    <strong>No accountability</strong><br>
-    Without tracking or coaching, most people quit midway.
-  </div>
+  <div class="card">No structured plan</div>
+  <div class="card">Random YouTube workouts</div>
+  <div class="card">Inconsistent effort</div>
+  <div class="card">No accountability</div>
 </div>
-
-<p>
-On top of this, Indian weddings add another layer of difficulty:
-late-night dinners, sweets at home, constant eating, and social pressure to “enjoy”.
-</p>
-
-<p>
-If your plan doesn’t account for real life, it will fail — no matter how good it looks on paper.
-</p>
 
 <h2>The Transformation System</h2>
 
-<p>
-The GroomFit system is built specifically for Indian grooms who cannot live like athletes but still want elite results.
-</p>
-
 <div class="card">
 <ul>
-<li><strong>Strength training 4–5x/week</strong> — builds muscle and improves body shape</li>
-<li><strong>Cardio daily</strong> — burns fat and increases calorie deficit</li>
-<li><strong>High-protein Indian diet</strong> — eggs, paneer, dal, chicken (not fancy imported foods)</li>
-<li><strong>Consistent routine</strong> — simple, repeatable structure</li>
+<li>Strength training 4–5x/week</li>
+<li>Cardio daily</li>
+<li>High-protein Indian diet</li>
+<li>Consistent routine</li>
 </ul>
-
-<p>
-Most people underestimate how powerful consistency is.
-You don’t need extreme diets or crazy workouts — you need a system you can follow daily.
-</p>
-
-<p>
-This system is designed to work even if:
-you have office work, travel, family events, or social pressure.
-</p>
 </div>
-
-<h2>What You Actually Need to Change</h2>
-
-<div class="grid">
-  <div class="card">
-    <strong>Fix your breakfast</strong><br>
-    Replace chai + biscuits with protein (eggs, paneer, curd).
-  </div>
-
-  <div class="card">
-    <strong>Control evening hunger</strong><br>
-    Avoid namkeen and snacks — use roasted chana or peanuts.
-  </div>
-
-  <div class="card">
-    <strong>Early dinner</strong><br>
-    Eating before 8:30 PM drastically improves fat loss.
-  </div>
-
-  <div class="card">
-    <strong>Daily movement</strong><br>
-    7–10k steps per day without fail.
-  </div>
-</div>
-
-<p>
-These changes look small — but together they create massive transformation over 60–90 days.
-</p>
 
 <h2>90-Day Roadmap</h2>
 
-<p>
-Transformation doesn’t happen randomly — it follows a predictable timeline.
-</p>
-
 <div class="grid">
-  <div class="card">
-    <strong>Month 1</strong><br>
-    Fat loss begins<br><br>
-    - Water weight drops<br>
-    - Bloating reduces<br>
-    - Energy improves<br>
-  </div>
-
-  <div class="card">
-    <strong>Month 2</strong><br>
-    Definition builds<br><br>
-    - Waist reduces<br>
-    - Face becomes sharper<br>
-    - Clothes start fitting better<br>
-  </div>
-
-  <div class="card">
-    <strong>Month 3</strong><br>
-    Peak physique<br><br>
-    - Visible muscle tone<br>
-    - Maximum fat loss<br>
-    - Confidence boost<br>
-  </div>
+  <div class="card"><strong>Month 1</strong><br>Fat loss begins</div>
+  <div class="card"><strong>Month 2</strong><br>Definition builds</div>
+  <div class="card"><strong>Month 3</strong><br>Peak physique</div>
 </div>
-
-<p>
-Most people quit before Month 2 — which is exactly when results start showing.
-</p>
-
-<h2>How to Eat During Wedding Functions</h2>
-
-<div class="card">
-<ul>
-<li>Eat protein first (paneer, chicken)</li>
-<li>Avoid fried starters</li>
-<li>Limit desserts to 2–3 bites</li>
-<li>Drink water before eating</li>
-<li>Walk after meals</li>
-</ul>
-
-<p>
-You don’t need to avoid functions — you just need to control damage.
-</p>
-
-<p>
-Even 70% discipline during events is enough to continue losing fat.
-</p>
-</div>
-
-<h2>Workout Reality for Indian Grooms</h2>
-
-<p>
-You don’t need 2-hour workouts.
-You need 45–60 minutes of focused training.
-</p>
-
-<div class="card">
-<ul>
-<li>Compound exercises (squats, push-ups, presses)</li>
-<li>Short cardio sessions (20–25 mins)</li>
-<li>Consistency over intensity</li>
-<li>5 days/week is enough</li>
-</ul>
-
-<p>
-If you miss gym:
-do bodyweight workouts at home — no excuses.
-</p>
-</div>
-
-<h2>Biggest Mistakes to Avoid</h2>
-
-<div class="grid">
-  <div class="card">Crash dieting (you lose muscle, not fat)</div>
-  <div class="card">Skipping meals (leads to overeating)</div>
-  <div class="card">Only cardio (no muscle definition)</div>
-  <div class="card">Late-night eating</div>
-  <div class="card">Alcohol every weekend</div>
-  <div class="card">No consistency</div>
-</div>
-
-<p>
-Avoid these mistakes and you are already ahead of 90% grooms.
-</p>
-
-<h2>Grooming & Visual Impact</h2>
-
-<div class="card">
-<ul>
-<li>Haircut 10–12 days before wedding</li>
-<li>Beard shaping professionally</li>
-<li>Ice face daily to reduce puffiness</li>
-<li>Tailored outfits (huge visual difference)</li>
-<li>Posture correction</li>
-</ul>
-
-<p>
-These changes alone can make you look 3–5 kg leaner instantly.
-</p>
-</div>
-
-<h2>Final Thought</h2>
-
-<p>
-Your wedding is one of the few days in life where all eyes are on you.
-Looking your best is not vanity — it’s preparation.
-</p>
-
-<p>
-Start early. Stay consistent. Follow a system.
-That’s what separates average from transformation.
-</p>
 
 </section>
+
+<!-- NEW CTA BOX -->
+<section class="section">
+<div class="cta">
+  <h2>Want a Personalised Plan?</h2>
+  <p>Check if you qualify for our transformation program.</p>
+
+  <a href="#" onclick="openPopup()" class="btn">Check If I Qualify →</a>
+</div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h3>Check If You Qualify</h3>
+
+    <form id="leadForm">
+      <input name="name" placeholder="Name" required>
+      <input name="phone" placeholder="Phone" required>
+      <input name="location" placeholder="Location" required>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success" id="success">
+  <div class="success-box">
+    <h2>Application Received</h2>
+
+    <a id="waBtn" href="#" class="btn">Connect on WhatsApp</a><br><br>
+    <a href="https://www.groomfit.in/#pricing" class="btn">View Pricing</a><br><br>
+
+    <button onclick="closeSuccess()" style="background:none;color:#aaa;border:none;">Maybe Later</button>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919588859960" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+<script>
+
+function openPopup(){
+  document.getElementById("popup").style.display="flex";
+}
+
+function closeSuccess(){
+  document.getElementById("success").style.display="none";
+}
+
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = new FormData(this);
+
+  // WhatsApp message
+  const msg = encodeURIComponent("Hi, I applied. Name: "+data.get("name"));
+  document.getElementById("waBtn").href = "https://wa.me/919588859960?text="+msg;
+
+  document.getElementById("popup").style.display="none";
+  document.getElementById("success").style.display="flex";
+});
+
+</script>
+
+</body>
+</html>
