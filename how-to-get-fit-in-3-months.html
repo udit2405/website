@@ -31,8 +31,8 @@ nav{
   justify-content:space-between;
   align-items:center;
   padding:0 6%;
-  background:rgba(10,10,10,0.9);
-  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(201,168,76,0.2);
   z-index:1000;
 }
@@ -51,46 +51,58 @@ nav a{
   border-radius:6px;
 }
 
+/* ===== HERO BACKGROUND ===== */
+.hero-bg{
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url("https://images.unsplash.com/photo-1558611848-73f7eb4001ab");
+  background-size:cover;
+  background-position:center;
+  padding-top:100px;
+}
+
 /* ===== CONTAINER ===== */
 .container{
-  max-width:800px;
+  max-width:820px;
   margin:auto;
-  padding:120px 20px 80px;
+  padding:80px 20px;
 }
 
 /* ===== TYPOGRAPHY ===== */
 h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:44px;
+  font-size:48px;
   color:#C9A84C;
+  line-height:1.2;
 }
 
 h2{
   font-family:'Cormorant Garamond',serif;
-  margin-top:50px;
+  margin-top:60px;
   color:#C9A84C;
 }
 
-p{
-  color:#ccc;
-}
+p{color:#ccc;}
+li{margin-bottom:8px;}
 
-ul{
-  padding-left:20px;
-}
-
-li{
-  margin-bottom:8px;
+/* ===== SECTION BREAK BG ===== */
+.section-bg{
+  background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438");
+  background-size:cover;
+  background-position:center;
 }
 
 /* ===== CTA BOX ===== */
 .cta-box{
   margin-top:60px;
-  padding:30px;
+  padding:35px;
   text-align:center;
-  border-radius:14px;
+  border-radius:16px;
   background:linear-gradient(135deg,#1a1500,#0f0f0f);
   border:1px solid rgba(201,168,76,0.3);
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
 .btn{
@@ -98,7 +110,7 @@ li{
   margin-top:15px;
   background:#C9A84C;
   color:#000;
-  padding:12px 24px;
+  padding:12px 26px;
   border-radius:6px;
   font-weight:600;
   text-decoration:none;
@@ -108,7 +120,7 @@ li{
 .popup{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.75);
   display:none;
   justify-content:center;
   align-items:center;
@@ -133,7 +145,7 @@ li{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,0.9);
   justify-content:center;
   align-items:center;
   z-index:9999;
@@ -177,6 +189,8 @@ li{
   </div>
 </nav>
 
+<!-- HERO -->
+<div class="hero-bg">
 <div class="container">
 
 <h1>How to Get Fit in 3 Months Before Your Wedding</h1>
@@ -189,71 +203,65 @@ li{
 
 <p>This is your complete blueprint.</p>
 
+</div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
 <h2>Is 3 Months Enough to Get Fit?</h2>
-
 <p>Yes — without a doubt.</p>
-
-<p>Knowing how to get fit in 3 months is about working smarter, not just harder. In 90 days of structured training and proper nutrition, an average Indian man can realistically lose 6–10 kg of fat, build visible muscle definition, dramatically improve posture, and feel more energetic and confident than he has in years.</p>
-
-<p>The grooms who do this successfully share one thing in common: they stop thinking about it and start doing it. Today. Not Monday.</p>
+<p>Knowing how to get fit in 3 months is about working smarter, not just harder...</p>
 
 <h2>The 3 Biggest Reasons Grooms Fail to Get Fit</h2>
-
 <p><strong>Teen months hai bhai — but these mistakes will waste every single day of it:</strong></p>
 
 <ul>
-  <li>No plan: Random gym sessions without a structured programme deliver random results</li>
-  <li>Inconsistency: Three amazing weeks followed by one bad week kills all momentum</li>
-  <li>All gym, no kitchen: Diet is where the real transformation happens — neglect it and you cap your results at 30%</li>
+<li>No plan: Random gym sessions without a structured programme deliver random results</li>
+<li>Inconsistency: Three amazing weeks followed by one bad week kills all momentum</li>
+<li>All gym, no kitchen: Diet is where the real transformation happens — neglect it and you cap your results at 30%</li>
 </ul>
-
-<p>The solution to all three? A structured programme with professional accountability.</p>
 
 <h2>The 3-Month Fitness Plan — Weekly Framework</h2>
 
-<p>Here is a powerful framework on how to get fit in 3 months:</p>
-
 <ul>
-  <li><strong>Strength Training — 3 days/week:</strong> Full body compound movements — squats, deadlifts, bench press, rows, shoulder press</li>
-  <li><strong>Cardio — 2 days/week:</strong> 30 minutes steady-state or 20-minute HIIT</li>
-  <li><strong>Active Recovery — 1 day/week:</strong> Brisk walk, yoga, or swimming</li>
-  <li><strong>Rest — 1 day/week:</strong> Full rest for recovery and muscle growth</li>
+<li><strong>Strength Training — 3 days/week:</strong> Full body compound movements</li>
+<li><strong>Cardio — 2 days/week:</strong> 30 minutes steady-state or HIIT</li>
+<li><strong>Active Recovery — 1 day/week:</strong> Brisk walk, yoga, or swimming</li>
+<li><strong>Rest — 1 day/week:</strong> Full rest</li>
 </ul>
+
+</div>
+
+<!-- MID IMAGE SECTION -->
+<div class="section-bg">
+<div class="container">
 
 <h2>3-Month Diet Plan for Indian Grooms</h2>
 
 <p>The most effective diet plan focuses on simple, sustainable changes:</p>
 
 <ul>
-  <li><strong>Week 1–2:</strong> Cut processed food, sugar, and cold drinks. Add protein to every meal</li>
-  <li><strong>Week 3–8:</strong> High-protein, moderate-carb, low-sugar diet</li>
-  <li><strong>Week 9–12:</strong> Tighten portions, reduce sodium, stay hydrated</li>
-</ul>
-
-<p><strong>Practical Indian meal plan:</strong></p>
-
-<ul>
-  <li>Breakfast: Eggs or paneer + oats or roti + chai without sugar</li>
-  <li>Lunch: Dal + sabzi + brown rice + salad + curd</li>
-  <li>Dinner: Chicken/paneer + chapati + sabzi or soup</li>
-  <li>Snacks: Whey protein, makhana, nuts, fruits</li>
+<li><strong>Week 1–2:</strong> Cut processed food</li>
+<li><strong>Week 3–8:</strong> High-protein diet</li>
+<li><strong>Week 9–12:</strong> Tighten portions</li>
 </ul>
 
 <h2>30-60-90 Day Transformation Milestones</h2>
 
-<p><strong>Day 1–30 (Launch):</strong> Build habits. Lose 2–4 kg. Energy improves, sleep gets better.</p>
+<p><strong>Day 1–30 (Launch):</strong> Build habits...</p>
+<p><strong>Day 31–60 (Build):</strong> Visible fat loss...</p>
+<p><strong>Day 61–90 (Polish):</strong> Final transformation...</p>
 
-<p><strong>Day 31–60 (Build):</strong> Visible fat loss. Leaner face, better strength, higher confidence.</p>
+</div>
+</div>
 
-<p><strong>Day 61–90 (Polish):</strong> Final transformation. Lean body, strong posture, perfect wedding look.</p>
-
-<p>Our <strong>90-day groom transformation program</strong> is built exactly around this proven structure.</p>
+<!-- FINAL CONTENT -->
+<div class="container">
 
 <h2>90 Days From Now, You'll Either Thank Yourself or Regret It</h2>
 
 <p>The grooms who commit to this transformation never regret it.</p>
-
-<p>They only regret starting late.</p>
 
 <p><strong>You have the time. You have the plan. Now you need to take action.</strong></p>
 
@@ -261,13 +269,10 @@ li{
 
 <p>
 Now you know how to get fit in 3 months.<br><br>
-
-Join our <strong>90-day groom transformation program</strong> and get expert guidance, a structured plan, and real accountability.<br><br>
-
-<a href="https://udit2405.github.io/website/#final-cta">Start Now</a>
+Join our <strong>90-day groom transformation program</strong> and get expert guidance...<br><br>
 </p>
 
-<!-- CTA BOX -->
+<!-- CTA -->
 <div class="cta-box">
   <h2>Want a Personalised Plan?</h2>
   <p>Check if you qualify for our transformation program.</p>
@@ -280,12 +285,10 @@ Join our <strong>90-day groom transformation program</strong> and get expert gui
 <div class="popup" id="popup">
   <div class="popup-box">
     <h3>Check If You Qualify</h3>
-
     <form id="leadForm">
       <input name="name" placeholder="Name" required>
       <input name="phone" placeholder="Phone" required>
       <input name="location" placeholder="Location" required>
-
       <button class="btn" type="submit">Submit</button>
     </form>
   </div>
@@ -303,34 +306,26 @@ Join our <strong>90-day groom transformation program</strong> and get expert gui
   </div>
 </div>
 
-<!-- WHATSAPP FLOAT -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/919588859960" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
 <script>
-
 function openPopup(){
   document.getElementById("popup").style.display="flex";
 }
-
 function closeSuccess(){
   document.getElementById("success").style.display="none";
 }
-
 document.getElementById("leadForm").addEventListener("submit", function(e){
   e.preventDefault();
-
   const data = new FormData(this);
   const msg = encodeURIComponent("Hi, I applied. Name: "+data.get("name"));
-
-  document.getElementById("waBtn").href =
-    "https://wa.me/919588859960?text="+msg;
-
+  document.getElementById("waBtn").href = "https://wa.me/919588859960?text="+msg;
   document.getElementById("popup").style.display="none";
   document.getElementById("success").style.display="flex";
 });
-
 </script>
 
 </body>
