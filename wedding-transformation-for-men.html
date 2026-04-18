@@ -2,99 +2,179 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Wedding Transformation for Men (90-Day Groom Guide)</title>
-
-<meta name="description" content="Complete wedding transformation plan for men. Lose fat, build muscle, and look your best in 90 days.">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Transformation for Men | GroomFit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-  font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: #fff;
-  line-height: 1.7;
+/* ===== BASE ===== */
+body{
   margin:0;
+  background:#080808;
+  color:#f5f0e8;
+  font-family:'Outfit',sans-serif;
+  line-height:1.8;
 }
 
-/* ===== NAVBAR ===== */
-nav {
-  position: fixed;
+/* ===== NAV ===== */
+nav{
+  position:fixed;
   top:0;
   left:0;
   right:0;
-  height:60px;
+  height:65px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  padding:0 5%;
-  background: rgba(0,0,0,0.9);
-  border-bottom:1px solid rgba(245,197,66,0.2);
+  align-items:center;
+  padding:0 6%;
+  background:rgba(8,8,8,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,0.2);
   z-index:1000;
 }
 
-.nav-left a {
-  color:#f5c542;
+nav a{
   text-decoration:none;
-  font-weight:bold;
+  font-size:14px;
+  font-weight:600;
 }
 
-.nav-right a {
-  background:#f5c542;
+.nav-left a{
+  color:#C9A84C;
+}
+
+.nav-right a{
+  background:#C9A84C;
   color:#000;
-  padding:10px 18px;
+  padding:10px 20px;
   border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
 }
 
-/* ===== CONTENT ===== */
-.container {
-  max-width:800px;
+/* ===== HERO ===== */
+.hero{
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:120px 6% 80px;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url("https://images.unsplash.com/photo-1594737625785-a6cbdabd333c");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:56px;
+  line-height:1.1;
+  max-width:700px;
+}
+
+.hero p{
+  max-width:520px;
+  color:#aaa;
+  margin-top:15px;
+}
+
+.hero .btn{
+  margin-top:25px;
+  display:inline-block;
+  background:#C9A84C;
+  color:#000;
+  padding:14px 30px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:80px 6%;
+  max-width:1000px;
   margin:auto;
-  padding:100px 20px 60px;
 }
 
-h1, h2 {
-  color: #f5c542;
+.section h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;
+  color:#C9A84C;
+  margin-bottom:15px;
 }
 
-ul {
-  margin-left: 20px;
+.section p{
+  color:#bbb;
 }
 
-a {
-  color: #f5c542;
-  text-decoration: none;
+/* ===== CARD ===== */
+.card{
+  background:#141414;
+  border:1px solid rgba(201,168,76,0.15);
+  border-radius:12px;
+  padding:25px;
+  margin-top:25px;
 }
 
-/* ===== WHATSAPP FLOAT ===== */
-.whatsapp-fab {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  z-index: 999;
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
 }
 
-.whatsapp-fab img {
-  width: 30px;
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
 }
+
+/* ===== CTA ===== */
+.cta{
+  margin-top:60px;
+  padding:40px;
+  text-align:center;
+  background:linear-gradient(135deg,#1a1500,#0f0f0f);
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:16px;
+}
+
+.cta h2{
+  font-size:34px;
+}
+
+.cta .btn{
+  margin-top:20px;
+  display:inline-block;
+  background:#C9A84C;
+  color:#000;
+  padding:14px 30px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+.whatsapp img{width:30px;}
 
 </style>
 </head>
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAV -->
 <nav>
   <div class="nav-left">
     <a href="https://www.groomfit.in/">← Back to Home</a>
@@ -105,74 +185,63 @@ a {
   </div>
 </nav>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero">
+  <h1>Become the Best Version of Yourself Before Your Wedding</h1>
 
-<h1>Wedding Transformation for Men</h1>
+  <p>
+  A 90-day transformation that helps you lose fat, build muscle, and walk into your wedding with confidence.
+  </p>
 
-<p><strong>Every groom deserves to walk into his wedding feeling powerful, confident, and completely in control of how he looks.</strong></p>
+  <a href="https://www.groomfit.in/#pricing" class="btn">See Plans →</a>
+</section>
 
-<p>But for most Indian men, the months leading up to a wedding are a blur of venue bookings, family meetings, and shopping — with fitness pushed to the very bottom of the list.</p>
+<!-- CONTENT -->
+<section class="section">
 
-<p>A real wedding transformation for men doesn't happen by accident. It happens with intention, a proven plan, and the right guidance.</p>
+<h2>Why Most Grooms Fail</h2>
 
-<h2>What Does a Real Groom Transformation Look Like?</h2>
-
-<p>We're not talking about a 10-day detox.</p>
-
-<p>A genuine transformation means fat loss, muscle gain, posture improvement, and confidence that shows in every photo.</p>
-
-<h2>Why Most Grooms Never Transform</h2>
-
-<ul>
-  <li>No structured plan</li>
-  <li>Generic advice</li>
-  <li>Inconsistency</li>
-  <li>No accountability</li>
-</ul>
-
-<h2>The Workout Plan</h2>
-
-<ul>
-  <li><strong>Day 1:</strong> Chest & Triceps</li>
-  <li><strong>Day 2:</strong> Back & Biceps</li>
-  <li><strong>Day 3:</strong> HIIT Cardio</li>
-  <li><strong>Day 4:</strong> Shoulders & Arms</li>
-  <li><strong>Day 5:</strong> Legs & Core</li>
-</ul>
-
-<h2>Nutrition</h2>
-
-<ul>
-  <li>High protein (dal, eggs, chicken)</li>
-  <li>Reduce night carbs</li>
-  <li>Avoid alcohol</li>
-  <li>Meal prep weekly</li>
-</ul>
-
-<h2>30-60-90 Day Roadmap</h2>
-
-<p><strong>Month 1:</strong> Fat loss starts</p>
-<p><strong>Month 2:</strong> Definition builds</p>
-<p><strong>Month 3:</strong> Peak physique</p>
-
-<h2>This Is Your Moment</h2>
-
-<p>
-The grooms who commit never regret it.  
-They only regret not starting earlier.
-</p>
-
-<h2>Start Your Transformation</h2>
-
-<p>
-<a href="https://www.groomfit.in/#pricing">See Plans →</a>
-</p>
-
+<div class="grid">
+  <div class="card">No structured plan</div>
+  <div class="card">Random YouTube workouts</div>
+  <div class="card">Inconsistent effort</div>
+  <div class="card">No accountability</div>
 </div>
 
-<!-- ===== WHATSAPP BUTTON ===== -->
-<a href="https://wa.me/919588859960" class="whatsapp-fab" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<h2>The Transformation System</h2>
+
+<div class="card">
+<ul>
+<li>Strength training 4–5x/week</li>
+<li>Cardio daily</li>
+<li>High-protein Indian diet</li>
+<li>Consistent routine</li>
+</ul>
+</div>
+
+<h2>90-Day Roadmap</h2>
+
+<div class="grid">
+  <div class="card"><strong>Month 1</strong><br>Fat loss begins</div>
+  <div class="card"><strong>Month 2</strong><br>Definition builds</div>
+  <div class="card"><strong>Month 3</strong><br>Peak physique</div>
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="section">
+<div class="cta">
+  <h2>Ready to Transform?</h2>
+  <p>Stop guessing. Follow a structured plan built for your wedding timeline.</p>
+
+  <a href="https://www.groomfit.in/#pricing" class="btn">Start Now →</a>
+</div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919588859960" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
 </body>
