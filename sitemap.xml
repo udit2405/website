@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- MAIN PAGE -->
   <url>
     <loc>https://www.groomfit.in/</loc>
   </url>
 
-  <!-- CORE PAGES -->
   <url>
     <loc>https://www.groomfit.in/problem.html</loc>
   </url>
@@ -23,16 +21,41 @@
     <loc>https://www.groomfit.in/blogs.html</loc>
   </url>
 
-  <!-- BLOG ARTICLES (ADD YOUR 10 ARTICLES HERE) -->
-  <!-- Example -->
   <url>
-    <loc>https://www.groomfit.in/blog1.html</loc>
+    <loc>https://www.groomfit.in/build-muscle-before-wedding.html</loc>
   </url>
 
   <url>
-    <loc>https://www.groomfit.in/blog2.html</loc>
+    <loc>https://www.groomfit.in/groomfit-weight-loss-wedding.html</loc>
   </url>
 
-  <!-- Add all remaining blog pages like this -->
+  <!-- ADD MORE BLOGS LIKE THIS -->
+  <url>
+    <loc>https://www.groomfit.in/how-to-get-fit-in-3-months.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.groomfit.in/lose-belly-fat-before-wedding.html</loc>
+  </url>
+
+   <url>
+    <loc>https://www.groomfit.in/personal-trainer-for-weight-loss.html</loc>
+  </url>
+
+   <url>
+    <loc>https://www.groomfit.in/reduce-weight-fast-before-wedding.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.groomfit.in/wedding-transformation-for-men.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.groomfit.in/weight-loss-before-wedding.html</loc>
+  </url>
+
+  <url>
+    <loc>https://www.groomfit.in/workout-plan-before-wedding.html</loc>
+  </url>
 
 </urlset>
