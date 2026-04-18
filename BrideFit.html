@@ -221,6 +221,7 @@ html {
   z-index: 900;
   padding: 0 5%;
   height: 55px;
+    justify-content: space-between;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -365,122 +366,257 @@ html {
   margin: 1.4rem 0;
   }
 
-  <!-- ===== HERO (BRIDEFIT) ===== -->
+  /* ============================================================
+  HERO
+  ============================================================ */
 
-<section id="hero">
+    .hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* use cover, not contain */
+  z-index: 0;
+  opacity: 0.5;
+  background: black;
+}
 
-<!-- Video stays same -->
-<video autoplay muted loop playsinline class="hero-bg-video desktop-video">
-  <source src="bride_bg.mp4" type="video/mp4">
-</video>
+@media (max-width: 768px) {
+  .desktop-video {
+    display: none;
+  }
 
-<video autoplay muted loop playsinline class="hero-bg-video mobile-video">
-  <source src="bride_mobile.mp4" type="video/mp4">
-</video>
+  .mobile-video {
+    display: block;
+  }
+}
+  .hero-bg-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
-<div class="hero-inner">
-<div class="hero-left-col">
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .mobile-video {
+    object-fit: contain;
+    transform: scale(0.8); /* try 0.75–0.9 */
+  }
+}
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+    
+  #hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 5% 120px;
+  position: relative;
+  overflow: hidden;
+  }
 
-<div class="hero-eyebrow">India's #1 Bridal Transformation Program</div>
+  /* Layered background */
+  #hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  z-index: 1;
+}
 
-<h1 class="hero-headline">
-Feel Confident, Radiant, and Unforgettable on Your Wedding Day —  
-Not Just “Dressed Up.”
-</h1>
+  /* Decorative rings */
+  .hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.06);
+  pointer-events: none;
+  }
+  .hero-ring-1 { width: 600px; height: 600px; top: -150px; right: -100px; }
+  .hero-ring-2 { width: 900px; height: 900px; top: -300px; right: -300px; border-color: rgba(201,168,76,0.03); }
 
-<p class="hero-value-strong">
-60–90 day transformation designed specifically for brides
-</p>
+ .hero-inner {
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
 
-<p class="hero-sub">
-It’s not just about the lehenga.  
-It’s about how you feel wearing it.
-</p>
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 2.5rem;
+}
+  .hero-left-col { min-width: 0; }
+  @media (min-width: 1024px) {
+  .hero-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+}
+  }
 
-<p style="font-size:0.8rem; color:#aaa; margin-top:10px;">
-Trusted by brides across India · Real transformations · Real confidence
-</p>
+  .hero-eyebrow {
+  margin-top: 60px; 
+  display: inline-flex;  
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  }
 
-<div class="hero-cta-group">
+ .hero-headline {
+   margin-top: 7px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  max-width: 800px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.35s forwards;
+}
+  .hero-headline em {
+  font-style: italic;
+  color: var(--gold);
+  }
 
-<button onclick="openPopup()" class="btn-primary">
-  Check If I Qualify →
-</button>
+  .hero-sub {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: rgba(245,240,232,0.6);
+  max-width: 580px;
+  margin: 1.8rem 0 1.15rem;
+  line-height: 1.85;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.5s forwards;
+  }
 
-<a href="how.html" class="btn-outline">
-  See How It Works
-</a>
+  .hero-value-strong {
+    margin-top: 10px;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  font-family: 'Outfit', sans-serif;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1.55;
+  max-width: 580px;
+  margin: 0.5rem 0 2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.58s forwards;
+  }
+  .hero-value-strong strong {
+  font-weight: 700;
+  color: var(--gold-light);
+  }
 
-</div>
+  .hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.72s forwards;
+  }
 
-<p style="font-size:0.75rem; color:#888; margin-top:8px;">
-Limited bridal slots every month — personalised attention only.
-</p>
+  .hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 3.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.88s forwards;
+  }
+  .hero-trust-dots {
+  display: flex;
+  gap: 4px;
+  }
+  .hero-trust-dots span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--dark-3);
+  border: 2px solid var(--dark-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  }
+  .hero-trust-dots span:nth-child(2) { margin-left: -8px; }
+  .hero-trust-dots span:nth-child(3) { margin-left: -8px; }
 
-<!-- 🔥 TRANSFORMATION SELECTOR (REPLACES COUNTDOWN) -->
-<div style="margin-top:25px;">
+  .hero-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  z-index: 2;
+  animation: bounce 2s infinite;
+  }
+  .scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+  }
 
-<p style="font-size:12px; color:#C9A84C; margin-bottom:10px; letter-spacing:1px;">
-CHOOSE YOUR TRANSFORMATION
-</p>
-
-<div style="display:flex; gap:10px; flex-wrap:wrap;">
-
-<a href="index.html" class="btn-outline">BrideFit</a>
-
-<a href="bridefit.html" class="btn-primary">BrideFit</a>
-
-<a href="couplefit.html" class="btn-outline">CoupleFit</a>
-
-</div>
-
-<p style="font-size:12px; color:#888; margin-top:8px;">
-Not sure? Most clients start solo and upgrade later.
-</p>
-
-</div>
-
-<!-- comparison block -->
-<div class="hero-comparison">
-<div class="hero-comparison-grid">
-
-<div class="hero-comp-card hero-comp-card--diy">
-<div class="hero-comp-title">Generic Plans / Internet Advice</div>
-<ul class="hero-comp-list">
-<li>Random workouts</li>
-<li>No bridal focus</li>
-<li>No accountability</li>
-<li>Inconsistent results</li>
-<li>Doesn’t consider your wedding timeline</li>
-</ul>
-</div>
-
-<div class="hero-comp-card hero-comp-card--gf">
-<div class="hero-comp-title">With BrideFit Coaching</div>
-<ul class="hero-comp-list">
-<li>Body shaping for your outfits</li>
-<li>Glow + posture + confidence focus</li>
-<li>Weekly coach support</li>
-<li>Structured transformation plan</li>
-<li>Designed around your wedding date</li>
-</ul>
-</div>
-
-</div>
-
-<p class="hero-comp-close">
-You’ll remember how you <em>felt</em> that day forever.
-</p>
-
-</div>
-
-<div class="hero-trust">
-<span>Brides across India · 60–90 day transformations · Confidence guaranteed</span>
-</div>
-
-</div>
-</div>
-</section>
+  /* Stats bar */
+  .hero-stats {
+  position: relative;
+  margin-top: 80px;
+  left: 0;
+  right: 0;
+  background: rgba(14,14,14,0.92);
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding: 24px 5%;
+  display: flex;
+  justify-content: center;
+  gap: 4%;
+  flex-wrap: wrap;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeUp 0.9s 1s forwards;
+  }
+  .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  }
+  .stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  }
+  .stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  }
 
   /* ============================================================
   PROBLEM
@@ -1713,6 +1849,145 @@ overflow: hidden;
   font-style: italic;
   }
 
+    .persona-selector {
+  margin-top: 25px;
+  max-width: 650px;
+}
+
+.persona-title {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.persona-card {
+  position: relative;
+  padding: 22px 18px;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid rgba(201,168,76,0.2);
+
+  transition: all 0.35s ease;
+}
+
+ /* ===== ALWAYS VISIBLE OUTLINE LIKE COUPLEFIT ===== */
+
+/* GroomFit → Gold */
+.groom-card {
+  border: 1.5px solid var(--gold);
+  box-shadow: 
+    0 0 15px rgba(201,168,76,0.25),
+    0 0 40px rgba(201,168,76,0.15);
+}
+
+/* BrideFit → Pink */
+.bride-card {
+  border: 1.5px solid rgba(255, 105, 180, 0.9);
+  box-shadow: 
+    0 0 15px rgba(255,105,180,0.25),
+    0 0 40px rgba(255,105,180,0.15);
+}
+
+/* Optional: stronger glow on hover */
+.groom-card:hover {
+  box-shadow: 
+    0 0 25px rgba(201,168,76,0.5),
+    0 0 60px rgba(201,168,76,0.25);
+}
+
+.bride-card:hover {
+  box-shadow: 
+    0 0 25px rgba(255,105,180,0.5),
+    0 0 60px rgba(255,105,180,0.25);
+}   
+
+    
+/* Glow border effect */
+.persona-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+
+  background: linear-gradient(120deg, transparent, rgba(201,168,76,0.6), transparent);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover = PREMIUM FEEL */
+.persona-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    0 0 25px rgba(201,168,76,0.25);
+  border-color: rgba(201,168,76,0.6);
+}
+
+.persona-card:hover::before {
+  opacity: 1;
+}
+
+/* Active press feel */
+.persona-card:active {
+  transform: scale(0.97);
+}
+
+/* Featured (CoupleFit) = EXTRA GLOW */
+.persona-card.featured {
+  background: radial-gradient(circle at 50% 30%, rgba(201,168,76,0.15), #0b0b0b);
+  border-color: var(--gold);
+  box-shadow: 0 0 35px rgba(201,168,76,0.25);
+}
+
+.persona-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.persona-card.featured {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.1);
+}
+
+.persona-name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.persona-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.persona-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+    
+    
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
   margin-top: -140px;
@@ -1832,9 +2107,12 @@ overflow: hidden;
   }
 
     .logo-img {
-  height: 60px;
+  height: 45px;
   width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
 }
+    
 /* ===== PRICING FAB ===== */
 .pricing-fab {
   position: fixed;
@@ -1890,7 +2168,7 @@ overflow: hidden;
 <!-- ===== NAV ===== -->
 <nav id="navbar">
   <div class="nav-logo">
-  <img src="logo.jpg" alt="BrideFit Logo" class="logo-img">
+  <img src="logo.jpg" alt="GroomFit Logo" class="logo-img">
 </div>
 
 
@@ -1909,7 +2187,7 @@ overflow: hidden;
   <a href="#">Explore ▾</a>
 
   <div class="dropdown">
-    <a href="problem.html">Why brides Fail</a>
+    <a href="problem.html">Why Grooms Fail</a>
     <a href="how.html">How We Work</a>
     <a href="why-trust-us.html">Meet Our Team</a>
     <a href="blogs.html">Free Guides</a>
@@ -1941,8 +2219,7 @@ overflow: hidden;
   <div class="hero-eyebrow">India's #1 Wedding Transformation Brand</div>
 
   <h1 class="hero-headline">
-Look Like the Best Version of Yourself on Your Wedding Day —  
-or Regret Every Photo Forever.
+Look & Feel Confident, Radiant, and Camera-Ready on Your Wedding Day
 </h1>
 
 <p class="hero-value-strong">
@@ -1955,7 +2232,7 @@ Make sure you don’t regret them.
 </p>
 
 <p style="font-size:0.8rem; color:#aaa; margin-top:10px;">
-Trusted by 100+ brides across India · 5★ average rating
+Trusted by 70+ brides across India · 5★ average rating
 </p>
  
     
@@ -1972,20 +2249,34 @@ Trusted by 100+ brides across India · 5★ average rating
 
 </div>
 
+    <div class="persona-selector">
+
+  <p class="persona-title">Who is this for?</p>
+
+  <div class="persona-grid">
+
+    <div class="persona-card groom-card" onclick="selectPersona('groom')">
+      <div class="persona-name">🤵 GroomFit</div>
+      <div class="persona-sub">For Grooms</div>
+    </div>
+
+    <div class="persona-card bride-card" onclick="selectPersona('bride')">
+      <div class="persona-name">👰 BrideFit</div>
+      <div class="persona-sub">For Brides</div>
+    </div>
+
+    <div class="persona-card featured" onclick="selectPersona('couple')">
+      <div class="persona-name">💍 CoupleFit</div>
+      <div class="persona-sub">Train Together</div>
+    </div>
+
+  </div>
+</div>
+
 <p style="font-size:0.75rem; color:#888; margin-top:8px;">
-Limited slots this month. Apply now—only committed brides are accepted.
+Limited slots this month. Apply now—only committed grooms are accepted.
 </p>
 
-    <div class="mini-countdown">
-  <p class="mini-title">Wedding Countdown</p>
-  <div class="mini-row">
-  Days Left - <span id="miniDays" class="flip">90</span>
-</div>
-
-      
-  <input type="date" id="miniDate">
-  <button onclick="setMiniDate()">Set Date</button>
-</div>
     
 
   <div class="hero-comparison">
@@ -2001,7 +2292,7 @@ Limited slots this month. Apply now—only committed brides are accepted.
   </ul>
   </div>
   <div class="hero-comp-card hero-comp-card--gf">
-  <div class="hero-comp-title">With BrideFit Coaching</div>
+  <div class="hero-comp-title">With GroomFit Coaching</div>
   <ul class="hero-comp-list">
   <li>Personalised plan for YOUR body</li>
   <li>Weekly coach check-ins</li>
@@ -2020,7 +2311,7 @@ Limited slots this month. Apply now—only committed brides are accepted.
   <span aria-hidden="true">✨</span>
   <span aria-hidden="true">⭐</span>
   </div>
-  <span>Trusted by brides across India &nbsp;·&nbsp; Results in 60–90 days</span>
+  <span>Trusted by grooms across India &nbsp;·&nbsp; Results in 60–90 days</span>
   </div>
   </div>
 
@@ -2054,7 +2345,7 @@ Limited slots this month. Apply now—only committed brides are accepted.
   <div class="hero-stats">
   <div class="stat-item">
   <span class="stat-num">100+</span>
-  <span class="stat-label">brides Transformed</span>
+  <span class="stat-label">Grooms Transformed</span>
   </div>
   <div class="stat-item">
   <span class="stat-num">90</span>
@@ -2078,8 +2369,8 @@ Limited slots this month. Apply now—only committed brides are accepted.
   <div class="section-inner">
   <div class="solution-layout">
   <div class="reveal">
-  <span class="section-tag">The BrideFit System</span>
-  <h2 class="section-title">A Precision Plan Built for <em class="gold italic">brides Only</em></h2>
+  <span class="section-tag">The GroomFit System</span>
+  <h2 class="section-title">A Precision Plan Built for <em class="gold italic">Grooms Only</em></h2>
   <div class="divider"></div>
   <p class="section-sub" style="margin-bottom:2.5rem">
   This isn't a generic fitness app or YouTube routine. This is a structured, deadline-driven transformation designed for men who have a real deadline — their wedding.
@@ -2109,7 +2400,7 @@ Limited slots this month. Apply now—only committed brides are accepted.
   <div class="pillar reveal" style="transition-delay:0.4s">
   <span class="pillar-num">04</span>
   <div>
-  <h4>Designed Specifically for brides</h4>
+  <h4>Designed Specifically for Grooms</h4>
   <p>We understand the wedding prep chaos — and we work around it, not against it.</p>
   </div>
   </div>
@@ -2127,7 +2418,7 @@ Limited slots this month. Apply now—only committed brides are accepted.
   <li>WhatsApp support 6 days a week</li>
   <li>Progress tracking & body measurement logs</li>
   <li>Deadline-based milestones aligned to your D-Day</li>
-  <li>Pre-wedding posture & brideing tips</li>
+  <li>Pre-wedding posture & grooming tips</li>
   </ul>
   <div class="sh-days">
   <div class="sh-days-num">90</div>
@@ -2150,7 +2441,7 @@ Limited slots this month. Apply now—only committed brides are accepted.
   <h2 class="section-title">Transformations That <em class="gold italic">Speak for Themselves</em></h2>
   <div class="divider" style="margin:1rem auto"></div>
   <p class="section-sub" style="margin:0 auto">
-  Every bride who committed to BrideFit showed up to their wedding looking and feeling their absolute best.
+  Every groom who committed to GroomFit showed up to their wedding looking and feeling their absolute best.
   </p>
   </div>
 
@@ -2401,7 +2692,7 @@ background:#000;
 </a>
 </div>
     <p style="font-size:12px; color:#888; margin-top:10px; text-align:center;">
-  Real stories from brides who were exactly where you are
+  Real stories from grooms who were exactly where you are
 </p>
     
  <p class="transform-note">
@@ -2416,8 +2707,8 @@ Client transformations (identity protected)
   <div class="section-inner">
   <div class="pricing-header reveal">
     <p style="text-align:center;color:#aaa;margin-bottom:20px;">
-Most brides spend ₹50K–₹2L on outfits & makeup.  
-This ensures you feel as good as you look.
+Most grooms spend ₹40K–₹60K on clothes & grooming.  
+This ensures your body matches it.
 </p>
   <span class="section-tag">Invest in Yourself</span>
   <h2 class="section-title">Choose Your <em class="gold italic">Transformation</em></h2>
@@ -2436,7 +2727,7 @@ This ensures you feel as good as you look.
   <span class="price-num">8,999</span>
   <span class="price-period">/program</span>
   </div>
-  <p class="plan-desc">A structured plan for the self-driven bride.</p>
+  <p class="plan-desc">A structured plan for the self-driven groom.</p>
   <ul class="plan-features">
   <li><span class="check">✓</span> Custom workout plan (gym/home)</li>
   <li><span class="check">✓</span> Indian diet plan (veg/non-veg)</li>
@@ -2460,7 +2751,7 @@ This ensures you feel as good as you look.
   <span class="price-num">15,999</span>
   <span class="price-period">/program</span>
   </div>
-  <p class="plan-desc">Full support, coaching, and accountability for serious brides.</p>
+  <p class="plan-desc">Full support, coaching, and accountability for serious grooms.</p>
   <ul class="plan-features">
   <li><span class="check">✓</span> Custom workout plan (gym/home)</li>
   <li><span class="check">✓</span> Indian diet plan (veg/non-veg)</li>
@@ -2488,7 +2779,7 @@ This ensures you feel as good as you look.
   <li><span class="check">✓</span> Everything in Premium</li>
   <li><span class="check">✓</span> Dedicated personal coach</li>
   <li><span class="check">✓</span> Daily plan adjustments</li>
-  <li><span class="check">✓</span> Posture & brideing coaching</li>
+  <li><span class="check">✓</span> Posture & grooming coaching</li>
   <li><span class="check">✓</span> Pre-wedding peak week protocol</li>
   <li><span class="check">✓</span> WhatsApp support (7 days/week)</li>
   <li><span class="check">✓</span> Post-wedding maintenance plan</li>
@@ -2511,7 +2802,7 @@ This ensures you feel as good as you look.
   <div class="section-inner">
   <div class="testi-header reveal">
   <span class="section-tag">Client Stories</span>
-  <h2 class="section-title">What brides Say About <em class="gold italic">BrideFit</em></h2>
+  <h2 class="section-title">What Grooms Say About <em class="gold italic">GroomFit</em></h2>
   <div class="divider" style="margin:1rem auto"></div>
   </div>
 
@@ -2521,7 +2812,7 @@ This ensures you feel as good as you look.
   <div class="stars">
   <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
   </div>
-  <p>“Working in Dubai, my schedule was all over the place and fitness kept getting pushed. I tried BrideFit mainly because it was focused on brides. In about 80 days I lost 9 kilos and finally felt confident on my wedding day. Didn’t expect it to make this much difference honestly."</p>
+  <p>“Working in Dubai, my schedule was all over the place and fitness kept getting pushed. I tried GroomFit mainly because it was focused on grooms. In about 80 days I lost 9 kilos and finally felt confident on my wedding day. Didn’t expect it to make this much difference honestly."</p>
   <div class="testi-author">
   <div class="testi-ava">
   <img src="akash.jpg" alt="Akash Bhamre"
@@ -2539,7 +2830,7 @@ This ensures you feel as good as you look.
   <div class="stars">
   <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
   </div>
-  <p>"The Indian diet plan was a game changer. I always thought I'd have to eat bland salads to get fit. BrideFit proved that wrong completely. My mother-in-law actually commented on my transformation!"</p>
+  <p>"The Indian diet plan was a game changer. I always thought I'd have to eat bland salads to get fit. GroomFit proved that wrong completely. My mother-in-law actually commented on my transformation!"</p>
   <div class="testi-author">
   <div class="testi-ava">
   <img src="arth.jpg" alt="Arth Patel"
@@ -2557,7 +2848,7 @@ This ensures you feel as good as you look.
   <div class="stars">
   <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
   </div>
-  <p>“Tried YouTube workouts and doing things on my own for years — never worked out. A friend recommended BrideFit so I gave it a try. Not gonna lie, the coaches were on my back the whole time 😂 but that’s exactly what I needed. Ended up way more lean and confident by the wedding."</p>
+  <p>“Tried YouTube workouts and doing things on my own for years — never worked out. A friend recommended GroomFit so I gave it a try. Not gonna lie, the coaches were on my back the whole time 😂 but that’s exactly what I needed. Ended up way more lean and confident by the wedding."</p>
   <div class="testi-author">
   <div class="testi-ava">
   <img src="sourabh.jpg" alt="Sourabh R."
@@ -2587,7 +2878,7 @@ This ensures you feel as good as you look.
   <div class="modal-box">
     <div class="modal-header">
       <div class="modal-header-left">
-        <span class="modal-brand-label">BrideFit · Legal</span>
+        <span class="modal-brand-label">GroomFit · Legal</span>
         <h2 class="modal-title" id="title-privacy">Privacy Policy</h2>
       </div>
       <button class="modal-close" onclick="closeModal('privacy')" aria-label="Close">✕</button>
@@ -2596,12 +2887,12 @@ This ensures you feel as good as you look.
 
       <div class="modal-section">
         <div class="modal-section-title">Our Commitment</div>
-        <p>At BrideFit, your privacy is something we take seriously. Any information you share with us is used solely to deliver and improve your coaching experience — nothing more, nothing less.</p>
+        <p>At GroomFit, your privacy is something we take seriously. Any information you share with us is used solely to deliver and improve your coaching experience — nothing more, nothing less.</p>
       </div>
 
       <div class="modal-section">
         <div class="modal-section-title">What We Collect</div>
-        <p>When you apply for or enrol in a BrideFit program, we may collect:</p>
+        <p>When you apply for or enrol in a GroomFit program, we may collect:</p>
         <ul>
           <li>Personal details — your name, phone number, and email address</li>
           <li>Fitness information — current weight, body goals, wedding date, and any health notes you share</li>
@@ -2622,7 +2913,7 @@ This ensures you feel as good as you look.
       <div class="modal-section">
         <div class="modal-section-title">Data Protection</div>
         <div class="modal-highlight">
-          <p><strong>We do not sell, rent, or share your personal data with any third party.</strong> Your information stays strictly between you and your BrideFit coach.</p>
+          <p><strong>We do not sell, rent, or share your personal data with any third party.</strong> Your information stays strictly between you and your GroomFit coach.</p>
         </div>
       </div>
 
@@ -2639,10 +2930,10 @@ This ensures you feel as good as you look.
 
       <div class="modal-section">
         <div class="modal-section-title">Your Consent</div>
-        <p>By applying to or joining BrideFit, you agree to the collection and use of information as described above. If you have any questions or concerns, we're always just a message away.</p>
+        <p>By applying to or joining GroomFit, you agree to the collection and use of information as described above. If you have any questions or concerns, we're always just a message away.</p>
       </div>
 
-      <p class="modal-footer-note">Last updated: 2024 · BrideFit, India · For queries: WhatsApp +91 95888 59960</p>
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
     </div>
   </div>
 </div>
@@ -2652,7 +2943,7 @@ This ensures you feel as good as you look.
   <div class="modal-box">
     <div class="modal-header">
       <div class="modal-header-left">
-        <span class="modal-brand-label">BrideFit · Legal</span>
+        <span class="modal-brand-label">GroomFit · Legal</span>
         <h2 class="modal-title" id="title-terms">Terms &amp; Conditions</h2>
       </div>
       <button class="modal-close" onclick="closeModal('terms')" aria-label="Close">✕</button>
@@ -2661,12 +2952,12 @@ This ensures you feel as good as you look.
 
       <div class="modal-section">
         <div class="modal-section-title">The Service</div>
-        <p>BrideFit provides online fitness coaching designed specifically for Indian men preparing for their wedding. This includes personalised workout plans, Indian-adapted diet plans, progress check-ins, and coaching support — delivered remotely via WhatsApp, video calls, and email.</p>
+        <p>GroomFit provides online fitness coaching designed specifically for Indian men preparing for their wedding. This includes personalised workout plans, Indian-adapted diet plans, progress check-ins, and coaching support — delivered remotely via WhatsApp, video calls, and email.</p>
       </div>
 
       <div class="modal-section">
         <div class="modal-section-title">Your Responsibility</div>
-        <p>BrideFit provides the plan, the structure, and the support — but results come from your consistent effort. By joining, you acknowledge that:</p>
+        <p>GroomFit provides the plan, the structure, and the support — but results come from your consistent effort. By joining, you acknowledge that:</p>
         <ul>
           <li>You will follow the program as instructed to the best of your ability</li>
           <li>Results depend on your commitment, consistency, and lifestyle choices</li>
@@ -2676,7 +2967,7 @@ This ensures you feel as good as you look.
 
       <div class="modal-section">
         <div class="modal-section-title">Payment Terms</div>
-        <p>BrideFit operates on a simple, transparent payment structure:</p>
+        <p>GroomFit operates on a simple, transparent payment structure:</p>
         <ul>
           <li>Payment is a one-time program fee — no recurring charges, no hidden costs</li>
           <li>The program begins once payment is confirmed</li>
@@ -2689,20 +2980,20 @@ This ensures you feel as good as you look.
 
       <div class="modal-section">
         <div class="modal-section-title">Code of Conduct</div>
-        <p>We believe in a respectful coaching relationship. We ask that all communication with your coach and the BrideFit team remains courteous and professional. BrideFit reserves the right to discontinue service (without refund) in cases of abusive or disrespectful behaviour.</p>
+        <p>We believe in a respectful coaching relationship. We ask that all communication with your coach and the GroomFit team remains courteous and professional. GroomFit reserves the right to discontinue service (without refund) in cases of abusive or disrespectful behaviour.</p>
       </div>
 
       <div class="modal-section">
         <div class="modal-section-title">Health Disclaimer</div>
-        <p>BrideFit coaching is not a substitute for medical advice. If you have any underlying health conditions, please consult a qualified doctor before starting the program. Always inform your coach of any medical concerns.</p>
+        <p>GroomFit coaching is not a substitute for medical advice. If you have any underlying health conditions, please consult a qualified doctor before starting the program. Always inform your coach of any medical concerns.</p>
       </div>
 
       <div class="modal-section">
         <div class="modal-section-title">Acceptance</div>
-        <p>By purchasing or enrolling in a BrideFit program, you confirm that you have read, understood, and agree to these Terms &amp; Conditions.</p>
+        <p>By purchasing or enrolling in a GroomFit program, you confirm that you have read, understood, and agree to these Terms &amp; Conditions.</p>
       </div>
 
-      <p class="modal-footer-note">Last updated: 2024 · BrideFit, India · For queries: WhatsApp +91 95888 59960</p>
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
     </div>
   </div>
 </div>
@@ -2712,7 +3003,7 @@ This ensures you feel as good as you look.
   <div class="modal-box">
     <div class="modal-header">
       <div class="modal-header-left">
-        <span class="modal-brand-label">BrideFit · Legal</span>
+        <span class="modal-brand-label">GroomFit · Legal</span>
         <h2 class="modal-title" id="title-refund">Refund Policy</h2>
       </div>
       <button class="modal-close" onclick="closeModal('refund')" aria-label="Close">✕</button>
@@ -2722,7 +3013,7 @@ This ensures you feel as good as you look.
       <div class="modal-section">
         <div class="modal-section-title">Our Guarantee</div>
         <div class="modal-highlight">
-          <p><strong>7-Day Risk-Free Guarantee.</strong> We're confident in what we deliver. If you join BrideFit and genuinely feel it's not working for you within the first 7 days, you'll get a full refund — no questions, no drama.</p>
+          <p><strong>7-Day Risk-Free Guarantee.</strong> We're confident in what we deliver. If you join GroomFit and genuinely feel it's not working for you within the first 7 days, you'll get a full refund — no questions, no drama.</p>
         </div>
         <p>We stand behind our program because we've seen what it does when followed sincerely. This guarantee exists because we believe you deserve to try it without risk.</p>
       </div>
@@ -2754,27 +3045,27 @@ This ensures you feel as good as you look.
         </div>
       </div>
 
-      <p class="modal-footer-note">Last updated: 2024 · BrideFit, India · For queries: WhatsApp +91 95888 59960</p>
+      <p class="modal-footer-note">Last updated: 2024 · GroomFit, India · For queries: WhatsApp +91 95888 59960</p>
     </div>
   </div>
 </div>
   
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="footer-logo">bride<span>Fit</span></div>
+  <div class="footer-logo">Groom<span>Fit</span></div>
   <p class="footer-tagline">India's Premier Wedding Transformation Program for Men</p>
   <ul class="footer-links">
   <li><a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a></li>
   <li><a href="#" onclick="openModal('terms');return false;">Terms</a></li>
   <li><a href="#" onclick="openModal('refund');return false;">Refund Policy</a></li>
   <li><a href="https://wa.me/919588859960" target="_blank" rel="noopener">Contact Us</a></li>
-  <li><a href="https://www.instagram.com/BrideFit.in" target="_blank" rel="noopener">Instagram</a></li>
+  <li><a href="https://www.instagram.com/groomfit.in" target="_blank" rel="noopener">Instagram</a></li>
   </ul>
-  <p class="footer-copy">© 2024 BrideFit. All rights reserved. · Results may vary. Commitment required.</p>
+  <p class="footer-copy">© 2024 GroomFit. All rights reserved. · Results may vary. Commitment required.</p>
 </footer>
 
 <!-- ===== WHATSAPP FAB ===== -->
-<a href="https://wa.me/919588859960?text=Hi%2C%20I%20want%20to%20check%20if%20I%20qualify%20for%20BrideFit.%0A%0AMy%20wedding%20date%20is%3A%0AMy%20current%20weight%20is%3A%0AMy%20goal%20is%3A" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919588859960?text=Hi%2C%20I%20want%20to%20check%20if%20I%20qualify%20for%20GroomFit.%0A%0AMy%20wedding%20date%20is%3A%0AMy%20current%20weight%20is%3A%0AMy%20goal%20is%3A" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -2892,7 +3183,7 @@ This ensures you feel as good as you look.
       font-size: 18px;
     ">✖</span>
 
-    <h3>Check If You Qualify for BrideFit</h3>
+    <h3>Check If You Qualify for GroomFit</h3>
     <p style="font-size: 13px; margin-bottom: 20px;">
       Apply below — we’ll get back within 24 hours
     </p>
@@ -2916,85 +3207,9 @@ This ensures you feel as good as you look.
 </div>
 
 <script>
-  // Show popup once
-  // AUTO SET DEFAULT WEDDING DATE (90 DAYS)
-document.addEventListener("DOMContentLoaded", function() {
-  const defaultDate = new Date();
-  defaultDate.setDate(defaultDate.getDate() + 90);
-
-  const input = document.getElementById("miniDate");
-  if (input) {
-    input.value = defaultDate.toISOString().split('T')[0];
-    miniTargetDate = new Date(input.value);
-  }
-});
-document.addEventListener("DOMContentLoaded", function() {
-  const lastShown = localStorage.getItem("popupTime");
-  const now = Date.now();
-
-  if (!lastShown || now - lastShown > 86400000) {
-    setTimeout(() => {
-      document.getElementById("leadPopup").style.display = "flex";
-    }, 5000);
-
-    localStorage.setItem("popupTime", now);
-  }
-});
-  
-  function closePopup() {
-    document.getElementById("leadPopup").style.display = "none";
-  }
 
   // FORM SUBMIT
- 
-  
-let miniTargetDate;
-  let lastDays = null;
 
-function setMiniDate() {
-  miniTargetDate = new Date(document.getElementById("miniDate").value);
-}
-
-function updateMiniCountdown() {
-  if (!miniTargetDate) return;
-
-  const now = new Date();
-  const diff = miniTargetDate - now;
-
-  if (diff <= 0) {
-    document.getElementById("miniDays").textContent = "0";
-    return;
-  }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-const daysEl = document.getElementById("miniDays");
-
-// animate only when value changes
-if (days !== lastDays) {
-  daysEl.classList.add("animate");
-
-  setTimeout(() => {
-    daysEl.textContent = days;
-    daysEl.classList.remove("animate");
-  }, 200);
-
-  lastDays = days;
-}
-
-
-// urgency color
-const box = document.querySelector(".mini-countdown");
-if (days <= 10) {
-  box.classList.add("urgent");
-} else {
-  box.classList.remove("urgent");
-}
-  } // function ends
-
-setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 
   function openPopup() {
   document.getElementById("leadPopup").style.display = "flex";
@@ -3112,7 +3327,7 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
 
   // WHATSAPP MESSAGE
   const name = formData.get("name") || "there";
-  const message = `Hi, I just applied for BrideFit. My name is ${name}. Looking forward.`;
+  const message = `Hi, I just applied for GroomFit. My name is ${name}. Looking forward.`;
   const encodedMsg = encodeURIComponent(message);
 
   const phone = "919588859960";
@@ -3166,12 +3381,24 @@ if (slider3 && afterImage3) {
 </a>
 
 <div class="pricing-tooltip">View Pricing</div>
-
+  
 <script>
-// Disable pinch zoom
-document.addEventListener('gesturestart', function (e) {
-  e.preventDefault();
-});
+
+  function selectPersona(type) {
+
+  if (type === 'groom') {
+    window.location.href = "#pricing";
+  }
+
+  if (type === 'bride') {
+  window.location.href = "#pricing";
+
+}
+
+  if (type === 'couple') {
+    window.location.href = "CoupleFit.html";
+  }
+}
 
 // Disable double tap zoom
 let lastTouchEnd = 0;
@@ -3194,6 +3421,3 @@ document.addEventListener('touchmove', function (e) {
   
 </body>
 </html>
-
-
-
