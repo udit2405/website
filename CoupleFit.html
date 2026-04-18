@@ -221,6 +221,7 @@ html {
   z-index: 900;
   padding: 0 5%;
   height: 55px;
+    justify-content: space-between;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1848,6 +1849,145 @@ overflow: hidden;
   font-style: italic;
   }
 
+    .persona-selector {
+  margin-top: 25px;
+  max-width: 650px;
+}
+
+.persona-title {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.persona-card {
+  position: relative;
+  padding: 22px 18px;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid rgba(201,168,76,0.2);
+
+  transition: all 0.35s ease;
+}
+
+ /* ===== ALWAYS VISIBLE OUTLINE LIKE COUPLEFIT ===== */
+
+/* GroomFit → Gold */
+.groom-card {
+  border: 1.5px solid var(--gold);
+  box-shadow: 
+    0 0 15px rgba(201,168,76,0.25),
+    0 0 40px rgba(201,168,76,0.15);
+}
+
+/* BrideFit → Pink */
+.bride-card {
+  border: 1.5px solid rgba(255, 105, 180, 0.9);
+  box-shadow: 
+    0 0 15px rgba(255,105,180,0.25),
+    0 0 40px rgba(255,105,180,0.15);
+}
+
+/* Optional: stronger glow on hover */
+.groom-card:hover {
+  box-shadow: 
+    0 0 25px rgba(201,168,76,0.5),
+    0 0 60px rgba(201,168,76,0.25);
+}
+
+.bride-card:hover {
+  box-shadow: 
+    0 0 25px rgba(255,105,180,0.5),
+    0 0 60px rgba(255,105,180,0.25);
+}   
+
+    
+/* Glow border effect */
+.persona-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+
+  background: linear-gradient(120deg, transparent, rgba(201,168,76,0.6), transparent);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover = PREMIUM FEEL */
+.persona-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    0 0 25px rgba(201,168,76,0.25);
+  border-color: rgba(201,168,76,0.6);
+}
+
+.persona-card:hover::before {
+  opacity: 1;
+}
+
+/* Active press feel */
+.persona-card:active {
+  transform: scale(0.97);
+}
+
+/* Featured (CoupleFit) = EXTRA GLOW */
+.persona-card.featured {
+  background: radial-gradient(circle at 50% 30%, rgba(201,168,76,0.15), #0b0b0b);
+  border-color: var(--gold);
+  box-shadow: 0 0 35px rgba(201,168,76,0.25);
+}
+
+.persona-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.persona-card.featured {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.1);
+}
+
+.persona-name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.persona-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.persona-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+    
+    
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
   margin-top: -140px;
@@ -1967,9 +2107,12 @@ overflow: hidden;
   }
 
     .logo-img {
-  height: 60px;
+  height: 45px;
   width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
 }
+    
 /* ===== PRICING FAB ===== */
 .pricing-fab {
   position: fixed;
@@ -2056,121 +2199,171 @@ overflow: hidden;
   <a href="#pricing" class="nav-cta nav-cta-primary">View Pricing</a>
 </nav>
 
-<!-- ===== HERO (COUPLEFIT) ===== -->
+<!-- ===== HERO ===== -->
 
+  
 <section id="hero">
-
+  <!-- Desktop Video -->
 <video autoplay muted loop playsinline class="hero-bg-video desktop-video">
-  <source src="couple_bg.mp4" type="video/mp4">
+  <source src="background_video.mp4" type="video/mp4">
 </video>
 
+<!-- Mobile Video -->
 <video autoplay muted loop playsinline class="hero-bg-video mobile-video">
-  <source src="couple_mobile.mp4" type="video/mp4">
+  <source src="mob_video.mp4" type="video/mp4">
 </video>
+  <div class="hero-ring hero-ring-1"></div>
+  <div class="hero-ring hero-ring-2"></div>
+  <div class="hero-inner">
+  <div class="hero-left-col">
+  <div class="hero-eyebrow">India's #1 Wedding Transformation Brand</div>
 
-<div class="hero-inner">
-<div class="hero-left-col">
-
-<div class="hero-eyebrow">India’s First Couple Transformation Program</div>
-
-<h1 class="hero-headline">
-Transform Together — Look Incredible, Feel Connected,  
-and Step Into Your Wedding as a Team.
+  <h1 class="hero-headline">
+Transform Together Before Your Wedding —  
+and Show Up as Your Best Selves.
 </h1>
 
 <p class="hero-value-strong">
-A 60–90 day transformation designed for couples preparing for their wedding
+60–90 day transformation designed for couples training together
 </p>
 
 <p class="hero-sub">
-You’re starting a life together.  
-Why not start the journey together too?
+Your wedding photos last forever.  
+Make sure both of you love what you see.
 </p>
 
 <p style="font-size:0.8rem; color:#aaa; margin-top:10px;">
-Couples across India · Shared transformations · Stronger together
+Trusted by couples across India · Transforming together, not alone
 </p>
+ 
+    
 
-<div class="hero-cta-group">
+   <div class="hero-cta-group">
 
-<button onclick="openPopup()" class="btn-primary">
-  Apply as a Couple →
-</button>
+  <button onclick="openPopup()" class="btn-primary">
+    Check If I Qualify →
+  </button>
 
-<a href="how.html" class="btn-outline">
-  See How It Works
-</a>
+  <a href="how.html" class="btn-outline">
+    See How It Works
+  </a>
 
+</div>
+
+    <div class="persona-selector">
+
+  <p class="persona-title">Who is this for?</p>
+
+  <div class="persona-grid">
+
+    <div class="persona-card groom-card" onclick="selectPersona('groom')">
+      <div class="persona-name">🤵 GroomFit</div>
+      <div class="persona-sub">For Grooms</div>
+    </div>
+
+    <div class="persona-card bride-card" onclick="selectPersona('bride')">
+      <div class="persona-name">👰 BrideFit</div>
+      <div class="persona-sub">For Brides</div>
+    </div>
+
+    <div class="persona-card featured" onclick="selectPersona('couple')">
+      <div class="persona-name">💍 CoupleFit</div>
+      <div class="persona-sub">Train Together</div>
+    </div>
+
+  </div>
 </div>
 
 <p style="font-size:0.75rem; color:#888; margin-top:8px;">
-Limited couple slots — high-touch coaching for both partners.
+Limited slots this month. Apply now—only committed grooms are accepted.
 </p>
 
-<!-- 🔥 TRANSFORMATION SELECTOR -->
-<div style="margin-top:25px;">
+    
 
-<p style="font-size:12px; color:#C9A84C; margin-bottom:10px; letter-spacing:1px;">
-CHOOSE YOUR TRANSFORMATION
-</p>
+  <div class="hero-comparison">
+  <div class="hero-comparison-grid">
+  <div class="hero-comp-card hero-comp-card--diy">
+  <div class="hero-comp-title">Do It Yourself / AI Plans</div>
+  <ul class="hero-comp-list">
+  <li>Generic workouts</li>
+  <li>No accountability</li>
+  <li>No customization</li>
+  <li>Easy to quit</li>
+  <li>Risky for a once-in-a-lifetime event</li>
+  </ul>
+  </div>
+  <div class="hero-comp-card hero-comp-card--gf">
+  <div class="hero-comp-title">With GroomFit Coaching</div>
+  <ul class="hero-comp-list">
+  <li>Personalised plan for YOUR body</li>
+  <li>Weekly coach check-ins</li>
+  <li>Real accountability</li>
+  <li>Proven transformation system</li>
+  <li>Designed for your wedding deadline</li>
+  </ul>
+  </div>
+  </div>
+  <p class="hero-comp-close">Your wedding happens once. Do you really want to risk it on <em>guesswork</em>?</p>
+  </div>
 
-<div style="display:flex; gap:10px; flex-wrap:wrap;">
+  <div class="hero-trust">
+  <div class="hero-trust-dots">
+  <span aria-hidden="true">💍</span>
+  <span aria-hidden="true">✨</span>
+  <span aria-hidden="true">⭐</span>
+  </div>
+  <span>Trusted by grooms across India &nbsp;·&nbsp; Results in 60–90 days</span>
+  </div>
+  </div>
 
-<a href="index.html" class="btn-outline">GroomFit</a>
+    
+  <aside class="hero-offline-card" aria-label="Offline coaching locations">
 
-<a href="bridefit.html" class="btn-outline">BrideFit</a>
 
-<a href="couplefit.html" class="btn-primary">CoupleFit</a>
+    
+  <h3 class="hero-offline-title">Offline <span>Coaching</span> Available</h3>
+  <p class="hero-offline-text">Prefer in-person guidance? Meet us for consultations and gym sessions in select cities.</p>
+  <div class="hero-offline-cities">
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Dubai</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Mumbai</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Gurgaon</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Jaipur</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Ghaziabad</span>
+  <span class="hero-city-tag"><span class="hero-city-marker" aria-hidden="true">●</span> Noida</span>
 
-</div>
+  </div>
+<a href="#" onclick="openPopup(); return false;" class="hero-offline-cta">
+  Book Offline Consultation
+</a>  </aside>
+    
+  </div>
 
-<p style="font-size:12px; color:#888; margin-top:8px;">
-Best for couples who want accountability + shared results.
-</p>
+  <div class="hero-scroll-hint">
+  <span>See Transformations ↓</span>
+  <div class="scroll-line"></div>
+  </div>
 
-</div>
-
-<!-- 🔥 COMPARISON -->
-<div class="hero-comparison">
-<div class="hero-comparison-grid">
-
-<div class="hero-comp-card hero-comp-card--diy">
-<div class="hero-comp-title">Doing It Separately</div>
-<ul class="hero-comp-list">
-<li>Different plans, no sync</li>
-<li>No shared accountability</li>
-<li>Hard to stay consistent together</li>
-<li>Different energy levels</li>
-<li>One partner often drops off</li>
-</ul>
-</div>
-
-<div class="hero-comp-card hero-comp-card--gf">
-<div class="hero-comp-title">With CoupleFit</div>
-<ul class="hero-comp-list">
-<li>One unified transformation plan</li>
-<li>Shared accountability</li>
-<li>Motivation from each other</li>
-<li>Synchronized progress</li>
-<li>Stronger bond before marriage</li>
-</ul>
-</div>
-
-</div>
-
-<p class="hero-comp-close">
-The couples who train together… show up differently on their wedding day.
-</p>
-
-</div>
-
-<div class="hero-trust">
-<span>Couples across India · 60–90 day programs · Real shared results</span>
-</div>
-
-</div>
-</div>
+  <div class="hero-stats">
+  <div class="stat-item">
+  <span class="stat-num">100+</span>
+  <span class="stat-label">Grooms Transformed</span>
+  </div>
+  <div class="stat-item">
+  <span class="stat-num">90</span>
+  <span class="stat-label">Day Program</span>
+  </div>
+  <div class="stat-item">
+  <span class="stat-num">5⭐</span>
+  <span class="stat-label">Avg. Rating</span>
+  </div>
+  <div class="stat-item">
+  <span class="stat-num">5yrs</span>
+  <span class="stat-label">Expert Experience</span>
+  </div>
+  </div>
 </section>
+
+
 
 <!-- ===== SOLUTION ===== -->
 <section id="program" class="section">
@@ -2178,9 +2371,7 @@ The couples who train together… show up differently on their wedding day.
   <div class="solution-layout">
   <div class="reveal">
   <span class="section-tag">The GroomFit System</span>
-  <h2 class="section-title">
-A Transformation Built for <em class="gold italic">Two</em>
-</h2>
+  <h2 class="section-title">A Precision Plan Built for <em class="gold italic">Grooms Only</em></h2>
   <div class="divider"></div>
   <p class="section-sub" style="margin-bottom:2.5rem">
   This isn't a generic fitness app or YouTube routine. This is a structured, deadline-driven transformation designed for men who have a real deadline — their wedding.
@@ -2243,24 +2434,6 @@ A Transformation Built for <em class="gold italic">Two</em>
   </div>
 </section>
 
-  
-<section class="section">
-<div class="section-inner">
-
-<h2 class="section-title">Why Couples Choose This</h2>
-
-<ul style="margin-top:20px; line-height:2;">
-<li>✔ You both stay accountable</li>
-<li>✔ No mismatch in progress</li>
-<li>✔ Shared routine despite busy schedules</li>
-<li>✔ Support system built-in</li>
-<li>✔ You look equally great together</li>
-</ul>
-
-</div>
-</section>
-  
-  
 <!-- ===== TRANSFORMATIONS ===== -->
 <section id="transformations" class="section">
   <div class="section-inner">
@@ -2535,8 +2708,8 @@ Client transformations (identity protected)
   <div class="section-inner">
   <div class="pricing-header reveal">
     <p style="text-align:center;color:#aaa;margin-bottom:20px;">
-Most couples spend ₹2L–₹10L on their wedding.  
-This ensures you both actually feel confident in it.
+Most grooms spend ₹40K–₹60K on clothes & grooming.  
+This ensures your body matches it.
 </p>
   <span class="section-tag">Invest in Yourself</span>
   <h2 class="section-title">Choose Your <em class="gold italic">Transformation</em></h2>
@@ -2570,37 +2743,29 @@ This ensures you both actually feel confident in it.
 </a>
   </div>
 
-  <div class="plan featured">
-
-<div class="plan-badge">Best for Couples</div>
-
-<div class="plan-name">CoupleFit Transformation</div>
-
-<div class="plan-price">
-<span class="price-symbol">₹</span>
-<span class="price-num">29,999</span>
-<span class="price-period">/both</span>
-</div>
-
-<p class="plan-desc">
-A shared transformation journey for both partners — guided under one system.
-</p>
-
-<ul class="plan-features">
-<li><span class="check">✓</span> Full coaching for both individuals</li>
-<li><span class="check">✓</span> Personalised diet & workout (for each)</li>
-<li><span class="check">✓</span> Shared accountability system</li>
-<li><span class="check">✓</span> Weekly couple check-ins</li>
-<li><span class="check">✓</span> Coordinated schedules</li>
-<li><span class="check">✓</span> Joint progress tracking</li>
-<li><span class="check">✓</span> WhatsApp support (6 days/week)</li>
-</ul>
-
-<a href="#" onclick="openPopup()" class="btn-primary">
-Apply as a Couple →
+  <!-- Premium -->
+  <div class="plan featured reveal" style="transition-delay:0.1s">
+  <div class="plan-badge">Most Popular</div>
+  <div class="plan-name">Premium Coaching</div>
+  <div class="plan-price">
+  <span class="price-symbol">₹</span>
+  <span class="price-num">15,999</span>
+  <span class="price-period">/program</span>
+  </div>
+  <p class="plan-desc">Full support, coaching, and accountability for serious grooms.</p>
+  <ul class="plan-features">
+  <li><span class="check">✓</span> Custom workout plan (gym/home)</li>
+  <li><span class="check">✓</span> Indian diet plan (veg/non-veg)</li>
+  <li><span class="check">✓</span> 90-day program structure</li>
+  <li><span class="check">✓</span> Progress tracking & body metrics</li>
+  <li><span class="check">✓</span> Weekly video check-in calls</li>
+  <li><span class="check">✓</span> WhatsApp support (6 days/week)</li>
+  <li class="off"><span class="cross">✗</span> Dedicated 1-on-1 coach</li>
+  </ul>
+  <a href="https://razorpay.me/@uditsahai" target="_blank" class="btn-primary">
+  Pay ₹15,999 & Start
 </a>
-
-</div>
+  </div>
 
   <!-- Elite -->
   <div class="plan reveal" style="transition-delay:0.15s">
@@ -3043,85 +3208,9 @@ Apply as a Couple →
 </div>
 
 <script>
-  // Show popup once
-  // AUTO SET DEFAULT WEDDING DATE (90 DAYS)
-document.addEventListener("DOMContentLoaded", function() {
-  const defaultDate = new Date();
-  defaultDate.setDate(defaultDate.getDate() + 90);
-
-  const input = document.getElementById("miniDate");
-  if (input) {
-    input.value = defaultDate.toISOString().split('T')[0];
-    miniTargetDate = new Date(input.value);
-  }
-});
-document.addEventListener("DOMContentLoaded", function() {
-  const lastShown = localStorage.getItem("popupTime");
-  const now = Date.now();
-
-  if (!lastShown || now - lastShown > 86400000) {
-    setTimeout(() => {
-      document.getElementById("leadPopup").style.display = "flex";
-    }, 5000);
-
-    localStorage.setItem("popupTime", now);
-  }
-});
-  
-  function closePopup() {
-    document.getElementById("leadPopup").style.display = "none";
-  }
 
   // FORM SUBMIT
- 
-  
-let miniTargetDate;
-  let lastDays = null;
 
-function setMiniDate() {
-  miniTargetDate = new Date(document.getElementById("miniDate").value);
-}
-
-function updateMiniCountdown() {
-  if (!miniTargetDate) return;
-
-  const now = new Date();
-  const diff = miniTargetDate - now;
-
-  if (diff <= 0) {
-    document.getElementById("miniDays").textContent = "0";
-    return;
-  }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
-const daysEl = document.getElementById("miniDays");
-
-// animate only when value changes
-if (days !== lastDays) {
-  daysEl.classList.add("animate");
-
-  setTimeout(() => {
-    daysEl.textContent = days;
-    daysEl.classList.remove("animate");
-  }, 200);
-
-  lastDays = days;
-}
-
-
-// urgency color
-const box = document.querySelector(".mini-countdown");
-if (days <= 10) {
-  box.classList.add("urgent");
-} else {
-  box.classList.remove("urgent");
-}
-  } // function ends
-
-setInterval(updateMiniCountdown, 1000); // 👈 THIS LINE
 
   function openPopup() {
   document.getElementById("leadPopup").style.display = "flex";
@@ -3293,12 +3382,23 @@ if (slider3 && afterImage3) {
 </a>
 
 <div class="pricing-tooltip">View Pricing</div>
-
+  
 <script>
-// Disable pinch zoom
-document.addEventListener('gesturestart', function (e) {
-  e.preventDefault();
-});
+
+  function selectPersona(type) {
+
+  if (type === 'groom') {
+    window.location.href = "#pricing";
+  }
+
+  if (type === 'bride') {
+    window.location.href = "BrideFit.html";
+  }
+
+  if (type === 'couple') {
+    window.location.href = "CoupleFit.html";
+  }
+}
 
 // Disable double tap zoom
 let lastTouchEnd = 0;
