@@ -479,7 +479,6 @@ html {
   .hero-ring-2 { width: 900px; height: 900px; top: -300px; right: -300px; border-color: rgba(201,168,76,0.03); }
 
  .hero-inner {
-  margin-top: 0;
   position: relative;
   z-index: 2;
   max-width: 1180px;
@@ -487,7 +486,7 @@ html {
   width: 100%;
 
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
   align-items: start;
   gap: 2.5rem;
 }
@@ -507,7 +506,6 @@ html {
   }
 
   .hero-eyebrow {
-  margin-top: 60px; 
   display: inline-flex;  
   align-items: center;
   gap: 10px;
@@ -571,12 +569,10 @@ html {
 
   .hero-cta-group {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
-  opacity: 0;
-  animation: fadeUp 0.9s 0.72s forwards;
-  }
+  flex-wrap: wrap;
+}
 
 
   @media (max-width: 480px) {
@@ -2057,7 +2053,6 @@ overflow: hidden;
     
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
-  margin-top: 20px;
 }
 
 @media (max-width: 768px) {
