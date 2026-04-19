@@ -282,16 +282,14 @@ html {
   border: 1px solid rgba(201,168,76,0.25);
 
   transition: all 0.3s ease;
-}.nav-links a {
-  text-decoration: none;
 }
 
-.nav-card {
-  color: var(--muted);   /* 👈 force same color */
-}
-
-.nav-card:hover {
-  color: var(--gold);    /* 👈 consistent hover */
+/* HOVER EFFECT */
+.nav-links a:hover {
+  background: var(--gold);
+  color: black;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.25);
 }
 
   .nav-cta {
