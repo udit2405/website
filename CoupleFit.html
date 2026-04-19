@@ -19,10 +19,21 @@
 
   gtag('config', 'G-92T8Y1TFG0');
 </script>
+
     
   
   <style>
 
+    /* ===== MOBILE BASE FIX ===== */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
  
 
     /* ===== DROPDOWN ===== */
@@ -419,22 +430,22 @@ html {
     display: block;
   }
 }
-  .hero-bg-video {
-  object-fit: cover;
+ .hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.75;
+  background: black;
 }
 
-/* MOBILE FIX */
 @media (max-width: 768px) {
   .mobile-video {
-    object-fit: contain;
-    transform: scale(0.8); /* try 0.75–0.9 */
+    object-fit: cover;
   }
-}
-  width: 100%;
-  height: 100%;
-  background: black;
 }
     
   #hero {
@@ -480,6 +491,14 @@ html {
   align-items: start;
   gap: 2.5rem;
 }
+
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+    
   .hero-left-col { min-width: 0; }
   @media (min-width: 1024px) {
   .hero-inner {
@@ -559,6 +578,20 @@ html {
   animation: fadeUp 0.9s 0.72s forwards;
   }
 
+
+  @media (max-width: 480px) {
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group a,
+  .hero-cta-group button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+    
   .hero-trust {
   display: flex;
   align-items: center;
@@ -1895,6 +1928,13 @@ overflow: hidden;
   gap: 10px;
 }
 
+    @media (max-width: 768px) {
+  .persona-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    
+
 .persona-card {
   position: relative;
   padding: 22px 18px;
@@ -2017,8 +2057,15 @@ overflow: hidden;
     
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
-  margin-top: -140px;
-  align-self: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-offline-card {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
   
   background: rgba(20,20,20,0.55);
   -webkit-backdrop-filter: blur(16px);
@@ -2316,6 +2363,59 @@ overflow: hidden;
     0 0 25px rgba(201,168,76,0.5),
     0 0 60px rgba(201,168,76,0.25);
 }
+
+/* ===== MOBILE GRID FIX ===== */
+@media (max-width: 768px) {
+  .features-grid,
+  .transform-grid,
+  .upgrade-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+    /* ===== PRICING MOBILE FIX ===== */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+    /* ===== MOBILE TEXT FIX ===== */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+  }
+}
+
+    /* ===== FINAL MOBILE POLISH ===== */
+@media (max-width: 768px) {
+
+  .section {
+    padding: 50px 5%;
+  }
+
+  .plan {
+    padding: 24px;
+  }
+
+  .feature-card,
+  .upgrade-card {
+    padding: 20px;
+  }
+}
+    
+
     
   </style>
 
