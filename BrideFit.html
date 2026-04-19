@@ -3135,6 +3135,16 @@ By the time my wedding came, I felt lighter, more confident, and actually enjoye
       });
     }
   });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(function(overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+  });
   
 </script>
 <!-- PREMIUM LEAD POPUP -->
