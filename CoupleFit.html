@@ -487,7 +487,7 @@ html {
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
-  align-items: start;
+  align-items: start;  /* 🔥 THIS IS KEY */
   gap: 2.5rem;
 }
 
@@ -2053,6 +2053,9 @@ overflow: hidden;
     
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
+  align-self: start;   /* 🔥 pushes it to top */
+  margin-top: 0;       /* 🔥 removes extra push down */
+  position: relative;
 }
 
 @media (max-width: 768px) {
