@@ -3211,13 +3211,27 @@ It made a huge difference not just physically, but mentally as well."</p>
   </div>
 </div>
 
+
+  
 <script>
+
+  document.getElementById("leadPopup").addEventListener("click", function(e) {
+  if (e.target === this) {
+    closePopup();
+  }
+});
+  
 
   // FORM SUBMIT
 
 
+  
   function openPopup() {
   document.getElementById("leadPopup").style.display = "flex";
+}
+
+  function closePopup() {
+  document.getElementById("leadPopup").style.display = "none";
 }
   
 </script>
