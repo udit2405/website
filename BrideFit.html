@@ -18,8 +18,24 @@
   gtag('js', new Date());
 
   gtag('config', 'G-92T8Y1TFG0');
+
+<script>
+
+document.addEventListener('touchmove', function(e) {
+
+  if (e.touches.length > 1) return;
+
+  const touch = e.touches[0];
+
+  if (Math.abs(touch.clientX - touch.pageX) > 0) {
+
+    e.preventDefault();
+
+  }
+
+}, { passive: false });
+
 </script>
-    
 
 
 
