@@ -3517,7 +3517,12 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
 
   // WHATSAPP MESSAGE
   const name = formData.get("name") || "there";
-  const message = `Hi, I just applied for GroomFit. My name is ${name}. Looking forward.`;
+  const message = `Hi, I wanted to check if I qualify for CoupleFit.
+
+My name is: ${name}
+My wedding date is: ${date}
+My current location is: ${location}`;
+  
   const encodedMsg = encodeURIComponent(message);
 
   const phone = "919588859960";
