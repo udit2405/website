@@ -421,10 +421,12 @@ html {
 
 /* MOBILE FIX */
 @media (max-width: 768px) {
-  .mobile-video {
-    object-fit: contain;
-    transform: scale(0.8); /* try 0.75–0.9 */
-  }
+.mobile-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
 }
   width: 100%;
   height: 100%;
@@ -2335,39 +2337,11 @@ overflow: hidden;
 
   /* HERO */
 
-  .hero-headline {
 
-    font-size: 2rem;
-
-    line-height: 1.15;
-
-  }
-
-  .hero-sub {
-
-    font-size: 0.9rem;
-
-  }
-
-  .hero-value-strong {
-
-    font-size: 1rem;
-
-  }
-
-  .hero-cta-group {
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-  }
-
-  .btn-primary,
-  .btn-outline {
-    width: 100%;
-    justify-content: center;
-  }
+  ..hero-cta-group {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
   .btn-primary,
 .btn-outline {
@@ -2384,10 +2358,8 @@ overflow: hidden;
   /* PERSONA */
 
   .persona-grid {
-
-    grid-template-columns: 1fr;
-
-  }
+  grid-template-columns: repeat(3, 1fr);
+}
 
   .persona-card {
 
@@ -2398,12 +2370,8 @@ overflow: hidden;
   /* OFFLINE CARD FIX */
 
   .hero-offline-card {
-
-    margin-top: 20px;
-
-    width: 100%;
-
-  }
+  margin-top: -140px;
+}
 
   /* COMPARISON */
 
