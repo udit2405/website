@@ -3529,6 +3529,121 @@ document.addEventListener('touchmove', function (e) {
 }
 
 </script>
+
+
+  <!-- ===== FEEDBACK BOX ===== -->
+<div class="feedback-box">
+
+  <div class="feedback-header">
+    Have some words for us?
+  </div>
+
+  <p class="feedback-sub">
+    Drop them below 👇
+  </p>
+
+  <textarea id="feedbackText" placeholder="Write your feedback..."></textarea>
+
+  <button onclick="submitFeedback()">Submit</button>
+
+</div>
+
+<style>
+.feedback-box {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 260px;
+
+  background: rgba(20,20,20,0.95);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 12px;
+
+  padding: 16px;
+  z-index: 999;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Heading */
+.feedback-header {
+  font-size: 14px;
+  font-weight: 700;
+  color: #C9A84C;
+  margin-bottom: 6px;
+}
+
+/* Subtext */
+.feedback-sub {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Textarea */
+.feedback-box textarea {
+  width: 100%;
+  height: 70px;
+  padding: 8px;
+
+  border-radius: 6px;
+  border: 1px solid rgba(201,168,76,0.2);
+
+  background: #111;
+  color: white;
+  font-size: 12px;
+
+  resize: none;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.feedback-box button {
+  width: 100%;
+  padding: 8px;
+
+  background: #C9A84C;
+  color: black;
+  border: none;
+  border-radius: 6px;
+
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.feedback-box button:hover {
+  background: #E8C96A;
+}
+
+/* Mobile adjust */
+@media (max-width: 768px) {
+  .feedback-box {
+    width: 90%;
+    left: 5%;
+    bottom: 15px;
+  }
+}
+</style>
+
+<script>
+function submitFeedback() {
+  const text = document.getElementById("feedbackText").value;
+
+  if (!text.trim()) {
+    alert("Please write something first!");
+    return;
+  }
+
+  // 👉 Replace with your Google Form / backend later
+  console.log("Feedback:", text);
+
+  alert("Thanks for your feedback 🙌");
+
+  document.getElementById("feedbackText").value = "";
+}
+</script>
   
 </body>
 </html>
