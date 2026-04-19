@@ -250,6 +250,12 @@ html {
   background: rgba(8,8,8,0.85);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(201,168,76,0.12);
+    background: linear-gradient(
+  90deg,
+  rgba(201,168,76,0.1),
+  rgba(255,140,0,0.08),
+  rgba(201,168,76,0.1)
+);
   transition: var(--transition);
   }
   nav.scrolled { background: rgba(8,8,8,0.97); }
@@ -273,23 +279,49 @@ html {
   text-transform: uppercase;
   }
   .nav-links a {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 22px;
+  border-radius: 999px; /* pill shape */
+
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
 
   color: var(--gold);
-  background: rgba(201,168,76,0.08);
-  border: 1px solid rgba(201,168,76,0.25);
+
+  /* 🔥 gradient dark base */
+  background: linear-gradient(145deg, #0d0d0d, #050505);
+
+  /* 🔥 gold border */
+  border: 1.5px solid rgba(201,168,76,0.5);
+
+  /* 🔥 glow */
+  box-shadow:
+    0 0 10px rgba(201,168,76,0.2),
+    0 0 25px rgba(201,168,76,0.15),
+    inset 0 0 10px rgba(201,168,76,0.05);
 
   transition: all 0.3s ease;
 }
 
 /* HOVER EFFECT */
 .nav-links a:hover {
-  background: var(--gold);
-  color: black;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(201,168,76,0.25);
+  transform: translateY(-2px) scale(1.05);
+
+  background: linear-gradient(145deg, #1a1400, #0d0a00);
+
+  border-color: var(--gold);
+
+  box-shadow:
+    0 0 20px rgba(201,168,76,0.6),
+    0 0 50px rgba(201,168,76,0.35),
+    inset 0 0 12px rgba(201,168,76,0.2);
+
+  color: var(--gold-light);
 }
 
   .nav-cta {
