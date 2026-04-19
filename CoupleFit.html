@@ -3466,14 +3466,21 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
   googleForm.submit();
 
   // WHATSAPP MESSAGE
-  const name = formData.get("name") || "there";
-  const message = `Hi, I just applied for CoupleFit. My name is ${name}. Looking forward.`;
-  const encodedMsg = encodeURIComponent(message);
+const name = formData.get("name") || "there";
+const location = formData.get("location") || "";
 
-  const phone = "919588859960";
-  const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
+const message = `Hi, We wanted to check if we qualify for CoupleFit.
 
-  document.getElementById("whatsappBtn").href = waLink;
+My Name: ${name}
+Our wedding date is:
+Our Current location is: ${location}`;
+
+const encodedMsg = encodeURIComponent(message);
+
+const phone = "919588859960";
+const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
+
+document.getElementById("whatsappBtn").href = waLink;
 
   // SHOW SUCCESS POPUP
   document.getElementById("successPopup").style.display = "flex";
