@@ -1921,12 +1921,15 @@ overflow: hidden;
 }
 
 .persona-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
 @media (max-width:768px){
   .persona-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 }
     @media (max-width:768px){
@@ -1937,6 +1940,7 @@ overflow: hidden;
 
 .persona-card {
   position: relative;
+  z-index: 2;
   padding: 22px 18px;
   border-radius: 16px;
   text-align: center;
@@ -1948,6 +1952,15 @@ overflow: hidden;
 
   transition: all 0.35s ease;
 }
+
+    .persona-selector {
+
+  position: relative;
+
+  z-index: 5;
+
+}
+    
 
  /* ===== ALWAYS VISIBLE OUTLINE LIKE COUPLEFIT ===== */
 
@@ -1983,6 +1996,7 @@ overflow: hidden;
     
 /* Glow border effect */
 .persona-card::before {
+  pointer-events: none;
   content: "";
   position: absolute;
   inset: 0;
@@ -2455,7 +2469,7 @@ Trusted by 70+ brides across India · 5★ average rating
 
   <div class="persona-grid">
 
-    <div class="persona-card groom-card" onclick="selectPersona('groom')">
+    <div class="persona-card groom-card" onclick="event.stopPropagation(); selectPersona('groom')">
       <div class="persona-name">🤵 GroomFit</div>
       <div class="persona-sub">For Grooms</div>
     </div>
