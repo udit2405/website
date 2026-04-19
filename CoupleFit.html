@@ -3472,13 +3472,14 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
 
   // WHATSAPP MESSAGE
   const name = formData.get("name") || "there";
-const location = formData.get("location") || "";
 
-const message = `Hi, I wanted to check if we qualify for CoupleFit.
+const message = `Hi, I wanted to check if I qualify for CoupleFit.
 
-My name is:
-Our wedding date is:
-My current location is:  ;
+My name is: 
+My wedding date is:
+My current location is:`;
+
+
   
   const encodedMsg = encodeURIComponent(message);
 
