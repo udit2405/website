@@ -3115,26 +3115,6 @@ By the time my wedding came, I felt lighter, more confident, and actually enjoye
     });
   });
 
-  // Close on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.active').forEach(function(overlay) {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    }
-  });
-
-
-// Close on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.active').forEach(function(overlay) {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    }
-  });
 
   // Close on Escape key
   document.addEventListener('keydown', function(e) {
@@ -3202,11 +3182,21 @@ By the time my wedding came, I felt lighter, more confident, and actually enjoye
 
 <script>
 
+document.getElementById("leadPopup").addEventListener("click", function(e) {
+  if (e.target === this) {
+    closePopup();
+  }
+});
+  
   // FORM SUBMIT
 
 
   function openPopup() {
   document.getElementById("leadPopup").style.display = "flex";
+}
+
+  function closePopup() {
+  document.getElementById("leadPopup").style.display = "none";
 }
   
 </script>
