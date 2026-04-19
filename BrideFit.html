@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>BrideFit — Transform Before Your Wedding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -394,14 +394,16 @@ html {
 
     .hero-bg-video {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* use cover, not contain */
   z-index: 0;
+  opacity: 0.5;
+  background: black;
 }
 
-/* MOBILE IMAGE FIX */
 @media (max-width: 768px) {
   .desktop-video {
     display: none;
@@ -409,9 +411,8 @@ html {
 
   .mobile-video {
     display: block;
-    object-fit: cover;   /* 👈 IMPORTANT (not contain) */
   }
-}}
+}
   .hero-bg-video {
   object-fit: cover;
   width: 100%;
@@ -422,6 +423,7 @@ html {
 @media (max-width: 768px) {
   .mobile-video {
     object-fit: contain;
+    transform: scale(0.8); /* try 0.75–0.9 */
   }
 }
   width: 100%;
@@ -430,7 +432,7 @@ html {
 }
     
   #hero {
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -479,16 +481,8 @@ html {
 }
   }
 
-    @media (max-width: 768px) {
-  .hero-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-
   .hero-eyebrow {
-  margin-top: 20px; 
+  margin-top: 60px; 
   display: inline-flex;  
   align-items: center;
   gap: 10px;
@@ -1891,13 +1885,9 @@ overflow: hidden;
 }
 
 .persona-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
-
-@media (max-width: 768px) {
-  .persona-grid {
-    grid-template-columns: 1fr;
-  }
+  gap: 10px;
 }
 
 .persona-card {
@@ -2024,7 +2014,7 @@ overflow: hidden;
     
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
-  margin-top: 20px;
+  margin-top: -140px;
   align-self: center;
   
   background: rgba(20,20,20,0.55);
@@ -2405,9 +2395,12 @@ overflow: hidden;
   /* OFFLINE CARD FIX */
 
   .hero-offline-card {
-  margin-top: 0;
-  width: 100%;
-}
+
+    margin-top: 20px;
+
+    width: 100%;
+
+  }
 
   /* COMPARISON */
 
