@@ -3354,8 +3354,25 @@ This ensures your body matches it.
   </div>
 </div>
 
+
+ 
   <script>
 
+
+     function closePopup() {
+  document.getElementById("leadPopup").style.display = "none";
+}
+
+  document.addEventListener("keydown", function(e) {
+
+  if (e.key === "Escape") {
+
+    closePopup();
+
+  }
+
+});
+    
 </script>
   <script>
 
