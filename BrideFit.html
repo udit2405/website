@@ -302,7 +302,7 @@ html {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 16px 38px;
+ padding: 14px 26px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
@@ -339,11 +339,26 @@ html {
   color: var(--black);
   }
 
+
+    @media (max-width:768px){
+  .btn-primary, .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+    
   /* ===== SECTION WRAPPER ===== */
   .section {
   width: 100%;
-  padding: 70px 5%;
+  padding: 60px 20px;
   position: relative;
+}
+
+@media (max-width:768px){
+  .section {
+    padding: 50px 16px;
+  }
 }
   .section-inner {
   max-width: 1080px;
@@ -415,13 +430,11 @@ html {
 /* MOBILE FIX */
 @media (max-width: 768px) {
   .mobile-video {
-    object-fit: contain;
-    transform: scale(0.8); /* try 0.75–0.9 */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background: black;
   }
-}
-  width: 100%;
-  height: 100%;
-  background: black;
 }
     
   #hero {
@@ -497,7 +510,7 @@ html {
 
  .hero-headline {
    margin-top: 7px;
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
   font-weight: 700;
   line-height: 1.05;
   max-width: 800px;
@@ -510,11 +523,11 @@ html {
   }
 
   .hero-sub {
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+   font-size: 0.95rem;
   color: rgba(245,240,232,0.6);
   max-width: 580px;
   margin: 1.8rem 0 1.15rem;
-  line-height: 1.85;
+ line-height: 1.7;
   font-weight: 300;
   opacity: 0;
   animation: fadeUp 0.9s 0.5s forwards;
@@ -633,6 +646,23 @@ html {
   color: var(--muted);
   }
 
+
+    @media (max-width:768px){
+  .hero-inner {
+    gap: 1.5rem;
+  }
+
+  .hero-eyebrow {
+    margin-top: 20px;
+  }
+
+  .hero-trust {
+    margin-top: 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+    
   /* ============================================================
   PROBLEM
   ============================================================ */
@@ -1336,6 +1366,17 @@ overflow: hidden;
   .plan-features li.off { color: var(--muted); opacity: 0.5; }
 
 
+    @media (max-width:768px){
+  .plan {
+    padding: 24px 20px;
+  }
+
+  .price-num {
+    font-size: 2.5rem;
+  }
+}
+    
+
   /* ============================================================
   GUARANTEE
   ============================================================ */
@@ -1784,11 +1825,13 @@ overflow: hidden;
   .hero-comparison-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+}
+
+@media (max-width:768px){
+  .hero-comparison-grid {
+    grid-template-columns: 1fr;
   }
-  @media (max-width: 640px) {
-  .hero-comparison-grid { grid-template-columns: 1fr; }
-  }
+}
   .hero-comp-card {
   background: var(--dark-2);
   border: 1px solid rgba(201,168,76,0.1);
@@ -1878,9 +1921,18 @@ overflow: hidden;
 }
 
 .persona-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+}
+
+@media (max-width:768px){
+  .persona-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    @media (max-width:768px){
+  .persona-card {
+    padding: 18px;
+  }
 }
 
 .persona-card {
@@ -2007,7 +2059,7 @@ overflow: hidden;
     
   /* ===== HERO: OFFLINE CONSULTATION CARD ===== */
   .hero-offline-card {
-  margin-top: -140px;
+  margin-top: 20px;
   align-self: center;
   
   background: rgba(20,20,20,0.55);
@@ -2092,6 +2144,15 @@ overflow: hidden;
   @media (prefers-reduced-motion: reduce) {
   .hero-offline-card { animation: none; opacity: 1; transform: none; }
   }
+
+    @media (max-width:768px){
+  .hero-offline-card {
+    margin-top: 10px;
+    padding: 1.2rem;
+  }
+}
+
+    
 
   /* ============================================================
   KEYFRAMES
@@ -2286,9 +2347,6 @@ overflow: hidden;
 #transformations p {
   text-shadow: 0 3px 12px rgba(0,0,0,0.7);
 }
-
-    <style> 
-    
     
   </style>
 </head>
@@ -2382,12 +2440,12 @@ Trusted by 70+ brides across India · 5★ average rating
    <div class="hero-cta-group">
 
   <button onclick="openPopup()" class="btn-primary">
-    Check If I Qualify →
-  </button>
+  Start My Bridal Transformation →
+</button>>
 
   <a href="how-bridefit-works.html" class="btn-outline">
-    See How It Works
-  </a>
+  How It Works
+</a>
 
 </div>
 
@@ -2646,10 +2704,15 @@ Limited slots this month. Apply now — only brides ready to show up as their be
   <div class="section-inner">
 
   <div class="pricing-header reveal">
+    <p style="color:#C9A84C; font-weight:600; text-align:center; margin-bottom:15px;">
+Only 12 slots available this month. 7 already taken.
+</p>
+
     <p style="text-align:center;color:#aaa;margin-bottom:20px;">
 Most brides invest ₹50K–₹1L on outfits & makeup.  
 This ensures your body matches your dream look.
 </p>
+    
 
   <span class="section-tag">Invest in Yourself</span>
 
@@ -2837,7 +2900,9 @@ By the time my wedding came, I felt lighter, more confident, and actually enjoye
   </div>
   </div>
   <p class="transform-note" style="margin-top:2rem">* Based on real client experiences. Names and details may be adapted for privacy.</p>
+    
   </div>
+  
 </section>
 
   
@@ -2926,7 +2991,7 @@ By the time my wedding came, I felt lighter, more confident, and actually enjoye
 
       <div class="modal-section">
         <div class="modal-section-title">The Service</div>
-        <p>Bride provides online fitness coaching designed specifically for Indian women preparing for their wedding. This includes personalised workout plans, Indian-adapted diet plans, progress check-ins, and coaching support — delivered remotely via WhatsApp, video calls, and email.</p>
+        <p>BrideFit provides online fitness coaching designed specifically for Indian women preparing for their wedding. This includes personalised workout plans, Indian-adapted diet plans, progress check-ins, and coaching support — delivered remotely via WhatsApp, video calls, and email.</p>
       </div>
 
       <div class="modal-section">
@@ -3157,7 +3222,7 @@ By the time my wedding came, I felt lighter, more confident, and actually enjoye
       font-size: 18px;
     ">✖</span>
 
-    <h3>Check If You Qualify for GroomFit</h3>
+    <h3>Check If You Qualify for BrideFit</h3>
     <p style="font-size: 13px; margin-bottom: 20px;">
       Apply below — we’ll get back within 24 hours
     </p>
@@ -3311,7 +3376,7 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
 
   // WHATSAPP MESSAGE
   const name = formData.get("name") || "there";
-  const message = `Hi, I just applied for GroomFit. My name is ${name}. Looking forward.`;
+  const message = `Hi, I just applied for BrideFit. My name is ${name}. Looking forward.`;
   const encodedMsg = encodeURIComponent(message);
 
   const phone = "919588859960";
@@ -3401,6 +3466,14 @@ document.addEventListener('touchmove', function (e) {
   }
 }, { passive: false });
 
+
+  
+
+  .testi-card p {
+    font-size: 0.85rem;
+  }
+}
+  
 </script>
   
 </body>
