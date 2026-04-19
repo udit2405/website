@@ -62,16 +62,20 @@ img, video {
 
 .dropdown a {
   display: block;
-  padding: 10px 16px;
-  font-size: 0.75rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
+  padding: 12px 18px;
 
-.dropdown a:hover {
-  color: var(--gold);
-  background: rgba(201,168,76,0.05);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: rgba(245,240,232,0.7);
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  transition: all 0.2s ease;
 }
 
 /* SHOW ON HOVER */
@@ -278,7 +282,7 @@ html {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   }
-  .nav-links a {
+  .nav-links > li > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
