@@ -1976,11 +1976,9 @@ overflow: hidden;
 }
 
 /* Hover = PREMIUM FEEL */
-.persona-card:hover {
+.persona-card:not(.couple-card):hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.6),
-    0 0 25px rgba(201,168,76,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 25px rgba(201,168,76,0.25);
   border-color: rgba(201,168,76,0.6);
 }
 
@@ -1991,14 +1989,6 @@ overflow: hidden;
 /* Active press feel */
 .persona-card:active {
   transform: scale(0.97);
-}
-
-/* Featured (CoupleFit) = EXTRA GLOW */
-.persona-card.featured {
-  border: 1.5px solid rgba(255, 105, 180, 0.9);
-  box-shadow: 
-    0 0 15px rgba(255,105,180,0.25),
-    0 0 40px rgba(255,105,180,0.15);
 }
 
 .persona-card:not(.couple-card):hover {
