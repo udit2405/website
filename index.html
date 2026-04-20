@@ -447,7 +447,7 @@ html {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.60));
+    linear-gradient(135deg, rgba(26,21,48,0.85), rgba(60,40,60,0.75));
   z-index: 1;
 }
 
@@ -915,7 +915,12 @@ html {
   background: linear-gradient(90deg, var(--gold), var(--gold-light));
   transition: width 0.4s ease;
   }
-  .feature-card:hover { border-color: rgba(201,168,76,0.22); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .feature-card:hover { 
+  border-color: rgba(232,178,200,0.35);
+  transform: translateY(-4px); 
+  box-shadow: 0 20px 50px rgba(232,178,200,0.15); 
+  background: linear-gradient(135deg, #2d2a42, #35324a);
+}
   .feature-card:hover::after { width: 100%; }
 
   .feature-icon {
@@ -1213,13 +1218,12 @@ overflow: hidden;
   @media(max-width:900px){ .testi-grid { grid-template-columns: repeat(2,1fr); } }
   @media(max-width:560px){ .testi-grid { grid-template-columns: 1fr; } }
 
-  .testi-card {
-  background: var(--dark-2);
-  border: 1px solid rgba(201,168,76,0.08);
-  border-radius: 14px;
-  padding: 32px 28px;
-  position: relative;
-  }
+  .plan.featured {
+  border-color: #E8B24B;
+  background: linear-gradient(170deg, rgba(232,178,200,0.12) 0%, #221f35 60%);
+  transform: scale(1.04);
+  box-shadow: 0 0 40px rgba(232,178,200,0.2);
+}
   .testi-quote {
   position: absolute;
   top: 24px; right: 28px;
@@ -1269,6 +1273,31 @@ overflow: hidden;
   border-radius: 3px;
   }
 
+
+    .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #E8B4C8, #F0C8DB);
+  color: #1a1530;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 38px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 rgba(232,178,200,0);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(232,178,200,0.35);
+  filter: brightness(1.08);
+}
+    
   /* ============================================================
   PRICING
   ============================================================ */
@@ -1944,18 +1973,17 @@ overflow: hidden;
 
 /* GroomFit → Gold */
 .groom-card {
-  border: 1.5px solid var(--gold);
+  border: 1.5px solid #E8B24B;
   box-shadow: 
-    0 0 15px rgba(201,168,76,0.25),
-    0 0 40px rgba(201,168,76,0.15);
+    0 0 15px rgba(232,178,75,0.25),
+    0 0 40px rgba(232,178,75,0.15);
 }
 
-/* BrideFit → Pink */
 .bride-card {
-  border: 1.5px solid rgba(255, 105, 180, 0.9);
+  border: 1.5px solid #E8B4C8;
   box-shadow: 
-    0 0 15px rgba(255,105,180,0.25),
-    0 0 40px rgba(255,105,180,0.15);
+    0 0 15px rgba(232,178,200,0.3),
+    0 0 40px rgba(232,178,200,0.15);
 }
 
 /* Optional: stronger glow on hover */
