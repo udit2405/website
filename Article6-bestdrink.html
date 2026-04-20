@@ -92,7 +92,7 @@ nav.scrolled {
   padding: 10px 24px; border-radius: 8px;
   letter-spacing: 0.03em;
   box-shadow: 0 4px 15px rgba(201,168,76,0.2);
-  transition: var(--transition);
+  transition: var(--transition); border: none; cursor: pointer;
 }
 .nav-cta:hover { 
   transform: translateY(-2px); 
@@ -239,7 +239,7 @@ nav.scrolled {
 }
 .side-cta p { font-size: 13px; color: var(--muted); margin-bottom: 20px; position: relative; }
 .side-cta a {
-  display: block; position: relative;
+  display: block; position: relative; cursor: pointer;
   background: var(--white); color: #000; text-decoration: none;
   font-weight: 700; font-size: 14px; padding: 14px 20px;
   border-radius: 10px; transition: var(--transition);
@@ -331,14 +331,6 @@ a.text-link:hover { color: var(--gold-bright); border-color: var(--gold-bright);
   transition: var(--transition);
 }
 .feature-box:hover { transform: translateY(-5px); border-color: var(--gold); }
-.feature-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: var(--gold-dim); border: 1px solid var(--gold-border);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--gold); font-size: 20px; margin-bottom: 20px;
-}
-.feature-box h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 10px; }
-.feature-box p { font-size: 15px; color: var(--muted); margin: 0; line-height: 1.6; }
 
 /* Myth vs Fact Badge */
 .myth-badge {
@@ -347,6 +339,9 @@ a.text-link:hover { color: var(--gold-bright); border-color: var(--gold-bright);
 }
 .badge-myth { background: rgba(220, 53, 69, 0.15); color: #ff6b6b; border: 1px solid rgba(220, 53, 69, 0.3); }
 .badge-fact { background: rgba(40, 167, 69, 0.15); color: #51cf66; border: 1px solid rgba(40, 167, 69, 0.3); }
+
+.feature-box h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 10px; }
+.feature-box p { font-size: 15px; color: var(--muted); margin: 0; line-height: 1.6; }
 
 /* Custom Lists */
 .custom-list { list-style: none; margin: 24px 0; display: flex; flex-direction: column; gap: 16px; }
@@ -394,7 +389,7 @@ blockquote::before {
 .cta-content h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 16px; font-style: italic; }
 .cta-content p { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
 .btn-primary {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 10px; cursor: pointer; border: none;
   background: linear-gradient(135deg, var(--gold), var(--gold-bright));
   color: #000; text-decoration: none; font-weight: 800; font-size: 16px;
   padding: 16px 36px; border-radius: 12px; transition: var(--transition);
@@ -402,10 +397,46 @@ blockquote::before {
 }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(201,168,76,0.5); }
 
+/* ─── POPUP & OVERLAYS ─── */
+.popup { position: fixed; inset: 0; background: rgba(0,0,0,0.82); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 9999; padding: 20px; }
+.popup-box { background: var(--surface2); border: 1px solid var(--gold-border); border-radius: 20px; padding: 38px 32px; width: 360px; max-width: 100%; animation: fadeUp 0.35s ease both; position: relative; }
+.popup-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); border-radius: 20px 20px 0 0; }
+.popup-logo { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
+.popup-box h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--white); margin-bottom: 6px; }
+.popup-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+.popup-box input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--gold-border); border-radius: 10px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; margin-bottom: 10px; transition: border-color 0.2s, background 0.2s; }
+.popup-box input:focus { border-color: var(--gold); background: rgba(201,168,76,0.04); }
+.popup-box input::placeholder { color: #5a5550; }
+.popup-submit { width: 100%; padding: 14px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: #000; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; border: none; border-radius: 10px; cursor: pointer; margin-top: 4px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 6px 20px rgba(201,168,76,0.3); }
+.popup-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+.popup-close { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--muted); cursor: pointer; background: none; border: none; width: 100%; transition: color 0.2s; }
+.popup-close:hover { color: var(--white); }
+
+/* SUCCESS */
+.success-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 9999; padding: 20px; }
+.success-box { background: var(--surface2); border: 1px solid var(--gold-border); border-radius: 20px; padding: 44px 32px; text-align: center; max-width: 360px; width: 100%; animation: fadeUp 0.35s ease both; }
+.tick { width: 60px; height: 60px; border-radius: 50%; background: var(--gold-dim); border: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 24px; color: var(--gold); animation: popIn 0.4s ease both; }
+.success-box h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px; }
+.success-box p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+.wa-link { display: flex; align-items: center; justify-content: center; gap: 9px; background: #25D366; color: #fff; text-decoration: none; border: none; font-weight: 700; font-size: 14px; padding: 13px 20px; border-radius: 10px; margin-bottom: 10px; transition: opacity 0.2s; }
+.wa-link:hover { opacity: 0.88; }
+.pricing-link { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); text-decoration: none; font-weight: 600; font-size: 13px; padding: 11px 20px; border-radius: 10px; margin-bottom: 14px; }
+.success-box button { background: none; border: none; color: var(--muted); font-size: 12px; cursor: pointer; transition: color 0.2s; }
+.success-box button:hover { color: var(--white); }
+
+/* WHATSAPP FLOAT */
+.wa-float { position: fixed; bottom: 28px; right: 28px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 999; border: none; box-shadow: 0 8px 28px rgba(37,211,102,0.4); transition: transform 0.2s, box-shadow 0.2s; }
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 36px rgba(37,211,102,0.5); }
+.wa-float i { font-size: 24px; color: #fff; }
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn { 
+  from { transform: scale(0.5); opacity: 0; } 
+  to { transform: scale(1); opacity: 1; } 
 }
 .reveal {
   opacity: 0; transform: translateY(40px);
@@ -427,7 +458,7 @@ footer {
 
 <nav id="navbar">
   <a href="https://www.groomfit.in/" class="nav-brand">GroomFit</a>
-  <a href="#" class="nav-cta">Apply for Coaching</a>
+  <button class="nav-cta" onclick="openPopup(); return false;">Apply for Coaching</button>
 </nav>
 
 <header class="hero">
@@ -555,9 +586,9 @@ footer {
       <div class="cta-content">
         <h2>Stop Chasing Myths. Start Building the Man in the Mirror.</h2>
         <p>No detox teas. No starvation. Just ruthless consistency, science-backed nutrition, and workouts designed for busy Indian professionals. Let GroomFit take the guesswork out of your wedding transformation.</p>
-        <a href="https://groomfit.in/#pricing" class="btn-primary">
+        <button class="btn-primary" onclick="openPopup(); return false;">
           Claim Your Custom GroomFit Plan <i class="fa fa-arrow-right"></i>
-        </a>
+        </button>
       </div>
     </div>
 
@@ -579,7 +610,7 @@ footer {
       <div class="side-cta">
         <h4>Tired of Diet BS?</h4>
         <p>Get a no-nonsense, science-backed plan built for your busy schedule.</p>
-        <a href="https://groomfit.in/#pricing">Start Transformation</a>
+        <a onclick="openPopup(); return false;">Start Transformation</a>
       </div>
 
     </div>
@@ -590,6 +621,37 @@ footer {
 <footer>
   <p>© 2026 GroomFit. Engineered for the modern groom.</p>
 </footer>
+
+<a href="https://wa.me/919588859960" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-box">
+    <div class="popup-logo">GroomFit</div>
+    <h3 id="popup-title">Check If You Qualify</h3>
+    <p class="popup-sub">We personally review every application and reach out within 24 hours.</p>
+    <form id="leadForm">
+      <input name="name" placeholder="Your Full Name" required autocomplete="name">
+      <input name="phone" type="tel" placeholder="Phone Number" required autocomplete="tel">
+      <input name="wedding" placeholder="Wedding Date (Approx.)" required>
+      <input name="location" placeholder="Your City" required>
+      <button class="popup-submit" type="submit">Submit Application →</button>
+    </form>
+    <button class="popup-close" onclick="closePopup()">Maybe Later</button>
+  </div>
+</div>
+
+<div class="success-overlay" id="success" role="dialog" aria-modal="true">
+  <div class="success-box">
+    <div class="tick"><i class="fa fa-check"></i></div>
+    <h3>Application Received</h3>
+    <p>Our team will review and reach out shortly. Connect on WhatsApp for a faster response.</p>
+    <a id="waBtn" href="#" class="wa-link"><i class="fab fa-whatsapp"></i> Connect on WhatsApp</a>
+    <a href="https://www.groomfit.in/#pricing" class="pricing-link"><i class="fa fa-tag"></i> View Pricing Plans</a>
+    <button onclick="closeSuccess()">Dismiss</button>
+  </div>
+</div>
 
 <script>
 // Scroll Progress
@@ -632,6 +694,47 @@ const tocObserver = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '-20% 0px -75% 0px' });
 sections.forEach(sec => tocObserver.observe(sec));
+
+// ─── POPUP LOGIC ───
+function openPopup() { 
+  document.getElementById('popup').style.display = 'flex'; 
+  document.body.style.overflow = 'hidden'; 
+}
+function closePopup() { 
+  document.getElementById('popup').style.display = 'none'; 
+  document.body.style.overflow = ''; 
+}
+function closeSuccess() { 
+  document.getElementById('success').style.display = 'none'; 
+  document.body.style.overflow = ''; 
+}
+
+document.getElementById('leadForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const data = new FormData(this);
+  const msg = encodeURIComponent(
+    'Hi GroomFit! I applied for your transformation program.\n\n' +
+    'Name: ' + data.get('name') + '\n' +
+    'Phone: ' + data.get('phone') + '\n' +
+    'Wedding Date: ' + data.get('wedding') + '\n' +
+    'City: ' + data.get('location')
+  );
+  document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
+  closePopup();
+  document.getElementById('success').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+});
+
+// Close modals on background click or Escape key
+document.getElementById('popup').addEventListener('click', function (e) { 
+  if (e.target === this) closePopup(); 
+});
+document.getElementById('success').addEventListener('click', function (e) { 
+  if (e.target === this) closeSuccess(); 
+});
+document.addEventListener('keydown', function (e) { 
+  if (e.key === 'Escape') { closePopup(); closeSuccess(); } 
+});
 </script>
 
 </body>
