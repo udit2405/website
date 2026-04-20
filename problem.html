@@ -12,17 +12,26 @@
   
 <style>
 
-  .nav-logo img{
-  height:100%;          /* fills nav-logo container */
-  width:auto;           /* keeps aspect ratio */
-  object-fit:contain;   /* prevents stretching */
-  display:block;
-  transition:all 0.3s ease;
-}
-  .nav-logo img:hover{
-  transform:scale(1.05);
-  opacity:0.9;
-}
+  .nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  }
+  .nav-links a { color: var(--muted); transition: color 0.25s; }
+  .nav-links a:hover { color: var(--gold); }
   
 /* ===== ROOT ===== */
 :root{
