@@ -8,7 +8,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+
+  
 <style>
+
+  .nav-logo img{
+  height:32px;   /* adjust as needed */
+  width:auto;
+  display:block;
+}
+  
 /* ===== ROOT ===== */
 :root{
   --gold:#C9A84C;
@@ -715,7 +724,10 @@ section{padding:100px 40px;}
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">GROOMFIT</a>
+  <a href="index.html" class="nav-logo" aria-label="GroomFit Home">
+  <img src="logo.png" alt="GroomFit Logo">
+</a>
+  
   <div class="nav-right">
     <a href="index.html" class="btn-ghost">← Back to Home</a>
     <a href="index.html#pricing" class="btn-solid">See The Program →</a>
