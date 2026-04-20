@@ -1998,16 +1998,22 @@ overflow: hidden;
 
 
     //* CoupleFit → Pink (same as others) */
-.couple-card,
-.couple-card:hover,
-.couple-card:active,
-.couple-card:focus {
-  border: 1.5px solid rgba(201, 168, 76, 0.9) !important;
-  background: #000000 !important;
-  box-shadow: 
-    0 0 15px rgba(201,168,76,0.25),
-    0 0 40px rgba(201,168,76,0.15) !important;
+.persona-card.featured {
+  background: radial-gradient(circle at 50% 30%, rgba(201,168,76,0.15), #0b0b0b);
+  border-color: var(--gold);
+  box-shadow: 0 0 35px rgba(201,168,76,0.25);
 }
+
+.persona-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.persona-card.featured {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.1);
+}
+
 
 
     
