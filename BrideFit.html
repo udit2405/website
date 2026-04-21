@@ -2534,11 +2534,14 @@ overflow: hidden;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 6px;
   z-index: 1001;
+  -webkit-appearance: none;   /* removes iOS default button style */
+  appearance: none;           /* removes Android/Chrome default */
+  outline: none;              /* removes focus ring */
 }
 .hamburger span {
   display: block;
