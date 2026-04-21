@@ -2534,14 +2534,24 @@ overflow: hidden;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
+
   background: transparent;
   border: none;
+
   cursor: pointer;
   padding: 6px;
   z-index: 1001;
-  -webkit-appearance: none;   /* removes iOS default button style */
-  appearance: none;           /* removes Android/Chrome default */
-  outline: none;              /* removes focus ring */
+
+  /* ✅ ADD THESE FIXES */
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 0;
+
+  /* 🔥 IMPORTANT */
+  line-height: 0;   /* removes extra inline spacing */
 }
 .hamburger span {
   display: block;
