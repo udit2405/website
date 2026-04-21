@@ -2453,6 +2453,118 @@ overflow: hidden;
   animation: fadeUp 0.8s 0.1s forwards;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #F5F0E8;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; right: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(10,10,10,0.98);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(201,168,76,0.15);
+  z-index: 999;
+  padding: 80px 28px 40px;
+  flex-direction: column;
+  gap: 0;
+  transform: translateX(100%);
+  transition: transform 0.38s cubic-bezier(0.23,1,0.32,1);
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.mobile-menu-backdrop.open { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8A8070;
+  border-bottom: 1px solid rgba(201,168,76,0.07);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: #C9A84C; }
+.mobile-menu-explore-label {
+  padding: 14px 0 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8A8070;
+  border-bottom: 1px solid rgba(201,168,76,0.07);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-menu-explore-label.open-sub { color: #C9A84C; }
+.mobile-explore-sub {
+  display: none;
+  flex-direction: column;
+  background: rgba(201,168,76,0.04);
+  border-radius: 8px;
+  margin: 4px 0 8px;
+  overflow: hidden;
+}
+.mobile-explore-sub.open { display: flex; }
+.mobile-explore-sub a {
+  padding: 11px 16px;
+  font-size: 0.78rem;
+  color: #8A8070;
+  border-bottom: 1px solid rgba(201,168,76,0.05);
+}
+.mobile-explore-sub a:last-child { border-bottom: none; }
+.mobile-menu-cta {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #C9A84C;
+  color: #080808;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  border-radius: 6px;
+}
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+  .mobile-menu-backdrop { display: block; }
+}
+
     
   </style>
 
@@ -2491,9 +2603,34 @@ overflow: hidden;
 </li>
 
 </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+  <span></span><span></span><span></span>
+</button>
+
   
   <a href="#pricing" class="nav-cta nav-cta-primary">View Pricing</a>
 </nav>
+
+
+  <div class="mobile-menu-backdrop" id="mobileBackdrop" onclick="closeMobileMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="index.html#program" onclick="closeMobileMenu()">Program</a>
+  <a href="index.html#transformations" onclick="closeMobileMenu()">Results</a>
+  <a href="index.html#pricing" onclick="closeMobileMenu()">Pricing</a>
+  <a href="index.html#testimonials" onclick="closeMobileMenu()">Reviews</a>
+  <div class="mobile-menu-explore-label" id="exploreLabel" onclick="toggleExplore()">
+    Explore <span id="exploreArrow">▾</span>
+  </div>
+  <div class="mobile-explore-sub" id="exploreSub">
+    <a href="problem.html" onclick="closeMobileMenu()">Why Grooms Fail</a>
+    <a href="how.html" onclick="closeMobileMenu()">How We Work</a>
+    <a href="why-trust-us.html" onclick="closeMobileMenu()">Meet Our Team</a>
+    <a href="blogs.html" onclick="closeMobileMenu()">Free Guides</a>
+  </div>
+  <a href="index.html#pricing" class="mobile-menu-cta" onclick="closeMobileMenu()">View Pricing</a>
+</div>
 
 <!-- ===== HERO ===== -->
 
@@ -3443,6 +3580,34 @@ It made a huge difference not just physically, but mentally as well."</p>
 </script>
   <script>
 
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const backdrop = document.getElementById('mobileBackdrop');
+  const hamburger = document.getElementById('hamburger');
+  if (menu.classList.contains('open')) {
+    closeMobileMenu();
+  } else {
+    menu.classList.add('open');
+    backdrop.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mobileBackdrop').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function toggleExplore() {
+  const sub = document.getElementById('exploreSub');
+  const label = document.getElementById('exploreLabel');
+  const arrow = document.getElementById('exploreArrow');
+  sub.classList.toggle('open');
+  label.classList.toggle('open-sub');
+  arrow.textContent = sub.classList.contains('open') ? '▴' : '▾';
+}
+    
  function closeSuccessPopup() {
   const popup = document.getElementById("successPopup");
   if (popup) popup.style.display = "none";
