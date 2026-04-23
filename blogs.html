@@ -3,35 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GroomFit Guides – Wedding Fitness Blogs for Grooms | 100+ Expert Articles</title>
-<meta name="description" content="Browse 100+ expert fitness guides for grooms. Search by topic – weight loss, muscle building, belly fat, diet, workout plans – and transform your body before your wedding.">
-<meta name="keywords" content="groom fitness guide, wedding weight loss, build muscle before wedding, lose belly fat wedding, groom workout plan, wedding transformation men, personal trainer wedding India">
+<title>GroomFit Guides – Wedding Fitness Blogs | 100+ Expert Articles</title>
+<meta name="description" content="Browse 100+ expert fitness guides for grooms, brides, and couples. Search by topic – weight loss, muscle building, belly fat, diet, workout plans – and transform your body before your wedding.">
+<meta name="keywords" content="groom fitness guide, bride fitness guide, couple fitness, wedding weight loss, build muscle before wedding, lose belly fat wedding, groom workout plan, bridal fitness India">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://groomfit.in/guides">
-
 <meta property="og:type" content="website">
-<meta property="og:title" content="GroomFit Guides – 100+ Wedding Fitness Articles for Grooms">
-<meta property="og:description" content="The ultimate fitness blog hub for grooms. Real strategies, expert advice, real results.">
+<meta property="og:title" content="GroomFit Guides – 100+ Wedding Fitness Articles">
+<meta property="og:description" content="The ultimate fitness blog hub for grooms, brides, and couples. Real strategies, expert advice, real results.">
 <meta property="og:url" content="https://groomfit.in/guides">
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GroomFit Guides – 100+ Wedding Fitness Articles">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "GroomFit Guides",
-  "description": "100+ expert fitness guides for grooms preparing for their wedding day",
+  "description": "100+ expert fitness guides for grooms, brides, and couples preparing for their wedding day",
   "url": "https://groomfit.in/guides",
   "publisher": { "@type": "Organization", "name": "GroomFit", "url": "https://groomfit.in" }
 }
 </script>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
 /* ─── ROOT ─── */
 :root {
@@ -40,16 +34,18 @@
   --gold-dim: rgba(201,168,76,0.12);
   --gold-mid: rgba(201,168,76,0.22);
   --gold-border: rgba(201,168,76,0.22);
+  --rose: #D4748C;
+  --rose-light: #E89AAD;
+  --rose-dim: rgba(212,116,140,0.12);
+  --rose-border: rgba(212,116,140,0.28);
   --surface: rgba(10,9,7,0.72);
   --surface-hover: rgba(22,20,14,0.82);
   --white: #f5f0e8;
   --muted: #8a8070;
   --radius: 14px;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'DM Sans', sans-serif;
   color: var(--white);
@@ -59,8 +55,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
-/* Grain overlay */
 body::after {
   content: '';
   position: fixed; inset: 0;
@@ -77,7 +71,6 @@ nav {
   background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
   backdrop-filter: blur(4px);
 }
-
 .nav-back {
   display: flex; align-items: center; gap: 9px;
   color: var(--gold); text-decoration: none;
@@ -89,7 +82,6 @@ nav {
   transition: all 0.2s;
 }
 .nav-back:hover { background: var(--gold); color: #000; }
-
 .nav-cta {
   display: flex; align-items: center; gap: 8px;
   background: linear-gradient(135deg, var(--gold), var(--gold-bright));
@@ -103,10 +95,9 @@ nav {
 /* ─── HERO ─── */
 .hero {
   position: relative; z-index: 1;
-  padding: 120px 24px 56px;
+  padding: 120px 24px 48px;
   text-align: center;
 }
-
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--gold-dim);
@@ -118,7 +109,6 @@ nav {
   color: var(--gold); margin-bottom: 24px;
   animation: riseIn 0.7s ease both;
 }
-
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.8rem, 7vw, 5rem);
@@ -126,24 +116,17 @@ nav {
   color: var(--white);
   animation: riseIn 0.7s 0.1s ease both;
 }
-
-.hero h1 .gold-word {
-  color: var(--gold);
-  font-style: italic;
-}
-
+.hero h1 .gold-word { color: var(--gold); font-style: italic; }
 .hero-desc {
   margin: 20px auto 0;
-  max-width: 540px;
+  max-width: 560px;
   font-size: 16px; line-height: 1.7;
   color: var(--muted); font-weight: 300;
   animation: riseIn 0.7s 0.18s ease both;
 }
-
-/* Decorative line */
 .hero-line {
   display: flex; align-items: center; justify-content: center;
-  gap: 16px; margin: 36px auto 0; max-width: 300px;
+  gap: 16px; margin: 32px auto 0; max-width: 300px;
   animation: riseIn 0.7s 0.24s ease both;
 }
 .hero-line::before, .hero-line::after {
@@ -153,14 +136,19 @@ nav {
 .hero-line::after { background: linear-gradient(270deg, transparent, var(--gold-border)); }
 .hero-line-gem { color: var(--gold); font-size: 10px; }
 
-/* ─── SEARCH ENGINE ─── */
-.search-section {
+/* ─── SEARCH + AUDIENCE ROW ─── */
+.search-audience-row {
   position: relative; z-index: 2;
-  max-width: 780px; margin: 0 auto;
-  padding: 0 20px 10px;
+  max-width: 860px; margin: 0 auto;
+  padding: 0 20px 0;
   animation: riseIn 0.7s 0.3s ease both;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
 }
 
+/* ─── SEARCH ENGINE ─── */
+.search-section { flex: 1; min-width: 0; }
 .search-shell {
   position: relative;
   border-radius: 18px;
@@ -175,14 +163,11 @@ nav {
   border-color: rgba(201,168,76,0.5);
   box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 30px rgba(201,168,76,0.08);
 }
-
 .search-inner {
   display: flex; align-items: center; gap: 14px;
   padding: 14px 20px;
 }
-
 .search-icon { color: var(--gold); font-size: 16px; flex-shrink: 0; }
-
 #searchBox {
   flex: 1;
   background: none; border: none; outline: none;
@@ -192,7 +177,6 @@ nav {
   caret-color: var(--gold);
 }
 #searchBox::placeholder { color: #4a4640; }
-
 .search-clear {
   background: var(--gold-dim); border: 1px solid var(--gold-border);
   color: var(--gold); border-radius: 8px;
@@ -204,8 +188,6 @@ nav {
 }
 .search-clear:hover { background: var(--gold-mid); }
 .search-clear.visible { display: flex; }
-
-/* Live count bar */
 .search-meta {
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px 20px 14px;
@@ -213,10 +195,7 @@ nav {
   border-top: 1px solid rgba(255,255,255,0.04);
   min-height: 40px;
 }
-
-.search-hint { display: flex; align-items: center; gap: 6px; }
 .search-hints-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
 .hint-tag {
   font-size: 11px; padding: 3px 10px;
   background: var(--gold-dim); border: 1px solid var(--gold-border);
@@ -224,25 +203,104 @@ nav {
   cursor: pointer; transition: background 0.2s;
 }
 .hint-tag:hover { background: var(--gold-mid); }
+#liveCount { font-weight: 600; color: var(--gold); white-space: nowrap; }
 
-#liveCount {
-  font-weight: 600; color: var(--gold); white-space: nowrap;
+/* ─── AUDIENCE SELECTOR BOX ─── */
+.audience-box {
+  background: rgba(10,9,6,0.75);
+  border: 1px solid var(--gold-border);
+  border-radius: 18px;
+  backdrop-filter: blur(24px);
+  padding: 10px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 148px;
+}
+.audience-box-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 2px 8px 0;
+}
+.audience-btn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.22s;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+}
+.audience-btn i { font-size: 13px; width: 16px; text-align: center; }
+.audience-btn:hover {
+  background: var(--gold-dim);
+  border-color: var(--gold-border);
+  color: var(--white);
+}
+/* Default (All) active = gold */
+.audience-btn.active[data-audience="all"] {
+  background: var(--gold-dim);
+  border-color: var(--gold-border);
+  color: var(--gold);
+  font-weight: 600;
+}
+/* Groom active = gold */
+.audience-btn.active[data-audience="groom"] {
+  background: var(--gold-dim);
+  border-color: var(--gold-border);
+  color: var(--gold);
+  font-weight: 600;
+}
+/* Bride active = rose */
+.audience-btn.active[data-audience="bride"] {
+  background: var(--rose-dim);
+  border-color: var(--rose-border);
+  color: var(--rose-light);
+  font-weight: 600;
+}
+/* Couple active = gold (shared) */
+.audience-btn.active[data-audience="couple"] {
+  background: rgba(201,168,76,0.1);
+  border-color: rgba(201,168,76,0.3);
+  color: var(--gold-bright);
+  font-weight: 600;
+}
+.aud-count {
+  margin-left: auto;
+  font-size: 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 100px;
+  padding: 1px 7px;
+  color: inherit;
+  opacity: 0.7;
 }
 
 /* ─── CATEGORY PILLS ─── */
 .cats-section {
   position: relative; z-index: 1;
-  max-width: 860px; margin: 28px auto 0;
+  max-width: 860px; margin: 14px auto 0;
   padding: 0 20px;
   animation: riseIn 0.7s 0.38s ease both;
 }
-
 .cats-scroll {
   display: flex; gap: 8px; overflow-x: auto;
   padding-bottom: 6px; scrollbar-width: none;
 }
 .cats-scroll::-webkit-scrollbar { display: none; }
-
 .cat-pill {
   display: inline-flex; align-items: center; gap: 7px;
   background: rgba(10,9,6,0.65);
@@ -265,14 +323,45 @@ nav {
 }
 .cat-pill.active .pill-count { background: rgba(0,0,0,0.25); }
 
+/* ─── ACTIVE AUDIENCE INDICATOR (below pills) ─── */
+.audience-indicator {
+  max-width: 860px; margin: 10px auto 0;
+  padding: 0 20px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.audience-indicator.visible { display: flex; }
+.aud-indicator-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.aud-indicator-badge.groom {
+  background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--gold);
+}
+.aud-indicator-badge.bride {
+  background: var(--rose-dim); border: 1px solid var(--rose-border); color: var(--rose-light);
+}
+.aud-indicator-badge.couple {
+  background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.22); color: var(--gold-bright);
+}
+.aud-clear-link {
+  color: var(--muted); cursor: pointer; font-size: 11px;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.aud-clear-link:hover { color: var(--white); }
+
 /* ─── RESULTS AREA ─── */
 .results-section {
   position: relative; z-index: 1;
-  max-width: 860px; margin: 36px auto 0;
+  max-width: 860px; margin: 28px auto 0;
   padding: 0 20px 100px;
 }
-
-/* Section divider */
 .section-head {
   display: flex; align-items: center; gap: 14px;
   margin-bottom: 20px;
@@ -288,13 +377,9 @@ nav {
 }
 
 /* ─── CARD ─── */
-.blog-grid {
-  display: flex; flex-direction: column; gap: 10px;
-}
-
+.blog-grid { display: flex; flex-direction: column; gap: 10px; }
 .blog-card {
   display: flex; align-items: center;
-  gap: 0;
   background: var(--surface);
   border: 1px solid var(--gold-border);
   border-radius: var(--radius);
@@ -306,23 +391,41 @@ nav {
   animation: riseIn 0.5s ease both;
   position: relative;
 }
-
 .blog-card::before {
   content: '';
   position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
   background: linear-gradient(180deg, var(--gold), var(--gold-bright));
   opacity: 0; transition: opacity 0.25s;
 }
-
+/* Bride cards get a rose left-bar */
+.blog-card[data-audience="bride"]::before {
+  background: linear-gradient(180deg, var(--rose), var(--rose-light));
+}
+/* Couple cards get a gold→rose gradient left-bar */
+.blog-card[data-audience="couple"]::before {
+  background: linear-gradient(180deg, var(--gold), var(--rose));
+}
 .blog-card:hover {
   transform: translateX(6px);
   border-color: rgba(201,168,76,0.45);
   background: var(--surface-hover);
   box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.08);
 }
+.blog-card[data-audience="bride"]:hover { border-color: rgba(212,116,140,0.45); }
 .blog-card:hover::before { opacity: 1; }
 
-/* icon column */
+/* Audience dot on card */
+.audience-dot {
+  position: absolute; top: 10px; right: 56px;
+  width: 7px; height: 7px; border-radius: 50%;
+  opacity: 0.5;
+}
+.blog-card[data-audience="groom"] .audience-dot { background: var(--gold); }
+.blog-card[data-audience="bride"] .audience-dot { background: var(--rose); }
+.blog-card[data-audience="couple"] .audience-dot {
+  background: linear-gradient(135deg, var(--gold), var(--rose));
+}
+
 .card-icon {
   width: 62px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
@@ -333,73 +436,62 @@ nav {
   align-self: stretch;
   transition: background 0.25s;
 }
-.blog-card:hover .card-icon { background: var(--gold-mid); }
-
-/* body */
-.card-body {
-  flex: 1; padding: 16px 20px;
-  display: flex; flex-direction: column; gap: 4px;
+.blog-card[data-audience="bride"] .card-icon {
+  color: var(--rose-light); background: var(--rose-dim); border-right-color: var(--rose-border);
 }
+.blog-card[data-audience="couple"] .card-icon {
+  background: rgba(201,168,76,0.07);
+}
+.blog-card:hover .card-icon { background: var(--gold-mid); }
+.blog-card[data-audience="bride"]:hover .card-icon { background: rgba(212,116,140,0.22); }
 
+.card-body { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
 .card-cat-tag {
   font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--gold); font-weight: 600;
 }
+.blog-card[data-audience="bride"] .card-cat-tag { color: var(--rose-light); }
+.card-title { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.35; }
+.card-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; font-weight: 300; }
 
-.card-title {
-  font-size: 15px; font-weight: 600;
-  color: var(--white); line-height: 1.35;
+/* Audience label on card */
+.card-audience-label {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;
+  margin-top: 2px;
 }
+.blog-card[data-audience="groom"] .card-audience-label { color: rgba(201,168,76,0.5); }
+.blog-card[data-audience="bride"] .card-audience-label { color: rgba(212,116,140,0.6); }
+.blog-card[data-audience="couple"] .card-audience-label { color: rgba(201,168,76,0.45); }
 
-.card-desc {
-  font-size: 12.5px; color: var(--muted);
-  line-height: 1.5; font-weight: 300;
-}
-
-/* tail */
 .card-tail {
   display: flex; flex-direction: column; align-items: flex-end;
   justify-content: center; gap: 8px;
   padding: 16px 20px; flex-shrink: 0;
 }
-
-.card-read {
-  font-size: 11px; color: #4a4540; white-space: nowrap;
-}
-
+.card-read { font-size: 11px; color: #4a4540; white-space: nowrap; }
 .card-arrow {
   width: 32px; height: 32px; border-radius: 50%;
-  background: var(--gold-dim);
-  border: 1px solid var(--gold-border);
+  background: var(--gold-dim); border: 1px solid var(--gold-border);
   display: flex; align-items: center; justify-content: center;
   color: var(--gold); font-size: 12px;
   transition: background 0.2s, transform 0.2s;
 }
-.blog-card:hover .card-arrow {
-  background: var(--gold); color: #000;
-  transform: translateX(2px);
+.blog-card[data-audience="bride"] .card-arrow {
+  background: var(--rose-dim); border-color: var(--rose-border); color: var(--rose-light);
 }
+.blog-card:hover .card-arrow { background: var(--gold); color: #000; transform: translateX(2px); }
+.blog-card[data-audience="bride"]:hover .card-arrow { background: var(--rose); color: #fff; }
 
 /* ─── EMPTY STATE ─── */
 .empty-state {
-  display: none; text-align: center;
-  padding: 80px 20px;
+  display: none; text-align: center; padding: 80px 20px;
   animation: riseIn 0.4s ease both;
 }
-.empty-icon {
-  font-size: 44px; color: rgba(201,168,76,0.2);
-  margin-bottom: 20px; display: block;
-}
-.empty-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; color: var(--white);
-  margin-bottom: 10px;
-}
+.empty-icon { font-size: 44px; color: rgba(201,168,76,0.2); margin-bottom: 20px; display: block; }
+.empty-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; }
 .empty-sub { font-size: 14px; color: var(--muted); }
-.empty-suggest {
-  margin-top: 24px;
-  display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
-}
+.empty-suggest { margin-top: 24px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
 
 /* ─── BOTTOM CTA ─── */
 .cta-banner {
@@ -415,11 +507,7 @@ nav {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
   flex-wrap: wrap;
 }
-.cta-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem; font-style: italic;
-  color: var(--white); margin-bottom: 6px;
-}
+.cta-text h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: var(--white); margin-bottom: 6px; }
 .cta-text p { font-size: 14px; color: var(--muted); }
 .cta-btn {
   display: inline-flex; align-items: center; gap: 9px;
@@ -427,8 +515,7 @@ nav {
   color: #000; text-decoration: none;
   font-weight: 700; font-size: 14px;
   padding: 14px 28px; border-radius: 12px;
-  white-space: nowrap;
-  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap; transition: opacity 0.2s, transform 0.2s;
 }
 .cta-btn:hover { opacity: 0.88; transform: translateY(-2px); }
 
@@ -461,7 +548,12 @@ footer a { color: #4a4540; text-decoration: none; }
 }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 580px) {
+@media (max-width: 680px) {
+  .search-audience-row { flex-direction: column; }
+  .audience-box { width: 100%; flex-direction: row; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px 12px; }
+  .audience-box-label { width: 100%; margin-bottom: 2px; }
+  .audience-btn { flex: 1; min-width: 90px; justify-content: center; padding: 8px 10px; }
+  .aud-count { display: none; }
   .card-desc, .card-read { display: none; }
   .card-icon { width: 50px; font-size: 14px; }
   .cta-inner { flex-direction: column; text-align: center; }
@@ -482,111 +574,187 @@ footer a { color: #4a4540; text-decoration: none; }
   <div class="hero-eyebrow"><i class="fa fa-crown"></i> Wedding Fitness Knowledge Base</div>
   <h1>Every Answer.<br>One <span class="gold-word">Place.</span></h1>
   <p class="hero-desc">
-    100+ expert guides to help you look and feel your absolute best before your wedding — covering weight loss, muscle gain, diet, mindset, and more.
+    100+ expert guides for grooms, brides, and couples — covering weight loss, muscle gain, diet, posture, and more. Filter by who you are and find exactly what you need.
   </p>
   <div class="hero-line"><span class="hero-line-gem">◆</span></div>
 </header>
 
-<!-- SEARCH -->
-<section class="search-section" aria-label="Search guides">
-  <div class="search-shell">
-    <div class="search-inner">
-      <i class="fa fa-magnifying-glass search-icon" aria-hidden="true"></i>
-      <input
-        type="text"
-        id="searchBox"
-        placeholder="Search by topic, goal, or keyword…"
-        aria-label="Search fitness guides"
-        autocomplete="off"
-        spellcheck="false"
-      >
-      <button class="search-clear" id="clearBtn" aria-label="Clear search">
-        <i class="fa fa-xmark"></i>
-      </button>
-    </div>
-    <div class="search-meta">
-      <div class="search-hints-tags" id="hintTags">
-        <span class="hint-tag" data-q="belly fat">belly fat</span>
-        <span class="hint-tag" data-q="muscle">muscle</span>
-        <span class="hint-tag" data-q="diet">diet</span>
-        <span class="hint-tag" data-q="workout">workout</span>
-        <span class="hint-tag" data-q="3 months">3 months</span>
-        <span class="hint-tag" data-q="weight loss">weight loss</span>
+<!-- SEARCH + AUDIENCE ROW -->
+<div class="search-audience-row">
+
+  <!-- SEARCH -->
+  <section class="search-section" aria-label="Search guides">
+    <div class="search-shell">
+      <div class="search-inner">
+        <i class="fa fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input
+          type="text"
+          id="searchBox"
+          placeholder="Search by topic, goal, or keyword…"
+          aria-label="Search fitness guides"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button class="search-clear" id="clearBtn" aria-label="Clear search">
+          <i class="fa fa-xmark"></i>
+        </button>
       </div>
-      <span id="liveCount"></span>
+      <div class="search-meta">
+        <div class="search-hints-tags" id="hintTags">
+          <span class="hint-tag" data-q="belly fat">belly fat</span>
+          <span class="hint-tag" data-q="muscle">muscle</span>
+          <span class="hint-tag" data-q="diet">diet</span>
+          <span class="hint-tag" data-q="workout">workout</span>
+          <span class="hint-tag" data-q="3 months">3 months</span>
+          <span class="hint-tag" data-q="weight loss">weight loss</span>
+        </div>
+        <span id="liveCount"></span>
+      </div>
     </div>
+  </section>
+
+  <!-- AUDIENCE SELECTOR -->
+  <div class="audience-box" role="group" aria-label="Filter by audience">
+    <span class="audience-box-label">For</span>
+    <button class="audience-btn active" data-audience="all">
+      <i class="fa fa-border-all"></i> Everyone
+      <span class="aud-count" id="audCountAll">0</span>
+    </button>
+    <button class="audience-btn" data-audience="groom">
+      <i class="fa fa-user-tie"></i> Groom
+      <span class="aud-count" id="audCountGroom">0</span>
+    </button>
+    <button class="audience-btn" data-audience="bride">
+      <i class="fa fa-crown"></i> Bride
+      <span class="aud-count" id="audCountBride">0</span>
+    </button>
+    <button class="audience-btn" data-audience="couple">
+      <i class="fa fa-heart"></i> Couple
+      <span class="aud-count" id="audCountCouple">0</span>
+    </button>
   </div>
-</section>
+
+</div>
+
+<!-- AUDIENCE ACTIVE INDICATOR -->
+<div class="audience-indicator" id="audienceIndicator">
+  <span>Showing articles for</span>
+  <span class="aud-indicator-badge" id="audienceBadge"></span>
+  <span class="aud-clear-link" id="audClearLink">Show all</span>
+</div>
 
 <!-- CATEGORY PILLS -->
 <section class="cats-section" aria-label="Filter by category">
   <div class="cats-scroll" role="list">
     <button class="cat-pill active" data-cat="all" role="listitem">
-      <i class="fa fa-border-all"></i> All <span class="pill-count" id="countAll">25</span>
+      <i class="fa fa-border-all"></i> All <span class="pill-count" id="countAll">0</span>
     </button>
     <button class="cat-pill" data-cat="weight-loss" role="listitem">
-      <i class="fa fa-fire"></i> Weight Loss <span class="pill-count" id="countWeightLoss">16</span>
+      <i class="fa fa-fire"></i> Weight Loss <span class="pill-count" id="countWeightLoss">0</span>
     </button>
     <button class="cat-pill" data-cat="muscle" role="listitem">
-      <i class="fa fa-dumbbell"></i> Muscle & Strength <span class="pill-count" id="countMuscle">2</span>
+      <i class="fa fa-dumbbell"></i> Muscle &amp; Strength <span class="pill-count" id="countMuscle">0</span>
     </button>
     <button class="cat-pill" data-cat="body" role="listitem">
-      <i class="fa fa-bullseye"></i> Body Transformation <span class="pill-count" id="countBody">2</span>
+      <i class="fa fa-bullseye"></i> Body Transformation <span class="pill-count" id="countBody">0</span>
     </button>
     <button class="cat-pill" data-cat="training" role="listitem">
-      <i class="fa fa-person-running"></i> Training <span class="pill-count" id="countTraining">4</span>
+      <i class="fa fa-person-running"></i> Training <span class="pill-count" id="countTraining">0</span>
+    </button>
+    <button class="cat-pill" data-cat="posture" role="listitem">
+      <i class="fa fa-person-walking"></i> Posture &amp; Elegance <span class="pill-count" id="countPosture">0</span>
+    </button>
+    <button class="cat-pill" data-cat="nutrition" role="listitem">
+      <i class="fa fa-utensils"></i> Nutrition <span class="pill-count" id="countNutrition">0</span>
     </button>
   </div>
 </section>
 
 <!-- RESULTS -->
 <main class="results-section" role="main">
-
   <div class="section-head" id="sectionHead">
     <span class="section-head-label" id="sectionLabel">All Guides</span>
     <span class="section-head-rule"></span>
   </div>
-
   <div class="blog-grid" id="blogGrid" role="list">
 
-    <!-- CARD TEMPLATE (repeat for 100 blogs — just copy a .blog-card) -->
-    <!-- data-cat: weight-loss | muscle | body | training -->
-    <!-- data-tags: extra search keywords for this article -->
+    <!--
+    ═══════════════════════════════════════════════════════════════════════════
+    HOW TO ADD NEW ARTICLES — READ THIS BEFORE ADDING CARDS
+    ═══════════════════════════════════════════════════════════════════════════
 
-   
-<a href="/Article1-reduce-bellyfat.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="belly fat stomach abs flat tummy waist reduce groom wedding"
-   role="listitem">
+    Every card has TWO data attributes that control filtering:
 
-  <div class="card-icon">
-    <i class="fa fa-bullseye"></i>
-  </div>
+    1. data-audience="groom"   → shows only when Groom is selected
+       data-audience="bride"   → shows only when Bride is selected
+       data-audience="couple"  → shows only when Couple is selected
+       (if you omit data-audience, it defaults to "groom")
 
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">Reduce Belly Fat Before Wedding</span>
-    <span class="card-desc">
-      A practical, step-by-step guide to flatten your stomach and look sharp in your wedding outfit
-    </span>
-  </div>
+    2. data-cat="weight-loss"  → Weight Loss category
+       data-cat="muscle"       → Muscle & Strength
+       data-cat="body"         → Body Transformation
+       data-cat="training"     → Training
+       data-cat="posture"      → Posture & Elegance  ← USE FOR BRIDE/COUPLE
+       data-cat="nutrition"    → Nutrition
 
-  <div class="card-tail">
-    <span class="card-read">12 min read</span>
-    <div class="card-arrow">
-      <i class="fa fa-arrow-right"></i>
-    </div>
-  </div>
+    3. data-tags="..."  → extra search keywords (comma-free, space-separated)
 
-</a>
-    
+    CARD TEMPLATE — copy and fill in:
+
+    <a href="/your-article-url.html" class="blog-card"
+       data-audience="groom"          ← CHANGE THIS per audience
+       data-cat="weight-loss"         ← CHANGE THIS per topic
+       data-tags="keyword1 keyword2"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-ICON-NAME"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label">
+          <i class="fa fa-user-tie"></i> For Grooms
+        </span>
+        <span class="card-title">Your Article Title Here</span>
+        <span class="card-desc">A one-line description of the article</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
+
+    FOR BRIDE ARTICLES: set data-audience="bride", card-audience-label = "For Brides"
+    FOR COUPLE ARTICLES: set data-audience="couple", card-audience-label = "For Couples"
+    ═══════════════════════════════════════════════════════════════════════════
+    -->
+
+    <!-- ══════════════ GROOM ARTICLES ══════════════ -->
+
+    <a href="/Article1-reduce-bellyfat.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="belly fat stomach abs flat tummy waist reduce groom wedding"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-bullseye"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">Reduce Belly Fat Before Wedding</span>
+        <span class="card-desc">A practical, step-by-step guide to flatten your stomach and look sharp in your wedding outfit</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">12 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
+
     <a href="/weight-loss-before-wedding.html" class="blog-card"
+       data-audience="groom"
        data-cat="weight-loss"
        data-tags="diet calorie deficit slim tone before ceremony"
        role="listitem">
       <div class="card-icon"><i class="fa fa-scale-balanced"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">Weight Loss Before Wedding</span>
         <span class="card-desc">Science-backed steps to drop weight sustainably before your ceremony</span>
       </div>
@@ -597,12 +765,14 @@ footer a { color: #4a4540; text-decoration: none; }
     </a>
 
     <a href="/wedding-transformation-for-men.html" class="blog-card"
+       data-audience="groom"
        data-cat="body"
        data-tags="full body makeover groom India physique look"
        role="listitem">
       <div class="card-icon"><i class="fa fa-user-check"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Body Transformation</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">Wedding Transformation for Men</span>
         <span class="card-desc">Full-body transformation plan tailored for grooms in India</span>
       </div>
@@ -612,13 +782,15 @@ footer a { color: #4a4540; text-decoration: none; }
       </div>
     </a>
 
-     <a href="/groomfit-weight-loss-wedding.html" class="blog-card"
+    <a href="/groomfit-weight-loss-wedding.html" class="blog-card"
+       data-audience="groom"
        data-cat="weight-loss"
        data-tags="fat shed kilos slim sherwani transformation"
        role="listitem">
       <div class="card-icon"><i class="fa fa-fire"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">GroomFit Weight Loss Guide</span>
         <span class="card-desc">The complete roadmap to shed kilos and look sharp on your wedding day</span>
       </div>
@@ -628,14 +800,15 @@ footer a { color: #4a4540; text-decoration: none; }
       </div>
     </a>
 
-    
     <a href="/how-to-get-fit-in-3-months.html" class="blog-card"
+       data-audience="groom"
        data-cat="body"
        data-tags="12 week plan 90 days results quick timeline"
        role="listitem">
       <div class="card-icon"><i class="fa fa-calendar-days"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Body Transformation</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">How to Get Fit in 3 Months</span>
         <span class="card-desc">A structured 12-week plan to see visible results fast</span>
       </div>
@@ -646,12 +819,14 @@ footer a { color: #4a4540; text-decoration: none; }
     </a>
 
     <a href="/build-muscle-before-wedding.html" class="blog-card"
+       data-audience="groom"
        data-cat="muscle"
        data-tags="hypertrophy strength arms chest broad sherwani fill"
        role="listitem">
       <div class="card-icon"><i class="fa fa-dumbbell"></i></div>
       <div class="card-body">
-        <span class="card-cat-tag">Muscle & Strength</span>
+        <span class="card-cat-tag">Muscle &amp; Strength</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">Build Muscle Before Wedding</span>
         <span class="card-desc">Hypertrophy strategies so you fill that sherwani with confidence</span>
       </div>
@@ -662,12 +837,14 @@ footer a { color: #4a4540; text-decoration: none; }
     </a>
 
     <a href="/reduce-weight-fast-before-wedding.html" class="blog-card"
+       data-audience="groom"
        data-cat="weight-loss"
        data-tags="fast drop accelerated crash safe reduce soon"
        role="listitem">
       <div class="card-icon"><i class="fa fa-bolt"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">Reduce Weight Fast Before Wedding</span>
         <span class="card-desc">Safe accelerated methods when your timeline is tight</span>
       </div>
@@ -678,12 +855,14 @@ footer a { color: #4a4540; text-decoration: none; }
     </a>
 
     <a href="/lose-belly-fat-before-wedding.html" class="blog-card"
+       data-audience="groom"
        data-cat="weight-loss"
        data-tags="stomach tummy flat abs core trim waist"
        role="listitem">
       <div class="card-icon"><i class="fa fa-bullseye"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">Lose Belly Fat Before Wedding</span>
         <span class="card-desc">Targeted exercises and diet tweaks to flatten your stomach</span>
       </div>
@@ -694,12 +873,14 @@ footer a { color: #4a4540; text-decoration: none; }
     </a>
 
     <a href="/workout-plan-before-wedding.html" class="blog-card"
+       data-audience="groom"
        data-cat="training"
        data-tags="gym schedule week routine splits push pull legs"
        role="listitem">
       <div class="card-icon"><i class="fa fa-clipboard-list"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Training</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">Workout Plan Before Wedding</span>
         <span class="card-desc">A week-by-week gym and home workout schedule for grooms</span>
       </div>
@@ -710,12 +891,14 @@ footer a { color: #4a4540; text-decoration: none; }
     </a>
 
     <a href="/personal-trainer-for-weight-loss.html" class="blog-card"
+       data-audience="groom"
        data-cat="training"
        data-tags="coach trainer 1-on-1 guided accountability mentor"
        role="listitem">
       <div class="card-icon"><i class="fa fa-person-running"></i></div>
       <div class="card-body">
         <span class="card-cat-tag">Training</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
         <span class="card-title">Personal Trainer for Weight Loss</span>
         <span class="card-desc">Why working with a coach accelerates your wedding transformation</span>
       </div>
@@ -725,318 +908,432 @@ footer a { color: #4a4540; text-decoration: none; }
       </div>
     </a>
 
-<a href="/Article2-Stay-Consistent.html" class="blog-card"
-   data-cat="training"
-   data-tags="consistency discipline habit routine motivation fitness journey stay consistent"
-   role="listitem">
+    <a href="/Article2-Stay-Consistent.html" class="blog-card"
+       data-audience="groom"
+       data-cat="training"
+       data-tags="consistency discipline habit routine motivation fitness journey stay consistent"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-repeat"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Training</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">How to Stay Consistent in Your Fitness Journey</span>
+        <span class="card-desc">The real reason people fail—and the systems you need to stay consistent till your wedding day</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">7 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-  <div class="card-icon">
-    <i class="fa fa-repeat"></i>
-  </div>
+    <a href="/Article3-20-Minute-Fat.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="20 minute workout fat loss quick burn home workout busy schedule"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-clock"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">20-Minute Fat Loss Workouts for Busy Grooms</span>
+        <span class="card-desc">Short, intense workouts designed to burn fat fast—even with a packed schedule</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-  <div class="card-body">
-    <span class="card-cat-tag">Training</span>
-    <span class="card-title">How to Stay Consistent in Your Fitness Journey</span>
-    <span class="card-desc">
-      The real reason people fail—and the systems you need to stay consistent till your wedding day
-    </span>
-  </div>
-
-  <div class="card-tail">
-    <span class="card-read">7 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-
-</a>
-
-
-<a href="/Article3-20-Minute-Fat.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="20 minute workout fat loss quick burn home workout busy schedule"
-   role="listitem">
-
-  <div class="card-icon">
-    <i class="fa fa-clock"></i>
-  </div>
-
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">20-Minute Fat Loss Workouts for Busy Grooms</span>
-    <span class="card-desc">
-      Short, intense workouts designed to burn fat fast—even with a packed schedule
-    </span>
-  </div>
-
-  <div class="card-tail">
-    <span class="card-read">6 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-
-</a>
-
-
-<a href="/Article4-HIIT.html" class="blog-card"
-   data-cat="training"
-   data-tags="hiit cardio fat burn high intensity interval training quick results"
-   role="listitem">
-
-  <div class="card-icon">
-    <i class="fa fa-bolt"></i>
-  </div>
-
-  <div class="card-body">
-    <span class="card-cat-tag">Training</span>
-    <span class="card-title">HIIT for Rapid Fat Loss Before Your Wedding</span>
-    <span class="card-desc">
-      How to use HIIT workouts to maximize fat burn and get lean in less time
-    </span>
-  </div>
-
-  <div class="card-tail">
-    <span class="card-read">6 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-
-</a>
+    <a href="/Article4-HIIT.html" class="blog-card"
+       data-audience="groom"
+       data-cat="training"
+       data-tags="hiit cardio fat burn high intensity interval training quick results"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-bolt"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Training</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">HIIT for Rapid Fat Loss Before Your Wedding</span>
+        <span class="card-desc">How to use HIIT workouts to maximize fat burn and get lean in less time</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
     <a href="/Article5-BellyFat.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="belly fat stubborn fat waist stomach fat loss groom abs flat tummy"
-   role="listitem">
-
-  <div class="card-icon">
-    <i class="fa fa-bullseye"></i>
-  </div>
-
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">Why Belly Fat Is So Hard to Lose (And How to Fix It)</span>
-    <span class="card-desc">
-      Understand the science behind stubborn belly fat and the exact strategy to finally lose it
-    </span>
-  </div>
-
-  <div class="card-tail">
-    <span class="card-read">8 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-
-</a>
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="belly fat stubborn fat waist stomach fat loss groom abs flat tummy"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-bullseye"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">Why Belly Fat Is So Hard to Lose (And How to Fix It)</span>
+        <span class="card-desc">Understand the science behind stubborn belly fat and the exact strategy to finally lose it</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">8 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
     <a href="/Article6-bestdrink.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="fat loss drinks detox water morning drinks metabolism lemon water apple cider vinegar groom diet"
-   role="listitem">
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="fat loss drinks detox water morning drinks metabolism lemon water apple cider vinegar groom diet"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-glass-water"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">Best Drinks for Fat Loss Before Your Wedding</span>
+        <span class="card-desc">The most effective fat-loss drinks to boost metabolism and accelerate your transformation</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-  <div class="card-icon">
-    <i class="fa fa-glass-water"></i>
-  </div>
+    <a href="/Article7-High-Protein-Diet.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="high protein diet fat loss muscle retention groom nutrition"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-drumstick-bite"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">High Protein Diet for Faster Fat Loss</span>
+        <span class="card-desc">Why protein is the key to fat loss while maintaining muscle before your wedding</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">7 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">Best Drinks for Fat Loss Before Your Wedding</span>
-    <span class="card-desc">
-      The most effective fat-loss drinks to boost metabolism and accelerate your transformation
-    </span>
-  </div>
+    <a href="/Article8-mealplan-busy.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="meal plan busy schedule diet simple eating fat loss groom"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-calendar-check"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">Simple Meal Plan for Busy Grooms</span>
+        <span class="card-desc">A practical meal plan you can follow even with a hectic work schedule</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-  <div class="card-tail">
-    <span class="card-read">5 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
+    <a href="/Article9-Before-and-After-Meal.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="pre workout post workout meals nutrition timing fat loss"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-utensils"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">What to Eat Before &amp; After Your Workout</span>
+        <span class="card-desc">Optimize your meals around workouts to burn more fat and recover better</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-</a>
+    <a href="/Article10-foods-to-avoid.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="foods to avoid fat gain sugar junk processed diet mistakes"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-ban"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">Foods to Avoid Before Your Wedding</span>
+        <span class="card-desc">Common diet mistakes that silently ruin your fat loss progress</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
+    <a href="/Article11-Intermittent-Fasting.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="intermittent fasting fat loss fasting 16 8 diet strategy"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-hourglass-half"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">Intermittent Fasting for Fat Loss</span>
+        <span class="card-desc">How fasting can help you lose fat faster—if done correctly</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 7 -->
-<a href="/Article7-High-Protein-Diet.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="high protein diet fat loss muscle retention groom nutrition"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-drumstick-bite"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">High Protein Diet for Faster Fat Loss</span>
-    <span class="card-desc">Why protein is the key to fat loss while maintaining muscle before your wedding</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">7 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/Article12-lose-face-fat.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="face fat jawline double chin fat loss face grooming"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-user"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">How to Lose Face Fat Before Your Wedding</span>
+        <span class="card-desc">Reduce face fat and get a sharper jawline for your wedding photos</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 8 -->
-<a href="/Article8-mealplan-busy.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="meal plan busy schedule diet simple eating fat loss groom"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-calendar-check"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">Simple Meal Plan for Busy Grooms</span>
-    <span class="card-desc">A practical meal plan you can follow even with a hectic work schedule</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">6 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/Article13-Lose-Chest-Fat.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="chest fat gynecomastia fat loss upper body groom"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-dumbbell"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">How to Lose Chest Fat Before Your Wedding</span>
+        <span class="card-desc">Fix chest fat and build a more defined upper body</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 9 -->
-<a href="/Article9-Before-and-After-Meal.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="pre workout post workout meals nutrition timing fat loss"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-utensils"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">What to Eat Before & After Your Workout</span>
-    <span class="card-desc">Optimize your meals around workouts to burn more fat and recover better</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">5 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/Article14-Lose-Thigh-Fat.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="thigh fat legs slimming lower body fat loss"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-person-walking"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">How to Lose Thigh Fat Before Your Wedding</span>
+        <span class="card-desc">Slim down your legs and improve overall body proportions</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 10 -->
-<a href="/Article10-foods-to-avoid.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="foods to avoid fat gain sugar junk processed diet mistakes"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-ban"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">Foods to Avoid Before Your Wedding</span>
-    <span class="card-desc">Common diet mistakes that silently ruin your fat loss progress</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">5 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/Article15-Lose-Arm-Fat.html" class="blog-card"
+       data-audience="groom"
+       data-cat="weight-loss"
+       data-tags="arm fat triceps fat tone arms groom physique"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-hand-fist"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">How to Lose Arm Fat Before Your Wedding</span>
+        <span class="card-desc">Tone your arms and improve overall upper body definition</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 11 -->
-<a href="/Article11-Intermittent-Fasting.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="intermittent fasting fat loss fasting 16 8 diet strategy"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-hourglass-half"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">Intermittent Fasting for Fat Loss</span>
-    <span class="card-desc">How fasting can help you lose fat faster—if done correctly</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">6 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/Article50.Testosterone-Boosters.html" class="blog-card"
+       data-audience="groom"
+       data-cat="muscle"
+       data-tags="testosterone boosters natural testosterone increase muscle growth male hormones strength energy gym groom fitness"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-bolt"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Muscle &amp; Strength</span>
+        <span class="card-audience-label"><i class="fa fa-user-tie"></i> For Grooms</span>
+        <span class="card-title">Testosterone Boosters for Muscle Growth Before Wedding</span>
+        <span class="card-desc">Natural ways to increase testosterone, build muscle, and boost energy before your wedding</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">7 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 12 -->
-<a href="/Article12-lose-face-fat.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="face fat jawline double chin fat loss face grooming"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-user"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">How to Lose Face Fat Before Your Wedding</span>
-    <span class="card-desc">Reduce face fat and get a sharper jawline for your wedding photos</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">5 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <!-- ══════════════ BRIDE ARTICLES ══════════════ -->
 
-<!-- ARTICLE 13 -->
-<a href="/Article13-Lose-Chest-Fat.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="chest fat gynecomastia fat loss upper body groom"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-dumbbell"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">How to Lose Chest Fat Before Your Wedding</span>
-    <span class="card-desc">Fix chest fat and build a more defined upper body</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">6 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/bride-weight-loss-before-wedding.html" class="blog-card"
+       data-audience="bride"
+       data-cat="weight-loss"
+       data-tags="bride weight loss fat loss lehenga tone slim bridal wedding"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-fire"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Weight Loss</span>
+        <span class="card-audience-label"><i class="fa fa-crown"></i> For Brides</span>
+        <span class="card-title">Weight Loss Before Wedding for Brides</span>
+        <span class="card-desc">A safe, structured approach to losing weight and feeling confident in your lehenga</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">7 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 14 -->
-<a href="/Article14-Lose-Thigh-Fat.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="thigh fat legs slimming lower body fat loss"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-person-walking"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">How to Lose Thigh Fat Before Your Wedding</span>
-    <span class="card-desc">Slim down your legs and improve overall body proportions</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">5 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/bridal-posture-for-wedding.html" class="blog-card"
+       data-audience="bride"
+       data-cat="posture"
+       data-tags="bridal posture elegance wedding photos back straight confident bride lehenga"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-person-walking"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Posture &amp; Elegance</span>
+        <span class="card-audience-label"><i class="fa fa-crown"></i> For Brides</span>
+        <span class="card-title">Bridal Posture — How to Carry Yourself at Your Wedding</span>
+        <span class="card-desc">Simple posture corrections that change how you look in every photograph</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<!-- ARTICLE 15 -->
-<a href="/Article15-Lose-Arm-Fat.html" class="blog-card"
-   data-cat="weight-loss"
-   data-tags="arm fat triceps fat tone arms groom physique"
-   role="listitem">
-  <div class="card-icon"><i class="fa fa-hand-fist"></i></div>
-  <div class="card-body">
-    <span class="card-cat-tag">Weight Loss</span>
-    <span class="card-title">How to Lose Arm Fat Before Your Wedding</span>
-    <span class="card-desc">Tone your arms and improve overall upper body definition</span>
-  </div>
-  <div class="card-tail">
-    <span class="card-read">5 min read</span>
-    <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
-  </div>
-</a>
+    <a href="/bridal-arm-toning.html" class="blog-card"
+       data-audience="bride"
+       data-cat="training"
+       data-tags="arm toning bride arms sleeveless blouse toned arms wedding workout"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-hand-fist"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Training</span>
+        <span class="card-audience-label"><i class="fa fa-crown"></i> For Brides</span>
+        <span class="card-title">Arm Toning Workout for Brides</span>
+        <span class="card-desc">Tone your arms for sleeveless blouses and open-back lehengas — without bulking</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
+    <a href="/anti-bloat-diet-before-wedding.html" class="blog-card"
+       data-audience="bride"
+       data-cat="nutrition"
+       data-tags="bloat anti bloat diet bride wedding week stomach flat lehenga fit"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-leaf"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Nutrition</span>
+        <span class="card-audience-label"><i class="fa fa-crown"></i> For Brides</span>
+        <span class="card-title">Anti-Bloat Diet Plan for the Week Before Your Wedding</span>
+        <span class="card-desc">Eliminate pre-wedding bloating with this simple nutrition protocol</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-<a href="/Article50.Testosterone-Boosters.html" class="blog-card"
-   data-cat="muscle"
-   data-tags="testosterone boosters natural testosterone increase muscle growth male hormones strength energy gym groom fitness"
-   role="listitem">
+    <a href="/bridal-glow-diet.html" class="blog-card"
+       data-audience="bride"
+       data-cat="nutrition"
+       data-tags="bridal glow skin diet food nutrition radiant skin wedding bride"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-star"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Nutrition</span>
+        <span class="card-audience-label"><i class="fa fa-crown"></i> For Brides</span>
+        <span class="card-title">Bridal Glow Diet — What to Eat for Radiant Skin</span>
+        <span class="card-desc">The foods that improve your skin texture, tone, and glow in the 60 days before your wedding</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">7 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-  <div class="card-icon">
-    <i class="fa fa-bolt"></i>
-  </div>
+    <!-- ══════════════ COUPLE ARTICLES ══════════════ -->
 
-  <div class="card-body">
-    <span class="card-cat-tag">Muscle & Strength</span>
-    <span class="card-title">
-      Testosterone Boosters for Muscle Growth Before Wedding
-    </span>
-    <span class="card-desc">
-      Natural ways to increase testosterone, build muscle, and boost energy before your wedding
-    </span>
-  </div>
+    <a href="/couple-workout-plan-before-wedding.html" class="blog-card"
+       data-audience="couple"
+       data-cat="training"
+       data-tags="couple workout plan wedding together training accountability partner"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-heart"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Training</span>
+        <span class="card-audience-label"><i class="fa fa-heart"></i> For Couples</span>
+        <span class="card-title">Couple Workout Plan Before Your Wedding</span>
+        <span class="card-desc">Train together with this coordinated couple workout schedule — one goal, two transformations</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">8 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-  <div class="card-tail">
-    <span class="card-read">7 min read</span>
-    <div class="card-arrow">
-      <i class="fa fa-arrow-right"></i>
-    </div>
-  </div>
+    <a href="/couple-diet-plan-for-wedding.html" class="blog-card"
+       data-audience="couple"
+       data-cat="nutrition"
+       data-tags="couple diet meal plan Indian food shared kitchen wedding nutrition together"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-utensils"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Nutrition</span>
+        <span class="card-audience-label"><i class="fa fa-heart"></i> For Couples</span>
+        <span class="card-title">Shared Indian Diet Plan for Couples Before Wedding</span>
+        <span class="card-desc">One kitchen, two plans — how to eat healthy together without cooking separate meals</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">6 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-</a>
+    <a href="/couple-accountability-fitness.html" class="blog-card"
+       data-audience="couple"
+       data-cat="training"
+       data-tags="couple accountability fitness motivation together partner wedding stay on track"
+       role="listitem">
+      <div class="card-icon"><i class="fa fa-handshake"></i></div>
+      <div class="card-body">
+        <span class="card-cat-tag">Training</span>
+        <span class="card-audience-label"><i class="fa fa-heart"></i> For Couples</span>
+        <span class="card-title">How Couple Accountability Makes You Both More Consistent</span>
+        <span class="card-desc">Why training with your partner doubles your follow-through — and how to use it</span>
+      </div>
+      <div class="card-tail">
+        <span class="card-read">5 min read</span>
+        <div class="card-arrow"><i class="fa fa-arrow-right"></i></div>
+      </div>
+    </a>
 
-
-    
-    <!-- ═══════════════════════════════════════════════════════
-         ADD MORE CARDS HERE — just copy any .blog-card block
-         Change: href, data-cat, data-tags, icon, category label,
-                 card-title, card-desc, read time
-         ═══════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════════════════
+    ADD YOUR NEW ARTICLES ABOVE THIS LINE.
+    QUICK REFERENCE:
+      data-audience="groom"   → Groom filter
+      data-audience="bride"   → Bride filter
+      data-audience="couple"  → Couple filter
+      data-cat options: weight-loss | muscle | body | training | posture | nutrition
+    ═══════════════════════════════════════════════════════════════════════ -->
 
   </div>
 
@@ -1044,7 +1341,7 @@ footer a { color: #4a4540; text-decoration: none; }
   <div class="empty-state" id="emptyState" aria-live="polite">
     <i class="fa fa-magnifying-glass empty-icon"></i>
     <div class="empty-title">No guides found</div>
-    <p class="empty-sub">Try a different keyword or browse a category above</p>
+    <p class="empty-sub">Try a different keyword, category, or audience filter</p>
     <div class="empty-suggest" id="emptySuggest">
       <span class="hint-tag" data-q="belly fat">belly fat</span>
       <span class="hint-tag" data-q="muscle">muscle</span>
@@ -1052,7 +1349,6 @@ footer a { color: #4a4540; text-decoration: none; }
       <span class="hint-tag" data-q="workout">workout</span>
     </div>
   </div>
-
 </main>
 
 <!-- CTA BANNER -->
@@ -1060,11 +1356,9 @@ footer a { color: #4a4540; text-decoration: none; }
   <div class="cta-inner">
     <div class="cta-text">
       <h2>Ready to Transform?</h2>
-      <p>Join hundreds of grooms who started their GroomFit journey today.</p>
+      <p>Join hundreds of grooms, brides, and couples who started their journey today.</p>
     </div>
-    <a href="/#pricing" class="cta-btn">
-      View Plans <i class="fa fa-arrow-right"></i>
-    </a>
+    <a href="/#pricing" class="cta-btn">View Plans <i class="fa fa-arrow-right"></i></a>
   </div>
 </div>
 
@@ -1085,82 +1379,129 @@ footer a { color: #4a4540; text-decoration: none; }
 (function () {
   'use strict';
 
-  const searchBox  = document.getElementById('searchBox');
-  const clearBtn   = document.getElementById('clearBtn');
-  const liveCount  = document.getElementById('liveCount');
-  const blogGrid   = document.getElementById('blogGrid');
-  const emptyState = document.getElementById('emptyState');
-  const sectionLabel = document.getElementById('sectionLabel');
-  const allCards   = Array.from(document.querySelectorAll('.blog-card'));
-  const total      = allCards.length;
+  const searchBox      = document.getElementById('searchBox');
+  const clearBtn       = document.getElementById('clearBtn');
+  const liveCount      = document.getElementById('liveCount');
+  const blogGrid       = document.getElementById('blogGrid');
+  const emptyState     = document.getElementById('emptyState');
+  const sectionLabel   = document.getElementById('sectionLabel');
+  const audIndicator   = document.getElementById('audienceIndicator');
+  const audBadge       = document.getElementById('audienceBadge');
+  const audClearLink   = document.getElementById('audClearLink');
 
-  let activeCat = 'all';
-  let searchVal = '';
+  const allCards = Array.from(document.querySelectorAll('.blog-card'));
+  const total    = allCards.length;
 
-  /* ── UPDATE CATEGORY COUNTS ── */
-  function updateCatCounts(visibleCards) {
-    const cats = { all: 0, 'weight-loss': 0, muscle: 0, body: 0, training: 0 };
-    visibleCards.forEach(c => {
+  let activeCat      = 'all';
+  let activeAudience = 'all';
+  let searchVal      = '';
+
+  /* ── AUDIENCE LABELS ── */
+  const audMeta = {
+    all:    { label: 'Everyone',  icon: 'fa-border-all',  cls: '' },
+    groom:  { label: 'Grooms',   icon: 'fa-user-tie',    cls: 'groom' },
+    bride:  { label: 'Brides',   icon: 'fa-crown',       cls: 'bride' },
+    couple: { label: 'Couples',  icon: 'fa-heart',       cls: 'couple' }
+  };
+
+  /* ── UPDATE ALL CATEGORY + AUDIENCE COUNTS ── */
+  function updateCounts(matchedCards) {
+    const cats = { all:0, 'weight-loss':0, muscle:0, body:0, training:0, posture:0, nutrition:0 };
+    const auds = { all:0, groom:0, bride:0, couple:0 };
+
+    allCards.forEach(c => {
+      // for search-filtered set only
+      const q = searchVal.toLowerCase().trim();
+      const st = [
+        c.querySelector('.card-title')?.textContent || '',
+        c.querySelector('.card-desc')?.textContent  || '',
+        c.querySelector('.card-cat-tag')?.textContent || '',
+        c.dataset.tags || ''
+      ].join(' ').toLowerCase();
+      if (q && !st.includes(q)) return;
+
+      const aud = c.dataset.audience || 'groom';
       const cat = c.dataset.cat || '';
+      auds.all++;
+      if (auds[aud] !== undefined) auds[aud]++;
       cats.all++;
       if (cats[cat] !== undefined) cats[cat]++;
     });
+
     document.getElementById('countAll').textContent       = cats.all;
     document.getElementById('countWeightLoss').textContent = cats['weight-loss'];
     document.getElementById('countMuscle').textContent    = cats.muscle;
     document.getElementById('countBody').textContent      = cats.body;
     document.getElementById('countTraining').textContent  = cats.training;
+    document.getElementById('countPosture').textContent   = cats.posture;
+    document.getElementById('countNutrition').textContent = cats.nutrition;
+
+    document.getElementById('audCountAll').textContent    = auds.all;
+    document.getElementById('audCountGroom').textContent  = auds.groom;
+    document.getElementById('audCountBride').textContent  = auds.bride;
+    document.getElementById('audCountCouple').textContent = auds.couple;
   }
 
-  /* ── FILTER ENGINE ── */
+  /* ── MAIN FILTER ENGINE ── */
   function runFilter() {
     const q = searchVal.toLowerCase().trim();
     let visible = 0;
 
-    allCards.forEach((card, i) => {
-      const catMatch = activeCat === 'all' || card.dataset.cat === activeCat;
+    allCards.forEach((card) => {
+      const aud = card.dataset.audience || 'groom';
+      const cat = card.dataset.cat || '';
+
+      const audMatch = activeAudience === 'all' || aud === activeAudience;
+      const catMatch = activeCat === 'all' || cat === activeCat;
       const searchTarget = [
         card.querySelector('.card-title')?.textContent || '',
-        card.querySelector('.card-desc')?.textContent || '',
+        card.querySelector('.card-desc')?.textContent  || '',
         card.querySelector('.card-cat-tag')?.textContent || '',
         card.dataset.tags || ''
       ].join(' ').toLowerCase();
-
       const searchMatch = !q || searchTarget.includes(q);
-      const show = catMatch && searchMatch;
 
+      const show = audMatch && catMatch && searchMatch;
       card.style.display = show ? 'flex' : 'none';
       if (show) {
-        card.style.animationDelay = (visible * 0.04) + 's';
+        card.style.animationDelay = (visible * 0.035) + 's';
         visible++;
       }
     });
 
-    /* Live count text */
+    /* Live count */
+    liveCount.textContent = q
+      ? visible + ' of ' + total + ' guides'
+      : '';
+
+    /* Section label */
+    const catName = activeCat === 'all'
+      ? 'All Guides'
+      : (document.querySelector('.cat-pill.active')?.textContent.trim().replace(/\d+/,'').trim() || 'Guides');
+
     if (q) {
-      liveCount.textContent = visible + ' of ' + total + ' guides';
       sectionLabel.textContent = 'Results for "' + searchVal + '"';
+    } else if (activeAudience !== 'all') {
+      sectionLabel.textContent = catName + ' — ' + audMeta[activeAudience].label;
     } else {
-      liveCount.textContent = '';
-      sectionLabel.textContent = activeCat === 'all'
-        ? 'All Guides'
-        : document.querySelector('.cat-pill.active')?.textContent.trim().replace(/\d+/, '').trim();
+      sectionLabel.textContent = catName;
+    }
+
+    /* Audience indicator strip */
+    if (activeAudience !== 'all') {
+      const m = audMeta[activeAudience];
+      audBadge.className = 'aud-indicator-badge ' + m.cls;
+      audBadge.innerHTML = '<i class="fa ' + m.icon + '"></i> ' + m.label;
+      audIndicator.classList.add('visible');
+    } else {
+      audIndicator.classList.remove('visible');
     }
 
     /* Empty state */
     emptyState.style.display = visible === 0 ? 'block' : 'none';
-    blogGrid.style.display   = visible === 0 ? 'none' : 'flex';
+    blogGrid.style.display   = visible === 0 ? 'none'  : 'flex';
 
-    /* Update cat counts based on search-filtered set */
-    updateCatCounts(allCards.filter(c => {
-      const st = [
-        c.querySelector('.card-title')?.textContent || '',
-        c.querySelector('.card-desc')?.textContent || '',
-        c.dataset.tags || ''
-      ].join(' ').toLowerCase();
-      return !q || st.includes(q);
-    }));
-
+    updateCounts();
     return visible;
   }
 
@@ -1171,7 +1512,7 @@ footer a { color: #4a4540; text-decoration: none; }
     runFilter();
   });
 
-  /* ── CLEAR ── */
+  /* ── CLEAR SEARCH ── */
   clearBtn.addEventListener('click', function () {
     searchBox.value = '';
     searchVal = '';
@@ -1201,17 +1542,34 @@ footer a { color: #4a4540; text-decoration: none; }
     });
   });
 
-  /* ── STAGGER CARDS ON LOAD ── */
-  allCards.forEach((card, i) => {
-    card.style.animationDelay = (0.46 + i * 0.055) + 's';
+  /* ── AUDIENCE BUTTONS ── */
+  document.querySelectorAll('.audience-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.audience-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      activeAudience = this.dataset.audience;
+      runFilter();
+    });
   });
 
-  /* ── INITIAL COUNT ── */
-  updateCatCounts(allCards);
-  liveCount.textContent = '';
+  /* ── AUDIENCE CLEAR LINK ── */
+  audClearLink.addEventListener('click', function () {
+    document.querySelectorAll('.audience-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.audience-btn[data-audience="all"]').classList.add('active');
+    activeAudience = 'all';
+    runFilter();
+  });
+
+  /* ── STAGGER CARDS ON LOAD ── */
+  allCards.forEach((card, i) => {
+    card.style.animationDelay = (0.46 + i * 0.045) + 's';
+  });
+
+  /* ── INITIAL RENDER ── */
+  updateCounts();
+  runFilter();
 
 })();
 </script>
-
 </body>
 </html>
