@@ -152,6 +152,31 @@
 html{scroll-behavior:smooth;}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;}
 
+  .nav-logo {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-logo span {
+  color: var(--gold);
+}
+
+/* "by GroomFit" styling */
+.nav-sub {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+  
 /* ===== BACKGROUND ===== */
 .hero-img-bg{
   position:fixed;
@@ -808,7 +833,11 @@ section{padding:100px 40px;position:relative;}
 
 <!-- NAV -->
 <nav id="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo" aria-label="CoupleFit Home">COUPLEFIT</a>
+  <a href="index.html" class="nav-logo" aria-label="CoupleFit Home">
+  Couple<span>Fit</span>
+  <span class="nav-sub">by GroomFit</span>
+</a>
+  
   <div class="nav-right">
     <a href="index.html" class="btn-ghost">← Home</a>
     <a href="index.html#pricing" class="btn-solid">See Pricing →</a>
