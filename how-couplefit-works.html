@@ -161,12 +161,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
-
-.nav-logo > span:first-of-type {
-  color: var(--gold); /* only "Fit" stays gold */
+/* remove gap between Couple and Fit */
+.nav-logo span:first-of-type {
+  margin-left: -4px; /* pulls Fit closer to Couple */
+  color: var(--gold);
 }
+  
 
 /* "by GroomFit" styling */
 .nav-sub {
