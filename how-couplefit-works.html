@@ -1223,7 +1223,7 @@ section{padding:100px 40px;position:relative;}
 <div class="results-bar" aria-label="Programme results statistics" role="region">
   <div class="results-inner">
     <div class="result-stat reveal">
-      <div class="result-num">200+</div>
+      <div class="result-num">40+</div>
       <div class="result-label">Partners<br>Transformed</div>
     </div>
     <div class="result-stat reveal reveal-delay-1">
@@ -1496,7 +1496,7 @@ const counterObserver = new IntersectionObserver((entries) => {
     if(entry.isIntersecting){
       const el = entry.target;
       const text = el.textContent.trim();
-      if(text === '200+') animateCounter(el, 200, '+');
+      if(text === '40+') animateCounter(el, 200, '+');
       else if(text === '97%') animateCounter(el, 97, '%');
       counterObserver.unobserve(el);
     }
