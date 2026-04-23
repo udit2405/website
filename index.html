@@ -1591,6 +1591,14 @@
     font-weight: 700;
     margin-bottom: 0.8rem;
     }
+
+      .footer-logo-img {
+  height: 40px;   /* adjust if needed */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
+}
+      
     .footer-logo span { color: var(--gold); }
     .footer-tagline { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
     .footer-links {
@@ -3385,7 +3393,10 @@
     
   <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="footer-logo">Groom<span>Fit</span></div>
+    <div class="footer-logo">
+  <img src="logo.webp" alt="GroomFit Logo" class="footer-logo-img">
+</div>
+    
     <p class="footer-tagline">India's Premier Wedding Transformation Program for Men</p>
     <ul class="footer-links">
     <li><a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a></li>
