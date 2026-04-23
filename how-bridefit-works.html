@@ -1,292 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- FONT AWESOME (WHATSAPP ICON) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>How It Works | BrideFit</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<!-- SEO META TAGS -->
+<title>Why BrideFit | Transform Before the Biggest Day of Your Life</title>
+<meta name="description" content="BrideFit is India's premium 60–90 day wedding transformation program designed for brides. Tone, glow, posture, confidence — arrive at your wedding as the most radiant version of yourself.">
+<meta name="keywords" content="bride fitness program, wedding transformation, pre-wedding fitness India, bridal fitness plan, BrideFit, bridal glow, lehenga body, wedding workout">
+<meta property="og:title" content="Why BrideFit | Transform Before the Biggest Day of Your Life">
+<meta property="og:description" content="This is your moment. The only time in your life you'll prepare to be seen like this. BrideFit is India's premium pre-wedding transformation program built exclusively for brides.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-/* ===== BASE ===== */
-body{
-  margin:0;
-  font-family:'Outfit',sans-serif;
-  color:#fff;
-  background:#000;
-  overflow:hidden;
+*{ box-sizing:border-box; margin:0; padding:0; }
+:root{
+  --gold:#C9A84C;
+  --gold-light:#E8C96A;
+  --gold-dim:rgba(201,168,76,0.12);
+  --gold-border:rgba(201,168,76,0.22);
+  --rose:#D4748C;
+  --rose-light:#E89AAD;
+  --rose-dim:rgba(212,116,140,0.10);
+  --rose-border:rgba(212,116,140,0.22);
+  --accent:#C9A84C;
+  --accent-light:#E8C96A;
+  --accent-dim:rgba(212,116,140,0.09);
+  --accent-border:rgba(212,116,140,0.24);
+  --card:rgba(14,14,14,0.72);
 }
-
-/* ===== VIDEO BACKGROUND ===== */
-.bg-video{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-2;
-  pointer-events:none; /* prevents blocking clicks */
-}
-
+html{ scroll-behavior:smooth; }
+body{ font-family:'Outfit',sans-serif; color:#fff; background:#000; overflow-x:hidden; }
+/* ===== BG VIDEO ===== */
+.bg-video{ position:fixed; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; }
 .overlay{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9));
-  z-index:-1;
+  position:fixed; inset:0; z-index:-1;
+  background:linear-gradient(160deg,rgba(0,0,0,0.76) 0%,rgba(5,0,3,0.93) 100%);
 }
-
-/* ===== WRAPPER ===== */
-.wrapper{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  padding:40px 20px;
-  text-align:center;
-}
-
-/* ===== PREMIUM BACK BUTTON ===== */
+/* ===== NAV ===== */
 .back{
-  position:fixed;
-  top:25px;
-  left:25px;
-
-  background:rgba(20,20,20,0.6);
-  backdrop-filter:blur(10px);
-
-  color:#C9A84C;
-  text-decoration:none;
-
-  padding:12px 22px;
-  border-radius:10px;
-
-  font-size:14px;
-  font-weight:500;
-
-  border:1px solid rgba(201,168,76,0.3);
-
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  z-index:99999;
-
-  transition:all 0.3s ease;
+  position:fixed; top:24px; left:24px;
+  background:rgba(14,14,14,0.7); backdrop-filter:blur(14px);
+  color:var(--gold); text-decoration:none;
+  padding:11px 20px; border-radius:10px; font-size:13px; font-weight:500;
+  border:1px solid var(--gold-border); z-index:99999; transition:0.3s;
 }
-
-.back:hover{
-  background:#C9A84C;
-  color:#000;
-  transform:translateY(-2px) scale(1.05);
-  box-shadow:0 15px 40px rgba(0,0,0,0.7);
-}
-
-/* ===== JUMP BUTTON ===== */
+.back:hover{ background:var(--gold); color:#000; transform:translateY(-2px) scale(1.03); }
 .jump-btn{
-  position:fixed;
-  top:25px;
-  right:25px;
-  background:#C9A84C;
-  color:#000;
-  padding:16px 28px;
-  border-radius:10px;
-  text-decoration:none;
-  font-size:16px;
-  font-weight:600;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  z-index:99999;
-  transition:0.3s;
+  position:fixed; top:24px; right:24px;
+  background:linear-gradient(135deg,var(--gold),var(--rose));
+  color:#fff;
+  padding:13px 26px; border-radius:10px;
+  text-decoration:none; font-size:14px; font-weight:600;
+  box-shadow:0 8px 28px rgba(212,116,140,0.28); z-index:99999; transition:0.3s;
 }
-
-.jump-btn:hover{
-  background:#e0b84f;
-  transform:translateY(-3px) scale(1.05);
+.jump-btn:hover{ background:linear-gradient(135deg,var(--gold-light),var(--rose-light)); transform:translateY(-2px) scale(1.04); }
+/* ===== PAGE ===== */
+.page{ max-width:1040px; margin:0 auto; padding:110px 28px 80px; display:flex; flex-direction:column; gap:80px; }
+/* ===== UTILS ===== */
+.eyebrow{ font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--rose); font-weight:600; text-align:center; margin-bottom:12px; }
+.divider{ display:flex; align-items:center; gap:14px; max-width:400px; margin:0 auto; }
+.divider-line{ flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(212,116,140,0.35),transparent); }
+.divider-diamond{ width:7px; height:7px; background:var(--rose); transform:rotate(45deg); flex-shrink:0; }
+/* ========================================
+   HERO
+======================================== */
+.hero{ text-align:center; }
+.hero-badge{
+  display:inline-flex; align-items:center; gap:9px;
+  background:var(--rose-dim); color:var(--rose);
+  border:1px solid var(--rose-border); border-radius:40px;
+  padding:7px 22px; font-size:11px; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase; margin-bottom:28px;
+  animation:fadeUp 0.7s ease both;
 }
-
-/* ===== HEADLINE ===== */
-h1{
+.hero h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:42px;
-  margin-bottom:10px;
+  font-size:60px; font-weight:700; line-height:1.08; margin-bottom:24px;
+  animation:fadeUp 0.8s 0.08s ease both;
 }
-
-.sub{
-  color:#aaa;
-  font-size:15px;
-  margin-bottom:30px;
+.hero h1 em{ font-style:italic; color:var(--gold); }
+.hero-sub{
+  color:rgba(255,255,255,0.55); font-size:18px; line-height:1.75;
+  max-width:580px; margin:0 auto 46px; font-style:italic;
+  animation:fadeUp 0.8s 0.16s ease both;
 }
-
-/* ===== STEPS ===== */
-.steps{
-  display:flex;
-  gap:18px;
-  margin-bottom:35px;
-  flex-wrap:wrap;
-  justify-content:center;
+.hero-sub strong{ color:#fff; font-style:normal; font-weight:500; }
+/* STAT BAR */
+.stat-bar{
+  display:flex; justify-content:center;
+  border:1px solid var(--rose-border); border-radius:16px; overflow:hidden;
+  background:rgba(10,10,10,0.65); backdrop-filter:blur(16px);
+  max-width:720px; margin:0 auto;
+  animation:fadeUp 0.8s 0.24s ease both;
 }
-
-.step{
-  background:rgba(20,20,20,0.6);
-  backdrop-filter:blur(10px);
-  padding:18px;
-  border-radius:12px;
-  width:220px;
-  border:1px solid rgba(201,168,76,0.25);
-  transition:0.3s;
+.stat{ flex:1; padding:22px 14px; text-align:center; position:relative; }
+.stat:not(:last-child)::after{
+  content:''; position:absolute; right:0; top:20%; bottom:20%;
+  width:1px; background:var(--rose-border);
 }
-
-.step:hover{
-  transform:translateY(-5px);
-  border-color:#C9A84C;
+.stat-n{ font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:700; color:var(--gold); line-height:1; }
+.stat-l{ font-size:11px; color:rgba(255,255,255,0.4); margin-top:6px; letter-spacing:0.4px; }
+/* ========================================
+   MARQUEE STRIP
+======================================== */
+.strip-wrap{
+  overflow:hidden;
+  border-top:1px solid var(--rose-border);
+  border-bottom:1px solid var(--rose-border);
+  padding:15px 0; background:rgba(212,116,140,0.03);
 }
-
-.step h3{
-  margin-bottom:6px;
-  font-size:16px;
+.strip-track{
+  display:flex; animation:scroll-left 30s linear infinite; white-space:nowrap;
 }
-
-.step p{
-  font-size:13px;
-  color:#aaa;
+.strip-track:hover{ animation-play-state:paused; }
+.strip-item{
+  display:inline-flex; align-items:center; gap:20px;
+  font-size:12px; color:rgba(255,255,255,0.4);
+  letter-spacing:1.2px; text-transform:uppercase; padding:0 34px; flex-shrink:0;
 }
-
-/* ===== CTA ===== */
-.cta h2{
+.strip-item span{ color:var(--rose); font-size:14px; }
+@keyframes scroll-left{ 0%{ transform:translateX(0); } 100%{ transform:translateX(-50%); } }
+/* ========================================
+   PAIN POINTS
+======================================== */
+.pain-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+}
+.pain-card{
+  background:var(--card); backdrop-filter:blur(14px);
+  padding:30px 24px; border-radius:16px;
+  border:1px solid var(--rose-border);
+  text-align:left; position:relative; overflow:hidden;
+  transition:all 0.35s ease;
+}
+.pain-card::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--rose),transparent);
+  opacity:0; transition:opacity 0.35s;
+}
+.pain-card:hover{ transform:translateY(-7px); border-color:rgba(212,116,140,0.5); box-shadow:0 24px 54px rgba(0,0,0,0.55); }
+.pain-card:hover::before{ opacity:1; }
+.pain-icon{
+  width:50px; height:50px; margin-bottom:18px;
+  background:var(--rose-dim); border:1px solid var(--rose-border); border-radius:13px;
+  display:flex; align-items:center; justify-content:center; font-size:22px;
+}
+.pain-card h3{ font-size:16px; font-weight:600; margin-bottom:8px; }
+.pain-card p{ color:rgba(255,255,255,0.46); font-size:13px; line-height:1.65; }
+/* ========================================
+   MANIFESTO (Emotional Lines)
+======================================== */
+.together{ text-align:center; }
+.together-headline{
   font-family:'Cormorant Garamond',serif;
-  font-size:28px;
-  margin-bottom:12px;
+  font-size:48px; font-weight:700; line-height:1.12; margin-bottom:16px;
 }
-
+.together-headline em{ font-style:italic; color:var(--gold); }
+.together-body{
+  color:rgba(255,255,255,0.5); font-size:16px; line-height:1.8;
+  max-width:620px; margin:0 auto 50px;
+}
+/* THE THREE BIG LINES */
+.lines-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:18px; text-align:left;
+}
+.line-card{
+  background:var(--card); backdrop-filter:blur(14px);
+  padding:32px 28px; border-radius:16px;
+  border:1px solid var(--rose-border); position:relative; overflow:hidden;
+  transition:all 0.35s ease;
+}
+.line-card::after{
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--rose),transparent);
+  opacity:0; transition:opacity 0.35s;
+}
+.line-card:hover{ transform:translateY(-5px); border-color:rgba(212,116,140,0.45); box-shadow:0 20px 48px rgba(0,0,0,0.5); }
+.line-card:hover::after{ opacity:1; }
+.line-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px; font-weight:700;
+  color:rgba(212,116,140,0.1); line-height:1;
+  position:absolute; top:12px; right:18px;
+}
+.line-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px; font-weight:600; line-height:1.4; color:#fff; margin-bottom:10px;
+}
+.line-quote em{ font-style:italic; color:var(--gold); }
+.line-sub{ font-size:13px; color:rgba(255,255,255,0.44); line-height:1.65; }
+.line-card-full{ grid-column:1/-1; }
+.line-card-full .line-quote{ font-size:26px; }
+/* ========================================
+   PULL QUOTE BAND
+======================================== */
+.pull-band{
+  text-align:center;
+  border:1px solid var(--rose-border); border-radius:20px;
+  background:linear-gradient(135deg,rgba(212,116,140,0.07),rgba(201,168,76,0.03));
+  padding:50px 40px; position:relative; overflow:hidden;
+}
+.pull-band::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--rose),var(--gold),transparent);
+}
+.pull-open{
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px; color:rgba(212,116,140,0.14); line-height:0.6;
+  display:block; margin-bottom:16px;
+}
+.pull-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px; font-style:italic; line-height:1.5;
+  color:rgba(255,255,255,0.88); max-width:680px; margin:0 auto 16px;
+}
+.pull-text em{ color:var(--gold); }
+.pull-attr{
+  font-size:13px; color:rgba(255,255,255,0.36); letter-spacing:1px; text-transform:uppercase;
+}
+/* ========================================
+   COMPARISON
+======================================== */
+.compare{ }
+.compare-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:860px; margin:0 auto; }
+.compare-col{
+  background:var(--card); backdrop-filter:blur(14px);
+  border-radius:16px; overflow:hidden; border:1px solid var(--rose-border);
+}
+.compare-head{
+  padding:18px 24px;
+  display:flex; align-items:center; gap:10px;
+  border-bottom:1px solid var(--rose-border);
+}
+.compare-head.bad{ background:rgba(255,255,255,0.03); }
+.compare-head.good{ background:rgba(212,116,140,0.09); }
+.compare-head-title{ font-size:14px; font-weight:600; letter-spacing:0.3px; }
+.compare-head.good .compare-head-title{ color:var(--rose-light); }
+.compare-head.bad .compare-head-title{ color:rgba(255,255,255,0.55); }
+.compare-body{ padding:22px 24px; display:flex; flex-direction:column; gap:14px; }
+.citem{ display:flex; align-items:flex-start; gap:12px; font-size:13px; line-height:1.55; }
+.citem i{ margin-top:2px; font-size:13px; flex-shrink:0; }
+.citem.bad i{ color:rgba(255,80,80,0.7); }
+.citem.good i{ color:var(--rose); }
+.citem.bad span{ color:rgba(255,255,255,0.44); }
+.citem.good span{ color:rgba(255,255,255,0.8); }
+/* ========================================
+   TIMELINE
+======================================== */
+.timeline-wrap{ max-width:620px; margin:0 auto; display:flex; flex-direction:column; }
+.t-item{ display:flex; gap:22px; position:relative; }
+.t-item:not(:last-child)::after{
+  content:''; position:absolute; left:19px; top:46px; bottom:-4px;
+  width:1px; background:linear-gradient(to bottom,rgba(212,116,140,0.35),transparent);
+}
+.t-dot{
+  width:40px; height:40px; flex-shrink:0; border-radius:50%;
+  background:var(--rose-dim); border:1px solid rgba(212,116,140,0.38);
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; color:var(--rose); font-weight:600; margin-top:2px;
+}
+.t-body{ padding-bottom:36px; }
+.t-body h4{ font-size:15px; font-weight:600; margin-bottom:6px; color:#fff; }
+.t-body p{ font-size:13px; color:rgba(255,255,255,0.46); line-height:1.65; margin:0; }
+.t-tag{
+  display:inline-block; margin-top:9px;
+  background:var(--rose-dim); color:var(--rose-light);
+  border:1px solid rgba(212,116,140,0.25); border-radius:20px;
+  padding:3px 13px; font-size:11px; font-weight:500; letter-spacing:0.3px;
+}
+/* ========================================
+   BOTTOM CTA
+======================================== */
+.cta{
+  text-align:center;
+  border:1px solid var(--rose-border); border-radius:20px;
+  padding:58px 40px;
+  background:rgba(10,10,10,0.6); backdrop-filter:blur(14px);
+  position:relative; overflow:hidden; margin-bottom:10px;
+}
+.cta::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--rose),var(--gold),transparent);
+}
+.cta h2{ font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:700; line-height:1.18; margin-bottom:14px; }
+.cta h2 em{ font-style:italic; color:var(--gold); }
+.cta p{ color:rgba(255,255,255,0.46); font-size:15px; max-width:520px; margin:0 auto 32px; line-height:1.75; }
+.btn-group{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 .btn{
-  background:#C9A84C;
-  color:#000;
-  padding:14px 32px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:600;
-  display:inline-block;
-  transition:0.3s;
+  background:linear-gradient(135deg,var(--gold),var(--rose));
+  color:#fff;
+  padding:16px 38px; border-radius:8px; text-decoration:none;
+  font-weight:600; font-size:15px; transition:all 0.3s;
+  box-shadow:0 8px 28px rgba(212,116,140,0.28);
 }
-
-.btn:hover{
-  background:#e0b84f;
+.btn:hover{ background:linear-gradient(135deg,var(--gold-light),var(--rose-light)); transform:translateY(-2px); box-shadow:0 14px 36px rgba(212,116,140,0.42); }
+.btn-ghost{
+  background:transparent; color:var(--rose-light);
+  padding:16px 38px; border-radius:8px; text-decoration:none;
+  font-weight:500; font-size:15px; border:1px solid var(--rose-border); transition:all 0.3s;
 }
-
+.btn-ghost:hover{ background:var(--rose-dim); border-color:var(--rose); transform:translateY(-2px); }
 /* ===== WHATSAPP ===== */
 .whatsapp-float{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  width:65px;
-  height:65px;
-  background:#25D366;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  z-index:99999;
+  position:fixed; bottom:28px; right:28px;
+  width:62px; height:62px; background:#25D366;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%; text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6); z-index:99999; transition:transform 0.3s;
 }
-
-.whatsapp-float i{
-  font-size:32px;
-  color:#fff;
-}
-
+.whatsapp-float:hover{ transform:scale(1.1); }
+.whatsapp-float i{ font-size:28px; color:#fff; }
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{ from{ opacity:0; transform:translateY(24px); } to{ opacity:1; transform:translateY(0); } }
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-
-  h1{font-size:28px;}
-
-  .steps{
-    flex-direction:column;
-    align-items:center;
-  }
-
-  .step{
-    width:90%;
-  }
-
-  .bg-video{
-    transform:scale(1.3);
-  }
+  .page{ padding:88px 18px 70px; gap:60px; }
+  .hero h1{ font-size:34px; }
+  .together-headline{ font-size:30px; }
+  .pain-grid{ grid-template-columns:1fr; }
+  .lines-grid{ grid-template-columns:1fr; }
+  .line-card-full{ grid-column:auto; }
+  .compare-grid{ grid-template-columns:1fr; }
+  .stat-bar{ flex-direction:column; }
+  .stat:not(:last-child)::after{ display:none; }
+  .stat{ border-bottom:1px solid var(--rose-border); }
+  .cta h2{ font-size:28px; }
+  .pull-text{ font-size:22px; }
+  .bg-video{ transform:scale(1.3); }
 }
-
 </style>
 </head>
-
 <body>
-
-<!-- JUMP BUTTON -->
-<a href="BrideFit.html#pricing" class="jump-btn">Jump To Pricing →</a>
-
-<!-- VIDEO -->
+<a href="index.html#pricing" class="jump-btn">See BrideFit Plans →</a>
 <video autoplay muted loop playsinline class="bg-video">
-  <source src="howvideo.mp4" type="video/mp4">
+  <source src="bride_back.mp4" type="video/mp4">
 </video>
-
 <div class="overlay"></div>
+<a href="index.html" class="back">← Back to Home</a>
+<div class="page">
 
-<!-- BACK -->
-<a href="BrideFit.html" class="back">← Back to Home</a>
-
-<!-- MAIN -->
-<div class="wrapper">
-
-  <h1>
-    How BrideFit <span style="color:#C9A84C;">Works</span>
-  </h1>
-
-  <p class="sub">
-    Simple. Structured. Built for your wedding deadline.
-  </p>
-
-  <!-- STEPS -->
-  <div class="steps">
-
-    <div class="step">
-      <h3>1. Apply</h3>
-      <p>Tell us your wedding date, goals & current fitness level.</p>
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+    <div class="hero-badge"><i class="fas fa-crown"></i>&nbsp; For Brides Preparing to Be Unforgettable</div>
+    <h1>
+      This Is the Only Time You'll<br>
+      Prepare to Be Seen<br>
+      <em>Like This.</em>
+    </h1>
+    <p class="hero-sub">
+      <strong>Every eye in the room will be on you. Every camera pointed at you.</strong><br>
+      Most brides leave how they feel to chance. The ones who don't — walk in radiant, unforgettable, and entirely themselves.
+    </p>
+    <div class="stat-bar">
+      <div class="stat">
+        <div class="stat-n">60–90</div>
+        <div class="stat-l">Day Program</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">1</div>
+        <div class="stat-l">Plan Built For You</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">100%</div>
+        <div class="stat-l">Bridal Focus</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">∞</div>
+        <div class="stat-l">Confidence You'll Keep</div>
+      </div>
     </div>
-
-    <div class="step">
-      <h3>2. Get Plan</h3>
-      <p>Receive a personalised workout + Indian diet plan in 48 hours.</p>
-    </div>
-
-    <div class="step">
-      <h3>3. Execute</h3>
-      <p>Follow daily routine with coach tracking & accountability.</p>
-    </div>
-
-    <div class="step">
-      <h3>4. Transform</h3>
-      <p>Show up to your wedding confident, lean, and aesthetic.</p>
-    </div>
-
   </div>
 
-  <!-- CTA -->
+  <!-- ============ MARQUEE ============ -->
+  <div class="strip-wrap">
+    <div class="strip-track">
+      <div class="strip-item"><span>✦</span> Built Around Your Wedding Date</div>
+      <div class="strip-item"><span>✦</span> Tone. Glow. Presence. Posture.</div>
+      <div class="strip-item"><span>✦</span> You Won't Just Look Better — You'll Carry Yourself Differently</div>
+      <div class="strip-item"><span>✦</span> No Crash Diets. No Guesswork.</div>
+      <div class="strip-item"><span>✦</span> India's Premium Pre-Wedding Bridal Transformation Program</div>
+      <div class="strip-item"><span>✦</span> Built Around Your Wedding Date</div>
+      <div class="strip-item"><span>✦</span> Tone. Glow. Presence. Posture.</div>
+      <div class="strip-item"><span>✦</span> You Won't Just Look Better — You'll Carry Yourself Differently</div>
+      <div class="strip-item"><span>✦</span> No Crash Diets. No Guesswork.</div>
+      <div class="strip-item"><span>✦</span> India's Premium Pre-Wedding Bridal Transformation Program</div>
+    </div>
+  </div>
+
+  <!-- ============ PAIN POINTS ============ -->
+  <div>
+    <div class="eyebrow">Where Brides Go Wrong</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; text-align:center; margin-bottom:8px;">Why Most Brides Don't Feel <em style="font-style:italic; color:var(--gold);">Ready</em> on Their Wedding Day</h2>
+    <p style="text-align:center; color:rgba(255,255,255,0.42); font-size:14px; margin-bottom:36px;">It's not about discipline. It's about not having a system built for this moment.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🚫</div>
+        <h3>Crash Dieting Before the Big Day</h3>
+        <p>Starving yourself two weeks before the wedding doesn't create a glow — it creates stress, bloating, and exhaustion. The bride in the photos looks tired. That's not who you are.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <h3>Random Workouts, No Real Plan</h3>
+        <p>YouTube videos, Instagram reels, generic apps — none of it is designed around a wedding deadline, your body, or what you actually need to feel confident in your lehenga.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⏳</div>
+        <h3>Starting Too Late, Hoping Too Much</h3>
+        <p>Most brides wait until a month out. By then there's no time for real change — only panic. A structured 60–90 day plan changes everything. Timing is everything.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😰</div>
+        <h3>Stress and Bloating Close to the Wedding</h3>
+        <p>Wedding planning stress is real — and it shows up in your body. Without proper nutrition and recovery, pre-wedding bloating is almost guaranteed. BrideFit accounts for all of it.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">👗</div>
+        <h3>Not Feeling Confident in Your Lehenga</h3>
+        <p>You have one chance to wear that outfit. If your posture, tone, and energy aren't where you want them — you'll feel it. And unfortunately, so will the camera.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🪞</div>
+        <h3>Wanting to Look Different, Not Knowing How</h3>
+        <p>A vague goal of "losing weight" before the wedding isn't a plan. Without targeted toning, posture work, and a bridal-specific structure, results are unpredictable at best.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DIVIDER ============ -->
+  <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+  <!-- ============ EMOTIONAL LINES ============ -->
+  <div class="together">
+    <div class="eyebrow">What BrideFit Is Really About</div>
+    <div class="together-headline">
+      This isn't just fitness.<br>
+      This is <em>your presence.</em>
+    </div>
+    <p class="together-body">
+      The weeks before your wedding are the most photographed, most watched, most remembered of your life.
+      BrideFit is built so that when that moment arrives, you don't just look the part —
+      you feel it in how you stand, how you move, and how you walk into every room.
+    </p>
+    <div class="lines-grid">
+      <div class="line-card">
+        <div class="line-num">01</div>
+        <div class="line-quote">
+          You'll be remembered in <em>every photograph</em> for the rest of your life.
+        </div>
+        <div class="line-sub">Weddings are not re-shot. Every image is permanent. BrideFit ensures that the woman in those photos — her posture, her glow, her confidence — is exactly who you want the world to remember.</div>
+      </div>
+      <div class="line-card">
+        <div class="line-num">02</div>
+        <div class="line-quote">
+          This is not just fitness.<br>It's <em>presence.</em>
+        </div>
+        <div class="line-sub">The way you carry yourself on your wedding day is felt before a single word is spoken. BrideFit is built to give you the kind of physical confidence that makes a room go quiet when you walk in.</div>
+      </div>
+      <div class="line-card" style="grid-column:1/-1;">
+        <div class="line-num">03</div>
+        <div class="line-quote" style="font-size:26px;">
+          You don't get a second chance at <em>this version of you.</em>
+        </div>
+        <div class="line-sub">In 60–90 days, your body can change in ways that feel extraordinary — but only with the right structure. BrideFit is the only program designed specifically for the bridal moment: your timeline, your body, your wedding day. This is the investment that lasts in every photo, every memory, and every time you look back.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PULL QUOTE ============ -->
+  <div class="pull-band">
+    <span class="pull-open">&ldquo;</span>
+    <p class="pull-text">
+      Without a real plan,<br>
+      brides arrive hoping — <em>instead of glowing.</em>
+    </p>
+    <p class="pull-attr">— The BrideFit Principle</p>
+  </div>
+
+  <!-- ============ DIVIDER ============ -->
+  <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+  <!-- ============ COMPARISON ============ -->
+  <div class="compare">
+    <div class="eyebrow">The Difference It Makes</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; text-align:center; margin-bottom:8px;">On Your Own vs. <em style="font-style:italic; color:var(--gold);">The BrideFit System</em></h2>
+    <p style="text-align:center; color:rgba(255,255,255,0.42); font-size:14px; margin-bottom:36px;">The gap between trying alone and having a system designed for this moment is larger than most brides realise.</p>
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-head bad">
+          <i class="fas fa-xmark" style="color:rgba(255,80,80,0.6); font-size:14px;"></i>
+          <div class="compare-head-title">Trying On Your Own</div>
+        </div>
+        <div class="compare-body">
+          <div class="citem bad"><i class="fas fa-xmark"></i><span>No structure — random workouts that don't connect to your wedding timeline</span></div>
+          <div class="citem bad"><i class="fas fa-xmark"></i><span>Crash dieting leads to stress, fatigue, and pre-wedding bloating</span></div>
+          <div class="citem bad"><i class="fas fa-xmark"></i><span>Generic nutrition advice that ignores your schedule, stress, and Indian lifestyle</span></div>
+          <div class="citem bad"><i class="fas fa-xmark"></i><span>No posture or presence work — only scale-focused results that don't show in photos</span></div>
+          <div class="citem bad"><i class="fas fa-xmark"></i><span>You arrive at your wedding hoping you look good — not knowing it</span></div>
+        </div>
+      </div>
+      <div class="compare-col" style="border-color:rgba(212,116,140,0.4);">
+        <div class="compare-head good">
+          <i class="fas fa-check" style="color:var(--rose); font-size:14px;"></i>
+          <div class="compare-head-title">The BrideFit System</div>
+        </div>
+        <div class="compare-body">
+          <div class="citem good"><i class="fas fa-check"></i><span>A personalised 60–90 day plan built backwards from your exact wedding date</span></div>
+          <div class="citem good"><i class="fas fa-check"></i><span>Anti-bloat nutrition protocol designed specifically for the weeks leading up to the wedding</span></div>
+          <div class="citem good"><i class="fas fa-check"></i><span>Indian food-friendly meal planning that fits your life — not a foreign diet sheet</span></div>
+          <div class="citem good"><i class="fas fa-check"></i><span>Bridal posture, elegance, and tone — trained for how you look in a lehenga, not just the gym</span></div>
+          <div class="citem good"><i class="fas fa-check"></i><span>You walk into your wedding <em>knowing</em> you are your best self</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DIVIDER ============ -->
+  <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+  <!-- ============ TIMELINE ============ -->
+  <div>
+    <div class="eyebrow">The BrideFit Method</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:36px; text-align:center; margin-bottom:8px;">What 60–90 Days Looks Like</h2>
+    <p style="text-align:center; color:rgba(255,255,255,0.42); font-size:14px; margin-bottom:40px;">One wedding date. One personalised system. One transformation you'll carry for life.</p>
+    <div class="timeline-wrap">
+      <div class="t-item">
+        <div class="t-dot">1</div>
+        <div class="t-body">
+          <h4>Week 1–2 · Bridal Assessment & Personalised Blueprint</h4>
+          <p>We assess your body, your goals, your timeline, and your lifestyle. A fully personalised bridal plan is designed around your wedding date — not a generic template.</p>
+          <span class="t-tag">Your Foundation</span>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot">2</div>
+        <div class="t-body">
+          <h4>Week 3–6 · Glow, Energy & Early Tone</h4>
+          <p>Structured workouts and bridal-specific nutrition begin reshaping your body and skin. You'll notice energy first, then changes in the mirror. The glow begins here.</p>
+          <span class="t-tag">Glow + Tone</span>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot">3</div>
+        <div class="t-body">
+          <h4>Week 7–10 · Sculpt, Posture & Bridal Elegance</h4>
+          <p>Targeted shaping so your lehenga fits the way you imagined. Posture work, confidence training, and camera-ready presence — all refined for the day you'll be most seen.</p>
+          <span class="t-tag">Elegance + Confidence</span>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-dot">✦</div>
+        <div class="t-body">
+          <h4>Wedding Week · Peak Bridal Radiance</h4>
+          <p>You arrive at your wedding in the best shape of your life — not because you starved, but because you prepared. Every photo will show a woman who knew her moment was coming. And got ready for it.</p>
+          <span class="t-tag">Your Day ✦</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DIVIDER ============ -->
+  <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
+
+  <!-- ============ BOTTOM CTA ============ -->
   <div class="cta">
-    <h2>You Don’t Need More Effort. You Need the Right System.</h2>
-    <a href="BrideFit.html#pricing" class="btn">See The Program →</a>
+    <div class="eyebrow" style="margin-bottom:16px;">This Is Your Moment.</div>
+    <h2>Show up<br><em>unforgettable.</em></h2>
+    <p>
+      Your wedding date is set. Every photograph will last a lifetime.
+      BrideFit is the only program built specifically for the bride —
+      around your body, your timeline, and the most important day of your life.
+    </p>
+    <div class="btn-group">
+      <a href="index.html#pricing" class="btn">Explore BrideFit Plans →</a>
+      <a href="https://wa.me/919588859960?text=Hi%20BrideFit,%20I%20want%20to%20start%20my%20bridal%20transformation" class="btn-ghost" target="_blank">
+        <i class="fab fa-whatsapp" style="margin-right:8px;"></i>Chat With Us
+      </a>
+    </div>
   </div>
 
 </div>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/919588859960?text=Hi%20GroomFit,%20I%20want%20to%20start%20my%20transformation"
-   class="whatsapp-float"
-   target="_blank">
-   <i class="fab fa-whatsapp"></i>
+<!-- ===== WHATSAPP ===== -->
+<a href="https://wa.me/919588859960?text=Hi%20BrideFit,%20I%20want%20to%20start%20my%20bridal%20transformation"
+   class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
 </a>
-
 </body>
 </html>
