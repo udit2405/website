@@ -1165,72 +1165,7 @@ overflow: hidden;
   }
   .trainer-info p { font-size: 0.82rem; color: var(--muted); }
 
-  /* ============================================================
-  HOW IT WORKS
-  ============================================================ */
-  #how {
-  background: var(--black);
-  }
-  .steps-header { text-align: center; margin-bottom: 5rem; }
-
-  .steps-track {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  }
-  .steps-line {
-  position: absolute;
-  top: 36px;
-  left: 36px;
-  right: 36px;
-  height: 1px;
-  background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2) 80%, transparent);
-  }
-  @media(max-width:768px){ .steps-line { display: none; } }
-
-  .steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  position: relative;
-  z-index: 2;
-  }
-  @media(max-width:768px){ .steps-grid { grid-template-columns: 1fr; gap: 2rem; } }
-
-  .step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  }
-  .step-circle {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: var(--dark-2);
-  border: 2px solid var(--gold-dim);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-  transition: background 0.3s, border-color 0.3s, transform 0.3s;
-  }
-  .step:hover .step-circle {
-  background: rgba(201,168,76,0.1);
-  border-color: var(--gold);
-  transform: scale(1.1);
-  }
-  .step h4 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  }
-  .step p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+  
 
   /* ============================================================
   TESTIMONIALS
@@ -1634,6 +1569,75 @@ overflow: hidden;
   color: rgba(138,128,112,0.5);
   }
 
+
+    /* ============================================================
+  HOW IT WORKS
+  ============================================================ */
+  #how {
+  background: var(--black);
+  }
+  .steps-header { text-align: center; margin-bottom: 5rem; }
+
+  .steps-track {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  }
+  .steps-line {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  right: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2) 80%, transparent);
+  }
+  @media(max-width:768px){ .steps-line { display: none; } }
+
+  .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+  }
+  @media(max-width:768px){ .steps-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+  .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  }
+  .step-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--dark-2);
+  border: 2px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  }
+  .step:hover .step-circle {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--gold);
+  transform: scale(1.1);
+  }
+  .step h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  }
+  .step p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+    
   /* ============================================================
   LEGAL MODALS
   ============================================================ */
