@@ -74,6 +74,13 @@ nav{
   text-decoration:none;
 }
 
+  .nav-logo img {
+  height: 32px;   /* adjust if needed */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .nav-right{display:flex;gap:12px;align-items:center;}
 
 .btn-ghost{
@@ -715,7 +722,9 @@ section{padding:100px 40px;}
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">GROOMFIT</a>
+ <a href="index.html" class="nav-logo">
+  <img src="logo.webp" alt="GroomFit Logo">
+</a>
   <div class="nav-right">
     <a href="index.html" class="btn-ghost">← Back to Home</a>
     <a href="index.html#pricing" class="btn-solid">See The Program →</a>
