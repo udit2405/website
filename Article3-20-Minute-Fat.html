@@ -86,6 +86,20 @@
       font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--gold);
       display: flex; align-items: center; gap: 8px; letter-spacing: 0.04em;
     }
+
+    .nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
+  transition: filter 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
+}
+    
     .logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); animation: pulse 2s ease-in-out infinite; }
     .nav-actions { display: flex; align-items: center; gap: 14px; }
     .nav-back { color: var(--muted-light); text-decoration: none; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px; border: none; transition: color 0.2s; }
@@ -483,13 +497,10 @@
 
 <!-- NAV -->
 <nav>
-  <a href="https://www.groomfit.in/" class="nav-logo" id="navLogo">
-    <img src="logo.png" alt="GroomFit" class="nav-logo-img"
-      onerror="this.style.display='none'; document.getElementById('navLogoFallback').style.display='flex';">
-    <span class="nav-logo-fallback" id="navLogoFallback" style="display:none;">
-      <span class="logo-dot"></span>GroomFit
-    </span>
-  </a>
+  <a href="https://www.groomfit.in/" class="nav-logo">
+  <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
+</a>
+  
   <div class="nav-actions">
     <a href="https://www.groomfit.in/" class="nav-back"><i class="fa fa-arrow-left"></i> Home</a>
     <a href="https://www.groomfit.in/#pricing" class="nav-cta">View Plans</a>
