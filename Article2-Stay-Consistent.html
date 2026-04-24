@@ -117,6 +117,18 @@
       animation: pulse 2s ease-in-out infinite;
     }
 
+    .nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
+  transition: filter 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
+}
     .nav-actions { display: flex; align-items: center; gap: 14px; }
 
     .nav-back {
@@ -1387,9 +1399,9 @@
 
 <!-- NAV -->
 <nav>
-  <a href="https://www.groomfit.in/" class="nav-logo">
-    <span class="logo-dot"></span>GroomFit
-  </a>
+ <a href="https://www.groomfit.in/" class="nav-logo">
+  <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
+</a>
   <div class="nav-actions">
     <a href="https://www.groomfit.in/" class="nav-back"><i class="fa fa-arrow-left"></i> Home</a>
     <a href="https://www.groomfit.in/#pricing" class="nav-cta">View Plans</a>
