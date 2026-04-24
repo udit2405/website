@@ -34,6 +34,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-main
 nav{position:fixed;top:0;left:0;right:0;height:72px;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:rgba(7,6,4,0.7);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border-bottom:1px solid var(--gold-border);z-index:1000;transition:var(--transition)}
 nav.scrolled{height:64px;background:rgba(7,6,4,0.95);box-shadow:0 4px 30px rgba(0,0,0,0.5)}
 .nav-brand{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);font-weight:700;text-decoration:none;letter-spacing:0.02em}
+  .nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
+  transition: filter 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
+}
 .nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#000;text-decoration:none;border:none;cursor:pointer;font-size:14px;font-weight:700;padding:10px 24px;border-radius:8px;letter-spacing:0.03em;box-shadow:0 4px 15px rgba(201,168,76,0.2);transition:var(--transition)}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,0.4)}
 #readProgress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#a18335,var(--gold-bright),#fff);transform-origin:left;transform:scaleX(0);z-index:1001;transition:transform 0.1s linear;box-shadow:0 0 10px var(--gold-glow)}
@@ -143,7 +155,9 @@ footer{text-align:center;padding:40px 20px;font-size:14px;color:var(--muted);bor
 <div id="readProgress"></div>
 
 <nav id="navbar">
-  <a href="https://www.groomfit.in/" class="nav-brand">GroomFit</a>
+  <a href="https://www.groomfit.in/" class="nav-logo">
+  <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
+</a>
   <button class="nav-cta" onclick="openPopup(); return false;">Apply for Coaching</button>
 </nav>
 
