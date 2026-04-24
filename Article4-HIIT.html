@@ -109,13 +109,17 @@
       flex-shrink: 0;
     }
     .nav-logo-img {
-      height: 38px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      /* Fallback: if logo is dark/colored, these filters help on dark bg */
-      /* filter: brightness(1.1); */
-    }
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
+  transition: filter 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
+}
     /* Fallback text shown if image fails to load */
     .nav-logo-fallback {
       font-family: 'Playfair Display', serif;
@@ -971,17 +975,9 @@
 <!-- NAV -->
 <nav>
   <!-- LOGO: Place logo.png in the same folder as this HTML file -->
-  <a href="https://www.groomfit.in/" class="nav-logo" id="navLogo">
-    <img
-      src="logo.png"
-      alt="GroomFit"
-      class="nav-logo-img"
-      onerror="this.style.display='none'; document.getElementById('navLogoFallback').style.display='flex';"
-    >
-    <span class="nav-logo-fallback" id="navLogoFallback" style="display:none;">
-      <span class="logo-dot"></span>GroomFit
-    </span>
-  </a>
+  <a href="https://www.groomfit.in/" class="nav-logo">
+  <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
+</a>
   <div class="nav-actions">
     <a href="https://www.groomfit.in/" class="nav-back"><i class="fa fa-arrow-left"></i> Home</a>
     <a href="https://www.groomfit.in/#pricing" class="nav-cta">View Plans</a>
