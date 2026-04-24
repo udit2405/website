@@ -149,6 +149,38 @@ body{
   font-size:11px; letter-spacing:3px; text-transform:uppercase;
   color:var(--gold); font-weight:600; text-align:center; margin-bottom:12px;
 }
+
+ /* ===== BACK NAVIGATION GROUP ===== */
+.back-nav-group{
+  position:fixed; top:22px; left:22px;
+  display:flex; flex-direction:column; gap:8px; z-index:9999;
+}
+
+.back-nav-btn{
+  background:rgba(10,10,10,0.7); backdrop-filter:blur(14px);
+  color:var(--gold); text-decoration:none;
+  padding:11px 20px; border-radius:10px; font-size:13px; font-weight:500;
+  border:1px solid var(--gold-border); transition:0.3s;
+  text-align:center; white-space:nowrap;
+}
+
+.back-nav-btn:hover{ 
+  background:var(--gold); 
+  color:#000; 
+  transform:translateY(-2px);
+}
+
+/* Mobile: Stack vertically (default) or switch to horizontal if needed */
+@media(max-width:768px){
+  .back-nav-group{
+    gap:6px;
+  }
+  
+  .back-nav-btn{
+    padding:10px 14px;
+    font-size:12px;
+  }
+}
  
 /* ========================================
    HERO
@@ -535,7 +567,11 @@ body{
 <div class="bg-fixed"></div>
 <div class="bg-overlay"></div>
  
-<a href="index.html" class="back-home">← Back to Home</a>
+<div class="back-nav-group">
+  <a href="index.html" class="back-nav-btn">← GroomFit</a>
+  <a href="BrideFit.html" class="back-nav-btn">← BrideFit</a>
+  <a href="CoupleFit.html" class="back-nav-btn">← CoupleFit</a>
+</div>
 <a href="index.html#pricing" class="jump-btn">Jump To Pricing →</a>
  
 <div class="page">
