@@ -99,6 +99,19 @@ nav.scrolled {
   box-shadow: 0 6px 20px rgba(201,168,76,0.4); 
 }
 
+  .nav-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
+  transition: filter 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
+}
+
 /* ─── PROGRESS BAR ─── */
 #readProgress {
   position: fixed; top: 0; left: 0; height: 3px;
@@ -457,7 +470,9 @@ footer {
 <div id="readProgress"></div>
 
 <nav id="navbar">
-  <a href="https://www.groomfit.in/" class="nav-brand">GroomFit</a>
+  <a href="https://www.groomfit.in/" class="nav-logo">
+  <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
+</a>
   <button class="nav-cta" onclick="openPopup(); return false;">Apply for Coaching</button>
 </nav>
 
