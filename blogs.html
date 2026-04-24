@@ -27,6 +27,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
+
+  /* ===== LOGOS SECTION ===== */
+.logos-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  padding-top: 20px;
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(201,168,76,0.3));
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.08);
+}
+
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-bridefit {
+  color: #E89AAD;
+}
+
+.logo-couplefit {
+  color: #C9A84C;
+}
+
+.logo-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Mobile responsive */
+@media(max-width:768px) {
+  .logos-section {
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  .logo-text {
+    font-size: 16px;
+  }
+  
+  .logo-sub {
+    font-size: 9px;
+  }
+}
+  
 /* ─── ROOT ─── */
 :root {
   --gold: #C9A84C;
@@ -569,6 +643,26 @@ footer a { color: #4a4540; text-decoration: none; }
   <a href="/#pricing" class="nav-cta">View Pricing <i class="fa fa-arrow-right"></i></a>
 </nav>
 
+<!-- ===== LOGOS SECTION ===== -->
+  <div class="logos-section">
+    <!-- BrideFit Logo -->
+    <div class="logo-item">
+      <div class="logo-text logo-bridefit">BrideFit</div>
+      <div class="logo-sub">by GroomFit</div>
+    </div>
+
+    <!-- GroomFit Logo (Image) -->
+    <div class="logo-item">
+      <img src="logo.webp" alt="GroomFit Logo" class="logo-img">
+    </div>
+
+    <!-- CoupleFit Logo -->
+    <div class="logo-item">
+      <div class="logo-text logo-couplefit">CoupleFit</div>
+      <div class="logo-sub">by GroomFit</div>
+    </div>
+  </div>
+  
 <!-- HERO -->
 <header class="hero" role="banner">
   <div class="hero-eyebrow"><i class="fa fa-crown"></i> Wedding Fitness Knowledge Base</div>
