@@ -694,31 +694,113 @@ footer a:hover { color: var(--primary-light); }
   </p>
 </footer>
 <a href="https://wa.me/919588859960" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with BrideFit on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-  <div class="popup-box">
-    <div class="popup-logo">BrideFit by GroomFit</div>
-    <h3 id="popup-title">Check If You Qualify</h3>
-    <p class="popup-sub">We personally review every application and reach out within 24 hours.</p>
+<!-- ── LEAD POPUP (matches BrideFit.html) ── -->
+<div id="leadPopup" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+  <div style="
+    background: #111;
+    padding: 30px;
+    border-radius: 16px;
+    width: 320px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+  ">
+    <span onclick="closePopup()" style="
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 18px;
+    ">✖</span>
+    <h3 style="margin-bottom:6px;">Check If You Qualify for BrideFit</h3>
+    <p style="font-size: 13px; margin-bottom: 20px; color: #aaa;">
+      Apply below — we'll get back within 24 hours
+    </p>
     <form id="leadForm">
-      <input name="name" placeholder="Your Full Name" required autocomplete="name">
-      <input name="phone" type="tel" placeholder="Phone Number" required autocomplete="tel">
-      <input name="wedding" placeholder="Wedding Date (Approx.)" required>
-      <input name="location" placeholder="Your City" required>
-      <button class="popup-submit" type="submit">Submit Application →</button>
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;background:#222;color:#fff;">
+      <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;background:#222;color:#fff;">
+      <input type="text" name="location" placeholder="Location" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:none;background:#222;color:#fff;">
+      <button type="submit" aria-label="Submit form" style="width:100%;padding:12px;background:#00ff88;border:none;border-radius:8px;font-weight:bold;cursor:pointer;color:#000;">
+        Submit
+      </button>
     </form>
-    <button class="popup-close" onclick="closePopup()">Maybe Later</button>
   </div>
 </div>
-<div class="success-overlay" id="success" role="dialog" aria-modal="true">
-  <div class="success-box">
-    <div class="tick"><i class="fa fa-check"></i></div>
-    <h3>Application Received</h3>
-    <p>Our team will review and reach out shortly. Connect on WhatsApp for a faster response.</p>
-    <a id="waBtn" href="#" class="wa-link"><i class="fab fa-whatsapp"></i> Connect on WhatsApp</a>
-    <a href="https://www.groomfit.in/#pricing" class="pricing-link"><i class="fa fa-tag"></i> View BrideFit Plans</a>
-    <button onclick="closeSuccess()">Dismiss</button>
+
+<!-- ── SUCCESS POPUP (matches BrideFit.html) ── -->
+<div id="successPopup" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+">
+  <div style="
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 1px solid #C9A84C;
+  ">
+    <h2 style="color:#fff; margin-bottom:10px;">Application Received</h2>
+    <p style="color:#aaa; font-size:14px; margin-bottom:20px;">
+      If you're serious, message us on WhatsApp to fast-track your review.
+    </p>
+    <a id="whatsappBtn" href="#" target="_blank" style="
+      display: inline-block;
+      background: #C9A84C;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    ">Continue on WhatsApp</a>
+    <a href="https://razorpay.me/@uditsahai" target="_blank" style="
+      display: inline-block;
+      background: #C9A84C;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    ">Pay &amp; Start Instantly</a>
+    <div>
+      <button onclick="closeSuccessPopup()" style="
+        background: none;
+        border: none;
+        color: #aaa;
+        font-size: 13px;
+        cursor: pointer;
+        text-decoration: underline;
+      ">Maybe later</button>
+    </div>
   </div>
 </div>
+
+<!-- Hidden iframe for Google Forms silent submit -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 <script>
 // ── PROGRESS BAR ──
 window.addEventListener('scroll', () => {
@@ -729,6 +811,7 @@ window.addEventListener('scroll', () => {
   const nav = document.getElementById('navbar');
   if (scrolled > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
 }, { passive: true });
+
 // ── SCROLL REVEAL ──
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -736,6 +819,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
 // ── TOC ACTIVE ──
 const sections = document.querySelectorAll('[id^="s"]');
 const tocLinks = document.querySelectorAll('.toc-list a');
@@ -749,28 +833,70 @@ const tocObserver = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '-20% 0px -75% 0px' });
 sections.forEach(sec => tocObserver.observe(sec));
-// ── POPUP ──
-function openPopup()  { document.getElementById('popup').style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-function closePopup() { document.getElementById('popup').style.display = 'none'; document.body.style.overflow = ''; }
-function closeSuccess() { document.getElementById('success').style.display = 'none'; document.body.style.overflow = ''; }
-document.getElementById('leadForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const data = new FormData(this);
-  const msg = encodeURIComponent(
-    'Hi BrideFit! I applied for your bridal transformation programme.\n\n' +
-    'Name: ' + data.get('name') + '\n' +
-    'Phone: ' + data.get('phone') + '\n' +
-    'Wedding Date: ' + data.get('wedding') + '\n' +
-    'City: ' + data.get('location')
-  );
-  document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
-  closePopup();
-  document.getElementById('success').style.display = 'flex';
+
+// ── POPUP OPEN / CLOSE ──
+function openPopup() {
+  document.getElementById('leadPopup').style.display = 'flex';
   document.body.style.overflow = 'hidden';
+}
+function closePopup() {
+  document.getElementById('leadPopup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function closeSuccessPopup() {
+  document.getElementById('successPopup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Close on backdrop click
+document.getElementById('leadPopup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
 });
-document.getElementById('popup').addEventListener('click',  function(e) { if (e.target === this) closePopup(); });
-document.getElementById('success').addEventListener('click', function(e) { if (e.target === this) closeSuccess(); });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closePopup(); closeSuccess(); } });
+document.getElementById('successPopup').addEventListener('click', function(e) {
+  if (e.target === this) closeSuccessPopup();
+});
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closePopup(); closeSuccessPopup(); }
+});
+
+// ── FORM SUBMIT (Google Forms + WhatsApp + Success Popup) ──
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  // Silent submit to Google Forms
+  const googleForm = document.createElement('form');
+  googleForm.method = 'POST';
+  googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse';
+  googleForm.target = 'hidden_iframe';
+  function addField(name, value) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+  addField('entry.525461384', formData.get('name'));
+  addField('entry.933229371', formData.get('phone'));
+  addField('entry.1013425097', formData.get('location'));
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+  document.body.removeChild(googleForm);
+
+  // Build WhatsApp link
+  const name = formData.get('name') || 'there';
+  const message = `Hi, I just applied for BrideFit. My name is ${name}. Looking forward.`;
+  document.getElementById('whatsappBtn').href =
+    'https://wa.me/919588859960?text=' + encodeURIComponent(message);
+
+  // Show success, close form
+  closePopup();
+  document.getElementById('successPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  this.reset();
+});
 </script>
 </body>
 </html>
