@@ -237,7 +237,7 @@ nav {
   display: block; background: linear-gradient(135deg, var(--gold), var(--gold-bright));
   color: #000; text-decoration: none;
   font-weight: 700; font-size: 13px; padding: 12px 16px;
-  border-radius: 9px; transition: opacity 0.2s;
+  border-radius: 9px; transition: opacity 0.2s; cursor: pointer;
 }
 .side-cta a:hover { opacity: 0.85; }
 /* ─── ARTICLE BODY ─── */
@@ -403,7 +403,6 @@ a.text-link:hover { border-color: var(--gold); }
   background: rgba(255,255,255,0.02);
   font-size: 14px; font-weight: 500;
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
-  border-bottom: 1px solid var(--gold-border) !important;
 }
 .related-link:hover { background: var(--gold-dim); border-color: rgba(212,175,55,0.4); transform: translateX(4px); }
 .related-link i { color: var(--gold); font-size: 12px; }
@@ -423,92 +422,100 @@ a.text-link:hover { border-color: var(--gold); }
 .cta-btn {
   display: inline-flex; align-items: center; gap: 9px;
   background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-  color: #000; text-decoration: none; border-bottom: none !important;
+  color: #000; text-decoration: none;
   font-weight: 700; font-size: 15px; padding: 15px 32px; border-radius: 12px;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s; cursor: pointer; border: none;
 }
 .cta-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+
 /* ─── POPUP ─── */
-.popup {
+/* Overlay */
+#leadPopup {
   position: fixed; inset: 0;
-  background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);
-  display: none; justify-content: center; align-items: center; z-index: 9999;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(8px);
+  display: none; justify-content: center; align-items: center;
+  z-index: 9999;
 }
-.popup-box {
-  background: var(--surface2);
+/* Box — matches BrideFit dark style */
+#leadPopup .popup-inner {
+  background: #111;
   border: 1px solid var(--gold-border);
-  border-radius: 18px; padding: 36px 32px;
-  width: 340px; max-width: 90vw;
+  border-radius: 16px; padding: 30px;
+  width: 320px; max-width: 90vw;
+  color: #fff; font-family: 'DM Sans', sans-serif;
+  position: relative;
   animation: fadeUp 0.35s ease both;
 }
-.popup-box h3 {
+#leadPopup .popup-close-x {
+  position: absolute; top: 10px; right: 15px;
+  cursor: pointer; font-size: 18px; color: #aaa;
+  background: none; border: none; line-height: 1;
+}
+#leadPopup h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; color: var(--white); margin-bottom: 6px;
+  font-size: 1.25rem; color: #fff; margin-bottom: 6px;
 }
-.popup-box .popup-sub { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
-.popup-box input {
-  width: 100%; padding: 12px 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--gold-border);
-  border-radius: 9px; color: var(--white);
-  font-family: 'DM Sans', sans-serif; font-size: 14px;
-  outline: none; margin-bottom: 10px;
-  transition: border-color 0.2s;
+#leadPopup .popup-sub {
+  font-size: 13px; color: #aaa; margin-bottom: 20px;
 }
-.popup-box input:focus { border-color: var(--gold); }
-.popup-box input::placeholder { color: #5C554D; }
-.popup-submit {
-  width: 100%; padding: 13px;
-  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-  color: #000; font-family: 'DM Sans', sans-serif;
+#leadPopup input {
+  width: 100%; padding: 10px 12px; margin-bottom: 10px;
+  border-radius: 8px; border: none;
+  background: #222; color: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none;
+}
+#leadPopup input::placeholder { color: #555; }
+#leadPopup input:focus { outline: 1px solid var(--gold); }
+#leadPopup .popup-submit {
+  width: 100%; padding: 12px;
+  background: #00ff88; color: #000;
+  border: none; border-radius: 8px;
   font-weight: 700; font-size: 14px;
-  border: none; border-radius: 9px; cursor: pointer;
-  margin-top: 4px; transition: opacity 0.2s;
+  cursor: pointer; transition: opacity 0.2s;
+  font-family: 'DM Sans', sans-serif;
 }
-.popup-submit:hover { opacity: 0.88; }
-.popup-close {
-  display: block; text-align: center; margin-top: 14px;
-  font-size: 13px; color: var(--muted); cursor: pointer;
+#leadPopup .popup-submit:hover { opacity: 0.88; }
+#leadPopup .popup-maybe {
+  display: block; text-align: center; margin-top: 12px;
+  font-size: 13px; color: #aaa; cursor: pointer;
   background: none; border: none; width: 100%;
+  text-decoration: underline;
 }
-/* Success */
-.success-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
-  display: none; justify-content: center; align-items: center; z-index: 9999;
+
+/* ─── SUCCESS POPUP ─── */
+#successPopup {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999; justify-content: center; align-items: center;
 }
-.success-box {
-  background: var(--surface2); border: 1px solid var(--gold-border);
-  border-radius: 18px; padding: 40px 32px; text-align: center;
-  max-width: 340px; animation: fadeUp 0.35s ease both;
+#successPopup .success-inner {
+  background: #111; padding: 30px; border-radius: 12px; text-align: center;
+  max-width: 360px; width: 90%;
+  border: 1px solid #C9A84C;
+  animation: fadeUp 0.35s ease both;
 }
-.success-box .tick {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--gold-dim); border: 1px solid var(--gold-border);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 16px; font-size: 22px; color: var(--gold);
+#successPopup h2 { color: #fff; font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 1.45rem; }
+#successPopup p { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+#successPopup .wa-btn {
+  display: inline-block; background: #C9A84C; color: #000;
+  padding: 12px 20px; border-radius: 6px;
+  text-decoration: none; font-weight: 600; font-size: 14px;
+  width: 100%; box-sizing: border-box; margin-bottom: 10px;
 }
-.success-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.45rem; margin-bottom: 8px;
+#successPopup .pay-btn {
+  display: inline-block; background: #C9A84C; color: #000;
+  padding: 12px 20px; border-radius: 6px;
+  text-decoration: none; font-weight: 600; font-size: 14px;
+  width: 100%; box-sizing: border-box; margin-bottom: 12px;
 }
-.success-box p { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
-.success-box .wa-link {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  background: #25D366; color: #fff; text-decoration: none; border: none;
-  font-weight: 700; font-size: 14px; padding: 13px 20px;
-  border-radius: 10px; margin-bottom: 10px; transition: opacity 0.2s;
+#successPopup .dismiss-btn {
+  background: none; border: none; color: #aaa;
+  font-size: 13px; cursor: pointer; text-decoration: underline;
 }
-.success-box .wa-link:hover { opacity: 0.88; }
-.success-box .pricing-link {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border);
-  text-decoration: none; border-bottom: 1px solid var(--gold-border) !important;
-  font-weight: 600; font-size: 13px; padding: 11px 20px;
-  border-radius: 10px; margin-bottom: 14px;
-}
-.success-box button { background: none; border: none; color: var(--muted); font-size: 12px; cursor: pointer; }
-/* ─── WHATSAPP ─── */
+
+/* ─── WHATSAPP FLOAT ─── */
 .wa-float {
   position: fixed; bottom: 26px; right: 26px;
   width: 58px; height: 58px; border-radius: 50%;
@@ -526,13 +533,12 @@ footer {
   font-size: 12px; color: #5C554D;
   border-top: 1px solid rgba(255,255,255,0.04);
 }
-footer a { color: #8C857B; text-decoration: none; border: none; }
+footer a { color: #8C857B; text-decoration: none; }
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-/* Scroll reveal */
 .reveal {
   opacity: 0; transform: translateY(24px);
   transition: opacity 0.65s ease, transform 0.65s ease;
@@ -541,11 +547,14 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
 </style>
 </head>
 <body>
+
 <div id="readProgress"></div>
+
 <nav>
   <a href="CoupleFit.html" class="nav-back"><i class="fa fa-arrow-left"></i> Back to Home</a>
   <a href="CoupleFit.html#pricing" class="nav-cta">View Pricing</a>
 </nav>
+
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge"><i class="fa fa-heart"></i> Couple Fitness Guide</div>
@@ -562,8 +571,10 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
     </div>
   </div>
 </section>
+
 <div class="page-wrap">
   <article class="article-body">
+
     <div class="article-section reveal">
       <p>
         Wedding planning is notoriously stressful. Between venue visits, menu tastings, and managing guest lists, finding time to hit the gym can feel like a chore. However, when couples decide to tackle their pre-wedding fitness goals <strong>together</strong>, the dynamic completely shifts.
@@ -589,6 +600,7 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         </div>
       </div>
     </div>
+
     <div class="article-section reveal" id="s1">
       <div class="section-num">01</div>
       <h2>Why Partner Accountability is Your Secret Weapon</h2>
@@ -615,6 +627,7 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         <p>Establish a rule early on: If one partner wants to skip the workout, the other partner has the right to override them (within reason). You will thank each other later when the wedding photos arrive.</p>
       </div>
     </div>
+
     <div class="article-section reveal" id="s2">
       <div class="section-num">02</div>
       <h2>The 12-Week Couple Workout Plan</h2>
@@ -645,18 +658,18 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         </div>
       </div>
     </div>
+
     <div class="article-section reveal" id="s3">
       <div class="section-num">03</div>
-      <h2>Cardio, Step Targets, & Running Mechanics</h2>
+      <h2>Cardio, Step Targets, &amp; Running Mechanics</h2>
       <p>
         Lifting weights shapes the body, but your daily movement is what melts the fat away. Don't underestimate the power of Non-Exercise Activity Thermogenesis (NEAT).
       </p>
-
       <h3>The 13,000 Step Challenge</h3>
       <p>
         As a couple, push each other to hit a daily target of <strong>13,000 steps</strong>. This consistent, low-intensity movement burns a massive amount of calories over a 12-week period without spiking hunger or cortisol levels. Take evening walks after dinner to hit this target—it's also a great time to unplug from wedding planning and just talk.
       </p>
-      <h3>Treadmill Sessions & Running Mechanics</h3>
+      <h3>Treadmill Sessions &amp; Running Mechanics</h3>
       <p>
         If you prefer indoor cardio, side-by-side treadmill runs are highly effective. However, a common mistake couples make is trying to blindly match each other's treadmill speed.
       </p>
@@ -665,6 +678,7 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         <li><i class="fa fa-angle-up"></i> <strong>Use Incline for Intensity:</strong> If one partner is a faster runner, let them increase their speed while the other increases the <em>incline</em>. This way, you both get an intense workout while running side-by-side at different paces.</li>
       </ul>
     </div>
+
     <div class="article-section reveal" id="s4">
       <div class="section-num">04</div>
       <h2>Nutrition for Two: Syncing Your Diets</h2>
@@ -692,6 +706,7 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         </li>
       </ul>
     </div>
+
     <div class="article-section reveal" id="s5">
       <div class="section-num">05</div>
       <h2>Best Partner-Assisted Exercises</h2>
@@ -706,11 +721,12 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         </div>
         <div class="info-card">
           <div class="card-icon-sm"><i class="fa fa-people-pulling"></i></div>
-          <h4>Mirror Planks & High Fives</h4>
+          <h4>Mirror Planks &amp; High Fives</h4>
           <p>Hold a push-up plank position facing each other. Lift opposite hands and give each other a high-five. This challenges core stability and anti-rotation mechanics.</p>
         </div>
       </div>
     </div>
+
     <div class="related-section reveal">
       <div class="related-title"><i class="fa fa-book-open"></i> Related Guides</div>
       <div class="related-grid">
@@ -725,14 +741,17 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         </a>
       </div>
     </div>
+
     <div class="cta-section reveal">
       <h2>Transform Together.</h2>
       <p>Don't leave your wedding day confidence to chance. Get a synchronized, customized training and nutrition plan designed specifically for couples.</p>
-      <a href="#" class="cta-btn" onclick="openPopup(); return false;">
+      <button class="cta-btn" onclick="openPopup(); return false;">
         Apply for CoupleFit <i class="fa fa-arrow-right"></i>
-      </a>
+      </button>
     </div>
+
   </article>
+
   <aside class="sidebar" aria-label="Article navigation">
     <div class="sidebar-sticky">
       <div class="sidebar-box">
@@ -740,7 +759,7 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
         <ul class="toc-list">
           <li><a href="#s1"><i class="fa fa-chevron-right"></i> Partner Accountability</a></li>
           <li><a href="#s2"><i class="fa fa-chevron-right"></i> 12-Week Workout Plan</a></li>
-          <li><a href="#s3"><i class="fa fa-chevron-right"></i> Cardio & Step Targets</a></li>
+          <li><a href="#s3"><i class="fa fa-chevron-right"></i> Cardio &amp; Step Targets</a></li>
           <li><a href="#s4"><i class="fa fa-chevron-right"></i> Syncing Your Diets</a></li>
           <li><a href="#s5"><i class="fa fa-chevron-right"></i> Partner Exercises</a></li>
         </ul>
@@ -748,109 +767,154 @@ footer a { color: #8C857B; text-decoration: none; border: none; }
       <div class="side-cta">
         <h4>Get a Couple's Plan</h4>
         <p>A unified approach built for your timeline, goals, and diet.</p>
-        <a href="#" onclick="openPopup(); return false;">Apply Now →</a>
+        <a onclick="openPopup(); return false;">Apply Now →</a>
       </div>
     </div>
   </aside>
-</div><footer>
+</div>
+
+<footer>
   <p>© 2026 CoupleFit · All rights reserved · <a href="CoupleFit.html">Home</a> · <a href="/guides">All Guides</a></p>
 </footer>
+
 <a href="https://wa.me/919588859960" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
-<div class="popup" id="popup" role="dialog" aria-modal="true">
-  <div class="popup-box">
-    <h3>Check If You Qualify</h3>
-    <p class="popup-sub">We'll review your details and reach out within 24 hours.</p>
+
+<!-- ── LEAD POPUP (matches BrideFit style) ── -->
+<div id="leadPopup">
+  <div class="popup-inner">
+    <button class="popup-close-x" onclick="closePopup()">✖</button>
+    <h3>Check If You Qualify for CoupleFit</h3>
+    <p class="popup-sub">Apply below — we'll get back within 24 hours.</p>
     <form id="leadForm">
-      <input name="name" placeholder="Your Names (Couple)" required autocomplete="name">
-      <input name="phone" type="tel" placeholder="Phone Number" required autocomplete="tel">
-      <input name="location" placeholder="Your City" required>
-      <button class="popup-submit" type="submit">Submit Application</button>
+      <input type="text"  name="name"     placeholder="Your Names (Couple)" required>
+      <input type="tel"   name="phone"    placeholder="Phone Number"        required>
+      <input type="text"  name="location" placeholder="Your City"           required>
+      <button type="submit" class="popup-submit">Submit Application</button>
     </form>
-    <button class="popup-close" onclick="closePopup()">Maybe Later</button>
+    <button class="popup-maybe" onclick="closePopup()">Maybe Later</button>
   </div>
 </div>
-<div class="success-overlay" id="success" role="dialog" aria-modal="true">
-  <div class="success-box">
-    <div class="tick"><i class="fa fa-check"></i></div>
-    <h3>Application Received</h3>
-    <p>Our coaching team will review your details and reach out shortly. Meanwhile—</p>
-    <a id="waBtn" href="#" class="wa-link">
-      <i class="fab fa-whatsapp"></i> Connect on WhatsApp
-    </a>
-    <a href="CoupleFit.html#pricing" class="pricing-link">
-      <i class="fa fa-tag"></i> View Pricing Plans
-    </a>
-    <button onclick="closeSuccess()">Dismiss</button>
+
+<!-- ── SUCCESS POPUP (matches BrideFit style) ── -->
+<div id="successPopup">
+  <div class="success-inner">
+    <h2>Application Received</h2>
+    <p>If you're serious, message us on WhatsApp to fast-track your review.</p>
+    <a id="whatsappBtn" href="#" target="_blank" class="wa-btn">Continue on WhatsApp</a>
+    <a href="https://rzp.io/rzp/t9HOmi63" target="_blank" class="pay-btn">Pay &amp; Start Instantly</a>
+    <div>
+      <button class="dismiss-btn" onclick="closeSuccessPopup()">Maybe later</button>
+    </div>
   </div>
 </div>
+
+<!-- Hidden iframe for silent Google Forms submission -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 <script>
 // ─── PROGRESS BAR ───
 window.addEventListener('scroll', function () {
-  const doc = document.documentElement;
-  const scrolled = doc.scrollTop || document.body.scrollTop;
-  const total = doc.scrollHeight - doc.clientHeight;
-  const pct = scrolled / total;
-  document.getElementById('readProgress').style.transform = 'scaleX(' + pct + ')';
-});
+  var doc = document.documentElement;
+  var scrolled = doc.scrollTop || document.body.scrollTop;
+  var total = doc.scrollHeight - doc.clientHeight;
+  document.getElementById('readProgress').style.transform = 'scaleX(' + (scrolled / total) + ')';
+}, { passive: true });
+
 // ─── SCROLL REVEAL ───
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver(function (entries) {
+var revealObserver = new IntersectionObserver(function (entries, obs) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
+      obs.unobserve(entry.target);
     }
   });
 }, { threshold: 0.08 });
-reveals.forEach(function (el) { revealObserver.observe(el); });
+document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+
 // ─── ACTIVE TOC ───
-const sections = document.querySelectorAll('[id^="s"]');
-const tocLinks = document.querySelectorAll('.toc-list a');
-const tocObserver = new IntersectionObserver(function (entries) {
+var sections = document.querySelectorAll('[id^="s"]');
+var tocLinks = document.querySelectorAll('.toc-list a');
+var tocObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
       tocLinks.forEach(function (l) { l.classList.remove('active'); });
-      const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+      var active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
       if (active) active.classList.add('active');
     }
   });
 }, { rootMargin: '-30% 0px -65% 0px' });
 sections.forEach(function (s) { tocObserver.observe(s); });
-// ─── POPUP ───
+
+// ─── POPUP OPEN / CLOSE ───
 function openPopup() {
-  document.getElementById('popup').style.display = 'flex';
+  document.getElementById('leadPopup').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 function closePopup() {
-  document.getElementById('popup').style.display = 'none';
+  document.getElementById('leadPopup').style.display = 'none';
   document.body.style.overflow = '';
 }
-function closeSuccess() {
-  document.getElementById('success').style.display = 'none';
+function closeSuccessPopup() {
+  document.getElementById('successPopup').style.display = 'none';
   document.body.style.overflow = '';
 }
-document.getElementById('leadForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const data = new FormData(this);
-  const msg = encodeURIComponent(
-    'Hi CoupleFit, we applied for your couple wedding transformation program.\n' +
-    'Names: ' + data.get('name') + '\n' +
-    'Phone: ' + data.get('phone') + '\n' +
-    'City: ' + data.get('location')
-  );
-  document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
-  closePopup();
-  document.getElementById('success').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-});
-// Close popup on backdrop click
-document.getElementById('popup').addEventListener('click', function (e) {
+
+// Close on backdrop click
+document.getElementById('leadPopup').addEventListener('click', function (e) {
   if (e.target === this) closePopup();
 });
-document.getElementById('success').addEventListener('click', function (e) {
-  if (e.target === this) closeSuccess();
+document.getElementById('successPopup').addEventListener('click', function (e) {
+  if (e.target === this) closeSuccessPopup();
+});
+
+// Close on Escape
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') { closePopup(); closeSuccessPopup(); }
+});
+
+// ─── FORM SUBMIT ───
+document.getElementById('leadForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var formData = new FormData(this);
+
+  // ── Silent POST to same Google Forms sheet as BrideFit ──
+  var googleForm = document.createElement('form');
+  googleForm.method = 'POST';
+  googleForm.action  = 'https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse';
+  googleForm.target  = 'hidden_iframe';
+
+  function addField(name, value) {
+    var input = document.createElement('input');
+    input.type  = 'hidden';
+    input.name  = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+  addField('entry.525461384',  formData.get('name'));
+  addField('entry.933229371',  formData.get('phone'));
+  addField('entry.1013425097', formData.get('location'));
+
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+  document.body.removeChild(googleForm);
+
+  // ── Build WhatsApp pre-filled message ──
+  var name = formData.get('name') || 'there';
+  var message = 'Hi CoupleFit, we just applied for your couple wedding transformation program.\n'
+              + 'Names: '    + formData.get('name')     + '\n'
+              + 'Phone: '    + formData.get('phone')    + '\n'
+              + 'City: '     + formData.get('location') + '\n'
+              + 'Looking forward!';
+  document.getElementById('whatsappBtn').href =
+    'https://wa.me/919588859960?text=' + encodeURIComponent(message);
+
+  // ── Show success, reset form ──
+  closePopup();
+  document.getElementById('successPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  this.reset();
 });
 </script>
 </body>
