@@ -260,30 +260,32 @@ blockquote::before{content:'\f10d';font-family:'Font Awesome 6 Free';font-weight
 .btn-primary{display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:none;background:linear-gradient(135deg,var(--gold),var(--rose));color:#fff;text-decoration:none;font-weight:800;font-size:16px;padding:16px 36px;border-radius:12px;transition:var(--transition);box-shadow:0 10px 30px rgba(212,116,140,0.28)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(212,116,140,0.45)}
 /* ── POPUP ── */
-.popup{position:fixed;inset:0;background:rgba(0,0,0,0.82);backdrop-filter:blur(10px);display:none;justify-content:center;align-items:center;z-index:9999;padding:20px}
-.popup-box{background:var(--surface2);border:1px solid var(--rose-border);border-radius:20px;padding:38px 32px;width:360px;max-width:100%;animation:fadeUp 0.35s ease both;position:relative}
-.popup-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose),var(--gold),transparent);border-radius:20px 20px 0 0}
+#leadPopup{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);display:none;justify-content:center;align-items:center;z-index:9999;padding:20px}
+.popup-inner{background:#111;border:1px solid var(--rose-border);border-radius:20px;padding:38px 32px;width:380px;max-width:100%;animation:fadeUp 0.35s ease both;position:relative}
+.popup-inner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose),var(--gold),transparent);border-radius:20px 20px 0 0}
 .popup-logo{font-family:'Playfair Display',serif;font-size:14px;color:var(--rose-light);font-weight:700;margin-bottom:20px}
-.popup-box h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white);margin-bottom:6px}
+.popup-inner h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white);margin-bottom:6px}
 .popup-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.6}
-.popup-box input{width:100%;padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid var(--rose-border);border-radius:10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:10px;transition:border-color 0.2s,background 0.2s}
-.popup-box input:focus{border-color:var(--rose);background:rgba(212,116,140,0.04)}
-.popup-box input::placeholder{color:#5a5550}
-.popup-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--rose));color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;border:none;border-radius:10px;cursor:pointer;margin-top:4px;transition:opacity 0.2s,transform 0.2s;box-shadow:0 6px 20px rgba(212,116,140,0.25)}
+.popup-close-x{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:var(--muted);font-size:14px;width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.popup-close-x:hover{color:var(--white);background:rgba(255,255,255,0.12)}
+.popup-inner input{width:100%;padding:12px 16px;background:#222;border:1px solid var(--rose-border);border-radius:10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:10px;transition:border-color 0.2s,background 0.2s}
+.popup-inner input:focus{border-color:var(--rose);background:#2a2020}
+.popup-inner input::placeholder{color:#5a5550}
+.popup-submit{width:100%;padding:14px;background:#00ff88;color:#000;font-family:'DM Sans',sans-serif;font-weight:800;font-size:15px;border:none;border-radius:10px;cursor:pointer;margin-top:4px;transition:opacity 0.2s,transform 0.2s;letter-spacing:0.02em}
 .popup-submit:hover{opacity:0.88;transform:translateY(-1px)}
-.popup-close{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--muted);cursor:pointer;background:none;border:none;width:100%;transition:color 0.2s}
-.popup-close:hover{color:var(--white)}
+.popup-maybe{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--muted);cursor:pointer;background:none;border:none;width:100%;transition:color 0.2s}
+.popup-maybe:hover{color:var(--white)}
 /* ── SUCCESS ── */
-.success-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.88);backdrop-filter:blur(10px);display:none;justify-content:center;align-items:center;z-index:9999;padding:20px}
-.success-box{background:var(--surface2);border:1px solid var(--rose-border);border-radius:20px;padding:44px 32px;text-align:center;max-width:360px;width:100%;animation:fadeUp 0.35s ease both}
-.tick{width:60px;height:60px;border-radius:50%;background:var(--rose-dim);border:1px solid var(--rose-border);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:24px;color:var(--rose);animation:popIn 0.4s ease both}
-.success-box h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:8px}
-.success-box p{font-size:14px;color:var(--muted);margin-bottom:24px}
-.wa-link{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;text-decoration:none;border:none;font-weight:700;font-size:14px;padding:13px 20px;border-radius:10px;margin-bottom:10px;transition:opacity 0.2s}
-.wa-link:hover{opacity:0.88}
-.pricing-link{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--rose-dim);color:var(--rose-light);border:1px solid var(--rose-border);text-decoration:none;font-weight:600;font-size:13px;padding:11px 20px;border-radius:10px;margin-bottom:14px}
-.success-box button{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;transition:color 0.2s}
-.success-box button:hover{color:var(--white)}
+#successPopup{position:fixed;inset:0;background:rgba(0,0,0,0.88);backdrop-filter:blur(10px);display:none;justify-content:center;align-items:center;z-index:9999;padding:20px}
+.success-inner{background:#111;border:1px solid var(--rose-border);border-radius:20px;padding:44px 32px;text-align:center;max-width:380px;width:100%;animation:fadeUp 0.35s ease both}
+.success-inner h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white);margin-bottom:10px}
+.success-inner p{font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 20px;border-radius:10px;margin-bottom:10px;transition:opacity 0.2s}
+.wa-btn:hover{opacity:0.88}
+.pay-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--rose));color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:13px 20px;border-radius:10px;margin-bottom:16px;transition:opacity 0.2s,transform 0.2s}
+.pay-btn:hover{opacity:0.88;transform:translateY(-1px)}
+.dismiss-btn{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;transition:color 0.2s}
+.dismiss-btn:hover{color:var(--white)}
 /* ── WA FLOAT ── */
 .wa-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:999;border:none;box-shadow:0 8px 28px rgba(37,211,102,0.4);transition:transform 0.2s,box-shadow 0.2s}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 12px 36px rgba(37,211,102,0.5)}
@@ -414,9 +416,10 @@ footer a:hover{color:var(--rose-light)}
 </footer>
 <a href="https://wa.me/919588859960" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with BrideFit on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-<!-- POPUP -->
-<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-  <div class="popup-box">
+<!-- LEAD POPUP -->
+<div id="leadPopup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-inner">
+    <button class="popup-close-x" onclick="closePopup()">✖</button>
     <div class="popup-logo">BrideFit by GroomFit</div>
     <h3 id="popup-title">Check If You Qualify</h3>
     <p class="popup-sub">We personally review every application and reach out within 24 hours.</p>
@@ -427,107 +430,128 @@ footer a:hover{color:var(--rose-light)}
       <input name="location" placeholder="Your City" required>
       <button class="popup-submit" type="submit">Submit Application →</button>
     </form>
-    <button class="popup-close" onclick="closePopup()">Maybe Later</button>
+    <button class="popup-maybe" onclick="closePopup()">Maybe Later</button>
   </div>
 </div>
 
-<!-- SUCCESS -->
-<div class="success-overlay" id="success" role="dialog" aria-modal="true">
-  <div class="success-box">
-    <div class="tick"><i class="fa fa-check"></i></div>
-    <h3>Application Received</h3>
-    <p>Our team will review and reach out shortly. Connect on WhatsApp for a faster response.</p>
-    <a id="waBtn" href="#" class="wa-link"><i class="fab fa-whatsapp"></i> Connect on WhatsApp</a>
-    <a href="https://www.groomfit.in/#pricing" class="pricing-link"><i class="fa fa-tag"></i> View BrideFit Plans</a>
-    <button onclick="closeSuccess()">Dismiss</button>
+<!-- SUCCESS POPUP -->
+<div id="successPopup" role="dialog" aria-modal="true">
+  <div class="success-inner">
+    <h2>Application Received 🎉</h2>
+    <p>Our team will review and reach out shortly. Message us on WhatsApp to fast-track your review.</p>
+    <a id="waBtn" href="#" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i> Continue on WhatsApp</a>
+    <a href="https://rzp.io/rzp/t9HOmi63" target="_blank" class="pay-btn"><i class="fa fa-bolt"></i> Pay &amp; Start Instantly</a>
+    <div><button class="dismiss-btn" onclick="closeSuccessPopup()">Maybe later</button></div>
   </div>
 </div>
+
+<!-- Hidden iframe for silent Google Forms POST -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <script>
 // Progress Bar
-window.addEventListener('scroll', () => {
-  const doc = document.documentElement;
-  const scrolled = doc.scrollTop || document.body.scrollTop;
-  const total = doc.scrollHeight - doc.clientHeight;
-  document.getElementById('readProgress').style.transform = `scaleX(${scrolled / total})`;
-  const nav = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  var doc = document.documentElement;
+  var scrolled = doc.scrollTop || document.body.scrollTop;
+  var total = doc.scrollHeight - doc.clientHeight;
+  document.getElementById('readProgress').style.transform = 'scaleX(' + (scrolled / total) + ')';
+  var nav = document.getElementById('navbar');
   if (scrolled > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
 }, { passive: true });
 
 // Scroll Reveal
-const revealObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
+var revealObserver = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
 
 // TOC Active
-const sections = document.querySelectorAll('[id^="s"]');
-const tocLinks = document.querySelectorAll('.toc-list a');
-const tocObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+var sections = document.querySelectorAll('[id^="s"]');
+var tocLinks = document.querySelectorAll('.toc-list a');
+var tocObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
     if (entry.isIntersecting) {
-      tocLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+      tocLinks.forEach(function(l) { l.classList.remove('active'); });
+      var link = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
       if (link) link.classList.add('active');
     }
   });
 }, { rootMargin: '-20% 0px -75% 0px' });
+sections.forEach(function(sec) { tocObserver.observe(sec); });
 
-sections.forEach(sec => tocObserver.observe(sec));
-
-// Popup Functions
+// Popup open / close
 function openPopup() {
-  document.getElementById('popup').style.display = 'flex';
+  document.getElementById('leadPopup').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
-
 function closePopup() {
-  document.getElementById('popup').style.display = 'none';
+  document.getElementById('leadPopup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function closeSuccessPopup() {
+  document.getElementById('successPopup').style.display = 'none';
   document.body.style.overflow = '';
 }
 
-function closeSuccess() {
-  document.getElementById('success').style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-// Form Submit
+// Form Submit — silent Google Forms POST + WhatsApp + success popup
 document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const data = new FormData(this);
-  const msg = encodeURIComponent(
-    'Hi BrideFit! I applied for your bridal transformation programme.\n\n' +
-    'Name: ' + data.get('name') + '\n' +
-    'Phone: ' + data.get('phone') + '\n' +
-    'Wedding Date: ' + data.get('wedding') + '\n' +
-    'City: ' + data.get('location')
-  );
-  document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
+  var formData = new FormData(this);
+
+  // Silent POST to Google Forms via hidden iframe
+  var googleForm = document.createElement('form');
+  googleForm.method = 'POST';
+  googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse';
+  googleForm.target = 'hidden_iframe';
+
+  function addField(name, value) {
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+
+  addField('entry.525461384', formData.get('name'));
+  addField('entry.933229371', formData.get('phone'));
+  addField('entry.1013425097', formData.get('location'));
+
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+  document.body.removeChild(googleForm);
+
+  // Build WhatsApp pre-filled message
+  var message = 'Hi BrideFit! I just applied for your bridal transformation programme.\n\n' +
+    'Name: ' + formData.get('name') + '\n' +
+    'Phone: ' + formData.get('phone') + '\n' +
+    'Wedding Date: ' + formData.get('wedding') + '\n' +
+    'City: ' + formData.get('location');
+  document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + encodeURIComponent(message);
+
   closePopup();
-  document.getElementById('success').style.display = 'flex';
+  document.getElementById('successPopup').style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  this.reset();
 });
 
 // Close on backdrop click
-document.getElementById('popup').addEventListener('click', function(e) {
+document.getElementById('leadPopup').addEventListener('click', function(e) {
   if (e.target === this) closePopup();
 });
-
-document.getElementById('success').addEventListener('click', function(e) {
-  if (e.target === this) closeSuccess();
+document.getElementById('successPopup').addEventListener('click', function(e) {
+  if (e.target === this) closeSuccessPopup();
 });
 
 // Close on Escape
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closePopup();
-    closeSuccess();
+    closeSuccessPopup();
   }
 });
 </script>
