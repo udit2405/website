@@ -81,17 +81,16 @@
       display: flex; align-items: center; gap: 8px; letter-spacing: 0.04em;
     }
     .nav-logo-img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
-  transition: filter 0.3s ease;
-}
-.nav-logo-img:hover {
-  filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
-}
-
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
+      transition: filter 0.3s ease;
+    }
+    .nav-logo-img:hover {
+      filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
+    }
     .logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); animation: pulse 2s ease-in-out infinite; }
     .nav-actions { display: flex; align-items: center; gap: 14px; }
     .nav-back { color: var(--muted-light); text-decoration: none; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px; border: none; transition: color 0.2s; }
@@ -443,14 +442,12 @@
 <body>
 <!-- Hidden iframe for Google Forms submission -->
 <iframe name="hidden_iframe" style="display:none;"></iframe>
-
 <div id="readProgress"></div>
 <!-- NAV -->
 <nav>
   <a href="https://www.groomfit.in/" class="nav-logo">
-  <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
-</a>
-
+    <span class="nav-logo-fallback">GroomFit</span>
+  </a>
   <div class="nav-actions">
     <a href="https://www.groomfit.in/" class="nav-back"><i class="fa fa-arrow-left"></i> Home</a>
     <a href="https://www.groomfit.in/#pricing" class="nav-cta">View Plans</a>
@@ -768,16 +765,6 @@
           <span class="wf-stat"><i class="fa fa-fire"></i> <strong>300–380 kcal</strong> per session</span>
         </div>
       </div>
-      <a href="/hiit-workout-for-fat-loss.html" class="internal-link-box reveal">
-        <div class="ilb-left">
-          <div class="ilb-icon"><i class="fa fa-bolt"></i></div>
-          <div>
-            <div class="ilb-label">Related Guide</div>
-            <div class="ilb-title">HIIT Workout for Fast Fat Loss — Full Protocol Guide</div>
-          </div>
-        </div>
-        <i class="fa fa-arrow-right arrow"></i>
-      </a>
     </div>
     <!-- SECTION 4: WORKOUT 3 - ADVANCED -->
     <div class="article-section reveal" id="s4">
@@ -949,16 +936,6 @@
           Morning workouts — before the day's demands pile up — have a 71% higher completion rate than evening sessions. Set your clothes out the night before. Don't make the decision in the morning. <strong>The decision was made the night before when you laid out your kit.</strong> Morning you just executes.
         </p>
       </div>
-      <a href="/how-to-stay-consistent-in-fitness.html" class="internal-link-box reveal">
-        <div class="ilb-left">
-          <div class="ilb-icon"><i class="fa fa-calendar-check"></i></div>
-          <div>
-            <div class="ilb-label">Related Guide</div>
-            <div class="ilb-title">How to Stay Consistent in Your Fitness Journey</div>
-          </div>
-        </div>
-        <i class="fa fa-arrow-right arrow"></i>
-      </a>
     </div>
     <!-- SECTION 6: 4-Week Progression -->
     <div class="article-section reveal" id="s6">
@@ -1189,7 +1166,6 @@
         <p>Send to a groom who needs this.</p>
         <div class="share-btns">
           <button class="share-btn" onclick="window.open('https://wa.me/?text=20%20Minute%20Fat%20Burning%20Workout%20at%20Home%20-%20https://groomfit.in/20-minute-fat-burning-workout-at-home.html')"><i class="fab fa-whatsapp"></i></button>
-
           <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'fa fa-check\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'fa fa-link\'></i>',2000)"><i class="fa fa-link"></i></button>
         </div>
       </div>
@@ -1204,11 +1180,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div>
-      <img src="logo.png" alt="GroomFit" class="footer-logo-img"
-        onerror="this.style.display='none'; document.getElementById('footerBrand').style.display='block';">
-      <span class="footer-brand" id="footerBrand" style="display:none;">GroomFit</span>
-    </div>
+    <span>GroomFit</span>
     <span>·</span>
     <span>© 2024 All rights reserved</span>
     <span>·</span>
@@ -1231,13 +1203,13 @@
     <form id="leadForm">
       <input name="name" placeholder="Your Full Name" required autocomplete="name">
       <input name="phone" type="tel" placeholder="Phone Number" required autocomplete="tel">
-     
       <input name="location" placeholder="Your City" required>
       <button class="popup-submit" type="submit">Submit Application →</button>
     </form>
     <button class="popup-close" onclick="closePopup()">Maybe Later</button>
   </div>
 </div>
+<!-- SUCCESS OVERLAY -->
 <div class="success-overlay" id="success" role="dialog" aria-modal="true">
   <div class="success-box">
     <div class="tick"><i class="fa fa-check"></i></div>
@@ -1249,33 +1221,37 @@
   </div>
 </div>
 <script>
-  // Progress bar
+  // ─── PROGRESS BAR ───
   window.addEventListener('scroll', function () {
     const doc = document.documentElement;
     document.getElementById('readProgress').style.transform = 'scaleX(' + (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) + ')';
   });
-  // Scroll reveal
+  // ─── SCROLL REVEAL ───
   const revealEls = document.querySelectorAll('.reveal');
-  new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.07 }).observe && revealEls.forEach(function(el){
-    new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); } }); }, { threshold: 0.07 }).observe(el);
+  revealEls.forEach(function(el){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.07 }).observe(el);
   });
-  // Active TOC
+  // ─── ACTIVE TOC ───
   const sections = document.querySelectorAll('[id^="s"]');
   const tocLinks = document.querySelectorAll('.toc-list a');
-  new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        tocLinks.forEach(function (l) { l.classList.remove('active'); });
-        const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-25% 0px -70% 0px' }).observe && sections.forEach(function(s){
-    new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ tocLinks.forEach(function(l){ l.classList.remove('active'); }); const a = document.querySelector('.toc-list a[href="#'+e.target.id+'"]'); if(a) a.classList.add('active'); } }); }, { rootMargin: '-25% 0px -70% 0px' }).observe(s);
+  sections.forEach(function(s){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          tocLinks.forEach(function(l){ l.classList.remove('active'); });
+          const a = document.querySelector('.toc-list a[href="#'+e.target.id+'"]');
+          if(a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-25% 0px -70% 0px' }).observe(s);
   });
-  // Animated counters
+  // ─── ANIMATED COUNTERS ───
   function animateCounter(el) {
     const match = el.textContent.match(/^(\d+)/);
     if (!match) return;
@@ -1283,20 +1259,38 @@
     const suffix = el.innerHTML.replace(/^\d+/, '');
     let current = 0;
     const step = Math.ceil(target / 40);
-    const iv = setInterval(function () { current = Math.min(current + step, target); el.innerHTML = current + suffix; if (current >= target) clearInterval(iv); }, 32);
+    const iv = setInterval(function () {
+      current = Math.min(current + step, target);
+      el.innerHTML = current + suffix;
+      if (current >= target) clearInterval(iv);
+    }, 32);
   }
   document.querySelectorAll('.stat-num').forEach(function (el) {
-    new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { animateCounter(e.target); } }); }, { threshold: 0.5 }).observe(el);
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+        }
+      });
+    }, { threshold: 0.5 }).observe(el);
   });
-  // Nav scroll
+  // ─── NAV SCROLL ───
   window.addEventListener('scroll', function () {
     document.querySelector('nav').style.background = window.scrollY > 60 ? 'rgba(7,6,4,0.97)' : 'rgba(7,6,4,0.92)';
   });
-  // Popup
-  function openPopup() { document.getElementById('popup').style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-  function closePopup() { document.getElementById('popup').style.display = 'none'; document.body.style.overflow = ''; }
-  function closeSuccess() { document.getElementById('success').style.display = 'none'; document.body.style.overflow = ''; }
-
+  // ─── POPUP FUNCTIONS ───
+  function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  function closeSuccess() {
+    document.getElementById('success').style.display = 'none';
+    document.body.style.overflow = '';
+  }
   // ── FORM SUBMIT ──
 document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -1322,25 +1316,61 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
   googleForm.submit();
   document.body.removeChild(googleForm);
 
-    // Prepare WhatsApp message
-    const msg = encodeURIComponent(
-      'Hi GroomFit! I applied for your 20-minute home workout programme.\n\n' +
-      'Name: ' + formData.get('name') + '\n' +
-      'Phone: ' + formData.get('phone') + '\n' +
-      'Wedding Date: ' + formData.get('wedding') + '\n' +
-      'City: ' + formData.get('location')
-    );
+  // Build WhatsApp link
+  const name = formData.get('name') || '';
+  const phone = formData.get('phone') || '';
+  const location = formData.get('location') || '';
+  const message = `Hi GroomFit, I applied for your belly fat transformation program.\nName: ${name}\nPhone: ${phone}\nCity: ${location}`;
 
-    document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
+  document.getElementById('whatsappBtn').href =
+    'https://wa.me/919588859960?text=' + encodeURIComponent(message);
 
+  // Show success popup
+  closePopup();
+  document.getElementById('successPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  // Reset form
+  this.reset();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePopup();
+    closeSuccessPopup();
+  }
+});
+</script>
+</body>
+</html>
+    // Build WhatsApp message
+    const name = formData.get('name') || '';
+    const phone = formData.get('phone') || '';
+    const location = formData.get('location') || '';
+    const message = `Hi GroomFit, I applied for your 20-minute home workout programme.\nName: ${name}\nPhone: ${phone}\nCity: ${location}`;
+    document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + encodeURIComponent(message);
+    // Show success popup
     closePopup();
     document.getElementById('success').style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    // Reset form
+    this.reset();
   });
-
-  document.getElementById('popup').addEventListener('click', function (e) { if (e.target === this) closePopup(); });
-  document.getElementById('success').addEventListener('click', function (e) { if (e.target === this) closeSuccess(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closePopup(); closeSuccess(); } });
+  // ─── CLOSE ON BACKDROP CLICK ───
+  document.getElementById('popup').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+  document.getElementById('success').addEventListener('click', function(e) {
+    if (e.target === this) closeSuccess();
+  });
+  // ─── CLOSE ON ESCAPE ───
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closePopup();
+      closeSuccess();
+    }
+  });
 </script>
 </body>
 </html>
