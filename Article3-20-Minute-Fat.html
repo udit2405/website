@@ -26,10 +26,8 @@
     "dateModified": "2025-07-01"
   }
   </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     /* ─── ROOT ─── */
     :root {
@@ -56,15 +54,12 @@
       --green-dim: rgba(80,200,120,0.07);
       --green-border: rgba(80,200,120,0.18);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--white); line-height: 1.85; overflow-x: hidden; }
-
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 4px; }
-
     /* ─── PROGRESS ─── */
     #readProgress {
       position: fixed; top: 64px; left: 0; right: 0; height: 2px;
@@ -72,7 +67,6 @@
       transform-origin: left; transform: scaleX(0); z-index: 999;
       transition: transform 0.1s linear; box-shadow: 0 0 10px var(--gold-glow);
     }
-
     /* ─── NAV ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; height: 64px;
@@ -86,7 +80,6 @@
       font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--gold);
       display: flex; align-items: center; gap: 8px; letter-spacing: 0.04em;
     }
-
     .nav-logo-img {
   height: 48px;
   width: auto;
@@ -95,11 +88,10 @@
   filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
   transition: filter 0.3s ease;
 }
-
 .nav-logo-img:hover {
   filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
 }
-    
+
     .logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); animation: pulse 2s ease-in-out infinite; }
     .nav-actions { display: flex; align-items: center; gap: 14px; }
     .nav-back { color: var(--muted-light); text-decoration: none; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px; border: none; transition: color 0.2s; }
@@ -111,7 +103,6 @@
       box-shadow: 0 4px 16px rgba(201,168,76,0.3);
     }
     .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(201,168,76,0.42); }
-
     /* ─── HERO ─── */
     .hero {
       min-height: 92vh; display: flex; flex-direction: column; justify-content: flex-end;
@@ -130,9 +121,7 @@
     .hero-orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,168,76,0.11) 0%, transparent 70%); top: 0%; right: 0%; }
     .hero-orb-2 { width: 280px; height: 280px; background: radial-gradient(circle, rgba(80,200,120,0.05) 0%, transparent 70%); top: 50%; right: 28%; animation-delay: -3.5s; animation-duration: 11s; }
     .hero-orb-3 { width: 220px; height: 220px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); bottom: 12%; left: 8%; animation-delay: -2s; animation-duration: 7s; }
-
     .hero-inner { max-width: var(--body-max); position: relative; z-index: 2; }
-
     .hero-badge {
       display: inline-flex; align-items: center; gap: 9px;
       background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
@@ -141,25 +130,21 @@
       color: var(--gold); margin-bottom: 26px; animation: fadeUp 0.7s ease both;
     }
     .badge-pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
-
     .hero h1 {
       font-family: 'Playfair Display', serif; font-size: clamp(2.3rem, 5.8vw, 4rem);
       font-weight: 800; line-height: 1.06; color: var(--white); letter-spacing: -0.02em;
       animation: fadeUp 0.7s 0.1s ease both;
     }
     .hero h1 em { font-style: italic; color: var(--gold); }
-
     .hero-sub {
       margin-top: 20px; max-width: 570px; font-size: 16.5px;
       color: var(--muted-light); font-weight: 300; line-height: 1.72;
       animation: fadeUp 0.7s 0.18s ease both;
     }
-
     .hero-meta { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 28px; animation: fadeUp 0.7s 0.24s ease both; }
     .meta-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
     .meta-item i { color: var(--gold); font-size: 11px; }
     .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
-
     /* 20-min breakdown bar */
     .time-breakdown {
       display: flex; align-items: stretch; border-radius: 12px; overflow: hidden;
@@ -176,7 +161,6 @@
     .tb-warm { flex: 3; background: rgba(201,168,76,0.1); color: var(--gold); border-right: 1px solid var(--gold-border); }
     .tb-work { flex: 15; background: linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.08)); color: var(--gold); border-right: 1px solid var(--gold-border); }
     .tb-cool { flex: 2; background: rgba(255,255,255,0.03); color: var(--muted); }
-
     .hero-scroll {
       position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
       z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
@@ -184,11 +168,9 @@
     }
     .hero-scroll span { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
     .scroll-line { width: 1px; height: 38px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 1.8s ease-in-out infinite; }
-
     /* ─── LAYOUT ─── */
     .page-wrap { display: grid; grid-template-columns: 1fr 290px; gap: 56px; max-width: 1140px; margin: 0 auto; padding: 72px 5% 100px; }
     @media (max-width: 920px) { .page-wrap { grid-template-columns: 1fr; } .sidebar { display: none; } }
-
     /* ─── SIDEBAR ─── */
     .sidebar-sticky { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 18px; }
     .sidebar-box { background: var(--surface); border: 1px solid var(--gold-border); border-radius: var(--radius); padding: 22px; transition: border-color 0.3s; }
@@ -198,26 +180,22 @@
     .toc-list li a { display: flex; align-items: flex-start; gap: 10px; text-decoration: none; color: var(--muted); font-size: 13px; padding: 8px 10px; border-radius: 9px; transition: background 0.2s, color 0.2s, transform 0.2s; line-height: 1.4; border: none; }
     .toc-list li a:hover, .toc-list li a.active { background: var(--gold-dim); color: var(--gold); transform: translateX(3px); }
     .toc-num { font-size: 10px; font-weight: 700; color: var(--gold); opacity: 0.6; flex-shrink: 0; margin-top: 2px; }
-
     /* What you need box */
     .need-list { display: flex; flex-direction: column; gap: 8px; }
     .need-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted-light); }
     .need-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--green-dim); border: 1px solid var(--green-border); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--green); flex-shrink: 0; }
     .need-none { font-size: 11px; color: var(--green); font-weight: 700; margin-top: 10px; display: flex; align-items: center; gap: 6px; padding: 8px 10px; background: var(--green-dim); border: 1px solid var(--green-border); border-radius: 8px; }
-
     /* Share */
     .share-box { text-align: center; }
     .share-box p { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
     .share-btns { display: flex; gap: 8px; justify-content: center; }
     .share-btn { width: 36px; height: 36px; border-radius: 9px; background: var(--gold-dim); border: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 13px; cursor: pointer; transition: background 0.2s, transform 0.2s; }
     .share-btn:hover { background: var(--gold-mid); transform: translateY(-2px); }
-
     .side-cta { background: linear-gradient(145deg, rgba(201,168,76,0.12), rgba(201,168,76,0.03)); border: 1px solid var(--gold-border); border-radius: var(--radius); padding: 24px; text-align: center; }
     .side-cta h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--white); margin-bottom: 8px; }
     .side-cta p { font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.6; }
     .side-cta a { display: block; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: #000; text-decoration: none; font-weight: 700; font-size: 13px; padding: 12px 16px; border-radius: 10px; border: none; transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(201,168,76,0.25); }
     .side-cta a:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
-
     /* ─── ARTICLE ─── */
     .article-body { min-width: 0; }
     .article-section { margin-bottom: 58px; padding-bottom: 58px; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -232,13 +210,11 @@
     p em { color: var(--gold-bright); font-style: normal; }
     a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-border); transition: border-color 0.2s; }
     a:hover { border-color: var(--gold); }
-
     /* ─── STORY CARD ─── */
     .story-card { background: var(--surface); border: 1px solid var(--gold-border); border-radius: var(--radius); padding: 28px 30px; margin: 28px 0; position: relative; overflow: hidden; }
     .story-card::before { content: '\201C'; position: absolute; top: -10px; left: 16px; font-family: 'Playfair Display', serif; font-size: 100px; color: rgba(201,168,76,0.06); line-height: 1; pointer-events: none; }
     .story-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
     .story-card p { font-size: 15px; color: #c8c0b0; margin: 0; font-style: italic; line-height: 1.82; }
-
     /* ─── STAT ROW ─── */
     .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 28px 0; }
     @media (max-width: 520px) { .stat-row { grid-template-columns: 1fr; } }
@@ -247,18 +223,15 @@
     .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 800; color: var(--gold); line-height: 1; }
     .stat-unit { font-size: 16px; color: var(--gold); font-weight: 600; }
     .stat-desc { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
-
     /* ─── CALLOUT ─── */
     .callout { border-left: 3px solid var(--gold); background: var(--gold-dim); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 28px 0; }
     .callout-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
     .callout p { color: #c8c0b0; margin: 0; font-size: 15px; line-height: 1.75; }
-
     /* ─── FACT BOX ─── */
     .fact-box { background: var(--surface); border: 1px solid var(--gold-border); border-radius: 14px; padding: 24px 28px; margin: 28px 0; position: relative; overflow: hidden; }
     .fact-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-bright), transparent); }
     .fact-box-title { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 9px; }
     .fact-box p { color: #bdb5a8; font-size: 14.5px; line-height: 1.75; margin: 0; }
-
     /* ─── SPACE REQUIRED VISUAL ─── */
     .space-visual {
       background: var(--surface); border: 1px solid var(--gold-border);
@@ -277,7 +250,6 @@
     .space-icon { font-size: 22px; color: var(--gold); opacity: 0.5; margin-bottom: 4px; }
     .space-info h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); margin-bottom: 6px; }
     .space-info p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.6; }
-
     /* ─── MUSCLE TARGET BADGES ─── */
     .muscle-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
     .muscle-tag {
@@ -288,18 +260,15 @@
     }
     .muscle-tag i { font-size: 11px; }
     .muscle-tag.primary { background: var(--gold-mid); border-color: rgba(201,168,76,0.35); }
-
     /* ─── WORKOUT BLOCK ─── */
     .workout-block { background: var(--surface); border: 1px solid var(--gold-border); border-radius: var(--radius); overflow: hidden; margin: 22px 0; transition: border-color 0.3s, box-shadow 0.3s; }
     .workout-block:hover { border-color: rgba(201,168,76,0.35); box-shadow: 0 8px 32px rgba(0,0,0,0.35); }
-
     .workout-header { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--gold-border); background: linear-gradient(90deg, rgba(201,168,76,0.08), transparent); gap: 12px; flex-wrap: wrap; }
     .workout-header-left { display: flex; align-items: center; gap: 14px; }
     .workout-icon { width: 42px; height: 42px; border-radius: 11px; background: var(--gold-dim); border: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 17px; flex-shrink: 0; }
     .workout-title { font-family: 'Playfair Display', serif; font-size: 1.08rem; color: var(--white); }
     .workout-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
     .workout-badge { display: inline-flex; align-items: center; gap: 5px; background: var(--gold-dim); border: 1px solid var(--gold-border); border-radius: 7px; padding: 5px 11px; font-size: 10px; color: var(--gold); font-weight: 700; letter-spacing: 0.08em; white-space: nowrap; }
-
     /* Phase strip */
     .phase-strip { display: flex; border-bottom: 1px solid rgba(255,255,255,0.04); }
     .phase-block { flex: 1; padding: 10px 14px; text-align: center; border-right: 1px solid rgba(255,255,255,0.04); }
@@ -308,7 +277,6 @@
     .phase-time { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--gold); line-height: 1; }
     .phase-label { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px; }
     .phase-block.active .phase-label { color: var(--gold); opacity: 0.75; }
-
     /* Exercise list */
     .exercise-list { padding: 6px 0; }
     .exercise-row { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; padding: 13px 24px; border-bottom: 1px solid rgba(255,255,255,0.03); transition: background 0.2s; }
@@ -318,24 +286,20 @@
     .ex-name { font-size: 14px; color: var(--white); font-weight: 500; }
     .ex-detail { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
     .ex-reps { display: inline-flex; align-items: center; background: var(--gold-dim); border: 1px solid var(--gold-border); border-radius: 7px; padding: 4px 10px; font-size: 11px; color: var(--gold); font-weight: 700; white-space: nowrap; }
-
     .workout-footer { padding: 14px 24px; background: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
     .wf-stat { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
     .wf-stat i { color: var(--gold); font-size: 11px; }
     .wf-stat strong { color: var(--white); }
-
     /* ─── CHECK LIST ─── */
     .check-list { list-style: none; display: flex; flex-direction: column; gap: 13px; margin: 18px 0; }
     .check-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: #bdb5a8; font-weight: 300; line-height: 1.65; }
     .check-list li i { color: var(--gold); font-size: 13px; margin-top: 4px; flex-shrink: 0; }
     .check-list li strong { color: var(--white); font-weight: 600; }
-
     /* ─── PULL QUOTE ─── */
     .pull-quote { border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); padding: 32px 0; margin: 40px 0; text-align: center; position: relative; }
     .pull-quote::before { content: ''; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
     .pull-quote p { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2.6vw, 1.5rem); font-style: italic; color: var(--white); line-height: 1.5; margin: 0; }
     .pull-quote cite { display: block; margin-top: 12px; font-size: 12px; color: var(--muted); font-style: normal; letter-spacing: 0.12em; text-transform: uppercase; }
-
     /* ─── 4-WEEK PLAN ─── */
     .week-grid { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
     .week-row { display: grid; grid-template-columns: 110px 1fr; background: var(--surface); border: 1px solid var(--gold-border); border-radius: 12px; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
@@ -346,7 +310,6 @@
     .week-content strong { color: var(--white); display: block; margin-bottom: 4px; font-size: 14.5px; }
     .week-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
     .wtag { display: inline-flex; align-items: center; gap: 4px; background: var(--gold-dim); border: 1px solid var(--gold-border); border-radius: 6px; padding: 2px 9px; font-size: 10px; color: var(--gold); font-weight: 600; }
-
     /* ─── MISTAKE LIST ─── */
     .mistake-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
     .mistake-item { display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--red-border); border-radius: 12px; padding: 16px 20px; transition: border-color 0.2s; }
@@ -354,7 +317,6 @@
     .mistake-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--red-dim); display: flex; align-items: center; justify-content: center; color: var(--red); font-size: 13px; flex-shrink: 0; }
     .mistake-item h4 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
     .mistake-item p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.6; }
-
     /* ─── DAILY SCHEDULE ─── */
     .schedule-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 24px 0; }
     @media (max-width: 560px) { .schedule-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -373,12 +335,10 @@
     .sch-day.rest .sch-icon { color: var(--muted); }
     .sch-label { font-size: 9px; color: var(--muted); letter-spacing: 0.06em; line-height: 1.4; }
     .sch-day.active .sch-label { color: var(--gold); opacity: 0.8; }
-
     /* ─── WARNING BOX ─── */
     .warning-box { background: var(--red-dim); border: 1px solid var(--red-border); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
     .warning-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
     .warning-box p { color: #c0a09a; font-size: 14.5px; margin: 0; line-height: 1.7; }
-
     /* ─── PROGRESS LADDER ─── */
     .progress-ladder { display: flex; flex-direction: column; gap: 0; position: relative; margin: 24px 0; }
     .progress-ladder::before { content: ''; position: absolute; left: 18px; top: 36px; bottom: 36px; width: 1px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1)); }
@@ -388,7 +348,6 @@
     .pl-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); margin-bottom: 5px; }
     .pl-content p { font-size: 14px; color: var(--muted-light); margin: 0; line-height: 1.65; }
     .pl-content strong { color: var(--white); }
-
     /* ─── INTERNAL LINK BOX ─── */
     .internal-link-box { background: var(--surface); border: 1px solid var(--gold-border); border-radius: 12px; padding: 18px 22px; margin: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: border-color 0.2s, transform 0.2s; }
     .internal-link-box:hover { border-color: rgba(201,168,76,0.35); transform: translateX(4px); }
@@ -397,7 +356,6 @@
     .ilb-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
     .ilb-title { font-size: 14px; color: var(--white); font-weight: 600; }
     .internal-link-box i.arrow { color: var(--gold); font-size: 12px; flex-shrink: 0; }
-
     /* ─── GROOMFIT SECTION ─── */
     .groomfit-section { background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%); border: 1px solid var(--gold-border); border-radius: 20px; padding: 36px; margin: 40px 0; position: relative; overflow: hidden; }
     .groomfit-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-bright), var(--gold)); }
@@ -408,7 +366,6 @@
     .groomfit-section p { font-size: 15px; color: #c0b8aa; line-height: 1.78; }
     .gf-cta-inline { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: #000; text-decoration: none; border: none; font-weight: 700; font-size: 14px; padding: 13px 26px; border-radius: 10px; margin-top: 22px; transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 6px 20px rgba(201,168,76,0.3); }
     .gf-cta-inline:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.42); }
-
     /* ─── RELATED / FINAL CTA ─── */
     .related-section { background: var(--surface); border: 1px solid var(--gold-border); border-radius: 18px; padding: 32px; margin-top: 56px; }
     .related-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
@@ -416,7 +373,6 @@
     .related-link { display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: var(--white); border: 1px solid var(--gold-border); border-radius: 10px; padding: 14px 18px; background: rgba(255,255,255,0.015); font-size: 14px; font-weight: 500; transition: background 0.2s, border-color 0.2s, transform 0.2s; }
     .related-link:hover { background: var(--gold-dim); border-color: rgba(201,168,76,0.35); transform: translateX(5px); }
     .related-link i { color: var(--gold); font-size: 12px; }
-
     .cta-section { margin-top: 64px; background: linear-gradient(145deg, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.02) 100%); border: 1px solid var(--gold-border); border-radius: 22px; padding: 52px 44px; text-align: center; position: relative; overflow: hidden; }
     .cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-bright), var(--gold), transparent); }
     .cta-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--gold-dim); border: 1px solid var(--gold-border); border-radius: 100px; padding: 4px 14px; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
@@ -425,7 +381,6 @@
     .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: #000; text-decoration: none; border-bottom: none; font-weight: 700; font-size: 15px; padding: 16px 36px; border-radius: 12px; transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 28px rgba(201,168,76,0.35); }
     .cta-btn:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(201,168,76,0.45); }
     .cta-note { display: block; font-size: 12px; color: var(--muted); margin-top: 16px; }
-
     /* ─── POPUP ─── */
     .popup { position: fixed; inset: 0; background: rgba(0,0,0,0.82); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 9999; padding: 20px; }
     .popup-box { background: var(--surface2); border: 1px solid var(--gold-border); border-radius: 20px; padding: 38px 32px; width: 360px; max-width: 100%; animation: fadeUp 0.35s ease both; position: relative; }
@@ -440,7 +395,6 @@
     .popup-submit:hover { opacity: 0.88; transform: translateY(-1px); }
     .popup-close { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--muted); cursor: pointer; background: none; border: none; width: 100%; transition: color 0.2s; }
     .popup-close:hover { color: var(--white); }
-
     /* SUCCESS */
     .success-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 9999; padding: 20px; }
     .success-box { background: var(--surface2); border: 1px solid var(--gold-border); border-radius: 20px; padding: 44px 32px; text-align: center; max-width: 360px; width: 100%; animation: fadeUp 0.35s ease both; }
@@ -452,12 +406,10 @@
     .pricing-link { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); text-decoration: none; font-weight: 600; font-size: 13px; padding: 11px 20px; border-radius: 10px; margin-bottom: 14px; }
     .success-box button { background: none; border: none; color: var(--muted); font-size: 12px; cursor: pointer; transition: color 0.2s; }
     .success-box button:hover { color: var(--white); }
-
     /* WHATSAPP */
     .wa-float { position: fixed; bottom: 28px; right: 28px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 999; border: none; box-shadow: 0 8px 28px rgba(37,211,102,0.4); transition: transform 0.2s, box-shadow 0.2s; }
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 36px rgba(37,211,102,0.5); }
     .wa-float i { font-size: 24px; color: #fff; }
-
     /* FOOTER */
     footer { text-align: center; padding: 36px 20px; font-size: 12px; color: #35302a; border-top: 1px solid rgba(255,255,255,0.04); }
     footer a { color: #4a4540; border: none; transition: color 0.2s; }
@@ -465,20 +417,17 @@
     .footer-inner { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
     .footer-logo-img { height: 24px; width: auto; object-fit: contain; opacity: 0.5; }
     .footer-brand { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--gold); }
-
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes orbFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-22px) scale(1.04); } }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.88); } }
     @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
     @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.18s; }
     .reveal-delay-3 { transition-delay: 0.26s; }
-
     @media (max-width: 640px) {
       .hero { padding: 88px 5% 64px; min-height: 85vh; }
       .page-wrap { padding: 48px 5% 72px; gap: 36px; }
@@ -492,28 +441,27 @@
   </style>
 </head>
 <body>
+<!-- Hidden iframe for Google Forms submission -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <div id="readProgress"></div>
-
 <!-- NAV -->
 <nav>
   <a href="https://www.groomfit.in/" class="nav-logo">
   <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
 </a>
-  
+
   <div class="nav-actions">
     <a href="https://www.groomfit.in/" class="nav-back"><i class="fa fa-arrow-left"></i> Home</a>
     <a href="https://www.groomfit.in/#pricing" class="nav-cta">View Plans</a>
   </div>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
   <div class="hero-orb hero-orb-3"></div>
-
   <div class="hero-inner">
     <div class="hero-badge"><span class="badge-pulse"></span> Home Workout · No Equipment</div>
     <h1><em>20 Minute</em> Fat Burning<br>Workout at Home</h1>
@@ -529,7 +477,6 @@
       <span class="meta-dot"></span>
       <span class="meta-item"><i class="fa fa-calendar"></i> Updated 2025</span>
     </div>
-
     <!-- 20-minute breakdown bar -->
     <div class="time-breakdown">
       <div class="tb-seg tb-warm">
@@ -546,18 +493,14 @@
       </div>
     </div>
   </div>
-
   <div class="hero-scroll">
     <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
-
 <!-- PAGE LAYOUT -->
 <div class="page-wrap">
-
   <article class="article-body">
-
     <!-- INTRO -->
     <div class="article-section reveal">
       <div class="story-card">
@@ -566,14 +509,12 @@
           Vikram, 29, IT consultant from Hyderabad. Wedding in 10 weeks. His gym is 35 minutes away — one way. He does the math: commute + workout + shower = 2 hours per session. "I'll figure it out," he tells himself. Week one, he manages 3 trips. Week two, a project deadline hits and he goes twice. Week three, zero. What broke him wasn't the workout. It was the commute tax on already-limited time. Meanwhile, his fiancée was already seeing results — 20 minutes every morning in their living room, no membership, no traffic, no wasted hour on the road.
         </p>
       </div>
-
       <p>
         The gym is not the only place fat gets burned. It's not even the most efficient one for someone with a 60–90 day wedding deadline and a full calendar. <strong>The best workout is the one that actually happens.</strong> And for most busy Indian professionals, the one that actually happens is the one that doesn't require leaving your building.
       </p>
       <p>
         This guide gives you three complete 20-minute fat-burning workouts — beginner, intermediate, and advanced — plus the science explaining why 20 minutes, done right, produces results that two hours of careless gym time can't match.
       </p>
-
       <div class="stat-row">
         <div class="stat-card reveal reveal-delay-1">
           <div class="stat-num">300–420<span class="stat-unit"> kcal</span></div>
@@ -589,38 +530,31 @@
         </div>
       </div>
     </div>
-
     <!-- SECTION 1: Why 20 Minutes Works -->
     <div class="article-section reveal" id="s1">
       <div class="section-header">
         <div class="section-num">01</div>
         <h2>Why 20 Minutes Is Actually Enough</h2>
       </div>
-
       <p>
         The fitness industry has sold you the idea that more time equals more results. It doesn't. Results come from <strong>intensity, structure, and consistency</strong> — not duration. A poorly designed 90-minute gym session produces less fat loss than a sharp 20-minute bodyweight circuit at home.
       </p>
-
       <div class="fact-box">
         <div class="fact-box-title"><i class="fa fa-flask"></i> What the Research Actually Shows</div>
         <p>
           A 2019 study in the <em>Journal of Sports Science & Medicine</em> compared two groups: one doing 20-minute high-intensity bodyweight circuits four times per week, another doing 45-minute moderate-intensity treadmill sessions. After 8 weeks, the 20-minute group lost 27% more body fat, showed greater reductions in waist circumference, and had significantly higher self-reported workout adherence. The shorter sessions got done more often. And frequency, over an 8-week window, outweighs session duration every time.
         </p>
       </div>
-
       <p>
         Here's what 20 structured minutes actually does to your body: it depletes glycogen stores, triggers catecholamine release (the hormones that mobilise stubborn fat), creates an oxygen debt that keeps your metabolism elevated for hours afterward, and stimulates muscle retention — all without the cortisol spike that long, hard cardio sessions create.
       </p>
-
       <div class="callout">
         <div class="callout-label"><i class="fa fa-lightbulb"></i> The Principle Behind It</div>
         <p>
           Think of your body as a furnace. <strong>A 20-minute blast at maximum temperature raises the furnace's baseline heat for 24 hours.</strong> A 60-minute session at moderate temperature doesn't. The afterburn — EPOC — is what makes short, intense workouts disproportionately powerful for fat loss.
         </p>
       </div>
-
       <h3>What You Actually Need</h3>
-
       <div class="space-visual">
         <div class="space-box">
           <i class="fa fa-person fa-fw space-icon"></i>
@@ -632,7 +566,6 @@
           <p>Every workout in this guide fits within the space of a yoga mat. You can do all three in a hotel room, a terrace, a bedroom, or even a large balcony. The only equipment required is your own body — and optionally, a mat for your knees and wrists.</p>
         </div>
       </div>
-
       <div class="need-list" style="margin-top:16px;">
         <div class="need-item"><div class="need-icon"><i class="fa fa-check"></i></div> A yoga mat (optional — not required)</div>
         <div class="need-item"><div class="need-icon"><i class="fa fa-check"></i></div> A water bottle</div>
@@ -641,18 +574,15 @@
         <div class="need-none"><i class="fa fa-circle-check"></i> That's it. No gym membership. No equipment. No commute.</div>
       </div>
     </div>
-
     <!-- SECTION 2: WORKOUT 1 - BEGINNER -->
     <div class="article-section reveal" id="s2">
       <div class="section-header">
         <div class="section-num">02</div>
         <h2>Workout 1 — Beginner: The Starter Circuit</h2>
       </div>
-
       <p>
         If you haven't trained consistently in the last 3 months, this is your starting point. Don't let the word "beginner" fool you — done at the right intensity, this session will leave you breathless. The exercises are fundamental, the rest periods are forgiving, and the structure is designed to build your base without injury.
       </p>
-
       <div class="muscle-tags">
         <span class="muscle-tag primary"><i class="fa fa-star"></i> Full Body</span>
         <span class="muscle-tag"><i class="fa fa-circle"></i> Legs</span>
@@ -661,7 +591,6 @@
         <span class="muscle-tag"><i class="fa fa-circle"></i> Shoulders</span>
         <span class="muscle-tag"><i class="fa fa-circle"></i> Glutes</span>
       </div>
-
       <div class="workout-block">
         <div class="workout-header">
           <div class="workout-header-left">
@@ -673,7 +602,6 @@
           </div>
           <div class="workout-badge"><i class="fa fa-star"></i> Start Here</div>
         </div>
-
         <div class="phase-strip">
           <div class="phase-block">
             <div class="phase-time">3m</div>
@@ -688,7 +616,6 @@
             <div class="phase-label">Cool-Down</div>
           </div>
         </div>
-
         <div class="exercise-list">
           <div class="exercise-row">
             <div class="ex-num">1</div>
@@ -731,14 +658,12 @@
             <div class="ex-reps">30 sec</div>
           </div>
         </div>
-
         <div class="workout-footer">
           <span class="wf-stat"><i class="fa fa-rotate"></i> <strong>3 rounds</strong> with 45 sec rest between rounds</span>
           <span class="wf-stat"><i class="fa fa-stopwatch"></i> <strong>15 sec</strong> rest between exercises</span>
           <span class="wf-stat"><i class="fa fa-fire"></i> <strong>240–300 kcal</strong> per session</span>
         </div>
       </div>
-
       <div class="callout">
         <div class="callout-label"><i class="fa fa-lightbulb"></i> Beginner Tip</div>
         <p>
@@ -746,18 +671,15 @@
         </p>
       </div>
     </div>
-
     <!-- SECTION 3: WORKOUT 2 - INTERMEDIATE -->
     <div class="article-section reveal" id="s3">
       <div class="section-header">
         <div class="section-num">03</div>
         <h2>Workout 2 — Intermediate: The Metabolic Circuit</h2>
       </div>
-
       <p>
         This is the workout most grooms should be doing by week 3 or 4. The exercises are more demanding, the rest periods are shorter, and the circuit is designed to keep your heart rate in the fat-burning zone for the full 15 minutes. <strong>No room to coast here.</strong>
       </p>
-
       <div class="muscle-tags">
         <span class="muscle-tag primary"><i class="fa fa-star"></i> Full Body Metabolic</span>
         <span class="muscle-tag"><i class="fa fa-circle"></i> Posterior Chain</span>
@@ -765,7 +687,6 @@
         <span class="muscle-tag"><i class="fa fa-circle"></i> Cardiovascular</span>
         <span class="muscle-tag"><i class="fa fa-circle"></i> Hip Flexors</span>
       </div>
-
       <div class="workout-block">
         <div class="workout-header">
           <div class="workout-header-left">
@@ -777,7 +698,6 @@
           </div>
           <div class="workout-badge"><i class="fa fa-chart-line"></i> Level Up</div>
         </div>
-
         <div class="phase-strip">
           <div class="phase-block">
             <div class="phase-time">3m</div>
@@ -792,7 +712,6 @@
             <div class="phase-label">Stretch</div>
           </div>
         </div>
-
         <div class="exercise-list">
           <div class="exercise-row">
             <div class="ex-num">1</div>
@@ -843,14 +762,12 @@
             <div class="ex-reps">30 sec max</div>
           </div>
         </div>
-
         <div class="workout-footer">
           <span class="wf-stat"><i class="fa fa-rotate"></i> <strong>3 rounds</strong> with 30 sec rest between rounds</span>
           <span class="wf-stat"><i class="fa fa-stopwatch"></i> <strong>10 sec</strong> rest between exercises</span>
           <span class="wf-stat"><i class="fa fa-fire"></i> <strong>300–380 kcal</strong> per session</span>
         </div>
       </div>
-
       <a href="/hiit-workout-for-fat-loss.html" class="internal-link-box reveal">
         <div class="ilb-left">
           <div class="ilb-icon"><i class="fa fa-bolt"></i></div>
@@ -862,32 +779,27 @@
         <i class="fa fa-arrow-right arrow"></i>
       </a>
     </div>
-
     <!-- SECTION 4: WORKOUT 3 - ADVANCED -->
     <div class="article-section reveal" id="s4">
       <div class="section-header">
         <div class="section-num">04</div>
         <h2>Workout 3 — Advanced: The Tabata Burnout</h2>
       </div>
-
       <p>
         This is for grooms and men who already have a base level of fitness and want maximum fat loss in minimum time. The Tabata protocol — 20 seconds of absolute maximum effort, 10 seconds of rest — is one of the most scientifically validated short-duration fat loss methods in existence. <strong>Eight rounds of one exercise at true maximum effort takes 4 minutes. Four exercises back-to-back is your 20-minute session.</strong>
       </p>
-
       <div class="warning-box">
         <div class="warning-label"><i class="fa fa-triangle-exclamation"></i> Intensity Warning</div>
         <p>
           Tabata is not comfortable. If you're completing a full 20-second interval and feel fine, you're not going hard enough. Each "on" burst should feel like 95–100% effort. Start with the beginner or intermediate workout for at least 2 weeks before attempting this one. Jumping straight to Tabata without a base increases injury risk significantly.
         </p>
       </div>
-
       <div class="muscle-tags">
         <span class="muscle-tag primary"><i class="fa fa-star"></i> Full Body Tabata</span>
         <span class="muscle-tag"><i class="fa fa-circle"></i> Maximum EPOC</span>
         <span class="muscle-tag"><i class="fa fa-circle"></i> Explosive Power</span>
         <span class="muscle-tag"><i class="fa fa-circle"></i> Anaerobic Threshold</span>
       </div>
-
       <div class="workout-block">
         <div class="workout-header">
           <div class="workout-header-left">
@@ -899,7 +811,6 @@
           </div>
           <div class="workout-badge" style="background:rgba(201,168,76,0.15);"><i class="fa fa-medal"></i> Advanced</div>
         </div>
-
         <div class="phase-strip">
           <div class="phase-block">
             <div class="phase-time">3m</div>
@@ -914,7 +825,6 @@
             <div class="phase-label">Rest Between Blocks</div>
           </div>
         </div>
-
         <div class="exercise-list">
           <div class="exercise-row">
             <div class="ex-num">A</div>
@@ -973,31 +883,26 @@
             <div class="ex-reps">8 × 20/10</div>
           </div>
         </div>
-
         <div class="workout-footer">
           <span class="wf-stat"><i class="fa fa-layer-group"></i> <strong>4 Tabata blocks</strong> of 8 rounds each</span>
           <span class="wf-stat"><i class="fa fa-clock"></i> <strong>~20 min</strong> total</span>
           <span class="wf-stat"><i class="fa fa-fire"></i> <strong>350–450 kcal</strong> + 24 hr EPOC</span>
         </div>
       </div>
-
       <div class="pull-quote">
         <p>"Your bedroom can be a better gym than the one you keep planning to visit. The only membership required is showing up."</p>
         <cite>— GroomFit Coaching Team</cite>
       </div>
     </div>
-
     <!-- SECTION 5: Weekly Schedule -->
     <div class="article-section reveal" id="s5">
       <div class="section-header">
         <div class="section-num">05</div>
         <h2>Your Weekly Home Workout Schedule</h2>
       </div>
-
       <p>
         Here's how to slot these workouts into your week without overtraining or under-recovering. The goal is 4–5 active days per week — alternating intensity levels so your body never fully adapts.
       </p>
-
       <div class="schedule-grid">
         <div class="sch-day active">
           <div class="sch-name">Mon</div>
@@ -1035,18 +940,15 @@
           <div class="sch-label">Meal prep + plan</div>
         </div>
       </div>
-
       <p>
         <strong>For beginners:</strong> replace the Advanced Tabata days with the Beginner Circuit for the first 2 weeks. Use the intermediate session only once per week until your base is built.
       </p>
-
       <div class="callout">
         <div class="callout-label"><i class="fa fa-clock"></i> When to Train</div>
         <p>
           Morning workouts — before the day's demands pile up — have a 71% higher completion rate than evening sessions. Set your clothes out the night before. Don't make the decision in the morning. <strong>The decision was made the night before when you laid out your kit.</strong> Morning you just executes.
         </p>
       </div>
-
       <a href="/how-to-stay-consistent-in-fitness.html" class="internal-link-box reveal">
         <div class="ilb-left">
           <div class="ilb-icon"><i class="fa fa-calendar-check"></i></div>
@@ -1058,18 +960,15 @@
         <i class="fa fa-arrow-right arrow"></i>
       </a>
     </div>
-
     <!-- SECTION 6: 4-Week Progression -->
     <div class="article-section reveal" id="s6">
       <div class="section-header">
         <div class="section-num">06</div>
         <h2>4-Week Progression Plan — From Zero to Results</h2>
       </div>
-
       <p>
         Here's exactly how to structure the first four weeks. The progression is intentional — you're building capacity before building intensity. Rushing this is the most common reason people plateau or get injured.
       </p>
-
       <div class="week-grid">
         <div class="week-row">
           <div class="week-label">WEEK 1<div class="wl-sub">Foundation</div></div>
@@ -1120,7 +1019,6 @@
           </div>
         </div>
       </div>
-
       <div class="fact-box">
         <div class="fact-box-title"><i class="fa fa-chart-line"></i> What to Expect by Week 4</div>
         <p>
@@ -1128,18 +1026,15 @@
         </p>
       </div>
     </div>
-
     <!-- SECTION 7: Making It Work -->
     <div class="article-section reveal" id="s7">
       <div class="section-header">
         <div class="section-num">07</div>
         <h2>How to Make Home Workouts Actually Work (Not Just Once)</h2>
       </div>
-
       <p>
         Home workouts fail for one of two reasons: the environment is set up to make them easy to skip, or there's no progressive structure. Here's how to fix both.
       </p>
-
       <div class="progress-ladder">
         <div class="pl-item">
           <div class="pl-badge">1</div>
@@ -1177,7 +1072,6 @@
           </div>
         </div>
       </div>
-
       <!-- MISTAKES -->
       <h3>Mistakes That Kill Home Workout Results</h3>
       <div class="mistake-list">
@@ -1211,22 +1105,18 @@
         </div>
       </div>
     </div>
-
     <!-- SECTION 8: GroomFit Angle -->
     <div class="article-section reveal" id="s8">
       <div class="section-header">
         <div class="section-num">08</div>
         <h2>Home Workouts in Your Wedding Prep — Where They Fit</h2>
       </div>
-
       <p>
         Here's the honest truth: <strong>home workouts alone, even well-structured ones, have a ceiling</strong>. They are exceptional for fat loss, cardiovascular fitness, and maintaining muscle. But for grooms who want to also build visible muscle definition — the broad shoulders, the fuller chest, the sharper jaw that comes from lower overall body fat — you'll eventually need progressive resistance that bodyweight can't provide.
       </p>
-
       <p>
         That said, the 20-minute home workout has a specific and irreplaceable role in a complete wedding prep plan: it handles the sessions that would otherwise not happen. The Tuesday morning when you can't get to the gym. The Friday evening when work ran late. The Sunday when you're exhausted but want to do something. <strong>On those days, 20 minutes at home beats zero minutes at the gym you didn't make it to.</strong>
       </p>
-
       <div class="groomfit-section">
         <div class="gf-eyebrow"><i class="fa fa-crown"></i> GroomFit's Approach</div>
         <h3>Home Workouts Are Part of the Plan. Not a Substitute for It.</h3>
@@ -1241,7 +1131,6 @@
         </a>
       </div>
     </div>
-
     <!-- RELATED -->
     <div class="related-section reveal">
       <div class="related-title"><i class="fa fa-book-open"></i> Keep Going — More Guides</div>
@@ -1254,7 +1143,6 @@
         <a href="/weight-loss-before-wedding.html" class="related-link">Pre-Wedding Weight Loss Plan <i class="fa fa-arrow-right"></i></a>
       </div>
     </div>
-
     <!-- FINAL CTA -->
     <div class="cta-section reveal">
       <div class="cta-badge"><i class="fa fa-crown"></i> GroomFit Program</div>
@@ -1265,13 +1153,10 @@
       </a>
       <span class="cta-note">Limited spots monthly · Personalised coaching · Groom-specific results</span>
     </div>
-
   </article>
-
   <!-- SIDEBAR -->
   <aside class="sidebar" aria-label="Article navigation">
     <div class="sidebar-sticky">
-
       <div class="sidebar-box">
         <div class="sidebar-title"><i class="fa fa-list-ul"></i> In This Article</div>
         <ul class="toc-list">
@@ -1285,7 +1170,6 @@
           <li><a href="#s8"><span class="toc-num">08</span> Wedding Prep Context</a></li>
         </ul>
       </div>
-
       <!-- What You Need -->
       <div class="sidebar-box">
         <div class="sidebar-title"><i class="fa fa-list-check"></i> What You Need</div>
@@ -1299,29 +1183,24 @@
           <i class="fa fa-circle-check"></i> No gym. No equipment.
         </div>
       </div>
-
       <!-- Share -->
       <div class="sidebar-box share-box">
         <div class="sidebar-title"><i class="fa fa-share-nodes"></i> Share This</div>
         <p>Send to a groom who needs this.</p>
         <div class="share-btns">
           <button class="share-btn" onclick="window.open('https://wa.me/?text=20%20Minute%20Fat%20Burning%20Workout%20at%20Home%20-%20https://groomfit.in/20-minute-fat-burning-workout-at-home.html')"><i class="fab fa-whatsapp"></i></button>
-        
+
           <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'fa fa-check\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'fa fa-link\'></i>',2000)"><i class="fa fa-link"></i></button>
         </div>
       </div>
-
       <div class="side-cta">
         <h4>Want a Complete Plan?</h4>
         <p>Home workouts + gym sessions + nutrition + accountability — all built around your wedding date.</p>
         <a href="#" onclick="openPopup(); return false;">Apply Now →</a>
       </div>
-
     </div>
   </aside>
-
 </div>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1340,11 +1219,9 @@
     <a href="https://www.groomfit.in/#pricing">Pricing</a>
   </div>
 </footer>
-
 <a href="https://wa.me/919588859960" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
-
 <!-- POPUP -->
 <div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
   <div class="popup-box">
@@ -1361,7 +1238,6 @@
     <button class="popup-close" onclick="closePopup()">Maybe Later</button>
   </div>
 </div>
-
 <div class="success-overlay" id="success" role="dialog" aria-modal="true">
   <div class="success-box">
     <div class="tick"><i class="fa fa-check"></i></div>
@@ -1372,14 +1248,12 @@
     <button onclick="closeSuccess()">Dismiss</button>
   </div>
 </div>
-
 <script>
   // Progress bar
   window.addEventListener('scroll', function () {
     const doc = document.documentElement;
     document.getElementById('readProgress').style.transform = 'scaleX(' + (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) + ')';
   });
-
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   new IntersectionObserver(function (entries) {
@@ -1387,7 +1261,6 @@
   }, { threshold: 0.07 }).observe && revealEls.forEach(function(el){
     new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); } }); }, { threshold: 0.07 }).observe(el);
   });
-
   // Active TOC
   const sections = document.querySelectorAll('[id^="s"]');
   const tocLinks = document.querySelectorAll('.toc-list a');
@@ -1402,7 +1275,6 @@
   }, { rootMargin: '-25% 0px -70% 0px' }).observe && sections.forEach(function(s){
     new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ tocLinks.forEach(function(l){ l.classList.remove('active'); }); const a = document.querySelector('.toc-list a[href="#'+e.target.id+'"]'); if(a) a.classList.add('active'); } }); }, { rootMargin: '-25% 0px -70% 0px' }).observe(s);
   });
-
   // Animated counters
   function animateCounter(el) {
     const match = el.textContent.match(/^(\d+)/);
@@ -1416,22 +1288,51 @@
   document.querySelectorAll('.stat-num').forEach(function (el) {
     new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { animateCounter(e.target); } }); }, { threshold: 0.5 }).observe(el);
   });
-
   // Nav scroll
   window.addEventListener('scroll', function () {
     document.querySelector('nav').style.background = window.scrollY > 60 ? 'rgba(7,6,4,0.97)' : 'rgba(7,6,4,0.92)';
   });
-
   // Popup
   function openPopup() { document.getElementById('popup').style.display = 'flex'; document.body.style.overflow = 'hidden'; }
   function closePopup() { document.getElementById('popup').style.display = 'none'; document.body.style.overflow = ''; }
   function closeSuccess() { document.getElementById('success').style.display = 'none'; document.body.style.overflow = ''; }
 
-  document.getElementById('leadForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    const msg = encodeURIComponent('Hi GroomFit! I applied for your transformation program.\n\nName: ' + data.get('name') + '\nPhone: ' + data.get('phone') + '\nWedding Date: ' + data.get('wedding') + '\nCity: ' + data.get('location'));
+  // ── FORM SUBMIT ──
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  // Silent submit to Google Forms
+  const googleForm = document.createElement('form');
+  googleForm.method = 'POST';
+  googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse';
+  googleForm.target = 'hidden_iframe';
+
+  function addField(name, value) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+  addField('entry.525461384', formData.get('name'));
+  addField('entry.933229371', formData.get('phone'));
+  addField('entry.1013425097', formData.get('location'));
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+  document.body.removeChild(googleForm);
+
+    // Prepare WhatsApp message
+    const msg = encodeURIComponent(
+      'Hi GroomFit! I applied for your 20-minute home workout programme.\n\n' +
+      'Name: ' + formData.get('name') + '\n' +
+      'Phone: ' + formData.get('phone') + '\n' +
+      'Wedding Date: ' + formData.get('wedding') + '\n' +
+      'City: ' + formData.get('location')
+    );
+
     document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
+
     closePopup();
     document.getElementById('success').style.display = 'flex';
     document.body.style.overflow = 'hidden';
