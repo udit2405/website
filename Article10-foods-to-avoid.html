@@ -364,15 +364,15 @@ function closeSuccess() {
   document.body.style.overflow = '';
 }
 
-// FORM SUBMISSION WITH GOOGLE FORMS
-document.getElementById('leadForm').addEventListener('submit', function (e) {
+// ── FORM SUBMIT ──
+document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const formData = new FormData(this);
 
-  // Create hidden form for Google Forms submission
+  // Silent submit to Google Forms
   const googleForm = document.createElement('form');
   googleForm.method = 'POST';
-  googleForm.action = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+  googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse';
   googleForm.target = 'hidden_iframe';
 
   function addField(name, value) {
@@ -382,13 +382,9 @@ document.getElementById('leadForm').addEventListener('submit', function (e) {
     input.value = value;
     googleForm.appendChild(input);
   }
-
-  // CHANGE THESE ENTRY IDS TO MATCH YOUR GOOGLE FORM
-  addField('entry.525461384', formData.get('name'));        // Your name entry ID
-  addField('entry.933229371', formData.get('phone'));       // Your phone entry ID
-  addField('entry.1013425097', formData.get('wedding'));    // Your wedding date entry ID
-  addField('entry.1087654321', formData.get('location'));   // Your location entry ID (example - replace)
-
+  addField('entry.525461384', formData.get('name'));
+  addField('entry.933229371', formData.get('phone'));
+  addField('entry.1013425097', formData.get('location'));
   document.body.appendChild(googleForm);
   googleForm.submit();
   document.body.removeChild(googleForm);
