@@ -26,10 +26,8 @@
     "dateModified": "2025-07-01"
   }
   </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     /* ─── ROOT ─── */
     :root {
@@ -55,7 +53,6 @@
       --green: #50c878;
       --green-dim: rgba(80,200,120,0.07);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -65,12 +62,10 @@
       line-height: 1.85;
       overflow-x: hidden;
     }
-
     /* ─── SCROLLBAR ─── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 4px; }
-
     /* ─── READ PROGRESS ─── */
     #readProgress {
       position: fixed;
@@ -83,7 +78,6 @@
       transition: transform 0.1s linear;
       box-shadow: 0 0 10px var(--gold-glow);
     }
-
     /* ─── NAV ─── */
     nav {
       position: fixed;
@@ -99,7 +93,6 @@
       z-index: 1000;
       transition: background 0.3s;
     }
-
     /* ── LOGO ── */
     .nav-logo {
       display: flex;
@@ -116,7 +109,6 @@
   filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
   transition: filter 0.3s ease;
 }
-
 .nav-logo-img:hover {
   filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
 }
@@ -137,7 +129,6 @@
       background: var(--gold-bright);
       animation: pulse 2s ease-in-out infinite;
     }
-
     .nav-actions { display: flex; align-items: center; gap: 14px; }
     .nav-back {
       color: var(--muted-light);
@@ -161,9 +152,9 @@
       border: none;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+      cursor: pointer;
     }
     .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(201,168,76,0.42); }
-
     /* ─── HERO ─── */
     .hero {
       min-height: 92vh;
@@ -190,7 +181,6 @@
         rgba(7,6,4,1) 100%
       );
     }
-
     /* Animated orbs */
     .hero-orb {
       position: absolute;
@@ -217,13 +207,11 @@
       bottom: 15%; left: 10%;
       animation-delay: -2s; animation-duration: 7s;
     }
-
     .hero-inner {
       max-width: var(--body-max);
       position: relative;
       z-index: 2;
     }
-
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -247,7 +235,6 @@
       animation: pulse 1.8s ease-in-out infinite;
       flex-shrink: 0;
     }
-
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.4rem, 6vw, 4.1rem);
@@ -258,7 +245,6 @@
       animation: fadeUp 0.7s 0.1s ease both;
     }
     .hero h1 em { font-style: italic; color: var(--gold); }
-
     .hero-sub {
       margin-top: 22px;
       max-width: 570px;
@@ -268,7 +254,6 @@
       line-height: 1.72;
       animation: fadeUp 0.7s 0.18s ease both;
     }
-
     .hero-meta {
       display: flex;
       align-items: center;
@@ -280,7 +265,6 @@
     .meta-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
     .meta-item i { color: var(--gold); font-size: 11px; }
     .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
-
     /* Intensity bar */
     .intensity-bar {
       display: flex;
@@ -301,7 +285,6 @@
     .intensity-dots span:nth-child(3) { animation-delay: 0.3s; }
     .intensity-dots span:nth-child(4) { animation-delay: 0.45s; }
     .intensity-dots span:nth-child(5) { background: rgba(201,168,76,0.2); animation: none; }
-
     .hero-scroll {
       position: absolute;
       bottom: 28px; left: 50%;
@@ -319,7 +302,6 @@
       background: linear-gradient(to bottom, var(--gold), transparent);
       animation: scrollPulse 1.8s ease-in-out infinite;
     }
-
     /* ─── LAYOUT ─── */
     .page-wrap {
       display: grid;
@@ -333,7 +315,6 @@
       .page-wrap { grid-template-columns: 1fr; }
       .sidebar { display: none; }
     }
-
     /* ─── SIDEBAR ─── */
     .sidebar-sticky { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 18px; }
     .sidebar-box {
@@ -361,7 +342,6 @@
       background: var(--gold-dim); color: var(--gold); transform: translateX(3px);
     }
     .toc-num { font-size: 10px; font-weight: 700; color: var(--gold); opacity: 0.6; flex-shrink: 0; margin-top: 2px; }
-
     /* Quick ref box */
     .quick-ref { display: flex; flex-direction: column; gap: 10px; }
     .qr-item {
@@ -373,7 +353,6 @@
     }
     .qr-label { font-size: 12px; color: var(--muted); }
     .qr-val { font-size: 13px; font-weight: 700; color: var(--gold); }
-
     /* Share box */
     .share-box { text-align: center; }
     .share-box p { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
@@ -386,7 +365,6 @@
       transition: background 0.2s, transform 0.2s;
     }
     .share-btn:hover { background: var(--gold-mid); transform: translateY(-2px); }
-
     .side-cta {
       background: linear-gradient(145deg, rgba(201,168,76,0.12), rgba(201,168,76,0.03));
       border: 1px solid var(--gold-border);
@@ -401,9 +379,9 @@
       padding: 12px 16px; border-radius: 10px; border: none;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 16px rgba(201,168,76,0.25);
+      cursor: pointer;
     }
     .side-cta a:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
-
     /* ─── ARTICLE BODY ─── */
     .article-body { min-width: 0; }
     .article-section {
@@ -441,7 +419,6 @@
     p em { color: var(--gold-bright); font-style: normal; }
     a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-border); transition: border-color 0.2s; }
     a:hover { border-color: var(--gold); }
-
     /* ─── STORY CARD ─── */
     .story-card {
       background: var(--surface); border: 1px solid var(--gold-border);
@@ -460,7 +437,6 @@
       display: flex; align-items: center; gap: 8px;
     }
     .story-card p { font-size: 15px; color: #c8c0b0; margin: 0; font-style: italic; line-height: 1.82; }
-
     /* ─── STAT ROW ─── */
     .stat-row {
       display: grid;
@@ -477,7 +453,6 @@
     .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 800; color: var(--gold); line-height: 1; }
     .stat-unit { font-size: 16px; color: var(--gold); font-weight: 600; }
     .stat-desc { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
-
     /* ─── CALLOUT ─── */
     .callout {
       border-left: 3px solid var(--gold); background: var(--gold-dim);
@@ -489,7 +464,6 @@
       display: flex; align-items: center; gap: 7px;
     }
     .callout p { color: #c8c0b0; margin: 0; font-size: 15px; line-height: 1.75; }
-
     /* ─── FACT BOX ─── */
     .fact-box {
       background: var(--surface); border: 1px solid var(--gold-border);
@@ -506,7 +480,6 @@
       display: flex; align-items: center; gap: 9px;
     }
     .fact-box p { color: #bdb5a8; font-size: 14.5px; line-height: 1.75; margin: 0; }
-
     /* ─── HIIT vs STEADY COMPARISON ─── */
     .vs-grid {
       display: grid; grid-template-columns: 1fr auto 1fr;
@@ -537,7 +510,6 @@
       font-weight: 700;
     }
     @media (max-width: 580px) { .vs-divider { padding: 12px 0; } }
-
     /* ─── INTERVAL TIMER VISUAL ─── */
     .interval-visual {
       display: flex; align-items: center; gap: 0;
@@ -560,7 +532,6 @@
     }
     .iv-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
     .iv-block.work .iv-label { color: var(--gold); opacity: 0.8; }
-
     /* ─── WORKOUT CARDS ─── */
     .workout-block {
       background: var(--surface); border: 1px solid var(--gold-border);
@@ -625,7 +596,6 @@
     .wf-stat { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
     .wf-stat i { color: var(--gold); font-size: 11px; }
     .wf-stat strong { color: var(--white); }
-
     /* ─── CHECK LIST ─── */
     .check-list { list-style: none; display: flex; flex-direction: column; gap: 13px; margin: 18px 0; }
     .check-list li {
@@ -634,7 +604,6 @@
     }
     .check-list li i { color: var(--gold); font-size: 13px; margin-top: 4px; flex-shrink: 0; }
     .check-list li strong { color: var(--white); font-weight: 600; }
-
     /* ─── PULL QUOTE ─── */
     .pull-quote {
       border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border);
@@ -650,7 +619,6 @@
       font-style: italic; color: var(--white); line-height: 1.5; margin: 0;
     }
     .pull-quote cite { display: block; margin-top: 12px; font-size: 12px; color: var(--muted); font-style: normal; letter-spacing: 0.12em; text-transform: uppercase; }
-
     /* ─── 4-WEEK PLAN ─── */
     .week-grid { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
     .week-row {
@@ -677,7 +645,6 @@
       border-radius: 6px; padding: 2px 9px;
       font-size: 10px; color: var(--gold); font-weight: 600;
     }
-
     /* ─── MISTAKE LIST ─── */
     .mistake-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
     .mistake-item {
@@ -694,7 +661,6 @@
     }
     .mistake-item h4 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
     .mistake-item p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.6; }
-
     /* ─── HEART RATE ZONES ─── */
     .zone-bar {
       display: flex; height: 48px; border-radius: 12px; overflow: hidden;
@@ -715,7 +681,6 @@
     .zone-labels { display: grid; grid-template-columns: 1fr 1.2fr 1.5fr 2fr 1.2fr; gap: 0; margin-top: 8px; }
     .zone-lbl { text-align: center; font-size: 10px; color: var(--muted); line-height: 1.4; }
     .zone-lbl.active { color: var(--gold); font-weight: 700; }
-
     /* ─── WARNING BOX ─── */
     .warning-box {
       background: var(--red-dim); border: 1px solid var(--red-border);
@@ -727,7 +692,6 @@
       display: flex; align-items: center; gap: 7px;
     }
     .warning-box p { color: #c0a09a; font-size: 14.5px; margin: 0; line-height: 1.7; }
-
     /* ─── GROOMFIT SECTION ─── */
     .groomfit-section {
       background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
@@ -760,15 +724,16 @@
       border-radius: 10px; margin-top: 22px;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 6px 20px rgba(201,168,76,0.3);
+      cursor: pointer;
     }
     .gf-cta-inline:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.42); }
-
     /* ─── INTERNAL LINK BOX ─── */
     .internal-link-box {
       background: var(--surface); border: 1px solid var(--gold-border);
       border-radius: 12px; padding: 18px 22px; margin: 24px 0;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none; border-bottom: none !important;
     }
     .internal-link-box:hover { border-color: rgba(201,168,76,0.35); transform: translateX(4px); }
     .ilb-left { display: flex; align-items: center; gap: 14px; }
@@ -781,7 +746,6 @@
     .ilb-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
     .ilb-title { font-size: 14px; color: var(--white); font-weight: 600; }
     .internal-link-box i.arrow { color: var(--gold); font-size: 12px; flex-shrink: 0; }
-
     /* ─── RELATED / CTA ─── */
     .related-section {
       background: var(--surface); border: 1px solid var(--gold-border);
@@ -800,10 +764,10 @@
       padding: 14px 18px; background: rgba(255,255,255,0.015);
       font-size: 14px; font-weight: 500;
       transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      border-bottom: 1px solid var(--gold-border) !important;
     }
     .related-link:hover { background: var(--gold-dim); border-color: rgba(201,168,76,0.35); transform: translateX(5px); }
     .related-link i { color: var(--gold); font-size: 12px; }
-
     .cta-section {
       margin-top: 64px;
       background: linear-gradient(145deg, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.02) 100%);
@@ -830,12 +794,12 @@
       font-weight: 700; font-size: 15px; padding: 16px 36px; border-radius: 12px;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 8px 28px rgba(201,168,76,0.35);
+      cursor: pointer; border: none;
     }
     .cta-btn:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(201,168,76,0.45); }
     .cta-note { display: block; font-size: 12px; color: var(--muted); margin-top: 16px; }
-
     /* ─── POPUP ─── */
-    .popup {
+    #popup {
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.82); backdrop-filter: blur(10px);
       display: none; justify-content: center; align-items: center;
@@ -878,9 +842,8 @@
       background: none; border: none; width: 100%; transition: color 0.2s;
     }
     .popup-close:hover { color: var(--white); }
-
     /* SUCCESS */
-    .success-overlay {
+    #success {
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.88); backdrop-filter: blur(10px);
       display: none; justify-content: center; align-items: center; z-index: 9999; padding: 20px;
@@ -903,7 +866,7 @@
       display: flex; align-items: center; justify-content: center; gap: 9px;
       background: #25D366; color: #fff; text-decoration: none; border: none;
       font-weight: 700; font-size: 14px; padding: 13px 20px; border-radius: 10px;
-      margin-bottom: 10px; transition: opacity 0.2s;
+      margin-bottom: 10px; transition: opacity 0.2s; cursor: pointer;
     }
     .wa-link:hover { opacity: 0.88; }
     .pricing-link {
@@ -911,10 +874,10 @@
       background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border);
       text-decoration: none; font-weight: 600; font-size: 13px;
       padding: 11px 20px; border-radius: 10px; margin-bottom: 14px;
+      border-bottom: 1px solid var(--gold-border) !important;
     }
     .success-box button { background: none; border: none; color: var(--muted); font-size: 12px; cursor: pointer; transition: color 0.2s; }
     .success-box button:hover { color: var(--white); }
-
     /* ─── WHATSAPP ─── */
     .wa-float {
       position: fixed; bottom: 28px; right: 28px;
@@ -926,7 +889,6 @@
     }
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 36px rgba(37,211,102,0.5); }
     .wa-float i { font-size: 24px; color: #fff; }
-
     /* ─── FOOTER ─── */
     footer {
       text-align: center; padding: 36px 20px;
@@ -939,7 +901,6 @@
     .footer-logo-wrap { display: flex; align-items: center; }
     .footer-logo-img { height: 24px; width: auto; object-fit: contain; opacity: 0.5; }
     .footer-brand { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--gold); }
-
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes orbFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-22px) scale(1.04); } }
@@ -947,14 +908,12 @@
     @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
     @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
     @keyframes intensityGlow { from { opacity: 0.6; } to { opacity: 1; box-shadow: 0 0 10px var(--gold-glow); } }
-
     /* Scroll reveal */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.18s; }
     .reveal-delay-3 { transition-delay: 0.26s; }
-
     /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
       .hero { padding: 88px 5% 64px; min-height: 85vh; }
@@ -968,29 +927,24 @@
   </style>
 </head>
 <body>
-
 <!-- READ PROGRESS -->
 <div id="readProgress"></div>
-
 <!-- NAV -->
 <nav>
-  <!-- LOGO: Place logo.png in the same folder as this HTML file -->
   <a href="https://www.groomfit.in/" class="nav-logo">
-  <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
-</a>
+    <img src="logo.webp" alt="GroomFit Logo" class="nav-logo-img">
+  </a>
   <div class="nav-actions">
     <a href="https://www.groomfit.in/" class="nav-back"><i class="fa fa-arrow-left"></i> Home</a>
-    <a href="https://www.groomfit.in/#pricing" class="nav-cta">View Plans</a>
+    <button class="nav-cta" onclick="openPopup(); return false;">View Plans</button>
   </div>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
   <div class="hero-orb hero-orb-3"></div>
-
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="badge-pulse"></span>
@@ -1016,19 +970,15 @@
       <span style="font-size:12px;color:var(--muted)">High</span>
     </div>
   </div>
-
   <div class="hero-scroll">
     <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
-
 <!-- PAGE LAYOUT -->
 <div class="page-wrap">
-
   <!-- ─── ARTICLE ─── -->
   <article class="article-body">
-
     <!-- HOOK INTRO -->
     <div class="article-section reveal">
       <div class="story-card">
@@ -1038,15 +988,12 @@
           He had done everything "right" — and got almost nothing in return.
         </p>
       </div>
-
       <p>
         Rohit's mistake wasn't laziness. It was that he chose the least efficient form of cardio for fat loss and spent two months grinding himself into the ground doing it. <strong>Long, steady-state cardio burns calories only during the session.</strong> The moment you step off the treadmill, the burn stops. HIIT — High Intensity Interval Training — works completely differently.
       </p>
-
       <p>
         This guide explains the science behind why HIIT is superior for fat loss, gives you three complete workout protocols (beginner, intermediate, and advanced), and lays out a 4-week plan you can start this week.
       </p>
-
       <div class="stat-row">
         <div class="stat-card reveal reveal-delay-1">
           <div class="stat-num">25–28<span class="stat-unit">%</span></div>
@@ -1062,22 +1009,18 @@
         </div>
       </div>
     </div>
-
     <!-- SECTION 1: What is HIIT -->
     <div class="article-section reveal" id="s1">
       <div class="section-header">
         <div class="section-num">01</div>
         <h2>What HIIT Actually Is (And Why It's Not What You Think)</h2>
       </div>
-
       <p>
         HIIT stands for High Intensity Interval Training. The concept is simple: <strong>alternate between short bursts of maximum effort and brief recovery periods</strong>. What makes it powerful is not the movement — it's the intensity and the recovery structure.
       </p>
-
       <p>
         Most people who think they're doing HIIT are actually doing moderate-intensity interval training. They jog fast, walk slowly, jog fast again. That's not HIIT. <strong>True HIIT means your work intervals should feel like you're sprinting for your life.</strong> If you can hold a conversation during your "on" phase, you're not doing HIIT — you're doing cardio with extra steps.
       </p>
-
       <div class="interval-visual">
         <div class="iv-block work">
           <div class="iv-time">30<span style="font-size:1rem">s</span></div>
@@ -1100,16 +1043,13 @@
           <div class="iv-label">ROUNDS</div>
         </div>
       </div>
-
       <p>
         The ratio matters, and different ratios produce different results. A 1:1 ratio (30 seconds on, 30 seconds off) is the classic starting point. A 2:1 ratio (40 seconds on, 20 seconds off) is more aggressive and used for advanced conditioning. For pure fat loss in a wedding prep context, <strong>1:1 or 1:2 ratio for 20–25 minutes is the sweet spot</strong> — enough intensity to trigger the afterburn, not so much volume that it spikes cortisol.
       </p>
-
       <h3>The Heart Rate Zones You Need to Understand</h3>
       <p>
         HIIT targets Zone 4 and briefly touches Zone 5 on the Borg scale. This is where fat oxidation rate peaks and where EPOC (afterburn) is triggered.
       </p>
-
       <div class="zone-bar">
         <div class="zone-seg zone-1"><span>Zone 1</span></div>
         <div class="zone-seg zone-2"><span>Zone 2</span></div>
@@ -1125,33 +1065,27 @@
         <div class="zone-lbl">90–100%<br>Max</div>
       </div>
     </div>
-
     <!-- SECTION 2: Science of HIIT -->
     <div class="article-section reveal" id="s2">
       <div class="section-header">
         <div class="section-num">02</div>
         <h2>The Science Behind HIIT Fat Loss (EPOC Explained)</h2>
       </div>
-
       <p>
         Here's the mechanism that makes HIIT genuinely different from regular cardio — and why Rohit's treadmill strategy failed him.
       </p>
-
       <p>
         When you do steady-state cardio at 60–70% of your max heart rate, your body primarily burns fat during the session but returns to baseline metabolism within 30–60 minutes of finishing. The calorie burn window is narrow.
       </p>
-
       <p>
         When you do HIIT at 85–90% max heart rate, you push your body into an <strong>oxygen deficit</strong>. Your cells are working faster than your cardiovascular system can supply oxygen. To compensate, your body triggers <strong>EPOC — Excess Post-Exercise Oxygen Consumption</strong> — a state in which it burns significantly more calories at rest for the next 16–36 hours as it restores physiological equilibrium.
       </p>
-
       <div class="callout">
         <div class="callout-label"><i class="fa fa-flask"></i> The Afterburn in Numbers</div>
         <p>
           A 2011 study in the Journal of Obesity found that HIIT produced significantly greater reductions in total body fat, subcutaneous fat, and abdominal fat compared to steady-state cardio — even when the total calorie expenditure during training was lower. <strong>The work that happens after the workout is what makes HIIT powerful.</strong>
         </p>
       </div>
-
       <h3>Why HIIT Is Especially Effective for Belly Fat</h3>
       <p>
         Visceral fat — the deep abdominal fat that makes your stomach protrude — has a high density of beta-adrenergic receptors. These receptors are activated by catecholamines (adrenaline and noradrenaline), which are released in significant amounts during high-intensity effort. <strong>HIIT is one of the most effective triggers for catecholamine release, which directly mobilizes visceral fat stores.</strong>
@@ -1159,7 +1093,6 @@
       <p>
         HIIT also suppresses insulin and lowers cortisol more effectively post-workout than steady cardio — both of which are key levers for reducing stubborn abdominal fat in Indian men.
       </p>
-
       <a href="/lose-belly-fat-before-wedding.html" class="internal-link-box">
         <div class="ilb-left">
           <div class="ilb-icon"><i class="fa fa-circle-info"></i></div>
@@ -1171,18 +1104,15 @@
         <i class="fa fa-arrow-right arrow"></i>
       </a>
     </div>
-
     <!-- SECTION 3: HIIT vs Steady State -->
     <div class="article-section reveal" id="s3">
       <div class="section-header">
         <div class="section-num">03</div>
         <h2>HIIT vs Steady-State Cardio: An Honest Comparison</h2>
       </div>
-
       <p>
         Neither is universally "better" — but for grooms with limited time and a deadline, the math is clear.
       </p>
-
       <div class="vs-grid">
         <div class="vs-col hiit">
           <div class="vs-header hiit"><i class="fa fa-bolt"></i> HIIT</div>
@@ -1208,7 +1138,6 @@
           </div>
         </div>
       </div>
-
       <div class="callout">
         <div class="callout-label"><i class="fa fa-lightbulb"></i> The Right Approach</div>
         <p>
@@ -1216,18 +1145,15 @@
         </p>
       </div>
     </div>
-
     <!-- SECTION 4: The Workouts -->
     <div class="article-section reveal" id="s4">
       <div class="section-header">
         <div class="section-num">04</div>
         <h2>Three HIIT Workouts for Every Level</h2>
       </div>
-
       <p>
         These are complete, ready-to-execute workouts. No equipment needed for Levels 1 and 2. Level 3 uses gym equipment. Each session includes a 3-minute warm-up and a 2-minute cool-down — total time stays under 30 minutes.
       </p>
-
       <!-- BEGINNER -->
       <div class="workout-block reveal">
         <div class="workout-header">
@@ -1288,7 +1214,6 @@
           <span class="wf-stat"><i class="fa fa-fire"></i> <strong>280–340 kcal</strong> per session</span>
         </div>
       </div>
-
       <!-- INTERMEDIATE -->
       <div class="workout-block reveal">
         <div class="workout-header">
@@ -1357,7 +1282,6 @@
           <span class="wf-stat"><i class="fa fa-fire"></i> <strong>340–420 kcal</strong> per session</span>
         </div>
       </div>
-
       <!-- ADVANCED GYM -->
       <div class="workout-block reveal">
         <div class="workout-header">
@@ -1418,24 +1342,20 @@
           <span class="wf-stat"><i class="fa fa-fire"></i> <strong>250–320 kcal</strong> + EPOC</span>
         </div>
       </div>
-
       <div class="pull-quote">
         <p>"The most dangerous words in fitness are 'I'll go harder tomorrow.' The session in front of you is the only one that exists."</p>
         <cite>— GroomFit Coaching Notes</cite>
       </div>
     </div>
-
     <!-- SECTION 5: Common Mistakes -->
     <div class="article-section reveal" id="s5">
       <div class="section-header">
         <div class="section-num">05</div>
         <h2>What Most People Get Completely Wrong About HIIT</h2>
       </div>
-
       <p>
         HIIT is the most misunderstood training method in the gym. Here are the mistakes that waste your effort and in some cases make fat loss harder.
       </p>
-
       <div class="mistake-list">
         <div class="mistake-item">
           <div class="mistake-icon"><i class="fa fa-hourglass"></i></div>
@@ -1481,18 +1401,15 @@
         </div>
       </div>
     </div>
-
     <!-- SECTION 6: 4-Week Plan -->
     <div class="article-section reveal" id="s6">
       <div class="section-header">
         <div class="section-num">06</div>
         <h2>The 4-Week HIIT Fat Loss Progression</h2>
       </div>
-
       <p>
         This plan is structured for a groom or busy professional with 3 training days available per week for HIIT. It assumes you're also doing 2–3 compound lifting sessions separately.
       </p>
-
       <div class="week-grid">
         <div class="week-row">
           <div class="week-label">WEEK 1<div class="wl-sub">Foundation</div></div>
@@ -1543,7 +1460,6 @@
           </div>
         </div>
       </div>
-
       <div class="fact-box">
         <div class="fact-box-title"><i class="fa fa-calendar-check"></i> Beyond Week 4</div>
         <p>
@@ -1551,18 +1467,15 @@
         </p>
       </div>
     </div>
-
     <!-- SECTION 7: Diet & HIIT -->
     <div class="article-section reveal" id="s7">
       <div class="section-header">
         <div class="section-num">07</div>
         <h2>What to Eat Around Your HIIT Sessions</h2>
       </div>
-
       <p>
         You can't HIIT your way out of a bad diet. But you can structure your food around HIIT to dramatically amplify results.
       </p>
-
       <h3>Pre-HIIT (60–90 Minutes Before)</h3>
       <ul class="check-list">
         <li><i class="fa fa-check-circle"></i>
@@ -1575,7 +1488,6 @@
           <div><strong>Avoid:</strong> Full meals within 60 minutes. Dairy-heavy meals. Anything with high fibre right before training — it will cause discomfort during sprints.</div>
         </li>
       </ul>
-
       <h3>Post-HIIT (Within 30–45 Minutes)</h3>
       <ul class="check-list">
         <li><i class="fa fa-check-circle"></i>
@@ -1588,14 +1500,12 @@
           <div><strong>Hydration:</strong> You lose roughly 500–800 ml of fluid in a 25-minute HIIT session. Drink 500 ml water with a pinch of sea salt and lemon within 30 minutes of finishing — electrolytes, not just water.</div>
         </li>
       </ul>
-
       <div class="warning-box">
         <div class="warning-label"><i class="fa fa-triangle-exclamation"></i> The Biggest Nutrition Mistake</div>
         <p>
           Using your HIIT session as a "credit" to eat carelessly afterward. <strong>"I just burned 300 calories, I deserve a samosa and a chai"</strong> is how people stay the same weight for months. The EPOC effect only works if you're in a calorie deficit. The session creates the deficit — don't immediately erase it.
         </p>
       </div>
-
       <a href="/pre-wedding-weight-loss-plan.html" class="internal-link-box reveal">
         <div class="ilb-left">
           <div class="ilb-icon"><i class="fa fa-bowl-food"></i></div>
@@ -1607,18 +1517,15 @@
         <i class="fa fa-arrow-right arrow"></i>
       </a>
     </div>
-
     <!-- SECTION 8: GroomFit Angle -->
     <div class="article-section reveal" id="s8">
       <div class="section-header">
         <div class="section-num">08</div>
         <h2>HIIT in Your Wedding Prep: Where It Fits</h2>
       </div>
-
       <p>
         HIIT is not a standalone solution — it's a component of a complete transformation. Here's how it slots into the GroomFit methodology:
       </p>
-
       <ul class="check-list">
         <li><i class="fa fa-calendar-check"></i>
           <div><strong>Weeks 1–4:</strong> Introduce HIIT. Learn the protocol, build cardiovascular capacity. The body is building the engine that will burn fat in weeks 5–12.</div>
@@ -1630,7 +1537,6 @@
           <div><strong>Weeks 9–12 (Pre-Wedding):</strong> Reduce HIIT intensity slightly to avoid looking depleted. Switch to 2 moderate HIIT sessions per week. Priority shifts to holding the physique, managing cortisol, and peaking for the wedding date.</div>
         </li>
       </ul>
-
       <div class="groomfit-section">
         <div class="gf-eyebrow"><i class="fa fa-crown"></i> GroomFit Protocol</div>
         <h3>We Tell You Exactly When, How, and How Hard.</h3>
@@ -1640,12 +1546,11 @@
         <p>
           At GroomFit, every groom gets a periodized training plan where HIIT is scheduled precisely alongside lifting, recovery, and nutrition — so all three work together, not against each other. The grooms who've gone through this process average a 6–9 cm waist reduction in 60–90 days.
         </p>
-        <a href="#" class="gf-cta-inline" onclick="openPopup(); return false;">
+        <button class="gf-cta-inline" onclick="openPopup(); return false;">
           Apply for Personalised Coaching <i class="fa fa-arrow-right"></i>
-        </a>
+        </button>
       </div>
     </div>
-
     <!-- RELATED -->
     <div class="related-section reveal">
       <div class="related-title"><i class="fa fa-book-open"></i> Continue Your Transformation</div>
@@ -1670,24 +1575,20 @@
         </a>
       </div>
     </div>
-
     <!-- FINAL CTA -->
     <div class="cta-section reveal">
       <div class="cta-badge"><i class="fa fa-bolt"></i> GroomFit Program</div>
       <h2>Ready to Put This Into Action?</h2>
       <p>A custom HIIT protocol, lifting plan, and nutrition guide — all built around your wedding date, your body, and your schedule.</p>
-      <a href="#" class="cta-btn" onclick="openPopup(); return false;">
+      <button class="cta-btn" onclick="openPopup(); return false;">
         Check If I Qualify <i class="fa fa-arrow-right"></i>
-      </a>
+      </button>
       <span class="cta-note">Limited monthly spots · Personalised plan · Groom-specific results</span>
     </div>
-
   </article>
-
   <!-- ─── SIDEBAR ─── -->
   <aside class="sidebar" aria-label="Article navigation">
     <div class="sidebar-sticky">
-
       <!-- TOC -->
       <div class="sidebar-box">
         <div class="sidebar-title"><i class="fa fa-list-ul"></i> In This Article</div>
@@ -1702,7 +1603,6 @@
           <li><a href="#s8"><span class="toc-num">08</span> Wedding Prep Context</a></li>
         </ul>
       </div>
-
       <!-- Quick Reference -->
       <div class="sidebar-box">
         <div class="sidebar-title"><i class="fa fa-bolt"></i> HIIT Quick Ref</div>
@@ -1733,7 +1633,6 @@
           </div>
         </div>
       </div>
-
       <!-- Share -->
       <div class="sidebar-box share-box">
         <div class="sidebar-title"><i class="fa fa-share-nodes"></i> Share This</div>
@@ -1742,25 +1641,21 @@
           <button class="share-btn" title="Share on WhatsApp" onclick="window.open('https://wa.me/?text=HIIT%20Workout%20for%20Fast%20Fat%20Loss%20-%20https://groomfit.in/hiit-workout-for-fat-loss.html')">
             <i class="fab fa-whatsapp"></i>
           </button>
-          
+
           <button class="share-btn" title="Copy Link" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'fa fa-check\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'fa fa-link\'></i>',2000)">
             <i class="fa fa-link"></i>
           </button>
         </div>
       </div>
-
       <!-- CTA -->
       <div class="side-cta">
         <h4>Your Wedding Date Won't Wait</h4>
         <p>Get a personalised HIIT + lifting + nutrition plan built for your timeline.</p>
         <a href="#" onclick="openPopup(); return false;">Apply Now →</a>
       </div>
-
     </div>
   </aside>
-
 </div><!-- /page-wrap -->
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1779,14 +1674,14 @@
     <a href="https://www.groomfit.in/#pricing">Pricing</a>
   </div>
 </footer>
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/919588859960" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
-
+<!-- HIDDEN IFRAME FOR GOOGLE FORMS -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 <!-- POPUP -->
-<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+<div id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
   <div class="popup-box">
     <div class="popup-logo">GroomFit</div>
     <h3 id="popup-title">Check If You Qualify</h3>
@@ -1794,21 +1689,19 @@
     <form id="leadForm">
       <input name="name" placeholder="Your Full Name" required autocomplete="name">
       <input name="phone" type="tel" placeholder="Phone Number" required autocomplete="tel">
-      <input name="wedding" placeholder="Wedding Date (Approx.)" required>
       <input name="location" placeholder="Your City" required>
       <button class="popup-submit" type="submit">Submit Application →</button>
     </form>
     <button class="popup-close" onclick="closePopup()">Maybe Later</button>
   </div>
 </div>
-
 <!-- SUCCESS -->
-<div class="success-overlay" id="success" role="dialog" aria-modal="true">
+<div id="success" role="dialog" aria-modal="true">
   <div class="success-box">
     <div class="tick"><i class="fa fa-check"></i></div>
     <h3>Application Received</h3>
     <p>Our team will review and reach out shortly. Connect with us on WhatsApp for a faster response.</p>
-    <a id="waBtn" href="#" class="wa-link">
+    <a id="whatsappBtn" href="#" class="wa-link" target="_blank">
       <i class="fab fa-whatsapp"></i> Connect on WhatsApp
     </a>
     <a href="https://www.groomfit.in/#pricing" class="pricing-link">
@@ -1817,7 +1710,6 @@
     <button onclick="closeSuccess()">Dismiss</button>
   </div>
 </div>
-
 <script>
   // ─── PROGRESS BAR ───
   window.addEventListener('scroll', function () {
@@ -1826,7 +1718,6 @@
     const total = doc.scrollHeight - doc.clientHeight;
     document.getElementById('readProgress').style.transform = 'scaleX(' + (scrolled / total) + ')';
   });
-
   // ─── SCROLL REVEAL ───
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver(function (entries) {
@@ -1838,7 +1729,6 @@
     });
   }, { threshold: 0.07 });
   revealEls.forEach(function (el) { revealObserver.observe(el); });
-
   // ─── ACTIVE TOC ───
   const sections = document.querySelectorAll('[id^="s"]');
   const tocLinks = document.querySelectorAll('.toc-list a');
@@ -1852,7 +1742,6 @@
     });
   }, { rootMargin: '-25% 0px -70% 0px' });
   sections.forEach(function (s) { tocObserver.observe(s); });
-
   // ─── ANIMATED COUNTERS ───
   function animateCounter(el) {
     const fullText = el.innerHTML;
@@ -1877,14 +1766,12 @@
     });
   }, { threshold: 0.5 });
   statNums.forEach(function (el) { statObserver.observe(el); });
-
   // ─── NAV SCROLL ───
   window.addEventListener('scroll', function () {
     document.querySelector('nav').style.background =
       window.scrollY > 60 ? 'rgba(7,6,4,0.97)' : 'rgba(7,6,4,0.92)';
   });
-
-  // ─── POPUP ───
+  // ─── POPUP FUNCTIONS ───
   function openPopup() {
     document.getElementById('popup').style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -1897,31 +1784,93 @@
     document.getElementById('success').style.display = 'none';
     document.body.style.overflow = '';
   }
+ // ── FORM SUBMIT ──
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
 
-  document.getElementById('leadForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    const msg = encodeURIComponent(
-      'Hi GroomFit! I applied for your HIIT + transformation program.\n\n' +
-      'Name: ' + data.get('name') + '\n' +
-      'Phone: ' + data.get('phone') + '\n' +
-      'Wedding Date: ' + data.get('wedding') + '\n' +
-      'City: ' + data.get('location')
-    );
-    document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
+  // Silent submit to Google Forms
+  const googleForm = document.createElement('form');
+  googleForm.method = 'POST';
+  googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse';
+  googleForm.target = 'hidden_iframe';
+
+  function addField(name, value) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+  addField('entry.525461384', formData.get('name'));
+  addField('entry.933229371', formData.get('phone'));
+  addField('entry.1013425097', formData.get('location'));
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+  document.body.removeChild(googleForm);
+
+  // Build WhatsApp link
+  const name = formData.get('name') || '';
+  const phone = formData.get('phone') || '';
+  const location = formData.get('location') || '';
+  const message = `Hi GroomFit, I applied for your belly fat transformation program.\nName: ${name}\nPhone: ${phone}\nCity: ${location}`;
+
+  document.getElementById('whatsappBtn').href =
+    'https://wa.me/919588859960?text=' + encodeURIComponent(message);
+
+  // Show success popup
+  closePopup();
+  document.getElementById('successPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  // Reset form
+  this.reset();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePopup();
+    closeSuccessPopup();
+  }
+});
+</script>
+</body>
+</html>
+
+    // STEP 2: Build WhatsApp message with form data
+    const name = formData.get('name') || '';
+    const phone = formData.get('phone') || '';
+    const location = formData.get('location') || '';
+    const message = `Hi GroomFit, I applied for your HIIT fat loss program.\nName: ${name}\nPhone: ${phone}\nCity: ${location}`;
+
+    document.getElementById('whatsappBtn').href =
+      'https://wa.me/919588859960?text=' + encodeURIComponent(message);
+
+    // STEP 3: Show success popup
     closePopup();
     document.getElementById('success').style.display = 'flex';
     document.body.style.overflow = 'hidden';
+
+    // Reset form
+    this.reset();
   });
 
-  document.getElementById('popup').addEventListener('click', function (e) {
+  // ─── CLOSE POPUP ON BACKDROP CLICK ───
+  document.getElementById('popup').addEventListener('click', function(e) {
     if (e.target === this) closePopup();
   });
-  document.getElementById('success').addEventListener('click', function (e) {
+
+  document.getElementById('success').addEventListener('click', function(e) {
     if (e.target === this) closeSuccess();
   });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { closePopup(); closeSuccess(); }
+
+  // ─── CLOSE ON ESCAPE KEY ───
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closePopup();
+      closeSuccess();
+    }
   });
 
   // ─── HEART RATE ZONE ANIMATION ───
