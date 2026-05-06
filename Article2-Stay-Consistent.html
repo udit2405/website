@@ -26,10 +26,8 @@
     "dateModified": "2026-07-01"
   }
   </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     /* ─── ROOT ─── */
     :root {
@@ -52,10 +50,8 @@
       --body-max: 760px;
       --radius: 16px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
-
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
@@ -63,12 +59,10 @@
       line-height: 1.85;
       overflow-x: hidden;
     }
-
     /* ─── SCROLLBAR ─── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 4px; }
-
     /* ─── PROGRESS BAR ─── */
     #readProgress {
       position: fixed;
@@ -81,7 +75,6 @@
       transition: transform 0.1s linear;
       box-shadow: 0 0 8px var(--gold-glow);
     }
-
     /* ─── NAV ─── */
     nav {
       position: fixed;
@@ -97,7 +90,6 @@
       z-index: 1000;
       transition: background 0.3s;
     }
-
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
@@ -116,7 +108,6 @@
       background: var(--gold-bright);
       animation: pulse 2s ease-in-out infinite;
     }
-
     .nav-logo-img {
   height: 48px;
   width: auto;
@@ -125,12 +116,10 @@
   filter: drop-shadow(0 0 6px rgba(201,168,76,0.4));
   transition: filter 0.3s ease;
 }
-
 .nav-logo-img:hover {
   filter: drop-shadow(0 0 10px rgba(201,168,76,0.6));
 }
     .nav-actions { display: flex; align-items: center; gap: 14px; }
-
     .nav-back {
       color: var(--muted-light);
       text-decoration: none;
@@ -143,7 +132,6 @@
       transition: color 0.2s;
     }
     .nav-back:hover { color: var(--gold); }
-
     .nav-cta {
       background: linear-gradient(135deg, var(--gold), var(--gold-bright));
       color: #000;
@@ -158,7 +146,6 @@
       box-shadow: 0 4px 16px rgba(201,168,76,0.3);
     }
     .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(201,168,76,0.4); }
-
     /* ─── HERO ─── */
     .hero {
       min-height: 92vh;
@@ -169,7 +156,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -188,7 +174,6 @@
         rgba(7,6,4,1) 100%
       );
     }
-
     /* Animated orbs */
     .hero-orb {
       position: absolute;
@@ -211,13 +196,11 @@
       animation-delay: -3s;
       animation-duration: 10s;
     }
-
     .hero-inner {
       max-width: var(--body-max);
       position: relative;
       z-index: 2;
     }
-
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -240,7 +223,6 @@
       background: var(--gold);
       animation: pulse 1.8s ease-in-out infinite;
     }
-
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.4rem, 5.8vw, 4rem);
@@ -252,7 +234,6 @@
     }
     .hero h1 em { font-style: italic; color: var(--gold); }
     .hero h1 .line-break { display: block; }
-
     .hero-sub {
       margin-top: 20px;
       max-width: 560px;
@@ -262,7 +243,6 @@
       line-height: 1.72;
       animation: fadeUp 0.7s 0.18s ease both;
     }
-
     .hero-meta {
       display: flex;
       align-items: center;
@@ -281,7 +261,6 @@
     }
     .meta-item i { color: var(--gold); font-size: 11px; }
     .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
-
     .hero-scroll {
       position: absolute;
       bottom: 28px;
@@ -306,7 +285,6 @@
       background: linear-gradient(to bottom, var(--gold), transparent);
       animation: scrollPulse 1.8s ease-in-out infinite;
     }
-
     /* ─── LAYOUT ─── */
     .page-wrap {
       display: grid;
@@ -320,7 +298,6 @@
       .page-wrap { grid-template-columns: 1fr; }
       .sidebar { display: none; }
     }
-
     /* ─── SIDEBAR ─── */
     .sidebar-sticky {
       position: sticky;
@@ -329,7 +306,6 @@
       flex-direction: column;
       gap: 18px;
     }
-
     .sidebar-box {
       background: var(--surface);
       border: 1px solid var(--gold-border);
@@ -338,7 +314,6 @@
       transition: border-color 0.3s;
     }
     .sidebar-box:hover { border-color: rgba(201,168,76,0.3); }
-
     .sidebar-title {
       font-size: 10px;
       letter-spacing: 0.2em;
@@ -350,7 +325,6 @@
       align-items: center;
       gap: 7px;
     }
-
     .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
     .toc-list li a {
       display: flex;
@@ -378,7 +352,6 @@
       flex-shrink: 0;
       margin-top: 2px;
     }
-
     /* Share box */
     .share-box { text-align: center; }
     .share-box p { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
@@ -397,7 +370,6 @@
       transition: background 0.2s, transform 0.2s;
     }
     .share-btn:hover { background: var(--gold-mid); transform: translateY(-2px); }
-
     /* Sidebar CTA */
     .side-cta {
       background: linear-gradient(145deg, rgba(201,168,76,0.12), rgba(201,168,76,0.03));
@@ -425,12 +397,11 @@
       border: none;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 16px rgba(201,168,76,0.25);
+      cursor: pointer;
     }
     .side-cta a:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
-
     /* ─── ARTICLE BODY ─── */
     .article-body { min-width: 0; }
-
     /* Divider section */
     .article-section {
       margin-bottom: 56px;
@@ -438,7 +409,6 @@
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .article-section:last-child { border-bottom: none; margin-bottom: 0; }
-
     /* Section header */
     .section-header { margin-bottom: 22px; }
     .section-num {
@@ -455,7 +425,6 @@
       margin-bottom: 10px;
       letter-spacing: 0.05em;
     }
-
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.6rem, 3.8vw, 2.1rem);
@@ -463,7 +432,6 @@
       color: var(--white);
       line-height: 1.18;
     }
-
     h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.22rem;
@@ -482,7 +450,6 @@
       border-radius: 2px;
       flex-shrink: 0;
     }
-
     p {
       font-size: 16px;
       color: #bdb5a8;
@@ -492,10 +459,8 @@
     }
     p strong { color: var(--white); font-weight: 600; }
     p em { color: var(--gold-bright); font-style: normal; }
-
     a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-border); transition: border-color 0.2s; }
     a:hover { border-color: var(--gold); }
-
     /* ─── STORY CARD (Intro) ─── */
     .story-card {
       background: var(--surface);
@@ -528,7 +493,6 @@
       gap: 8px;
     }
     .story-card p { font-size: 15px; color: #c8c0b0; margin: 0; font-style: italic; line-height: 1.8; }
-
     /* ─── CALLOUT ─── */
     .callout {
       border-left: 3px solid var(--gold);
@@ -549,7 +513,6 @@
       gap: 7px;
     }
     .callout p { color: #c8c0b0; margin: 0; font-size: 15px; line-height: 1.75; }
-
     /* ─── STAT ROW ─── */
     .stat-row {
       display: grid;
@@ -558,7 +521,6 @@
       margin: 28px 0;
     }
     @media (max-width: 520px) { .stat-row { grid-template-columns: 1fr; } }
-
     .stat-card {
       background: var(--surface);
       border: 1px solid var(--gold-border);
@@ -581,7 +543,6 @@
     }
     .stat-unit { font-size: 16px; color: var(--gold); font-weight: 600; }
     .stat-desc { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
-
     /* ─── FAIL CARDS (4 reasons) ─── */
     .fail-grid {
       display: grid;
@@ -590,7 +551,6 @@
       margin: 24px 0;
     }
     @media (max-width: 580px) { .fail-grid { grid-template-columns: 1fr; } }
-
     .fail-card {
       background: var(--surface);
       border: 1px solid var(--gold-border);
@@ -611,7 +571,6 @@
     }
     .fail-card:hover { transform: translateY(-3px); border-color: rgba(201,168,76,0.3); }
     .fail-card:hover::after { opacity: 1; }
-
     .fail-icon {
       width: 38px; height: 38px;
       border-radius: 10px;
@@ -631,7 +590,6 @@
       margin-bottom: 8px;
     }
     .fail-card p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.6; }
-
     /* ─── SYSTEM STEPS ─── */
     .system-steps {
       display: flex;
@@ -649,7 +607,6 @@
       width: 1px;
       background: linear-gradient(to bottom, var(--gold), transparent);
     }
-
     .step-item {
       display: flex;
       gap: 20px;
@@ -657,7 +614,6 @@
       padding: 20px 0;
       position: relative;
     }
-
     .step-badge {
       width: 36px; height: 36px;
       border-radius: 50%;
@@ -677,7 +633,6 @@
       background: var(--gold-dim);
       border-color: var(--gold);
     }
-
     .step-content { flex: 1; }
     .step-content h4 {
       font-family: 'Playfair Display', serif;
@@ -687,7 +642,6 @@
     }
     .step-content p { font-size: 14.5px; color: var(--muted-light); margin: 0; line-height: 1.68; }
     .step-content strong { color: var(--white); }
-
     /* ─── CHECK LIST ─── */
     .check-list {
       list-style: none;
@@ -712,7 +666,6 @@
       flex-shrink: 0;
     }
     .check-list li strong { color: var(--white); font-weight: 600; }
-
     /* ─── PULL QUOTE ─── */
     .pull-quote {
       border-top: 1px solid var(--gold-border);
@@ -747,7 +700,6 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-
     /* ─── MOTIVATION vs DISCIPLINE TABLE ─── */
     .compare-grid {
       display: grid;
@@ -756,7 +708,6 @@
       margin: 24px 0;
     }
     @media (max-width: 520px) { .compare-grid { grid-template-columns: 1fr; } }
-
     .compare-col {
       background: var(--surface);
       border: 1px solid var(--gold-border);
@@ -788,7 +739,6 @@
     .compare-item i { font-size: 11px; flex-shrink: 0; margin-top: 3px; }
     .compare-col.motivation .compare-item i { color: #e07060; }
     .compare-col.discipline .compare-item i { color: #50c878; }
-
     /* ─── WARNING BOX ─── */
     .warning-box {
       background: rgba(180,60,40,0.07);
@@ -809,7 +759,6 @@
       gap: 7px;
     }
     .warning-box p { color: #c0a09a; font-size: 14.5px; margin: 0; line-height: 1.7; }
-
     /* ─── FACT BOX ─── */
     .fact-box {
       background: var(--surface);
@@ -839,7 +788,6 @@
       gap: 9px;
     }
     .fact-box p { color: #bdb5a8; font-size: 14.5px; line-height: 1.75; margin: 0; }
-
     /* ─── MISTAKE LIST ─── */
     .mistake-list {
       display: flex;
@@ -871,7 +819,6 @@
     }
     .mistake-item h4 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
     .mistake-item p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.6; }
-
     /* ─── WEEKLY PLAN (Timeline) ─── */
     .weekly-timeline {
       display: flex;
@@ -888,14 +835,12 @@
       width: 1px;
       background: linear-gradient(to bottom, var(--gold-border), transparent);
     }
-
     .timeline-item {
       display: grid;
       grid-template-columns: 104px 1fr;
       gap: 0;
       position: relative;
     }
-
     .timeline-day {
       padding: 18px 16px 18px 0;
       display: flex;
@@ -921,7 +866,6 @@
       border-color: var(--gold);
       background: var(--gold-dim);
     }
-
     .day-label {
       font-size: 11px;
       font-weight: 700;
@@ -933,13 +877,11 @@
       color: var(--muted);
       letter-spacing: 0.04em;
     }
-
     .timeline-content {
       padding: 18px 0 18px 24px;
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
     .timeline-item:last-child .timeline-content { border-bottom: none; }
-
     .timeline-content strong { color: var(--white); font-size: 14px; font-weight: 600; display: block; margin-bottom: 4px; }
     .timeline-content p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.62; }
     .timeline-content .tag {
@@ -956,7 +898,6 @@
       letter-spacing: 0.05em;
       margin-top: 8px;
     }
-
     /* ─── GROOMFIT SECTION ─── */
     .groomfit-section {
       background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
@@ -1017,9 +958,9 @@
       margin-top: 22px;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 6px 20px rgba(201,168,76,0.3);
+      cursor: pointer;
     }
     .gf-cta-inline:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.4); }
-
     /* ─── INTERNAL LINK CARD ─── */
     .internal-link-box {
       background: var(--surface);
@@ -1032,6 +973,8 @@
       justify-content: space-between;
       gap: 16px;
       transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: var(--white);
     }
     .internal-link-box:hover {
       border-color: rgba(201,168,76,0.35);
@@ -1051,7 +994,6 @@
     .ilb-text .ilb-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
     .ilb-text .ilb-title { font-size: 14px; color: var(--white); font-weight: 600; }
     .internal-link-box i.arrow { color: var(--gold); font-size: 12px; flex-shrink: 0; }
-
     /* ─── RELATED ─── */
     .related-section {
       background: var(--surface);
@@ -1092,7 +1034,6 @@
       transform: translateX(5px);
     }
     .related-link i { color: var(--gold); font-size: 12px; }
-
     /* ─── FINAL CTA ─── */
     .cta-section {
       margin-top: 64px;
@@ -1147,16 +1088,17 @@
       color: #000;
       text-decoration: none;
       border-bottom: none;
+      border: none;
       font-weight: 700;
       font-size: 15px;
       padding: 16px 36px;
       border-radius: 12px;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 8px 28px rgba(201,168,76,0.35);
+      cursor: pointer;
     }
     .cta-btn:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(201,168,76,0.45); }
     .cta-note { display: block; font-size: 12px; color: var(--muted); margin-top: 16px; }
-
     /* ─── POPUP ─── */
     .popup {
       position: fixed;
@@ -1234,7 +1176,6 @@
       transition: color 0.2s;
     }
     .popup-close:hover { color: var(--white); }
-
     /* Success */
     .success-overlay {
       position: fixed;
@@ -1281,12 +1222,14 @@
       color: #fff;
       text-decoration: none;
       border: none;
+      border-bottom: none;
       font-weight: 700;
       font-size: 14px;
       padding: 13px 20px;
       border-radius: 10px;
       margin-bottom: 10px;
       transition: opacity 0.2s;
+      cursor: pointer;
     }
     .wa-link:hover { opacity: 0.88; }
     .pricing-link {
@@ -1313,7 +1256,6 @@
       transition: color 0.2s;
     }
     .success-box button:hover { color: var(--white); }
-
     /* ─── WHATSAPP ─── */
     .wa-float {
       position: fixed;
@@ -1332,7 +1274,6 @@
     }
     .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 36px rgba(37,211,102,0.5); }
     .wa-float i { font-size: 24px; color: #fff; }
-
     /* ─── FOOTER ─── */
     footer {
       text-align: center;
@@ -1345,7 +1286,6 @@
     footer a:hover { color: var(--muted); }
     footer .footer-inner { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
     footer .footer-brand { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--gold); }
-
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -1371,7 +1311,6 @@
       0% { background-position: -200% center; }
       100% { background-position: 200% center; }
     }
-
     /* Scroll reveal */
     .reveal {
       opacity: 0;
@@ -1382,7 +1321,6 @@
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.18s; }
     .reveal-delay-3 { transition-delay: 0.26s; }
-
     /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
       .hero { padding: 88px 5% 64px; min-height: 85vh; }
@@ -1393,10 +1331,11 @@
   </style>
 </head>
 <body>
+<!-- HIDDEN IFRAME FOR GOOGLE FORMS -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <!-- PROGRESS BAR -->
 <div id="readProgress"></div>
-
 <!-- NAV -->
 <nav>
  <a href="https://www.groomfit.in/" class="nav-logo">
@@ -1407,13 +1346,11 @@
     <a href="https://www.groomfit.in/#pricing" class="nav-cta">View Plans</a>
   </div>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
-
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="badge-dot"></span>
@@ -1436,19 +1373,15 @@
       <span class="meta-item"><i class="fa fa-bullseye"></i> For Grooms & Busy Men</span>
     </div>
   </div>
-
   <div class="hero-scroll">
     <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
-
 <!-- PAGE LAYOUT -->
 <div class="page-wrap">
-
   <!-- ─── ARTICLE ─── -->
   <article class="article-body">
-
     <!-- HOOK INTRO -->
     <div class="article-section reveal">
       <div class="story-card">
@@ -1459,15 +1392,12 @@
           By month two, nothing had changed except his wedding was now six weeks closer and his anxiety was through the roof.
         </p>
       </div>
-
       <p>
         If any part of that story felt uncomfortably familiar — you're not weak, you're not lazy, and you don't have a "discipline problem." You have a <strong>system problem</strong>. And that's entirely fixable.
       </p>
-
       <p>
         Most fitness content tells you to "stay motivated" and "believe in yourself." That advice is garbage for busy people. Motivation is a feeling — it peaks and crashes like your blood sugar after a biryani. What you actually need is a <strong>repeatable system that works even on the days you don't feel like it</strong>. That's what this guide is about.
       </p>
-
       <div class="stat-row">
         <div class="stat-card reveal reveal-delay-1">
           <div class="stat-num">92<span class="stat-unit">%</span></div>
@@ -1483,49 +1413,40 @@
         </div>
       </div>
     </div>
-
     <!-- SECTION 1: Consistency > Motivation -->
     <div class="article-section reveal" id="s1">
       <div class="section-header">
         <div class="section-num">01</div>
         <h2>Consistency Is the Real Secret. Not Motivation.</h2>
       </div>
-
       <p>
         Here's a truth nobody wants to say out loud: <strong>the guys who get the best results aren't the ones who are most motivated — they're the ones who show up most often.</strong> Even on bad days. Even for 20 minutes when they had planned for 60. Even when the workout is trash.
       </p>
-
       <p>
         Motivation is a weather report. Beautiful on some days, terrible on others. You cannot build a fitness plan around weather. <strong>Discipline is owning a raincoat.</strong> You can't control the weather, but you control what you carry.
       </p>
-
       <p>
         Fitness is a skill that compounds. Every session — even a mediocre one — reinforces your neural pathways, preserves muscle, keeps your metabolism active, and most importantly, maintains your identity as someone who works out. <strong>The worst workout you do is always better than the perfect workout you skip.</strong>
       </p>
-
       <div class="callout">
         <div class="callout-label"><i class="fa fa-lightbulb"></i> The Core Principle</div>
         <p>
           Your body doesn't care how inspired you felt when you walked into the gym. It responds to load, frequency, and progressive overload over time. Consistency creates the frequency. Everything else is noise.
         </p>
       </div>
-
       <p>
         For Indian grooms specifically, the stakes are even higher. You have a wedding date. It doesn't move. The math is simple — <em>every missed week costs you visible results</em>. A groom who works out 3x/week for 12 weeks gets 36 sessions in. A groom who "stays motivated" but misses 2 weeks here and there gets maybe 20. That's nearly half the progress, same timeline.
       </p>
     </div>
-
     <!-- SECTION 2: Top Reasons -->
     <div class="article-section reveal" id="s2">
       <div class="section-header">
         <div class="section-num">02</div>
         <h2>Why Most People Actually Fail to Stay Consistent</h2>
       </div>
-
       <p>
         Before we talk solutions, let's diagnose the real causes. Most fitness inconsistency is not a character flaw — it's a planning failure.
       </p>
-
       <div class="fail-grid">
         <div class="fail-card reveal reveal-delay-1">
           <div class="fail-icon"><i class="fa fa-briefcase"></i></div>
@@ -1548,7 +1469,6 @@
           <p>You made a commitment only to yourself — and yourself is very easy to negotiate with. Nobody knows if you skip. So skipping has no social cost.</p>
         </div>
       </div>
-
       <div class="warning-box">
         <div class="warning-label"><i class="fa fa-triangle-exclamation"></i> The "All or Nothing" Trap</div>
         <p>
@@ -1556,18 +1476,15 @@
         </p>
       </div>
     </div>
-
     <!-- SECTION 3: How to Stay Consistent -->
     <div class="article-section reveal" id="s3">
       <div class="section-header">
         <div class="section-num">03</div>
         <h2>How to Actually Stay Consistent: The System That Works</h2>
       </div>
-
       <p>
         This is not a list of "tips." It's a layered system. Each element supports the others. Skip one and the whole thing wobbles. Implement all five and it becomes almost automatic.
       </p>
-
       <div class="system-steps">
         <div class="step-item">
           <div class="step-badge">1</div>
@@ -1605,7 +1522,6 @@
           </div>
         </div>
       </div>
-
       <a href="/pre-wedding-weight-loss-plan.html" class="internal-link-box reveal">
         <div class="ilb-left">
           <div class="ilb-icon"><i class="fa fa-calendar-check"></i></div>
@@ -1617,18 +1533,15 @@
         <i class="fa fa-arrow-right arrow"></i>
       </a>
     </div>
-
     <!-- SECTION 4: Busy Professionals -->
     <div class="article-section reveal" id="s4">
       <div class="section-header">
         <div class="section-num">04</div>
         <h2>Fitness for Busy Professionals: Minimum Effective Dose</h2>
       </div>
-
       <p>
         You don't need two hours a day. That's a myth perpetuated by people with a lot of free time. <strong>Research consistently shows that 30–40 focused minutes, 3–4 times per week, produces 85–90% of the results you'd get from twice the time.</strong> The extra time gives diminishing returns. For a groom juggling work, family, and wedding planning, minimum effective dose is the entire game.
       </p>
-
       <h3>The 30-Minute Protocol That Actually Works</h3>
       <ul class="check-list">
         <li><i class="fa fa-check-circle"></i>
@@ -1641,26 +1554,22 @@
           <div><strong>25–30 min:</strong> 10 minutes HIIT or 5-minute cool-down + stretching. Done. Shower. Out.</div>
         </li>
       </ul>
-
       <h3>Micro-Workouts: When 30 Minutes Isn't Possible</h3>
       <p>
         Life happens. Sometimes even 30 minutes disappears. On those days, <strong>a 10–15 minute micro-workout is not a waste of time — it's a habit-preservation move</strong>. 15 minutes of push-ups, squats, and planks tells your brain "I am still someone who works out today." That identity maintenance is worth far more than the calories burned.
       </p>
-
       <ul class="check-list">
         <li><i class="fa fa-circle-dot"></i> <div>10 push-ups + 15 squats + 30-second plank × 3 rounds = 12 minutes, done anywhere.</div></li>
         <li><i class="fa fa-circle-dot"></i> <div>Lunch break walk: 20–25 minutes of brisk walking burns visceral fat and clears cortisol.</div></li>
         <li><i class="fa fa-circle-dot"></i> <div>Hotel room workout if traveling: bodyweight only, no excuses.</div></li>
         <li><i class="fa fa-circle-dot"></i> <div>5-minute morning movement sequence: just enough to not break the streak.</div></li>
       </ul>
-
       <div class="fact-box">
         <div class="fact-box-title"><i class="fa fa-flask"></i> What the Science Says</div>
         <p>
           A 2020 study in <em>Medicine & Science in Sports & Exercise</em> found that three 10-minute exercise bouts throughout the day produced nearly identical cardiovascular and metabolic benefits as one continuous 30-minute session. For busy professionals, splitting workouts is not a compromise — it's a legitimate strategy.
         </p>
       </div>
-
       <a href="/home-workout-plan.html" class="internal-link-box reveal">
         <div class="ilb-left">
           <div class="ilb-icon"><i class="fa fa-house"></i></div>
@@ -1672,18 +1581,15 @@
         <i class="fa fa-arrow-right arrow"></i>
       </a>
     </div>
-
     <!-- SECTION 5: Motivation vs Discipline -->
     <div class="article-section reveal" id="s5">
       <div class="section-header">
         <div class="section-num">05</div>
         <h2>Motivation vs. Discipline: What Nobody Explains Properly</h2>
       </div>
-
       <p>
         Here's the simplest way to understand it. <strong>Motivation is why you started. Discipline is why you didn't stop.</strong> They serve completely different functions. Expecting motivation to carry you through 90 days is like expecting the adrenaline of booking a flight to also pack your bags, navigate the airport, and land the plane.
       </p>
-
       <div class="compare-grid">
         <div class="compare-col motivation">
           <div class="compare-header motivation">
@@ -1710,24 +1616,20 @@
           </div>
         </div>
       </div>
-
       <div class="pull-quote">
         <p>"The gap between who you are and who you want to be on your wedding day is closed by discipline. Not inspiration. Not perfect genetics. Just showing up when it's inconvenient."</p>
         <cite>— GroomFit Coaching Philosophy</cite>
       </div>
-
       <p>
         Practically: stop waiting to feel ready. You're never going to feel ready at 5:30 AM when the alarm goes off and the blanket is warm. <strong>The action comes before the feeling, not after it.</strong> You do the workout, and then you feel good about it. The feeling is the reward, not the prerequisite.
       </p>
     </div>
-
     <!-- SECTION 6: Common Mistakes -->
     <div class="article-section reveal" id="s6">
       <div class="section-header">
         <div class="section-num">06</div>
         <h2>Common Mistakes That Destroy Consistency</h2>
       </div>
-
       <div class="mistake-list">
         <div class="mistake-item">
           <div class="mistake-icon"><i class="fa fa-arrows-left-right"></i></div>
@@ -1766,18 +1668,15 @@
         </div>
       </div>
     </div>
-
     <!-- SECTION 7: Weekly Plan -->
     <div class="article-section reveal" id="s7">
       <div class="section-header">
         <div class="section-num">07</div>
         <h2>A Realistic Weekly Consistency Plan</h2>
       </div>
-
       <p>
         This is a sample week built for a busy groom or working professional. It's not perfect — it's <em>executable</em>. That's the only metric that matters.
       </p>
-
       <div class="weekly-timeline">
         <div class="timeline-item">
           <div class="timeline-day">
@@ -1857,7 +1756,6 @@
           </div>
         </div>
       </div>
-
       <div class="callout">
         <div class="callout-label"><i class="fa fa-calendar-check"></i> The Golden Rule</div>
         <p>
@@ -1865,22 +1763,18 @@
         </p>
       </div>
     </div>
-
     <!-- SECTION 8: GroomFit Angle -->
     <div class="article-section reveal" id="s8">
       <div class="section-header">
         <div class="section-num">08</div>
         <h2>What Consistency Looks Like 90 Days Before a Wedding</h2>
       </div>
-
       <p>
         Here's something nobody prepares you for: <strong>the grooms who transform the most before their wedding aren't the ones who tried the hardest in the last two weeks — they're the ones who stayed consistent in months two and three</strong>, when it wasn't exciting, when there was no visible progress yet, when they were tired.
       </p>
-
       <p>
         That's where GroomFit lives. Between the hype of Day 1 and the panic of the week before the wedding, there are 75 days that nobody talks about. Those are the days that determine what you look like in your sherwani, in your photos, in the mirror.
       </p>
-
       <div class="groomfit-section">
         <div class="gf-eyebrow"><i class="fa fa-crown"></i> The GroomFit Difference</div>
         <h3>You Don't Need More Motivation. You Need a System Built for You.</h3>
@@ -1894,27 +1788,22 @@
           Check If I Qualify <i class="fa fa-arrow-right"></i>
         </a>
       </div>
-
       <p>
         Think about the day of your wedding. You're standing with your family, dressed in your best. Every photo from that day gets printed, shared, looked at for decades. <strong>The version of you in those photos is being built right now, today, in the decisions you make this week.</strong> Not in the final 10 days of crash dieting. Now.
       </p>
-
       <p>
         That's not pressure. That's the most useful framing you can give yourself. Because it means every small consistent action you take today is directly connected to that moment.
       </p>
     </div>
-
     <!-- CONCLUSION -->
     <div class="article-section reveal" id="s9">
       <div class="section-header">
         <div class="section-num">09</div>
         <h2>The Simple Truth About Staying Consistent</h2>
       </div>
-
       <p>
         Here's everything in one place, distilled:
       </p>
-
       <ul class="check-list">
         <li><i class="fa fa-check-circle"></i>
           <div><strong>Stop waiting to feel motivated.</strong> The feeling follows the action. Always.</div>
@@ -1938,16 +1827,13 @@
           <div><strong>Get accountability.</strong> Someone who knows your goal, checks in on you, and doesn't let you negotiate with yourself.</div>
         </li>
       </ul>
-
       <p>
         You're doing this for a reason bigger than a six-pack. You want to walk into the most photographed day of your life feeling like you showed up for yourself. You want to look at those photos ten years from now and know you gave it everything. You want your partner to look at you and see the version of you that you know you can be.
       </p>
-
       <p>
         <strong>That version is built by consistency. And consistency starts today.</strong>
       </p>
     </div>
-
     <!-- RELATED -->
     <div class="related-section reveal">
       <div class="related-title"><i class="fa fa-book-open"></i> More Guides for Your Transformation</div>
@@ -1972,7 +1858,6 @@
         </a>
       </div>
     </div>
-
     <!-- FINAL CTA -->
     <div class="cta-section reveal">
       <div class="cta-badge"><i class="fa fa-crown"></i> GroomFit Program</div>
@@ -1983,13 +1868,10 @@
       </a>
       <span class="cta-note">Limited spots per month · Personalised coaching · Results guaranteed</span>
     </div>
-
   </article>
-
   <!-- ─── SIDEBAR ─── -->
   <aside class="sidebar" aria-label="Article navigation">
     <div class="sidebar-sticky">
-
       <!-- TOC -->
       <div class="sidebar-box">
         <div class="sidebar-title"><i class="fa fa-list-ul"></i> In This Article</div>
@@ -2005,7 +1887,6 @@
           <li><a href="#s9"><span class="toc-num">09</span> Conclusion</a></li>
         </ul>
       </div>
-
       <!-- Share -->
       <div class="sidebar-box share-box">
         <div class="sidebar-title"><i class="fa fa-share-nodes"></i> Share This Guide</div>
@@ -2014,25 +1895,21 @@
           <button class="share-btn" title="Share on WhatsApp" onclick="window.open('https://wa.me/?text=How%20to%20Stay%20Consistent%20in%20Fitness%20-%20https://groomfit.in/how-to-stay-consistent-in-fitness.html')">
             <i class="fab fa-whatsapp"></i>
           </button>
-         
+
           <button class="share-btn" title="Copy Link" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'fa fa-check\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'fa fa-link\'></i>', 2000)">
             <i class="fa fa-link"></i>
           </button>
         </div>
       </div>
-
       <!-- CTA -->
       <div class="side-cta">
         <h4>Your Wedding Has a Deadline</h4>
         <p>Get a plan built around your schedule, diet, and timeline. Not a template — yours.</p>
         <a href="#" onclick="openPopup(); return false;">Check If I Qualify →</a>
       </div>
-
     </div>
   </aside>
-
 </div><!-- /page-wrap -->
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -2047,12 +1924,10 @@
     <a href="https://www.groomfit.in/#pricing">Pricing</a>
   </div>
 </footer>
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/919588859960" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
-
 <!-- POPUP -->
 <div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
   <div class="popup-box">
@@ -2069,7 +1944,6 @@
     <button class="popup-close" onclick="closePopup()">Maybe Later</button>
   </div>
 </div>
-
 <!-- SUCCESS -->
 <div class="success-overlay" id="success" role="dialog" aria-modal="true">
   <div class="success-box">
@@ -2085,7 +1959,6 @@
     <button onclick="closeSuccess()">Dismiss</button>
   </div>
 </div>
-
 <script>
   // ─── PROGRESS BAR ───
   window.addEventListener('scroll', function () {
@@ -2094,7 +1967,6 @@
     const total = doc.scrollHeight - doc.clientHeight;
     document.getElementById('readProgress').style.transform = 'scaleX(' + (scrolled / total) + ')';
   });
-
   // ─── SCROLL REVEAL ───
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver(function (entries) {
@@ -2106,7 +1978,6 @@
     });
   }, { threshold: 0.07 });
   revealEls.forEach(function (el) { revealObserver.observe(el); });
-
   // ─── ACTIVE TOC ───
   const sections = document.querySelectorAll('[id^="s"]');
   const tocLinks = document.querySelectorAll('.toc-list a');
@@ -2120,7 +1991,6 @@
     });
   }, { rootMargin: '-25% 0px -70% 0px' });
   sections.forEach(function (s) { tocObserver.observe(s); });
-
   // ─── ANIMATED COUNTERS ───
   function animateCounter(el) {
     const text = el.textContent;
@@ -2136,7 +2006,6 @@
       if (current >= target) clearInterval(interval);
     }, 35);
   }
-
   const statNums = document.querySelectorAll('.stat-num');
   const statObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -2147,7 +2016,6 @@
     });
   }, { threshold: 0.5 });
   statNums.forEach(function (el) { statObserver.observe(el); });
-
   // ─── POPUP ───
   function openPopup() {
     document.getElementById('popup').style.display = 'flex';
@@ -2161,18 +2029,42 @@
     document.getElementById('success').style.display = 'none';
     document.body.style.overflow = '';
   }
+ // ── FORM SUBMIT ──
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
 
-  document.getElementById('leadForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(this);
+  // Silent submit to Google Forms
+  const googleForm = document.createElement('form');
+  googleForm.method = 'POST';
+  googleForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLScTSVwldCQqW5Veya8xcwSixQbrPkTITf-a0s5rQPK41ZML8w/formResponse';
+  googleForm.target = 'hidden_iframe';
+
+  function addField(name, value) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    googleForm.appendChild(input);
+  }
+  addField('entry.525461384', formData.get('name'));
+  addField('entry.933229371', formData.get('phone'));
+  addField('entry.1013425097', formData.get('location'));
+  document.body.appendChild(googleForm);
+  googleForm.submit();
+  document.body.removeChild(googleForm);
+
+    // Prepare WhatsApp message
     const msg = encodeURIComponent(
-      'Hi GroomFit! I just applied for your transformation program.\n\n' +
-      'Name: ' + data.get('name') + '\n' +
-      'Phone: ' + data.get('phone') + '\n' +
-      'Wedding Date: ' + data.get('wedding') + '\n' +
-      'City: ' + data.get('location')
+      'Hi GroomFit! I just applied for your fitness consistency coaching programme.\n\n' +
+      'Name: ' + formData.get('name') + '\n' +
+      'Phone: ' + formData.get('phone') + '\n' +
+      'Wedding Date: ' + formData.get('wedding') + '\n' +
+      'City: ' + formData.get('location')
     );
+
     document.getElementById('waBtn').href = 'https://wa.me/919588859960?text=' + msg;
+
     closePopup();
     document.getElementById('success').style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -2185,12 +2077,10 @@
   document.getElementById('success').addEventListener('click', function (e) {
     if (e.target === this) closeSuccess();
   });
-
   // Keyboard close
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closePopup(); closeSuccess(); }
   });
-
   // ─── NAV SCROLL EFFECT ───
   window.addEventListener('scroll', function () {
     const nav = document.querySelector('nav');
