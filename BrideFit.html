@@ -1341,9 +1341,29 @@ overflow: hidden;
 
   .plan-price {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 0.5rem;
+  }
+  .plan-price-row {
+  display: flex;
   align-items: baseline;
   gap: 4px;
-  margin-bottom: 0.5rem;
+  }
+  .original-price {
+  text-decoration: line-through;
+  color: var(--muted);
+  font-size: 1rem;
+  opacity: 0.7;
+  }
+  .founding-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-top: 0.3rem;
   }
   .price-symbol { font-size: 1.3rem; color: var(--gold); font-weight: 600; }
   .price-num {
@@ -3007,9 +3027,13 @@ This ensures your body matches your dream look.
   <div class="plan-name">Basic Plan</div>
 
   <div class="plan-price">
+  <div class="original-price">₹24,999</div>
+  <div class="founding-label">Founding Member Price</div>
+  <div class="plan-price-row">
   <span class="price-symbol">₹</span>
-  <span class="price-num">4,999</span>
+  <span class="price-num">16,999</span>
   <span class="price-period">/program</span>
+  </div>
   </div>
 
   <p class="plan-desc">
@@ -3038,9 +3062,13 @@ This ensures your body matches your dream look.
   <div class="plan-name">Premium Coaching</div>
 
   <div class="plan-price">
+  <div class="original-price">₹49,999</div>
+  <div class="founding-label">Founding Member Price</div>
+  <div class="plan-price-row">
   <span class="price-symbol">₹</span>
-  <span class="price-num">8,999</span>
+  <span class="price-num">34,999</span>
   <span class="price-period">/program</span>
+  </div>
   </div>
 
   <p class="plan-desc">
@@ -3067,9 +3095,13 @@ This ensures your body matches your dream look.
   <div class="plan-name">1-on-1 Bridal Elite</div>
 
   <div class="plan-price">
+  <div class="original-price">₹89,999</div>
+  <div class="founding-label">Founding Member Price</div>
+  <div class="plan-price-row">
   <span class="price-symbol">₹</span>
-  <span class="price-num">11,999</span>
+  <span class="price-num">64,999</span>
   <span class="price-period">/program</span>
+  </div>
   </div>
 
   <p class="plan-desc">
