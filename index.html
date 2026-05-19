@@ -1286,6 +1286,25 @@
     line-height: 1;
     }
     .price-period { font-size: 0.8rem; color: var(--muted); }
+    .price-original {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    text-decoration: line-through;
+    opacity: 0.45;
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+    }
+    .price-original .price-symbol { font-size: 0.85rem; }
+    .price-original .price-num { font-size: 1.1rem; font-weight: 500; }
+    .founding-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.75;
+    margin-bottom: 0.15rem;
+    }
     .plan-desc { font-size: 0.83rem; color: var(--muted); margin-bottom: 1.8rem; }
   
     .plan-features {
@@ -2781,9 +2800,14 @@
     <!-- Basic -->
     <div class="plan reveal" style="transition-delay:0.05s">
     <div class="plan-name">Basic Plan</div>
+    <div class="price-original">
+    <span class="price-symbol">₹</span>
+    <span class="price-num">14,999</span>
+    </div>
+    <div class="founding-label">Founding Member Price</div>
     <div class="plan-price">
     <span class="price-symbol">₹</span>
-    <span class="price-num">4,999</span>
+    <span class="price-num">9,999</span>
     <span class="price-period">/program</span>
     </div>
     <p class="plan-desc">A structured plan for the self-driven groom.</p>
@@ -2805,9 +2829,14 @@
     <div class="plan featured reveal" style="transition-delay:0.1s">
     <div class="plan-badge">Most Popular</div>
     <div class="plan-name">Premium Coaching</div>
+    <div class="price-original">
+    <span class="price-symbol">₹</span>
+    <span class="price-num">24,999</span>
+    </div>
+    <div class="founding-label">Founding Member Price</div>
     <div class="plan-price">
     <span class="price-symbol">₹</span>
-    <span class="price-num">8,999</span>
+    <span class="price-num">16,999</span>
     <span class="price-period">/program</span>
     </div>
     <p class="plan-desc">Full support, coaching and accountability for serious grooms.</p>
@@ -2828,9 +2857,14 @@
     <!-- Elite -->
     <div class="plan reveal" style="transition-delay:0.15s">
     <div class="plan-name">1-on-1 Transformation</div>
+    <div class="price-original">
+    <span class="price-symbol">₹</span>
+    <span class="price-num">39,999</span>
+    </div>
+    <div class="founding-label">Founding Member Price</div>
     <div class="plan-price">
     <span class="price-symbol">₹</span>
-    <span class="price-num">13,999</span>
+    <span class="price-num">24,999</span>
     <span class="price-period">/program</span>
     </div>
     <p class="plan-desc">Elite-level personal coaching for maximum results.</p>
